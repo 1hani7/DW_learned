@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<script>
+// 복습
+
+// 배열을 생성하는 방법
+// var a = ["개","고양이",1];
+// var b = new Array();
+// push.b(1,2);
+// a.length
+
+// var number = [10, 32, 54, 65, 34, 59, 60];
+// for(var i=0; i<number.length; i++){
+//     document.write(number[i] + " ");
+// }
+
+// var number2 = new Array();
+// for(var i=0; i<5; i++){
+//     // number2.push(prompt());
+// }
+
+// 하지원, 한지민, 전지현, 손예진, 한가인 의 이름을 배열로 저장하고
+// 순차적으로 출력하고 싶다.
+
+// var wom = ["하지원", "한지민", "전지현", "손예진", "한가인"]
+// for(var i=0; i<wom.length; i++){
+//     document.write(wom[i] + " ");
+// }
+
+// var number = new Array();
+// for(var i=1; i<=100; i++){
+//     number.push(Math.floor(Math.random()*200)+1);
+// }
+// for (var i=0; i<number.length; i++){
+//     if((!(number[i]%3==0) || (number[i]%5==0)))
+//     document.write(number[i] + "<br>");
+// }
+
+
+
+
+
+// 새로운 내용
+
+
+/*
+var = 재선언 가능, 데이터 수정 가능
+let = 재선언 불가, 데이터 수정 가능
+const = 재선언 불가, 데이터 수정 불가
+*/
+
+
+const name = ["이순신","강감찬","최무선","장영실","이성계","정도전"];
+// let, const => 문자열이 한 글자씩 떨어지지 않게 됨
+
+// name=["다른이름","다른이름"]; => 이러면 수정이 안 되지만
+name[0]="장보고";
+// => 이건 수정 가능함 (const의 수정 불가 속성은 '변수 이름'에 적용되므로
+// 내부에 직접 손 대면 막히지 않음)
+
+
+// 배열은, 다른 배열로 변경할 일도 없고
+// 내부의 실제 데이터 공간을 직접 변경해주는 방법도 가능하기에
+// 웬만하면 const 타입으로 만들어주는 것이 보통이다.
+
+
+window.onload=function(){ // html 다 표시되고 나서 실행
+    var list = document.getElementById("list");
+
+    var out = ""; // innerHTML은 덮어쓰기 되니까 여기에 구겨넣어서 출력
+
+    for(var i=0; i<name.length; i++){
+        out+= "<span>" + name[i] + "</span>";
+    }
+
+    list.innerHTML=out;
+
+}
+
+
+</script>
+
+<style>
+    #list span{
+        display:inline-block;
+        padding:10px 30px;
+        border:1px solid black;
+        margin-left:20px;
+    }
+</style>
+
+</head>
+<body>
+    <div id="list">
+        <span></span>
+    </div>
+</body>
+</html>

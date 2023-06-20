@@ -1,0 +1,50 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+#wrap{
+    width:70%;
+    max-width:1000px;
+    min-width:500px;
+    margin:0 auto;
+}
+
+#search_box{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:10px;
+    border:1px solid black;
+    width:60%;
+    margin:50px auto;
+    border-radius: 10px;
+}
+
+#search{ /*input 태그의 선을 지우고 div로 감싸서 스타일을 줌*/
+    border:0;
+    outline:none;
+    width:90%;
+    height:40px;
+    font-size:35px;
+}
+
+#search_box i{
+    font-size:30px;
+    width:10%;
+    text-align:center;
+}
+
+.line {
+    width:100%;
+    border-bottom:2px solid #292a2c;
+    margin-bottom:50px;
+}
+
+#search_result{
+    font-size:27px;
+    font-weight:700;
+    text-align:center;
+    
+}
