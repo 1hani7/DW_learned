@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="./static/js/func.js"></script>
+    <link rel="stylesheet" href="./static/css/style.css">
+
+</head>
+<body>
+
+    <!--input 태그-->
+    <!-- 텍스트 <input type="text"><br> 사용자가 입력할 수 있는 태그 -->
+    <!-- 숫자 <input type="number"><br> 숫자만 받을 수 있게 -->
+    <!-- 이메일 <input type="email"><br> 이메일 형식으로 입력해야 상호작용 가능 -->
+    <!-- 검색 <input type="search"><br> 이메일처럼 영어 우선임 -->
+    <!-- 날짜 <input type="date"><br> -->
+    <!-- 파일 <input type="file"><br> 파일첨부 가능하게 -->
+    <!-- 체크<input type="checkbox"><br> 네모모양 체크박스(여러 개 선택 가능) -->
+    <!-- 라디오<input type="radio"><br> 동그란모양 체크박스(하나만 선택 가능) -->
+    <!-- 월 선택 <input type="month"> <br> -->
+    <!-- 날짜시간 <input type="datetime-local"><br> -->
+    <!-- 슬라이드 바 <input type="range"><br> -->
+    <!-- 시간 <input type="time"><br> -->
+    <!-- 주 <input type="week"><br> -->
+    <!-- 비밀번호 <input type="password"><br> 점으로만 보이게 됨 -->
+
+<!--모바일 입력창 터치시 나오는 키보드 형식도 이걸로 제어해줄 수 있음-->
+
+
+    <!-- <button onclick="sum(10, 20)">더하기</button> -->
+    <!--매개변수 2개에 대한 인수를 입력해줌-->
+
+    <!-- <div>결과 : <b id="sum_result"></b> </div> -->
+
+
+    
+    <!-- <div>
+        <input type="number" id="num1">
+        <input type="number" id="num2">
+        <button onclick="plus()">+</button> <!--입력값은 input에서 받을 거라 매개변수 X-->
+        <!-- <div>결과 : <b id="result2"></b></div>
+    </div>
+
+<br>    
+<div style="border:1px solid black; width:300px; padding:20px;">
+    <input type="number" min="1920" max="2023" id="birth_year">
+    min과 max로 최소값/최댓값 정해주기
+    <input type="button" value="나이구하기" onclick="myage()">
+    <div>만 나이 : <span id="age"></span>세 </div>
+</div>
+
+<br><br> -->
+
+<!-- <div class="box">
+    <div class="subject">
+        <label>국어</label>
+        <input type="number" id="kor" mon="0" max="100">
+    </div>
+    <div class="subject">
+        <label>수학</label>
+        <input type="number" id="mat" mon="0" max="100">
+    </div>
+    <div class="subject">
+        <label>음악</label>
+        <input type="number" id="mus" mon="0" max="100">
+    </div><br>
+    <button onclick="grade_calc()">총점/평균</button>
+    <div id="result3"></div>
+</div> -->
+
+<!--소주 한 잔마다 수명이 2분 단축
+    문제의 사람은 매일 20년 마심
+    얼마나 단축되었는지 구하는데
+    input을 이용해서 하루 몇 잔 먹었는지 입력하여
+    이에 따른 단축된 수명을 출력할 것
+    단, 단축된 수명을 몇 분, 몇 시간, 며칠인지 각각 출력하기-->
+
+
+    <!-- <div class="box">
+        <div>20년 동안 매일 몇 잔을 드셨음?</div>
+        <input type="text" id="soju">
+        <button onclick="my_minus_life()">수명계산</button>
+        <div id="minuite"></div>
+        <div id="hour"></div>
+        <div id="day"></div>
+    </div> -->
+
+
+    <div class="box">
+        <div class="input_box">
+            <label>야식 메뉴</label>
+            <input type="text" id="night_snack">
+        </div>
+        <div class="input_box">
+            <label>사이드 메뉴</label>
+            <input type="text" id="side_menu">
+        </div>
+        <div class="input_box">
+            <lavel>주류</lavel>
+            <input type="text" id="alc">
+        </div>
+        <br>
+        <button onclick="my_order()">주문하기</button>
+        <br>
+        <div id="order_result"></div>
+    </div>
+
+
+</body>
+</html>

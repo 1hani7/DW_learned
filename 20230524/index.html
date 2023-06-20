@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실내동물원</title>
+    <style>
+        body{margin:0px; padding:0px;}
+        .wrap{
+            margin:0px;
+            padding:0px;
+            width:1200px;
+            /* border:1px solid black */
+        }
+        .logo_position{
+            display:inline-block;
+            width:400px;
+        }
+        .logo_img{
+            width:130px;
+        }
+        .zoo_name{
+            width:400px;
+            font-size:40px;
+            margin:0px;
+            padding:0px;
+            padding-top:20px;
+            font-family:'나눔스퀘어OTF';
+            color:red;
+            text-align:center;
+        }
+        .zoo_subname{
+            text-align:center;
+            margin:0;
+            padding:0;
+        }
+        .head_right{
+            width:400px;
+            margin:0px;
+            padding:0px;
+            text-align:right;
+            vertical-align:top;
+        }
+        .top_menu_wrap{
+            background-color:rgb(255, 179, 179);
+            padding:0px;
+            height:40px;
+        }
+        .top_menu{
+            padding:0px;
+            margin:0px;
+            padding-left:250px;
+            padding-bottom:25px;
+            height:40px;
+            list-style-type:none;
+        }
+        .top_menu_list{
+            font-weight:700;
+            font-size:20px;
+            float:left;
+            padding:20px;
+        }
+        .top_menu_list:hover{
+            cursor:pointer;
+            color:white;
+            background-color:black;
+        }
+        .banner{
+            background-image: url('../image/fireworks-g7bdebc1e6_640.jpg');
+            width:1200px;
+            height:480px;
+            margin:0px;
+            padding:0px;
+        }
+        .banner_letters{
+            margin:0;
+            padding:0px;
+            list-style-type:none;
+            text-align:center;
+            color:antiquewhite
+        }
+        .titleText{
+            margin:0;
+            padding:0;
+            font-size:100px;
+            font-weight:900;
+            opacity:0.8
+        }
+        .subtitleText{
+            margin:0;
+            padding:0;
+            font-size:24px;
+            font-weight:700;
+        }
+        .lastText{
+            margin:0;
+            padding:0;
+            font-size:10px;
+            opacity:0.6
+        }
+        .event_wrap{
+            height:200px;
+            margin:0;
+            padding:0px;
+        }
+        .envent_box{
+            list-style-type:none;
+            padding:0;
+            text-align:center;
+        }
+        .event_letter{
+            padding:0;
+            color:red;
+            font-family:serif;
+            font-size:25px;
+            font-weight:700
+        }
+        .box_wrap{
+            text-align:left;
+            vertical-align:bottom;
+            margin:0;
+            padding:0;
+            height:300px;
+            border-spacing:10px;
+            font-weight:900;
+            font-size:30px;
+            color:white;
+            border-spacing:5px;
+        }
+        .box_one{
+            background-image:url('../image/girl-g8f71547c7_640.jpg');
+            width:400px;
+        }
+        .box_two{
+            background-image:url('../image/polar.jpg');
+            width:400px;
+        }
+        .box_three{
+            background-image:url('../image/man-gdd725eea0_640.jpg');
+            width:400px;
+        }
+        .box_one:hover{cursor:pointer; filter:brightness(50%);}
+        .box_two:hover{cursor:pointer; filter:brightness(50%);}
+        .box_three:hover{cursor:pointer; filter:brightness(50%);}
+        .money_icon:hover{cursor:pointer;
+        }
+        .ticket_icon:hover{cursor:pointer;}
+        .nav_box_wrap{
+            cursor:pointer;
+            margin:0;
+            padding:0;
+            padding-left:250px;
+            padding-top:50px;
+            width:1000px
+        }
+        .payment{
+            list-style-type:none;
+        }
+        .sale{
+            list-style-type:none;
+        }
+        .bold_one{font-size:25px;}
+        .bold_two{font-size:25px;}
+        .table_third{width:1200px; margin-top:50px;}
+        .news_top{width:1200px;
+             margin:0px; padding:0px;}
+        .news_title{
+            font-size:25px;
+            font-weight:800;
+            padding-bottom:20px;
+        }
+        .read_more{
+            text-align:right
+        }
+        .newsDate{font-size:22px;}
+        .ttls{
+            font-size:20px;
+            font-weight:900;
+        }
+        .ttls:hover{cursor:pointer;}
+    </style>
+</head>
+<body>
+
+    <table class="wrap">
+        <tr class="head">
+            <td class="logo_position">
+                <a href="">
+                <img src="../image/zoologo.png" class="logo_img"></td>
+                </a>
+            <td>
+                <h1 class="zoo_name">대전 지옥불 동물원</h1><br>
+                <h4 class="zoo_subname">꿈과 희망이 가득한 곳</h4>
+            </td>
+            <td class="head_right">로그인 / 회원가입 / 예매</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="top_menu_wrap">
+                <ul class="top_menu">
+                    <li class="top_menu_list">동물원 소개</li>
+                    <li class="top_menu_list">이용정보</li>
+                    <li class="top_menu_list">예매/단체</li>
+                    <li class="top_menu_list">이벤트</li>
+                    <li class="top_menu_list">공지사항</li>
+                    <li class="top_menu_list">고객센터</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" class="banner">
+                <ul class="banner_letters">
+                    <h1 class="titleText">야간개장!</h1>
+                    <li class="subtitleText">뭣도 모르고 쳐놀다가<br>막차를 놓쳐보세요!</li>
+                    <li class="lastText">※숙박시설은 제공하지 않습니다※</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" class="event_wrap">
+                <ul class="envent_box">
+                    <li class="event_letter">Event & Features!</li>
+                    <li>당장 여기서 나가</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="box_wrap">
+            <td class="box_one">불타는 불곰쇼</td>
+            <td class="box_two">냉속성 북극곰쇼</td>
+            <td class="box_three">그냥 아저씨</td>
+        </tr>
+        <tr class="payment">
+            <td class="payment_icon"></td>
+    </table>
+
+    <table class="nav_box_wrap">
+        <tr class="nav_box_first">
+            <td class="money_icon">
+                <img src="../image/money.png" width="100">
+            </td>
+            <td>
+                <ul class="payment">
+                    <li><b class="bold_one">이용요금</b></li>
+                    <li>이용요금을</li>
+                    <li>알려드립니다.</li>
+                </ul>
+            </td>
+            <td class="ticket_icon">
+                <img src="../image/ticket.png" width="100">
+            </td>
+            <td>
+                <ul class="sale">
+                    <li><b class="bold_two">할인정보</b></li>
+                    <li>할인정보를</li>
+                    <li>알려드립니다.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="nav_box_second">
+            <td>
+                <img src="../image/way.png" width="100">
+            </td>
+            <td>
+                <ul class="sale">
+                    <li><b class="bold_two">오시는 길</b></li>
+                    <li>오시는 길을</li>
+                    <li>안알려드립니다.</li>
+                </ul>
+            </td>
+            <td>
+                <img src="../image/ticket(2).png" width="100">
+            </td>
+            <td>
+                <ul class="sale">
+                    <li><b class="bold_two">단체예약</b></li>
+                    <li>여기를 단체로</li>
+                    <li>예약하실 생각인가요?</li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+
+    <table width="1200" class="table_third">
+        <tr class="news_top">
+            <td colspan="3" class="news_title">NEWS & NOTICE</td>
+
+            
+            <td class="read_more">read more ></td>
+        </tr>
+        <tr>
+            <td class="newsDate">24<br>2023-05</td>
+            <td colspan="3" class="ttls">동물원에서 고릴라가 탈출해서 모두가 행복함</td>
+        </tr>
+        <tr>
+            <td class="newsDate">23<br>2023-05</td>
+            <td colspan="3" class="ttls">터줏대감 사자가 중성화 수술을 함</td>
+        </tr>
+        <tr>
+            <td class="newsDate">22<br>2023-05</td>
+            <td colspan="3" class="ttls">원숭이 우리에서 사람이 발견되어 축제</td>
+        </tr>
+    </table>
+</body>
+</html>

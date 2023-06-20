@@ -1,0 +1,142 @@
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ol, ul, li, dl, dd{
+    margin:0;
+    padding:0;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+/*기본설정*/
+
+.container{
+    margin:0 auto;
+    width:900px;
+    height:900px;
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    grid-template-rows:1fr 1fr 1fr;
+    text-align: center;
+    gap:20px;
+
+    grid-template-areas:
+    "header  header  header"
+    "a  main  b"
+    ""
+}
+
+.item{
+    background: yellow;
+    border-radius: 20px;;
+}
+
+.item:nth-child(1){
+    grid-column:1/4;
+}
+
+
+#page{
+    margin:50px auto;
+    display:grid;
+    width:1000px;
+    height:1000px;
+    grid-template-areas:
+    "head head"
+    "nav main"
+    "nav foot";
+    grid-template-rows:130px 1fr 200px;
+    grid-template-columns: 150px 1fr;
+    gap:20px;
+}
+
+#page > header{
+    grid-area: head;
+    display:grid;
+    grid-template-rows:1fr;
+    grid-template-columns:1fr 3fr 1fr;
+    column-gap: 20px;
+}
+
+#page header div{
+    background-color: brown;
+}
+
+#page header .top-left{
+    background-image: url(https://studiomeal.com/wp-content/themes/studiomeal2021/images/website-title.jpg);
+    background-size:cover;
+    background-repeat: no-repeat;
+} 
+
+#page > nav{
+    grid-area:nav;
+    display:flex;
+    flex-direction:column;
+    row-gap:20px;
+}
+
+#page > nav > div{
+    height:30px;
+    background-color: brown;
+    text-align: center;
+    line-height:30px;
+    color:white;
+}
+
+#page > nav > .tel{
+    border-radius: 10px;;
+    height:180px;
+}
+
+#page > main{
+    grid-area:main;
+    display:grid;
+    grid-template-areas: 
+    "left top right"
+    "left bottom right";
+    grid-gap:20px;
+    grid-template-columns: 1fr 2fr 1fr;
+}
+
+.left{grid-area:left;}
+.top{grid-area:top;}
+.bottom{grid-area:bottom;}
+.right{grid-area:right;}
+#page > main > div{
+    background-color: brown;
+}
+
+#page > footer{
+    grid-area:foot;
+    display:grid;
+    grid-template-columns: 1fr 3.1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap:20px;
+}
+
+#page > footer > div{
+    background-color: brown;
+}
+
+
+#test{
+    margin: 30px auto;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border:1px solid brown;
+    width:500px;
+    height:500px;
+}
+
+.div1{border:1px solid brown; flex-grow:2;
+      border-bottom:transparent; border-top:transparent;}
+.div2{border:1px solid brown; flex-grow:3; align-self:stretch;
+      border-left:transparent; border-right:transparent;}
+.div3{border:1px solid brown; flex-grow:1;
+      border-top:transparent; border-bottom:transparent;}

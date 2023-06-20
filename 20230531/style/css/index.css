@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&display=swap');
+
+
+/* *은 모든 태그라는 뜻 */
+
+*, *::before, *::after{
+    box-sizing:border-box;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, dl, dd{
+    margin:0;
+    padding:0;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+a{
+    text-decoration: none;
+    color: inherit; /* 상속 : 이제 a태그의 컬러는
+                             부모 태그 입력에 따라 유동적이 됨 */
+}
+
+/*여기까지 기본 설정*/
+
+#wrap{
+    max-width:1080px;
+    width:90%;
+    margin:0 auto;
+}
+
+#header{
+    position:sticky;
+    top:0;
+    background:white;
+    display:flex;
+    justify-content:space-between;
+    padding:7px 20px;
+    border-bottom:1px solid #d0d0d0;
+    margin-bottom:25px;
+}
+
+#header .header-nav{
+    display:flex;
+    align-self:center;
+}
+
+.header-nav a{
+    margin-left:15px;
+    display:flex;
+    align-items:center;
+}
+
+.header-logo{
+    width:100px;
+}
+
+.header-nav a:nth-child(2){/*부모의 자식태그 중 몇 번째 자식인지 저격할 수 있음
+                             header-nav의 자식 'a 태그 중' 2번째 라는 뜻*/
+    padding:7px 17px;
+    color:white;
+    background-color:black;
+    border-radius: 7px;
+}
+
+.header-nav a:nth-child(2) i{
+    padding-left:5px;
+}
+
+#main{
+    padding:15 0;
+}
+
+#flex{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: center;
+    row-gap: 20px;
+    column-gap:20px;
+}
+
+.flexitem{
+    width:30%;
+    max-width:300px;
+    border:0.5px solid rgb(172, 172, 172);
+    border-radius: 10px;
+    overflow:hidden;
+}
+
+.product-content{
+    display:flex;
+    justify-content: space-between;
+    padding:10px;
+}
+
+product-info{
+    font-size:13px;
+}
+
+.like{
+    align-self: flex-end;
+}
+
+/*
+@media 키워드 논리연산자 (조건) {
+    스타일속성: 속성값;
+}
+키워드 - all, screen, print, tv, tty, projection <- 등에서만 적용시킬 때
+논리연산자 - and : 키워드와 조건 둘 다 맞아야 함
+            or  : 키워드나 조건 둘 중 하나만 맞아도 됨
+조건 - max-width(이하), min-width(이상) 수치 같은 경우
+    세로모드 : orientation:portrait (높이가 더 클 때)
+    가로모드 : orientation:landscape (너비가 더 클 때)
+    너비 높이 비율 : aspect-ratio:16/9 (16:9 비율을 말함)
+    색상 비트수 : color:8 -> 8비트
+
+!참고 : 반응형 제각은 두 가지 방식이 있음
+        1. 모바일 먼저 만들고 그걸 기반으로 PC 환경을 제작
+            (모바일에선 min-width를 사용
+
+
+        2. PC 먼저 만들고 그걸 기반으로 모바일 환경을 제작
+            (PC에선 max-width를 사용
+
+        주로 모바일 => PC제작이 더 빠르다고 함
+
+*/
+@media screen and (max-width:768px){ /*[너비가 ?px 이하라면]의 조건*/
+    #flex{
+        column-gap:15px;
+    }
+    .flexitem{
+        width:40%;
+    }
+}
+
+@media screen and (max-width:576px){
+    .flexitem{
+        width:60%;
+    }
+}
+
+/*
+반응형에서 사용하는 단위들 = %, em, rem, vw, vh (상대단위들)
+em - 부모의 font-size가 10px이면 1em이 10px이 되는 식
+rem - html 태그의 font-size가 10px이면 1em이 10px이 되는 식
+vw,vh - 화면(view)의 넓이(width), 높이(height)만을 백분위로 나눔
+        ex): 1vw는 화면 너비의 1%
+*/

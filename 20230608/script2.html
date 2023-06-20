@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<script>
+
+    // 연산자
+/*
+  대입연산자 : =
+  사칙연산자 : +, -, *, /, % 
+  복합대입연산자 : +=, -+, *=, /=, %=
+  증감연산자 : ++, --
+  대소비교연산자 : >, <, >=, <=
+  등가연산자 : ==(같다), ===(같다), !=(같지않다)
+  논리연산자 : &&(and), ||(or), !(not)
+  조건연산자(삼항연산자) =>  (조건식) ? : ;
+*/
+
+    //복합대입연산자
+    var a = 10;
+
+    a = a+20; //이건 a변수에 20을 더하고 a변수에 다시 저장한 거
+    //이걸 줄여서 쓰면
+    a += 20; // +=는 더하고 대입했다는 뜻
+    //별 차이는 없음
+
+
+
+    //증감연산자
+    var a=10;
+    var b=10;
+    var c=0;
+
+    c = a++;
+    document.write("a++의 c 결과는" + c + "<br>");
+    document.write("a++의 a 결과는" + a + "<br>")
+    c = ++b;
+    document.write("++b의 c 결과는" + c + "<br>")
+
+    /*
+    차이점
+    a++을 C에 저장시키면 => a를 c에 저장한 다음 a를 증가시킴
+    ++a를 c에 저장시키면 => a를 증가시킨 다음 C에 저장함
+
+    ++a가 훨씬 먼저 동작함
+    */
+
+     
+
+    // 대소비교연산자
+    var num1=10, num2=40;
+
+    document.write(( num1 > num2 ) + "<br>"); // 구라니까 거짓이라고 출력됨
+    document.write(( num1 < num2 ) + "<br>"); // 찐이니까 진실이라고 출력됨
+    // 아이디비번 글자수 제한이나, 메일주소 형식이 올바른지, 중복 아이디인지 색출할 때 등
+    // 쉽게 말해서 [조건식]을 만들어 줄 때 쓰는 것
+
+
+    document.write( (num1==10) + "<br>" );    //이건 참
+    document.write( (num1==="10") + "<br>" ); //근데 이건 거짓
+    // 둘 다 [같다]는 뜻으로 사용되어 참과 거짓을 판단함
+    // 근데 ===는 타입이 같으냐 아니냐까지 따짐 (string, number 이런 차이)
+
+    // !=는, 같지 않은 경우가 참, 같은 경우가 거짓이니 참고 *
+
+
+    var tall=160;
+    document.write((tall>=150) + "<br>");
+    // 이거 이용하려면 키가 150 이상이어야 함~ 이란 뜻
+
+
+    var foot_size = 250;
+    document.write((foot_size <= 280) + "<br>");
+
+
+
+    var money = 5000;
+    var pocari = 2100; orange = 3400; beer = 5100;
+    document.write((money <= pocari));
+    document.write((money <= orange));
+    document.write((money <= beer) + "<br>");
+
+
+    var tall = 152;
+    document.write("후룸라이드 " + (150 <= tall <= 190) + "<br>");
+    // 근데 일반적으론 피연산자 2개 에 연산자 하나가 국룰임
+    // 이렇게 연산자 두 개 들어가고 그러면 오류가 발생할 수도 있음
+    // 국룰은 괜히 국룰이 아니니 연산자 1개씩만 하자
+    150 <= tall;
+    tall <= 190;
+    // 이게 맞음
+
+
+
+    // 논리연산자
+
+    var score=79;
+    //70점이상 80점미만 이면 C등급
+    70 <= score && score < 80
+
+    var num1=20;
+    // 10보다 작거나  15보다 크다면  통과
+    num1 < 10 || 15 < num1
+
+    var num1=1100;
+    // 900 이상 1100이하 는  재도전 불가 ( 결과가 true면 재도전, false불가)
+    num1 < 900 || 1100 < num1
+
+    var num1=1;
+    // 3,4를 제외한 모든 숫자 사용가능
+    num1 < 3 || num1 > 4
+
+    !(num1==3 || num1==4)
+
+    num1 != 3 && num!=4
+    //  ! not 연산자 - 부정 : 참->거짓, 거짓->참
+
+    var score= 85;
+    // 80점이상  90점미만이면  B등급
+
+    parseInt(score/10) == 8
+    // 10분의 1로 나눠서 정수값이 8이면 참이다, 라는 뜻
+
+    var num1 = 6;
+    // num1 이 짝수인가?
+    num1%2 == 0
+
+    var num1=12;
+    // num1은 48의 약수인가?
+    48%num1 == 0
+
+    var num1 = 6;
+    // num이 짝수인가?
+    num1%2 == 0;
+
+
+    var num1 = 8;
+    // 0보다 크고 10보다 작은 숫자인가?
+    0 < num1 || num1 < 10;
+
+
+    var num1 = 12;
+    // num1은 48의 약수인가?
+    48%num1 == 0;
+
+</script>
+
+
+</head>
+<body>
+    
+</body>
+</html>

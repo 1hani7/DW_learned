@@ -1,0 +1,39 @@
+
+
+table tr td{
+    border:1px solid black;
+    width:200px;
+    height:200px;
+    text-align: center;
+    font-size:50px;
+}
+
+table tr td:hover{
+    filter:brightness(0.7);
+    cursor:pointer;
+}
+table tr td:active{
+    transform: translate(2px, 2px);
+}
+
+table tr td:nth-child(4){
+    background:rgb(126, 224, 224);
+}
+
+table tr:nth-child(4) td:nth-child(3){
+    background:rgb(126, 224, 224);
+}
+
+table tr:nth-child(4) td:nth-child(2){
+    background:rgb(255, 182, 86)
+}
+
+#result{
+    border:transparent;
+    border-top:5px solid red;
+    border-bottom:5px solid red;
+    width:400px;
+    height:50px;
+    font-size:30px;
+    outline:none; /*클릭시 나오는 아웃라인을 제거하는 것*/
+}

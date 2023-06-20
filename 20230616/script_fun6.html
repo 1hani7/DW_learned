@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./static/css/script_fun6.css">
+    <script src="./static/js/script_fun6.js"></script>
+</head>
+<body>
+    <!--
+        주사위게임
+        1. START를 누르면 컴퓨터 주사위값이 나옴
+        2. 그 다음내 주사위를 누르면 주사위값이 나옴
+        3. 숫자가 큰 쪽이 승리
+        4. 전적이 쌓여야 함
+
+Math.floor(), Math.random(), 
+setInterval은 선택
+
+        * 필요한 기능 정리
+        1. START 버튼을 주르면 무작위값을 내놓는 기능
+        2. 내 주사위를 누르면 무작위값을 내놓는 기능
+        3. 비교하는 경우의 수를 따져주는 기능
+        4. 전적에 쌓이는 기능
+    -->
+
+<div id="wrap">
+    <div id="computer_dice">
+        <img id="cimg" src="./static/image/dice_one.png">
+    </div>
+
+    <button onclick="com()">START</button>
+
+    <div id="legacy"></div>
+
+    <div id="My_dice">
+        <img id="mimg" onclick="me()" src="./static/image/dice_one.png">
+    </div>
+</div>
+
+<div id="vs">
+    <img src="./static/image/Street_Fighter_VS_logo.png">
+</div>
+
+</body>
+</html>

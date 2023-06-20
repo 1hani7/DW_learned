@@ -1,0 +1,62 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+#box1{
+    position:relative;
+    height:160px;
+}
+
+#wrap{
+    margin:0 auto;
+    border:1px solid black;
+    width:500px;
+    padding:20px;
+    height:inherit;
+}
+
+.input_box{
+    width:100%;
+    display:flex;
+    justify-content: space-between;
+    line-height:35px;
+}
+
+input{
+    height:30px;
+}
+
+#board{
+    position: relative;
+    display:flex;
+    justify-content: center;
+}
+
+ul{
+    list-style-type: none;
+}
+
+.menu_title{
+    position:relative;
+    left:200px;
+}
+
+#pack{
+    position:absolute;
+    right:0;
+    bottom:0px;
+}
+
+
+#reset{
+    position:absolute;
+    right:0;
+    bottom:-30px;
+}
+
+#order_result{
+    border-top:1px dashed black;
+    margin-top:50px;
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<script>
+
+var me = parseInt(prompt("1~50 사이의 숫자를 제시하세요. 컴퓨터가 추론해낼 겁니다."));
+var a=50; b=1; i=0;
+
+while(true){
+
+    var com = parseInt(Math.floor(Math.random()*a)+b);
+    
+    if(me < com){
+        if(a>(a-com)){
+            i=(i+1);
+            document.write(i + "회차 시도 : " + com + " DOWN! <br>")
+            a=a-(a-com);
+            b=b;}
+        // }else if (a<(a-com)){
+        //     i=(i+1);
+        //     a=a;
+        //     b=b;
+        //     document.write(i + "회차 시도 : " + com + " DOWN! <br>")
+        // }
+        
+        
+    }else if(me > com){
+        if(a>com){
+            i=(i+1);
+            document.write(i + "회차 시도 : " + com + " UP! <br>")
+            a=a-com;
+            b=com;
+        }else if(a<com){
+            i=(i+1);
+            a=a;
+            b=b;
+            document.write(i + "회차 시도 : " + com + " UP! <br>")
+        }
+        
+        
+    }else if(me==com){
+        document.write(i + "회차 시도 : " + com + " 정답! <br>")
+        break;
+    }
+}
+
+</script>
+
+<body>
+    
+</body>
+</html>

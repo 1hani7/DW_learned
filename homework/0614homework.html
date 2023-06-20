@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="./static/js/0614homework.js"></script>
+    <link rel="stylesheet" href="./static/css/0614homework.css">
+
+</head>
+<body>
+    
+<!-- 오늘의 과제
+카페 주문하기
+주문 내용은 음료명, 아이스 또는 핫, 사이즈(m,L)
+음료 하나만 주문이 아니라 여러개 주문내역이 나와야 함
+    
+예)
+아메리카노, 아이스, M, 2000원
+수박주스, 아이스, M, 4500원
+    
+힌트 - 모든 함수에서 사용할 수 있는 변수를 생성하려면
+       함수 밖에서 만들면 됨 -->
+    
+
+<div id="wrap">
+    <div class="menu_title"><h3>메뉴판</h3></div>
+    <div id="board">
+        <ul>
+            <li>아메리카노 / 핫 or 아이스 /M or L</li>
+            <li>헤이즐넛 /핫 or 아이스 /M or L</li>
+            <li>카푸치노 /핫 or 아이스 /M or L</li>
+            <li>카페모카 /핫 or 아이스 /M or L</li>
+            <li>프라푸치노 /핫 or 아이스 /M or L</li>
+        </ul>
+    </div><br>
+    <div id="box1"> <!--주문공간-->
+        <b>주문</b>
+        <div class="input_box">
+            <label>음료 종류</label>
+            <input type="text" id="drinks">
+        </div>
+        <div class="input_box">
+            <label>핫 or 아이스</label>
+            <input type="text" id="temp">
+        </div>
+        <div class="input_box">
+            <label>사이즈 M / L</label>
+            <input type="text" id="size">
+        </div>
+        <button onclick="my_order()" id="pack">장바구니</button>
+        <button onclick="reset()" id=reset>입력창 비우기</button>
+    </div>
+    <div id="order_result"></div>
+</div>
+
+
+</body>
+</html>

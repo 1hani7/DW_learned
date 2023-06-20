@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<script>
+
+// 반복문 사용시 무한루프를 만들지 않도록 주의
+// ex) for(var i=1; ; i++) => 숫자를 무한히 +1 하기 때문에 무한루프, 브라우저 뻗음
+// 시작값과 끝값, 증가/감소값을 줘야 함
+// 조건식 내용이 참인 동안에만 중괄호 내부 => 증감식 순으로 실행되는 원리
+
+
+
+    // for 반복문 = 반복 횟수가 필요할 때 사용
+    // for(시작값; 끝나는값; 증가/감소값(;생략))
+    // for(var i=1; i<=19; i=i+1){
+    // document.write("<div>"+ (i*7) +"</div>");
+    // }// 평범한 경우, 시작값은 1, 증감소 값도 1이 보통
+
+    // var num = Math.floor(Math.random()*9)+1;
+    // var num = parseInt(prompt("1~9까지 숫자 중 하나를 입력하세요"));
+    // while(num <1 || num > 9){num=parseInt(prompt("1~9까지 중 하나를 입력하셔야 합니다."))}
+    // for(var i=1; i<=9; i++){
+    //     document.write("<div>" + num + "*" + i + "=" + (num*i) + "</div>");
+    // }
+
+
+    // for(var i=1; i<=77; i++){
+    //     document.write("<div>" + i + "</div>");
+    // }
+
+
+    // for (var i=1; i<=120; i=i+3){
+    //     document.write("<div>"+ i +"</div>");
+    // }
+
+
+    // var num = parseInt(prompt("정수 하나 입력"));
+    // for (var i=num; i<num+12; i++){
+    //     document.write("<div>" + i + "</div>");
+    // }
+
+    // var count = 0;
+    // for(var i=1; i<=100; i++){
+    //     if(i%7 == 0){count=count+1;} // 조건에 부합하는 것 하나당 카운트 +1 메커니즘
+    // }document.write("1~100에서 7의 배수는 " + count + "개다.");
+
+
+//     // 동전 10번 던져서 몇 번 이기고 졌는지
+//     var win=0, lose=0;
+//     for(i=1; i<=10; i++){
+//         var coin = Math.floor(Math.random()*2)+1;
+//         var ch = parseInt(prompt("1. 앞면 or 2. 뒷면"));
+//         if (coin==ch){
+//             document.wirte("승리<br>");
+//             win++;
+//         }else{
+//             document.write("패배<br>");
+//             lose++;
+//         }
+//     }
+// document.write("정답횟수 : " + win + "오답횟수 : " + lose);
+    
+
+
+
+    // 주사위 던지기  게임 10판
+    // 컴퓨터와 내가 주사위를 던져서 큰 쪽이 승리, 같으면 무승부
+    // 10판 해서 내가 몇 번 이기고 지고 비겼는지 출력하기
+
+    // var win=0; lose=0; draw=0;
+    // for(i=1; i<=10; i++){
+    //     var com = Math.floor(Math.random()*6)+1;
+    //     var user = Math.floor(Math.random()*6)+1;
+
+    //     if(com==user){
+    //         document.write("com = " + com + " user = " + user + " ");
+    //         document.write("<i>무승부!</i><br>");
+    //         draw++;
+    //     }else if(com > user){
+    //         document.write("com = " + com + " user = " + user + " ");
+    //         document.write("<span style=color:red;>패배!</span><br>");
+    //         lose++;
+    //     }else {
+    //         document.write("com = " + com + " user = " + user + " ");
+    //         document.write("<b style=color:blue;>승리!</b><br>");
+    //         win++;
+    //     }
+    // }
+    // document.write("<br>무승부 횟수 : " + draw +
+    //                "<br>승리 횟수 : " + win +
+    //                "<br>패배 횟수 : " + lose);
+
+
+
+    // While 반복문 = 반복 횟수가 필요없을 때 사용
+    // var i=1; 초기값
+    // while (조건식) {
+    //     내용;
+    //     i++; 증감식
+    // }
+    // for처럼 쓰기 힘듬
+
+    // while(true){ 무한루프
+    //    if(i==100) 같은 걸 넣어서 언제 무한루프를 멈출 건지 정함
+    //        break; => 중단
+    //         i++;
+    // }
+ 
+    //무한루프 사용예
+    // while(true){
+    //     var num=parseInt(prompt("정수 입력"));
+    //     if(num==0) break;
+    // }
+
+
+    //너비 100px 이상 입력하시오.
+    // while(true){
+    //     var width=parseInt(prompt("너비입력 100이상"));
+    //     if(width>=100) break;
+    // }
+
+    
+    // 업다운 게임
+    // 랜덤 숫자 1~50 중 하나
+    // 랜덤 숫자를 맞출때까지 계속 입력하게 시키기
+    // 숫자와 일치하지 않으면 Up이나 down을 alert로 출력시키기
+    // 정답이면 write로 랜덤 숫자와 함께 정답이라고 출력
+
+    // var num = Math.floor(Math.random()*50)+1
+    // while(true){
+    //     var user = parseInt(prompt("랜덤 숫자가 생성됐습니다. 맞춰보세요. (1~50 중 하나)"));
+    //     if(user > num){
+    //         alert("Down! 더 작은 수입니다!");
+    //     }else if(user < num){
+    //         alert("Up! 더 큰 수입니다!");
+    //     }else{
+    //         document.write("정답입니다!" + "<br>랜덤숫자 : " + num);
+    //         break;
+    //     }
+    // }
+
+
+
+    // 0612 과제
+    var user = parseInt(prompt("1~50의 숫자를 컴퓨터에게 제시해주세요. 얘가 맞춰줌."));
+    var com = Math.floor(Math.random()*50)+1;
+    var i = 0; a=50; b=1;
+    while(true){
+        if(user > com){
+            i = i+1;
+            com = Math.floor(Math.random()*a)+b;
+            document.write("<br>컴퓨터의 " + i + "차 짐작은 " + com + "입니다.<br>");
+            a-=(a-com);
+
+        }else if (user < com){
+            i = i+1;
+            com = Math.floor(Math.random()*a-user)+b;
+            document.write("<br>컴퓨터의 " + i + "차 짐작은 " + com + "입니다.<br>");
+            a-=com;
+            b=com;
+            
+        }else if (user == com){
+            document.write("<br>정답입니다, 컴퓨터!<br>" + i + "번만에 맞췄군요!");
+            break;
+        }
+    }
+
+    
+
+
+
+</script>
+
+<style>
+    *{
+        margin:0;
+        padding:0;
+    }
+</style>
+
+</head>
+<body>
+    
+</body>
+</html>

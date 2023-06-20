@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<script>
+
+// 가위바위보 머신
+
+var random = Math.floor(Math.random()*3)+1;
+var choice = prompt("1은 가위, 2는 바위, 3은 보 입니다.");
+var result = (random==choice) ? "무승부":
+             (choice==1 && random==2) ? "당신의 패배" :
+             (choice==1 && random==3) ? "당신의 승리" :
+             (choice==2 && random==1) ? "당신의 승리" :
+             (choice==2 && random==3) ? "당신의 패배" :
+             (choice==3 && random==1) ? "당신의 패배" :
+             (choice==3 && random==2) ? "당신의 승리" : "무효";
+// 메커니즘 부분
+
+// 같은 원리로 간략화
+// var result = (choice==random) ? "비김" : "패배" ;
+// result = ((choice==1 && random==3) || (choice==2 && random==1) || (choice==3 && random==2)) ? "이김" : result ;
+// 비기고 패배하는 경우를 따로, 이기는 경우를 따로 빼서 ||로 간략화시키는 방법
+
+
+// 수학적으로 접근해서 간략화시킨 방법으론
+// cal = choice-random
+// result = (cal == 0 ) ? "무승부" : (cal==1 || cal==-2) ? "승리" : "패배" ;
+
+
+
+var patch_ch = (choice==1)? "가위" : (choice==2)? "바위" : (choice==3) ? "보" : "error";
+var patch_rd = (random==1)? "가위" : (random==2)? "바위" : (random==3) ? "보" : "error";
+// 한글패치 부분
+
+document.write("당신은 <b>" + patch_ch + "</b>를 내셨고, 컴퓨터는 <b>"
+                + patch_rd + "</b>을 냈습니다. <br> 따라서 결과는 <b>" + result + "</b> 입니다.");
+// 결과출력 부분
+
+</script>
+
+
+<body>
+    
+</body>
+</html>

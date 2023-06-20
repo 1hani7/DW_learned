@@ -1,0 +1,18 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+#result{
+    text-align: center;
+    line-height:25px;
+    border-radius: 100%;
+    background-color: bisque;
+    width:25px;
+    height:25px;
+}
+
+input{
+    width:35px;
+}

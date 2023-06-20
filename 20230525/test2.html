@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>테이블 마지막</title>
+    <style>
+        #starWrap{
+            border-collapse:collapse;
+        }
+        .top_line{
+            height:300px;
+        }
+        .middle_line{
+            height:200px;
+        }
+        .bottom_line{
+            height:300px;
+        }
+        .td02{border:1px solid black; width:240px;}
+        .td04, .td06, .td08{
+            text-align:center;
+            border:1px solid black;
+            width:240px;
+        }
+        /*최적화된 정답 : 2,4,6,8번 칸만 클래스 지정해서 border 둘러주면 끝*/
+
+        .right_memo{display:none;} /*공간을 차지하지 않는 투명화 지정*/
+
+        .brother2{opacity:0;} /*공간을 차지하는 투명화 지정*/
+
+        /*hover 태그*/
+        .td02:hover{background-color: pink;}
+        .td04:hover{background-color: yellow}
+        .td06:hover .right_memo{/*06에 hover되었을 때 right_memo에게 벌어지는 일을 지정
+                                  부모자식으로 묶인 개체일 경우에 가능*/
+            display:block;
+        }
+        .brother1:hover ~ .brother2{opacity:1;}
+        /*형제 관계의 태그들끼리는 ~로 엮어줄 수 있음
+          같은 부모에 속해있는 태그들끼리를 형제라고 부름*/
+
+        
+    </style>
+</head>
+<body>
+    
+    <table id="starWrap">
+        <tr class="top_line">
+            <td class="td01">&nbsp;</td>
+            <td class="td02">&nbsp;</td>
+            <td class="td03">&nbsp;</td>
+        </tr>
+        <tr class="middle_line">
+            <td class="td04">&nbsp;</td>
+            <td class="td05">&nbsp;</td>
+            <td class="td06">
+                <p class="right_memo">
+                    나는 오른쪽입니다.<br>
+                    오른손잡이가 사람을 때릴 때<br>
+                    사용하는 쪽이죠.
+                </p>
+            </td>
+        </tr>
+        <tr class="bottom_line">
+            <td class="td07">&nbsp;</td>
+            <td class="td08">&nbsp;
+                <h3 class="brother1">여기 마우스 놓아보셈</h3>
+                <h5 class="brother2">
+                    이걸 하네 ㅋ
+                </h5>
+
+            </td>
+            <td class="td09">&nbsp;</td>
+        </tr>
+    </table>
+
+</body>
+</html>

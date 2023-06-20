@@ -1,0 +1,178 @@
+body{margin:0; padding:0;}
+#flex1{
+    width:1000px;
+    height:300px;
+    border:1px solid black;
+    display:flex;
+    flex-direction:row; 
+    flex-wrap:wrap;
+    /*flex-wrap:
+                 nowrap - 한 줄로 배치
+                 wrap - 여러 줄로 배치
+                 wrap-reverse - 여러 줄로 배치하는데 역순;*/
+    /*flex-direction:
+                     row - 좌에서 우로 배치
+                     row-reverse - 우에서 좌로 배치
+                     colum - 위에서 아래로 배치
+                     colum-reverse - 아래에서 위로 배치*/
+}
+#flex1 div{
+    width:100%;
+    /*flex의 주축선을 바꿨다면 넓이값도 바꿔줘야 표시됨*/
+}
+.red{
+    background:red;
+}
+.yellow{
+    background:yellow;
+}
+.green{
+    background:green;
+}
+.blue{
+    background:blue;
+}
+
+#flex2{
+    width:1000px;
+    height:300px;
+    border:1px solid black;
+    display:flex;
+}
+
+#flex2 div {
+    width:25%
+}
+
+.flexshape{
+    width:1000px;
+    height:300px;
+    display:flex;
+}
+
+#flex3 div{
+    width:15%;
+}
+
+#flex3{
+    border:1px solid black;
+    justify-content:space-between;
+}
+
+#flex4 div{
+    width:15%
+}
+
+#flex4{
+    border:1px solid black;
+    justify-content:space-around;
+}
+
+#flex5 div{
+    width:15%;
+    height:200px;
+}
+
+#flex5{
+    border:1px solid black;
+    align-items:center;
+}
+
+/*justify-contet와 align-items의 차이점
+align-items:strech;와 justify-content:start;는 결과물이 같아 보이지만
+strech는 내용물을 부모의 크기만큼 늘려서 억지로 맞춰주는 특성이 있음
+(align-items:strech;는 display:flex;의 자동 기본값)*/
+
+/* align-items
+strech:부모만큼 늘려서 배치
+flex-start:교차축의 시작점 (좌상단)
+flex-end:교차축의 끝점 (우하단) 
+center:교차축의 가운데
+
+
+개별적으로 배치하기
+align-self : auto, strech, flex-start, flex-end, center
+align-self는 items랑 다르게 부모가 아니라 자식에게 써주면 됨*/
+
+/*
+justify-content는 주축 기준
+align-item은 교차축 기준*/
+
+
+#flex6{
+    border:1px solid black;
+}
+
+#flex6 div{
+    width:15%;
+    height:200px;
+}
+
+#flex6 .red{
+    align-self:flex-end;
+}
+
+#flex6 .yellow{
+    align-self:center;
+}
+
+#flex6 .green{
+    height:auto;
+    align-self:stretch;
+}
+
+#flex7{
+    border: 1px solid black;
+    flex-direction:column;
+    justify-content: space-between;
+    align-items:center;
+}
+
+#flex7 div{
+    width:25%;
+    height:50px;
+}
+
+#flex7 .red{
+    order:3;
+}
+
+#flex7 .green{
+    order:1;
+}
+
+/*order는 flex-direction이 column일 때만 사용 가능
+입력한 숫자가 클수록 다음으로 배치되며, 입력 안 된 태그들은 위로 밀려올라감
+반응형 사이트에서 사용하기도 함 (브라우저 크기따라 배치 바꿀 때)*/
+
+#flex8{
+    border:1px solid black;
+}
+
+/*
+flex아이템 크기 변경 (자식에게 주기)
+ flex-grow : 남은 빈 공간을 입력한 숫자의 비율만큼 추가해줌
+ flex-shrink : 초과된 영역을 입력한 숫자의 비율만큼 감소시킴
+ flex-basis : 내용의 기본 크기를 정해줌 (쓸 일이 잘 없어서 기본 0)
+
+ flex:0 0 0; 순서로 바로 넣어줄 수 있음
+
+ ! grow는 padding값을 제외하고 남은 영역을 계산하지만 (내곽 기준)
+   shrink는 padding값까지 포함하고 계산함 (외곽 기준) !
+*/
+
+#flex8 div{width:120px;}
+
+#flex8 .red{
+    flex-grow:1;
+}
+#flex8 .yellow{
+    flex-grow:2;
+}
+#flex8 .green{
+    flex-grow:0;
+
+}
+#flex8 .blue{
+    flex-grow:2;
+}

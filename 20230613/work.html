@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <script>
+
+        // 내가 문제를 내면 컴퓨터가 up, down으로 맞춤
+
+        var a=50; b=1; i=1; max=50;
+        var user = parseInt(prompt("1~50을 입력하면 컴퓨터가 알아맞춥니다."));
+        
+        while(true){
+
+            var com = Math.floor(Math.random()*a)+b;
+
+            if(user==com){
+                document.write(i + "회차 / 컴퓨터가 정답을 맞췄습니다! 정답 : " + user);
+                break;
+            }
+            if(user > com){
+                document.write(i + "회차 / 숫자 : " + com + " 실패 / a : " + a + " / b : " + b + " / UP!<br>");
+                i=(i+1); // 회차 추가
+                b=(com+1);
+                a=(max-b+1);
+            }
+            if(user < com){
+                document.write(i + "회차 / 숫자 : " + com + " 실패 / a : " + a + " / b : " + b + " / DOWN!<br>");
+                i=(i+1); // 회차 추가
+                max = com-1;
+                i = max-k+1;
+            }
+        }
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

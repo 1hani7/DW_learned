@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>테이블</title>
+</head>
+<body>
+    <table border="1" align="center" width="360" height="240">
+        <!--테이블 자체에 폭넓이를 주면 브라우저 크기 상관없이 딱 고정됨-->
+        <tr>                       <!--colspan에는 '몇 개의 칸을' 합쳐줄 것인지 입력-->
+            <th width="360" height="80" colspan="3"></th> <!--여기에 사이즈를 주면 유동적이 됨-->
+        </tr>
+        <tr align="center" height="80"> <!--tr태그는 넓이값을 입력시킬 수 없음-->
+            <td rowspan="2"  width="120" height="80" align="center">쿵따리<br>샤바라<br>빠빠빠</td>
+            <!--rowspan은 무조건 아래쪽을 향해서 적용됨-->
+            <td></td>
+            <td></td>
+        </tr>
+        <tr align="center">
+            <!--두 번째 줄의 첫칸과 합치기 위해서 생략 당한 공백-->
+            <td colspan="2" height="80"></td>
+
+        </tr>
+    </table>
+    <br>
+    <table border="1" align="center" width="360" height="240">
+        <tr>
+            <td colspan="3"></td>
+
+
+        </tr>
+        <tr>
+            <td></td>
+            <td rowspan="2"></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+
+            <td></td>
+        </tr>
+    </table>
+<br>
+    <table align="center" border="1">
+        <tr height="50">
+            <td width="100"></td>
+            <td width="100"></td>
+            <td width="100"></td>
+            <td width="100"></td>
+            <td width="100"></td>
+        </tr>
+        <tr height="50">
+            <td></td>
+            <td colspan="4"></td>
+            
+
+
+
+        </tr>
+        <tr height="50">
+            <td colspan="2"></td>
+
+            <td></td>
+            <td></td>
+            <td rowspan="3"></td>
+        </tr>
+        <tr height="50">
+            <td></td>
+            <td colspan="3"></td>
+
+
+
+        </tr>
+        <tr height="50">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            
+        </tr>
+    </table>
+
+    
+</body>
+</html>

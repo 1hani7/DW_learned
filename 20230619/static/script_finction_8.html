@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/script_finction_8.css">
+    <script src="./js/script_function_8.js"></script>
+</head>
+<body>
+<!--
+문제1.
+국어, 수학, 영어 점수를 input에 입력받아서 각각 등급 출력
+세 과목의 평균에서도 등급 출력
+90~100은 A / 80~89는 B / 70~79는 C / 나머지는 F
+-->
+
+<div id="wrap">
+    <div id="inputs">
+        <div><b>국어</b><input type="text" min="0" max="100" id="kor"></div>
+        <div><b>수학</b><input type="text" min="0" max="100" id="mat"></div>
+        <div><b>영어</b><input type="text" min="0" max="100" id="eng"></div>
+    </div>
+    <button onclick="calc()">등급내기</button>
+    <div id="results"></div>
+</div>
+
+</body>
+</html>

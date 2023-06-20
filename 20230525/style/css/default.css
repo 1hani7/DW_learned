@@ -1,0 +1,180 @@
+body{
+    /* body에 여백 제거해서 화면이 꽉 차도록 하는 것 */
+    padding:0;
+    margin:0;
+    background-color: #2e313d;
+    color: #e6e6e6;
+    position:relative;
+}
+#wrap{
+    position:relative;
+    width:100%; /*브라우저 너비가 변화해도 100% 맞추라는 뜻*/
+}
+#header{
+    position:sticky; /*상단 메뉴바가 스크롤 따라오게 할 때 필요하니 꼭 기억*/
+    top:0;
+    z-index:2;
+    margin:0 auto;
+    width:1200px;
+    background-color:#878c9e;
+    display:flex; /*"자식 태그" 내용을 가로로 나열해줌
+                     float의 역할을 훨씬 간단하게 대신해줌!*/
+    padding:20px 0;
+    font-size:20px;
+    justify-content:space-around; /*내용물 간격을 일정하게 정렬해주는데
+                                    display가 flex랑 grid일 때만 가능하고
+                                    요즘 업계 표준이니 기억해줄 것*/
+                                /*start, end 식으로 표현하면 되고,
+                                space는 여백, around는 주변 패딩을 의미함*/
+}
+/* 옛날방식 */
+    /* overflow:hidden; /*자식이 float를 써도 무시 당하지 않게 됨 */
+                       /*float로 강제 독립하는 걸 또 강제로 끌어안고 있게 하는 것
+                       display:inline-block을 줘도 됨
+                       inline도 overflow와 비슷한 원리로 끌어안게 됨*/
+/* #header div{
+    float:left; /*이걸 먹이면 자식이 날개를 float해서 비행청소년이 됨(강제독립)(딴세상)(위상변화)
+                  그걸 overflow 선넘는 걸 hidden 숨겨서 억제한다는 식임*/
+    /*table은 강제로 담는 특성이 원래 있어서 안 그랬지만 div는 아니라서 발생*/
+    /* padding:20px 40px; */
+
+#section{
+    position:relative;
+    width:1200px;
+    margin:0 auto;
+    display:flex;
+    margin-top:15px;
+}
+.sectionLeft{
+    position:relative;
+    width:80%;
+    height:800px;
+}
+.sectionRight{
+    position:relative;
+    width:20%;
+    height:800px;
+}
+.sectionLeft .mainImage{ 
+    width:100%; /*이미지가 들어갈 div의 크기를 조정해준 것*/
+    height:400px;
+    overflow:hidden;
+}
+.sectionLeft .mainImage img{
+    position:relative;
+    top:-100px;
+    width:100%;
+}
+.notice_adImg{
+    margin-top:10px;
+    position:relative;
+    width:100%;
+    display:flex;
+}
+.notice_adImg .notice_box{
+    position:relative;
+    width:70%
+}
+.notice_adImg .notice_box .notice_list{/*공지글 ul태그*/
+/* list-style-type:circle; */
+/* list-style-image:url('../image/listIcon.png') */
+list-style-type:none;
+padding:0;
+}
+.notice_adImg .notice_box .notice_list li::before{/*::으로 붙이는 거*/
+    /*앞(전)쪽에 [가상 공간]을 만들어주는 기능
+      before는 after랑 다르게 특별한 동작 없이도 바로 보임*/
+      content:''; /*before공간에 내용을 추가해줄 수 있음
+                    [가상의 내용값]이라 드래그 선택 같은 게 안 됨
+                    아무것도 안 적으면 그냥 공간만 생김*/
+      display:inline-block;
+      height:15px;
+      width:15px;
+      background-image: url('../image/listIcon.png');
+      background-size: 15px;
+      background-repeat: no-repeat; /*이건 바둑판식 배열되지 않게 막으려고*/
+      margin-right:10px;       
+}
+.notice_adImg .notice_box .notice_list li{/*공지글 li태그*/
+    padding:5px 0;
+}
+.notice_adImg .notice_box .notice_more{/*공지글 h5태그*/
+    position:absolute;
+    top:0;
+    right:20px;
+}
+.notice_adImg .adImg_box{
+    width:30%;
+    height:240px;
+    overflow:hidden;
+    display:flex;       /*flex상태에서만 사용 가능*/
+    align-items:center; /*flex시킨 내용물들을 가운데로 정렬시킨다는 의미
+                        item은 이미지 글자들 전부 포함한다는 뜻*/
+}
+.notice_adImg .adImg_box img{
+    width:100%;
+}
+
+.coop_box{
+    margin-top:10px;
+    width:100%;
+}
+.coop_box .imageList{
+    width:100%;
+    height:80px;
+    display:flex;
+    overflow:hidden;
+    align-items:center;
+    justify-content:space-between; /*이거 반드시 필요하니까 기억해두기*/
+}
+.coop_box .imageList img{
+    width:140px;
+}
+.login_wrap{
+    text-align:center;
+    border:1px solid #cbcbcb;
+    height:120px;
+}
+.subMenu_wrap{
+    margin-top:50px;
+    padding:10px;
+}
+.subMenu_list{
+    margin:0;
+    padding:0;
+    list-style-type:none;
+    text-align:center;
+    font-size:20px;
+    font-weight:700
+}
+.list{
+    padding:10px;
+}
+.subMenu_list li:hover{
+    color:black;
+    background-color:white;
+}
+
+#footer{
+    width:1200px;
+    margin:0 auto;
+}
+.ft_menu{
+    width:100%;
+    padding:30px;
+}
+.ft{
+    list-style-type:none;
+    margin:0;
+    padding:0;
+    display:flex;
+}
+.ft li{
+    padding-right:30px;
+}
+.address{
+    padding:0 30px;
+}
+.copyright{
+    padding:5px 30px;
+}

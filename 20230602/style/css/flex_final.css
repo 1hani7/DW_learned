@@ -1,0 +1,181 @@
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ol, ul, li, dl, dd{
+    margin:0;
+    padding:0;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+/*기본설정 완료*/
+
+
+#wrap{
+    margin:0 auto;
+    width:1200px;
+}
+
+
+
+/*상단*/
+#header{
+    width:100%;
+    height:200px;
+    overflow:hidden;
+    border-radius: 30px;
+}
+
+#header img{
+    position:relative;
+    bottom:200px;
+}
+
+
+
+/*중단*/
+#section{
+    display:flex;
+    justify-content:space-between;
+    margin-top:30px;
+    width:100%;
+    height:800px;
+}
+
+.left, .right{ /*좌우 기둥 크기 조절*/
+    height:100%;
+    width:20%;
+    border-radius: 30px;
+    overflow:hidden;
+}
+
+.left img{ /*좌측 이미지 위치조정*/
+    position: relative;
+    right:120px;
+    height:100%;
+}
+
+.right img{ /*좌측 이미지 위치조정*/
+    position: relative;
+    right:200px;
+    height:100%;
+}
+
+.center{/*중앙 섹션 레이아웃*/
+    margin:0 30px;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow:1;
+    height:100%;
+}
+
+.center div{ /*중앙 섹션 박스들 조절*/
+    width:100%;
+    height:246px;
+    background-color: rgb(212, 212, 212);
+    border-radius: 30px;
+    padding-left:30px;
+    display:flex;
+    align-items: center;
+}
+
+.center div img{ /*중앙 박스들 이미지 크기*/
+    border-radius: 30px;
+    width:186px;
+    height:186px;
+}
+
+
+.text-box ul{ /*중앙 박스 텍스트 뭉치*/
+    margin-left:40px;
+    line-height:60px;
+}
+.text-box h2{
+    position: relative;
+    right:33px;
+    font-size:25px;
+}
+.text-box ul li{
+    font-size:23px;
+    line-height:-30px;
+}
+
+
+
+/*하단*/
+#footer{
+    display:flex;
+    justify-content: space-between;
+    margin-top:30px;
+    width:100%;
+    height:350px;
+}
+
+#footer div{ /*하단 박스들 라운딩*/
+    border-radius: 30px;;
+}
+
+.footer-left{ /*좌측 박스 설정*/
+    padding:20px;
+    padding-top:30px;
+    font-size:25px;
+    color:white;
+    width:40%;
+    height:350px;
+    background-image:url(https://cdn.pixabay.com/photo/2022/04/01/20/37/moon-7105626_1280.jpg);
+    background-size: cover;
+}
+
+.footer-left p{ /*좌측박스 폰트 꾸밈*/
+    font-size:20px;
+    line-height:30px;
+}
+.fax {margin-top:10px;}
+.phone{
+    font-size:50px;
+}
+.time{padding-top: 30px;}
+
+
+
+.footer-center{/*중앙 박스 설정*/
+    width:30%;
+    height:350px;
+    padding:20px;
+    padding-top:30px;
+    font-size:25px;
+    color:white;
+    background-image:url(https://cdn.pixabay.com/photo/2018/09/01/22/49/wallpaper-3647834_1280.jpg);
+    background-size: cover;
+    font-size:26px;
+}
+
+.footer-center p{/*중앙 박스 폰트 꾸밈*/
+    font-size:20px;
+    line-height:30px;
+}
+.footer-center p:first-child{font-size:15px;}
+.vol{
+    padding-top:60px;
+    display:flex;
+}
+.vol p:nth-child(1){margin-top: 1px;}
+.span1{color:orange;}
+.span2{color:pink;}
+
+
+.footer-right{/*우측 박스 설정*/
+    padding:20px;
+    line-height: 40px;
+    color:white;
+    width:25%;
+    height:350px;
+    background-image:url(https://cdn.pixabay.com/photo/2016/08/03/06/22/space-1565986_1280.jpg);
+    background-size: cover;
+}
+

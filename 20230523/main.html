@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS parctice</title>
+<!--html 문서에서 css의 선언 위치는 head 태그 내부가 정석임-->
+ <!--style 태그가 css를 사용하기 위한 태그-->
+    <style>
+        /*css의 영역이라 주석도 다르게 적어야 함*/
+        /*각 태그 영역에 스타일을 지정해줄 수 있는 기능임*/
+        /* body{background-color: rgb(194, 255, 255);} */
+        /* 영역지정 컨트롤 / 키로 주석 변경 가능 */
+        /* table{
+            border-spacing:30px; 
+        }
+         tr td{
+            vertical-align:; 
+            text-align:center;  
+            font-size:20px;
+            color:blue; 
+            font-family:나눔스퀘어OTF;
+            background-color:rgb(248, 255, 148);
+            width:100px;
+            height:100px;
+            border:1px solid rgb(85, 85, 85);
+         } */
+               /*굵기 선 모양 색깔, 반드시 순서대로*/
+                /*세미콜론 닫아주기 잊지 말 것*/
+            /*> 따로 할 경우
+                border-width: 1px;
+                border-color: black;
+                border-style: solid;
+            <*/
+         
+        body{
+            background-color:black;
+        }
+
+        table{
+            width:1200px;
+        }
+         tr td{
+            border:1px solid white;
+            color:rgb(192, 192, 192);
+        }
+        .top{ text-align:center; vertical-align:middle; height:50px;}
+        #logo-location{
+            width:250px;
+        }
+        #logo-location img{height:50px;}
+        #search-location{
+            width:650px;
+        }
+        #login-location{
+            width:300px;
+        }
+        #menu-location{
+             height:700px; vertical-align:top; 
+        }
+        .loginButton { 
+            background-color:bisque;
+            width:150px; height:40px;
+            line-height:40px; /*< 높이값을 기준으로 동값일수록 중앙정렬됨*/
+            display:inline-block /*block - 한 줄에 하나씩밖에 안 됨, 크기조절 가능
+                                   inline - 안에 든 내용에 따라 값이 정해짐
+                                            한 줄에 여러 개 가능
+                                            개발자 도구에서 display가 안 뜨는 개체는 inline
+                                   inline-block - 한 줄에 여러 개 가능하고
+                                                  크기 입력 가능하고
+                                                  크기입력 안돼있다면 내용값에 따라 자동조절됨*/
+        }
+        #menulist{
+            list-style-type:none; 
+            line-height:50px;
+            padding:0; /*들여쓰기 초기화라서 중요한 기능*/
+            margin:0;
+            font-size:20px;
+            text-align:center;
+        }
+        #menulist li:hover{
+            color:rgb(0, 0, 0);
+            background-color: aliceblue;
+            font-weight: bold;
+        }
+        .data{border:0px; width:300px;}
+        #t1{border-spacing:6px;}
+        #zero{vertical-align:top;}
+        #point{margin:0 auto;}
+        #t2{width:700px; margin:0 auto;}
+/* id는 앞에 #을 붙이고 클래스는 앞에 .을 붙여서 지정*/
+    </style>
+
+</head>
+<body>
+    <table id="t1">
+        <tr> <!--id는 개별 고유이름, class는 그룹 이름--> <!--주로 큰 태그들 쪽에 id를 쓰는 편-->
+            <td id="logo-location" class="top">
+                <img src="logo.png"> <!--src는 소스, 즉 경로라는 뜻-->
+            </td>
+            <td id="search-location" class="top">검색위치</td>
+            <td id="login-location" class="top">
+                <b class="loginButton">로그인</b>
+            </td>
+        </tr>
+        <tr>
+            <td id="menu-location">
+                <ul id="menulist">
+                    <li>회사소개</li>
+                    <li>연혁</li>
+                    <li>오시는길</li>
+                    <li>채용정보</li>
+                    <li>공지사항</li>
+                    <li>사이트맵</li>
+                </ul>
+            </td>
+            <td id="zero" colspan="2">
+                <table id="t2">
+                    <tr id="point">
+                        <td class="data">
+                            <h3>공지사항</h3>
+                            <ul> 
+                                <li>집에가고 싶으신가요?</li>
+                                <li>가실 수 없습니다.</li>
+                                <li>왜냐고요?</li>
+                                <li>아직 수업이 안끝났거든욧!</li>
+                            </ul>
+                        </td>
+                        <td class="data">
+                            <h3>채용정보</h3>
+                            <ol>
+                                <li>무기계약직 상시 채용</li>
+                                <li>개발자 계약직 채용공고</li>
+                                <li>연구소 정규직 신입/경력 채용공고</li>
+                                <li>AS사원 채용공고</li>
+                            </ol>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

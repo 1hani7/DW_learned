@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+<script>
+
+// 자바스크립트의 함수
+// 함수 : 기능을 가지고 있는 개체임
+// welcome 함수는 하란다고함? 을 출력하는 기능을 가진 함수인 셈
+// 함수를 선언 · 정의하는 방법
+// ㄴ function 이름(){} => 기본 함수 형태
+// ㄴ 이름() => 함수를 호출, 실행시키는 법
+
+    function welcome(){ // 한 줄짜리라도 중괄호 생략불가
+        alert("하란다고 함?")
+    }
+    function show_number(){
+        var show = document.getElementById("showbox"); // id가 showbox인 엘리먼트를 가져와라, 라는 뜻
+                                                       // 자바 스크립트에서 html 태그를 가져오는 방법임    
+        var result="";
+        for(var i=1; i<=10; i++)
+            result += i+"<br>";
+
+        show.innerHTML=result;
+        // 이제부턴 write 대신 이 방식으로 출력함
+    }
+
+    function input(){
+        var name = document.getElementById("myname");
+
+        var na = prompt("이름을 입력"); // 버튼을 누르면 이름을 입력하는 창이 뜸
+
+        name.innerHTML=na;
+    }
+
+
+
+</script>
+
+
+</head>
+<body>
+    
+    <button onclick="welcome()">클릭하시지</button>  <!--welcome이란 함수를 여기서 호출해준 것-->
+    <button onclick="show_number()">1~10까지 출력</button>
+
+    <div id="showbox"></div>
+
+    <button onclick="input()">너의 이름은?</button>
+
+    <b id="myname"></b>
+
+                  
+</body>
+</html>

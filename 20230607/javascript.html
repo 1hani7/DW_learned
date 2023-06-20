@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        /*js에서 html를 document(문서)라고 함
+          여기서 write가 함수 역할을 하고 있는 거
+          ""나 ''로 감싼 건 숫자가 아니라 문자로 취급되어서 계산은 안해줌
+          ''는 고유대명사나 변하지 않는 문자열을 표기할 때 사용하는 게 국룰이래*/
+
+          document.write('오늘 뭐 드심?<br>');
+          document.write("배 먹어, 배! or 사과먹어!<br>");
+
+    //다른 언어는 데이터가 실수인지 정수인지 데이터 타입을 전부 입력해야 함
+    //근데 js에선 딱 하나 [var]을 사용함 => variable (변수)라는 뜻
+
+    var number=10; //변수는 cpu와 램 같은 주요 메모리에 저장되는 데이터의 공간을 의미함
+                   //10이라는 변수에 number라는 이름을 줘서 저장했다는 의미
+                   //이름의 첫 글자는 반드시 영어로, 숫자는 안 됨!
+                   //대소문자 구분해야 함 (a랑 A는 다른 거)
+    /* =는 대입연산자로, 우측에 있는 걸 왼쪽에 저장시켜준다는 의미임 (같다는 뜻이 아님)
+                                                         (==, === 이게 같다는 뜻임)*/
+
+        document.write("<b>" + number + "</b><br>"); /*변수 호출 => 저장한 변수를 이런 식으로 호출*/
+        document.write(number+"<br>");               // + 기호는 더하기가 아니라 '하나로 합친다'는 뜻
+                                                    // 이러면 문자열과 태그를 써줄 수 있음
+
+
+    var width=40;
+    var height="60"; // <= 이러면 문자열이라 계산이 안 들어가야 하긴 한데 숫자만 들어가서 봐준 거임
+    document.write(width*height + "<br>"); // 문자열이 아닌 것들을 *로 곱셈 연산됨
+
+
+    var hyang_apple=10;
+    var ho_berry=5;
+    var gyum_pear=15;
+    document.write("<div>과일은 총 : <b>" + 
+                  (hyang_apple + ho_berry + gyum_pear) +
+                   "</b>개 이다.</div>");
+    //이렇게 html과 문자열도 사용해서 복합적으로 만들 수 있음
+
+
+    var width=15;
+    var height=20;
+    document.write("밑변 : " + width + " 높이 : " + height);
+    document.write("<br>삼각형의 넓이 : " + (width*height/2) + "<br>");
+
+    /*변수는 작성 순서에 따라 덮어쓰기 되며, 아래에서 쓴 변수는 위에서 사용할 수 없음*/
+
+    var tall=180;
+    var my_tall="나의 키는 " + tall;
+    document.write(my_tall+"<br>");
+
+    var tall=160;
+    var my_tall="너의 키는 " + tall;
+    document.write(my_tall);
+
+    var num1=10;
+    var num2=30;
+    //num1+num2  num1-num2  num1*num2  num1/num2  num1%num2
+    document.write("<br>" + num1/num2 + "<br>"); //몫이 나오는 나눗셈
+    document.write(num1%num2 + "<br><br><br>");          //나머지값이 나오는 나눗셈 *이거 중요하다고 함
+    
+
+    var half=parseInt(prompt("반지름을 입력"));
+    // prompt 함수는 브라우저에서 입력창을 제공함
+    // 이걸로 입력한 건 무조건 문자열이라 숫자랑 문자를 섞어 쓰면 계산기에 안 들어감
+    // 숫자만 되게 하려면 Number(), parseInt()를 씀
+    // Number() : 숫자만 입력해야 함
+    // parseInt() : 문자와 숫자 섞어도 되는데, 문자 앞에 있는 숫자만 읽기 때문
+    var π=3.1415926;
+    document.write("[과제]<br>");
+    document.write("이 원의 반지름은 " + half + "cm 입니다. <br>");
+    document.write("따라서 이 원의 둘레는 " + half*2*π + "cm 입니다. <br>");
+    document.write("또한 이 원의 넓이는 " + half*half*π + "cm 입니다. <br><br>");
+
+    document.write(typeof(half));
+    // 어떤 변수가 무슨 타입으로 저장되었는지 알려줌
+    // (Number나 parseInt로 감싸주면 string 타입이 number 타입으로 바뀜)
+
+    </script>
+
+<style>
+    html{font-size:25px;}
+</style>
+
+</head>
+<body>
+    
+</body>
+</html>

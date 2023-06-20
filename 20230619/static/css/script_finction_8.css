@@ -1,0 +1,43 @@
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+#wrap{
+    position:relative;
+    margin:0 auto;
+    margin-top:20px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    width:130px;
+    border: 1px solid black;
+    height:inherit;
+    padding:10px;
+    border-radius: 5px;
+}
+
+#inputs{
+    display:flex;
+    flex-direction: column;
+}
+
+button{
+    margin-top:10px;
+    width:70px;
+}
+
+input{
+    width:50px;
+    margin-left:20px;
+    outline:none;
+}
+
+#results{
+    text-align: center;
+    padding:5px;
+    width:100%;
+    border-top:1px dashed black;
+    margin-top:10px;
+}

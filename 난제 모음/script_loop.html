@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<script>
+
+// 실습1.
+// 랜덤범위 1~100, 무한루프 사용
+// 랜덤값 중에서 4의 배수의 값이 10개 나오면 무한 루프 중지
+
+// var count = 0;
+// while(true){
+
+//     var ran = Math.floor(Math.random()*100)+1;
+
+//     // document.write(ran + "<br>");
+    
+//     if(ran%4==0){
+//         count++;
+//         document.write("4의 배수 : " + ran + " / count : " + count + "<br>");
+//     }
+//     if(count==10){
+//         document.write("<br>4의 배수 10개 찾음"); break;
+//     }
+// }
+
+
+// 실습2.
+// 
+// 
+// 
+
+// for(i=1; i<=10; i++){
+//     var num = parseInt(prompt("정수를 입력하세오"));
+//     document.write(num + "<br>");
+// }
+
+
+// 실습3.
+// 팀플 문제
+// 2문제 중 1택해서 풀기
+
+// 문제1. 숫자 야구게임
+// 1~9의 랜덤값으로 3개의 숫자 뽑아내기 (단, 3개의 숫자는 중복 아님)
+// 숫자 3개를 맞출 때까지 계속됨
+// 랜덤숫자가 8 3 5이고
+// 숫자만 맞추면 볼, 자리까지 맞추면 스트라이크, 아니면 아웃
+
+        // 정답 코드
+        // var a=0,b=0,c=0;
+        // while(a==b || a==c || b==c){  // 중복이 하나라도 나오면 다시 돌리도록
+        //     a=Math.floor(Math.random()*9)+1;
+        //     b=Math.floor(Math.random()*9)+1;
+        //     c=Math.floor(Math.random()*9)+1;
+        // }
+        // var result="";
+        // while(true){
+        //     var str=0,ball=0; // 이러면 반복발 때 0으로 초기화
+        //     var u1=parseInt(prompt("1~9"));
+        //     var u2=parseInt(prompt("1~9"));
+        //     var u3=parseInt(prompt("1~9"));
+        //     if(u1==a)str++;
+        //     if(u2==b)str++;
+        //     if(u3==c)str++;
+        //     if(u1==b || u1==c)ball++;
+        //     if(u2==a || u2==c)ball++;
+        //     if(u3==a || u3==b)ball++;
+        //     result+=u1+" "+u2+" "+u3+"\n"+str+"스트라이크 "+ball+"볼 "+(3-str-ball)+"아웃\n"
+        //     alert(result);
+        //     if(str==3)break;}
+
+
+
+
+    // 내가 잘못 쓴 코드
+//     var ran_one=Math.floor(Math.random()*9)+1;
+//     var ran_two=Math.floor(Math.random()*9)+1;
+//     var ran_thr=Math.floor(Math.random()*9)+1;
+
+// while(true){
+
+ 
+
+//     var ans_one=parseInt(prompt("첫 번째 숫자 입력"));
+//     var ans_two=parseInt(prompt("두 번째 숫자 입력"));
+//     var ans_thr=parseInt(prompt("세 번째 숫자 입력"));
+
+//     var strike=0; ball=0; out=0;
+
+//     // 스트라이크 경우
+//     if(ran_one==ans_one){
+//         strike++;
+//     }
+//     if(ran_two==ans_two){
+//         strike++;
+//     }
+//     if(ran_thr==ans_thr){
+//         strike++;
+//     }
+
+//     // // 볼, 스트라이크 중첩의 경우
+//     // if(ran_one==ans_two || ran_one==ans_thr && ran_one==ans_one){
+//     //     ball;
+//     // }
+//     // if(ran_two==ans_one || ran_two==ans_thr && ran_two==ans_two){
+//     //     ball;
+//     // }
+//     // if(ran_thr==ans_one || ran_thr==ans_two && ran_thr==ans_thr){
+//     //     ball;
+//     // }
+//     // if(ran_one==ans_two || ran_one==ans_thr && ran_one==ans_one && ran_two==ans_two){
+//     //     ball;
+//     // }
+//     // if(ran_two==ans_one || ran_two==ans_thr && ran_two==ans_two && ran_one==ans_one){
+//     //     ball;
+//     // }
+//     // if(ran_thr==ans_one || ran_thr==ans_two && ran_thr==ans_thr){
+//     //     ball;
+//     // }
+
+//     // 볼의 경우
+//     if(ran_one==ans_two || ran_one==ans_thr){
+//         ball++;
+//     }
+//     if(ran_two==ans_one || ran_two==ans_thr){
+//         ball++;
+//     }
+//     if(ran_thr==ans_one || ran_thr==ans_two){
+//         ball++;
+//     }
+    
+
+//     // 아웃의 경우
+//     if(ran_one!=ans_one || ran_one!=ans_two || ran_one!=ans_thr ||
+//        ran_two!=ans_one || ran_two!=ans_two || ran_two!=ans_thr ||
+//        ran_thr!=ans_one || ran_thr!=ans_two || ran_thr!=ans_thr){
+//         out++;
+//     }else{ // 볼과 스트라이크의 중첩인 경우
+//         ball;
+//     }
+
+//     alert("컴퓨터의 1번 슬롯 : " + ran_one +
+//             "\n컴퓨터의 2번 슬롯 : " + ran_two +
+//             "\n컴퓨터의 3번 슬롯 : " + ran_thr + "\n" +
+
+//             "\n유저의 1번 슬롯 : " + ans_one +
+//             "\n유저의 2번 슬롯 : " + ans_two +
+//             "\n유저의 3번 슬롯 : " + ans_thr + "\n" +
+
+//         "\n스트라이크 : " + strike + " / 볼 : " + ball + " / 아웃" + out);
+    
+//     if(strike===3){
+//         alert("3 스트라이크, 승리!");
+//         break;
+//     }
+    
+// }
+
+
+// 문제2. 베스킨라빈스31
+// 컴퓨터와 1대1로 대결
+// 1. 몇 개의숫자를 낼 것인지 입력, 2라고 하면 자동으로 1,2가 출력됨
+// 2. 이후 컴퓨터가 몇 개 낼 것인지 랜덤으로 정함
+// 3. 이후 컴퓨터가 3을 입력할 경우 3, 4, 5가 출력됨
+// 4. 그렇게 31을 포함하는 숫자를 말하게 되는 쪽이 패배
+
+
+// var num=1; i=1;
+// var result =""; // 결과 출력용 변수
+// var flag=false; // 31이 되면 종료시키기 위한 용도
+
+// while(true){
+//     var user=parseInt(prompt("당신 차례! 숫자를 얼마나 이어나갈까요? (1~5)"));
+//     result+="\n유저\n";
+//     for(i=1; i<=user; i++){
+//         result+=num+" ";
+//         if(num==31){flag=true;break;} // 31이 된다면 break; 해준다
+//         num++;
+//     }
+//     alert(result);
+//     if(flag){document.write("유저패");break;}
+
+//     var com=Math.floor(Math.random()*5)+1;
+//     result+="\n컴퓨터\n";
+//     for(i=1; i<=com; i++){
+//         result+=num+" ";
+//         if(num==31){flag=true;break;} // 31이 된다면 break; 해준다
+//         num++;
+//     }
+
+//     alert(result);
+//     if(flag){document.write("컴퓨터 패배");break;}
+// }
+
+
+
+// 비밀번호 4개 숫자를 맞추세요.
+// 1. 각 숫자는 1~9의 값이다.
+// 2. 4개의 숫자는 중복 없음.
+// 3. 1번째 숫자는 4번째 숫자보다 2만큼 크다
+// 4. 2번째 숫자는 3번쨰 숫자보다 작다.
+// 5. 비밀번호 숫자 + 비밀번호 역순 숫자의 합은 16896이다.
+// ex) 비밀번호가 1234라면, 1234+4321
+// 위 조건들을 찾아주는 코드를 만들자
+
+// var result = 0;
+// var flag=true;
+// for(var a=1; a<=9; a++){ // abcd 숫자들을 만들어주는 역할만 수행함 1
+//     for(var b=1; b<=9; b++){// abcd 숫자들을 만들어주는 역할만 수행함 2
+//         for(var c=1; c<=9; c++){// abcd 숫자들을 만들어주는 역할만 수행함 3
+//             for(var d=1; d<=9; d++){// abcd 숫자들을 만들어주는 역할만 수행함 4
+//                  if(a!=b && a!=c && a!=d && b!=c && b!=d && c!=d){
+//                         if(a==(d+2)){
+//                             if(b<c){
+//                                 var e=(a*1000+b*100+c*10+d) // 네 자리 숫자로 만들어주기
+//                                 var f=(d*1000+c*100+b*10+a) // 네 자리 역순 숫자로 만들어주기
+//                                 if((e+f)==16896){
+//                                     if(flag){
+//                                         document.write(e);
+//                                         flag=false;
+//                                     }
+//                                     break;
+//                                     }
+//                                 }
+//                             }
+//                         }
+//                     }
+//             }
+//         }
+//     }
+    
+
+
+
+
+
+
+
+        
+</script>
+
+</head>
+<body>
+    
+</body>
+</html>

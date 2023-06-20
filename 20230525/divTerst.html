@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>div</title>
+
+    <link rel="stylesheet" href="./style/css/default.css">
+    <!--이제부터 css 태그를 다른 문서에 작성하고 그걸 연결해서 보기 편하게 작업함-->
+
+</head>
+<body>
+    
+    <div id="wrap">
+        <div id="header">
+            <!--div{내용$}*숫자 => 숫자만큽 곱셈 복사-->
+            <div>메뉴1</div>
+            <div>메뉴2</div>
+            <div>메뉴3</div>
+            <div>메뉴4</div>
+            <div>메뉴5</div>
+        </div>
+        <div id="section"> <!--큰 디비전-->
+
+            <div class="sectionLeft"> <!--좌측 섹션-->
+                <div class="mainImage"> <!--배너 이미지-->
+                    <img src="style/image/harley-davidson-g3ef8686d3_1280.jpg">
+                </div>
+                <div class="notice_adImg"> <!--공지와 이미지-->
+                    <div class="notice_box">
+                        <h3 class="notice_title">공지사항</h3>
+                        <!-- ul.notice_list>li{공지글$}*5 -->
+                        <!-- ul에 class이름 주고 그 하위(>) 리스트를 5개 만들라는 뜻 -->
+                        <!--$는 자동으로 숫자를 만들어주는 명령어-->
+                        <h5 class="notice_more">more</h5>
+                        <ul class="notice_list">
+                            <li>공지글1</li>
+                            <li>공지글2</li>
+                            <li>공지글3</li>
+                            <li>공지글4</li>
+                            <li>공지글5</li>
+                        </ul>
+                    </div>
+                    <div class="adImg_box">
+                        <img src="style/image/harlyLogo.png">
+                    </div>
+                </div>
+                <div class="coop_box"> <!--이미지묶음 박스-->
+                    <div class="imageList"> <!--이미지 묶음 포장지-->
+                        <img src="style/image/bike-g154592dcc_1280.jpg">
+                        <img src="style/image/cat-ga6e65ec8a_1280.jpg">
+                        <img src="style/image/dirt-road-g92291d963_1280.jpg">
+                        <img src="style/image/motorcycle-g07c92f4f4_1280.jpg">
+                        <img src="style/image/motorcycle-g153fdbaed_1280.jpg">
+                        <img src="style/image/yamahaBike.png">
+                    </div>
+                </div>
+            </div>
+
+            <div class="sectionRight"> <!--우측 섹션-->
+                <div class="login_wrap">
+                    <h1>로그인 부분</h1>
+                </div>
+                <div class="subMenu_wrap">
+                    <ul class="subMenu_list">
+                        <li class="list">서브메뉴1</li>
+                        <li class="list">서브메뉴2</li>
+                        <li class="list">서브메뉴3</li>
+                        <li class="list">서브메뉴4</li>
+                        <li class="list">서브메뉴5</li>
+                        <li class="list">서브메뉴6</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="footer">
+            <div class="ft_menu">
+                <ul class="ft">
+                    <li>회사소개</li>
+                    <li>이용약관</li>
+                    <li>운영정책</li>
+                    <li>커뮤니티 운영정책</li>
+                    <li>개인정보 처리방침</li>
+                </ul>
+            </div>
+            <div class="address">
+                상호:(주)개쩌는 바이크 ㅣ 대표 : 신상수 ㅣ 주소 : 대전 중구 선화동 ㅣ 
+                전화 : 042-111-1111 ㅣ E-mail : ge_bike@gmail.com
+            </div>
+            <div class="copyright">
+                Bike co. All rights reseved
+            </div>
+        </div>
+        
+    </div>
+
+</body>
+</html>

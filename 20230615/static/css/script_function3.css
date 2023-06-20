@@ -1,0 +1,50 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+.coin{
+    display: flex;
+    justify-content:center;
+}
+
+.coin img{
+    width:300px;
+}
+
+.select{
+    display:flex;
+    justify-content:center;
+    margin:50px 0;
+    transition:1s;
+}
+
+.select b{
+    display:inline-block;
+    font-size:30px;
+    padding:20px 50px;
+    margin:0 10px;
+    border:1px dashed black;
+    transition:0.5s;
+}
+
+.select b:hover{
+    border:transparent;
+    background:black;
+    color:white;
+}
+
+button{
+    width:50px;
+    height:25px;
+    position:absolute;
+    top:300px;
+    left:46.8%;
+}
+
+#출력{
+    text-align: center;
+    font-weight:700;
+    font-size:30px;
+}

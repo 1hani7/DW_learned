@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+<script>
+
+// 업다운 게임을 해야 함
+// 근데 문제를 내가 내고 컴퓨터가 정답을 맞춰야 함
+
+
+
+var me = parseInt(prompt("1~50 사이의 숫자를 제시하세요. 컴퓨터가 추론해낼 겁니다."));
+var a=50; b=1; i=0;
+
+while(true){
+    var com = parseInt(Math.floor(Math.random()*a)+b);
+    if(me < com && i==1){
+        i=(i+1);
+        document.write(i + "회차 시도 : " + com + " DOWN! <br>")
+        a=com;
+        
+    }else if(me > com && i==1){
+        i=(i+1);
+        document.write(i + "회차 시도 : " + com + " UP! <br>")
+        a=(a-com);
+        b=(a-com);
+        
+    }else if(me < com && i!=1){
+        i=(i+1);
+        document.write(i + "회차 시도 : " + com + " DOWN! <br>")
+        a-=();
+
+    }else if(me > com && i!=1){
+        i=(i+1);
+        document.write(i + "회차 시도 : " + com + " UP! <br>")
+        a=(a/2);
+        b=(b+1);
+
+    }else if(me==com){
+        document.write(i + "회차 시도 : " + com + " 정답! <br>")
+        break;
+    }
+}
+
+
+
+</script>
+
+
+</head>
+<body>
+    
+</body>
+</html>

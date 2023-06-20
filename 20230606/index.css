@@ -1,0 +1,22 @@
+*{
+    box-sizing: border-box;
+    padding::0;
+    margin:0;
+}
+
+#container{
+    background:brown;
+    height:1000px;
+    width:1000px;
+    display:flex;
+    gap:20px;
+    
+}
+
+.item{
+    background: blue;
+    text-align: center;
+    line-height: 50px;
+    height:50px;
+    width:50px;
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<script>
+
+/*
+    배열
+
+    함수는 메모리 영역 중 코드, 변수는 스택과 데이터에 쌓임 (정적 할당 영역)
+    배열은 마지막 영역인 힙에 쌓임 (힙은 동적 할당 영역임)
+    (=> 동적 할당 영역에선 작동중에 공간을 늘리고 줄일 수 있음)
+
+    즉, 여러 개의 변수를 늘였다 줄였다 할 수 있는 공간에 저장시켜주는 것
+
+
+*/
+
+// 배열 만들기 첫 번째 방법
+// var a = [ 1,2,3 ]; // a라는 배열에 1,2,3을 저장시킨 것
+// var name = ["강백호","송태섭","채치수"]; // name 배열에 세 이름을 저장시킨 것
+// var b= [1,2,"정대만",3.14]; // 서로 다른 타입도 함께 저장 가능한데 쓰기 불편해서 잘 안 함
+
+// var c = "good";
+// var d = [...c]; // 변수c의 문자열을 하나하나 나눠서 d배열에 저장시킨 것
+// // d = ["g","o","o","d"]  (숫자는 이렇게 못함)
+
+// // 배열 만들기 두 번째 방법 (정석)
+// var arr = new Array(); // Array 생성자
+// 아무것도 안 들어있는 빈 Array임
+
+
+// // 배열에서 원하는 숫자만 빼오기
+// a[1] // => a 배열 안의 '두 번째' 변수를 가져오기
+//      // why? => 0부터 숫자를 세니까 ***
+
+// // 이런 이유에서 for 반복문과 조합이 잦음
+// var A_team=["수박","참외","사과","귤","망고","오랑우탄"]
+// document.write(A_team[0]); // 이러면 노가다
+// for(var i=0; i<=5; i++){ // 이런 식으로 전부 출력 가능
+//     document.write(A_team[i]+"<br>");
+// }
+
+// // 배열에 저장된 모든 데이터 출력하기 => length 응용
+// for(var i=0; i<A_team.length; i++){ // length를 쓰면 지 알아서 최댓값을 찾음
+//     document.write(A_team[i]+"<br>")
+// }
+
+// var good_student=["김선향","신상수","안태균","이상준","한지민","고윤정","박보검"]
+// for(var g=0; g<good_student.length; g++){
+//     document.write(good_student[g]+"<br>")
+// }
+// // 배열에 데이터 추가하기 (끝순서에)
+// good_student.push("정예림");
+
+
+
+// 웹 브라우저 동작 순서
+// <html> => <head> => <script> => <body> => <div>
+// 즉, div보다 script가 먼저 실행되는 탓에 출력이 안 되는 것
+
+
+window.onload=function(){ // 브라우저 출력이 끝난 다음 실행되는, load함수
+    var out = document.getElementById("num_output");
+    for(var i=0; i<num.length; i++){
+        out.append(num[i]+" "); // (추가) 기존 내용에 추가로 들어가는 새로운 출력법
+    }                           // 단, innerText처럼 태그 적용은 안 됨
+}
+
+var num = new Array();
+document.write("현재 배열의 크기 : "+ num.length + "<br>");
+num.push(4);
+document.write("현재 배열의 크기 : "+ num.length + "<br>");
+num.push(Math.floor(Math.random()*1000));
+document.write("현재 배열의 크기 : "+ num.length + "<br>");
+num.push(Math.floor(Math.random()*1000));
+document.write("현재 배열의 크기 : "+ num.length + "<br>");
+
+
+
+</script>
+
+</head>
+<body>
+
+    <div id="num_output"></div>
+    
+</body>
+</html>

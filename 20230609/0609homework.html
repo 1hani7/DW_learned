@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        // 도형 입력하기 (정사각형, 직각사각형, 원형)
+        // 배경색 입히기 (빨강, 파랑, 노랑, 핑크)
+        // 너비 입력하기 (100px 이상 입력, 원형을 선택한 경우 너비는 반지름)
+        // 높이 입력하기 (100px 이상 입력, 원형을 선택한 경우 높이는 패스)
+        // 정사각형이라고 입력했을 경우 너비와 높이가 같아야 함
+        // 화면에 도형 출력하기
+   
+
+        // 도형 선택
+        var start = prompt("정사각형, 직각사각형, 원형 중 1택")
+        while (start!="정사각형" && start!="직각사각형" && start!="원형"){
+            start=prompt("정사각형, 직각사각형, 원형 중에서 하나만 선택하십시오.")
+        }
+
+
+        // 색상 선택
+        var color = prompt("빨강, 파랑, 노랑, 핑크 중 1택")
+            while (color!="빨강" && color!="파랑" && color!="노랑" && color!="핑크"){
+                 color=prompt("빨강, 파랑, 노랑, 핑크 중에서 선택하시오.")} // 빠꾸
+            if(color=="빨강"){color = "red;" // 한글패치
+            }else if(color=="파랑"){color = "blue;"
+            }else if(color=="노랑"){color = "yellow;"
+            }else if(color=="핑크"){color = "pink;"}
+
+
+        // 도형 출력 분기점
+        if (start==="직각사각형"){
+
+            var width = parseInt(prompt)("넓이 (100 이상을 입력하시오.)")
+            while (width < 100){width=parseInt(prompt)("고집부리지 말고 100 이상의 수를 입력하십시오.")} // 빠꾸
+
+            var height = parseInt(prompt)("높이 (100 이상을 입력하시오.)")
+            while (height < 100){height=parseInt(prompt)("고집부리지 말고 100 이상의 수를 입력하십시오.")} // 빠꾸
+
+            document.write("<div style=" + "background-color:" + color + "width:" + width + "px;" + "height:" + height + "px;" + "></div>")
+
+            document.write("<h2>요청하신 도형을 출력했습니다.</h2> <br><br>" + "도형 : " + start + "<br>배경색 : " + color + "<br>너비: " + width + "px;" + "<br>높이: " + height + "px;")
+
+
+
+        }else if (start==="정사각형"){
+
+            var width = parseInt(prompt)("한 변의 길이 (100 이상을 입력하시오.)")
+            while (width < 100){width=parseInt(prompt)("고집부리지 말고 100 이상의 수를 입력하십시오.")} // 빠꾸
+
+            document.write("<div style=" + "background-color:" + color + "width:" + width + "px;" + "height:" + width + "px;" + "></div>")
+            document.write("<h2>요청하신 도형을 출력했습니다.</h2> <br><br>" + "도형 : " + start + "<br>배경색 : " + color + "<br>한 변의 길이 : " + width + "px;")
+
+
+
+        }else if (start==="원형"){
+            var h = parseInt(prompt)("원의 반지름 (100 이상을 입력하시오.)");
+            while (h < 100){h=parseInt(prompt)("고집부리지 말고 100 이상의 수를 입력하십시오.")} // 빠꾸
+            
+            document.write("<div style=" + "border-radius:100%;" + "background-color:" + color + "width:" + (h*2) + "px;" + "height:" + (h*2) + "px;" + "></div>")
+            document.write("<h2>요청하신 도형을 출력했습니다.</h2> <br><br>" + "도형 : " + start + "<br>배경색 : " + color + "<br>반지름의 길이 : " + h + "px;")
+        }
+
+
+
+
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

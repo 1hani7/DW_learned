@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+/*다운받지 않아도 웹에서 폰트 가져다 쓸 수 있게 import한 것*/
+/* font-family: 'Nanum Gothic', sans-serif; 로 해당 태그에 사용 가능*/
+
+body{
+    position:relative;
+}
+
+body, ul, p,h1,h2,h3,h4,h5{
+    padding:0;
+    margin:0;
+}
+
+#wrap{
+    width:100%;
+    position:relative;
+    top:0;
+    margin:0 auto;
+    max-width:1200px;
+    min-width:800px;
+}
+
+#section_wrap{
+    position:relative;
+}
+
+#header, #section_wrap, #footer{
+    width:100%;
+    max-width:1200px; /*브라우저 크기를 늘려도 최대 1200으로 제한*/
+    min-width:800px;  /*최소 800이하로는 안 내려가게*/
+    position:relative;
+}
+
+#header{
+    display:flex;
+    background:#8eb4ff;
+    align-items:center; /*이러면 로고 크기가 바뀌어도 자동 대응됨*/
+    padding:10px 0;
+}
+
+.logo{width:140px;}
+.logo img{width:100%;}
+
+.menu{
+    flex-grow:1;
+    /* width:calc( 100% - 140px ); /*부모의 넓이 100%에서 로고의 140을 빼겠다 */
+                                  /*calc = 계산*/
+}
+
+.menu ul{
+    display:flex;
+    list-style-type: none;
+    justify-content: space-around;
+    font-size:25px;
+}
+
+#section_wrap{
+    display:flex;
+    flex-direction:column;
+}
+
+#section_top{
+    order:1;
+    display:flex;
+}
+
+.slider{
+    width:400px;
+}
+
+.slider img{
+    width:100%;
+}
+
+.gallery{
+    width:500px;
+    padding:10px;
+    box-sizing:border-box;
+    /*이걸 주면 padding값을 넣어도 크기가 안 커짐
+    넓이를 500px로 유지하도록 만들어준 것*/
+}
+
+.gallery_box{
+    width:100%;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: space-between;
+    row-gap:10px; /*row 사이의 거리 / column-gap도 가능*/
+}
+
+.thumbnail{
+    width:30%;
+    height:100px;
+    overflow:hidden;
+}
+
+.popularSearch{
+    background:#ffe489;
+    flex-grow:1;
+}
+
+.thumbnail img{
+    width:100%;
+}
+
+#section_bottom{
+    order:2;
+    display:flex;
+}
+
+ul{
+    list-style-type:none;
+}
+
+.latest_post{
+    padding:20px;
+    box-sizing:border-box;
+    width:25%;
+    background:#ff9870;
+}
+
+.latest_post .latest{
+    cursor:pointer;
+    padding: 5px 0;
+}
+
+.popular_post{
+    padding:20px;
+    box-sizing:border-box;
+    width:25%;
+    background:#ffe489;
+}
+
+.popular_post .popular_list{
+    cursor:pointer;
+    padding:5px 0;
+}
+
+.social{/*부트스크랩에서 CDN으로 가져온 아이콘은 폰트 취급*/
+    flex-grow:1;
+    font-size:40px;
+    color:rgb(91, 91, 255);
+    background:#ffe489;
+    display:flex;
+    align-items: center;
+    justify-content:space-around;
+}
+
+@font-face
+{ 
+    src:url('https://www.axis-praxis.org/fonts/webfonts/MetaVariableDemo-Set.woff2');
+    /*웹사이트 상단 주소가 url 전반부에 포함되어 있어야 함*/
+    font-family:'Meta';
+    font-style:normal;
+    font-weight:normal;
+}
+
+.banner{
+    box-sizing:border-box;
+    display:flex;
+    justify-content: space-evenly;
+    /*space-around랑 비슷하면서 약간 다른데,
+    around는 좌우 여백과 글자간 여백이 다르지만 evenly는 전부 같게 들어감*/
+    align-items:center;
+    background:#5d68ff;
+    flex-grow:1;
+}
+
+.banner main{
+/*
+font-variation-settings 폰트의 설정을 일관적으로 해줌
+두께, 기울기, 너비 가능 ('wght' : 두께 / 'ital' : 기울기 0 or 1, 'wdth' : 너비)
+
+transparent : 투명
+
+-webkit- : 크롬, 사파리 브라우저의 특수기능을 쓰기 위한 접두
+-moz- : 파이어폭스의 경우는 이거
+-ms- : 익스플로러, 엣지는 이거
+-o- : 이건 오페라
+
+-접두-text-stroke : 포토샵의 stroke 기능 같은 것
+
+transition : 같은 태그 내의 css의 속성 변경 속도를 조절해줌
+             ex): hover filter가 천천히 적용되도록할 수 있음
+
+transition: css속성명 시간(초s 단위)
+
+text-shadow: x축 y축 흐림정도 색;
+*/
+    font-size:60px;
+    font-family:'Meta', sans-serif;
+    text-align:center;
+    font-variation-settings:'wght' 900, 'ital' 1;
+    color:transparent;
+    -webkit-text-stroke: 2px #ffe489;
+    transition:all 0.5s;
+    text-shadow:5px 5px 0px #07bccc, 8px 8px 0px #e601c0, 11px 11px 0px #e9019a,
+    14px 14px 0px #f40468, 34px 34px 10px #482896;
+}
+
+.banner main:hover{
+    font-variation-settings: 'wght' 100, 'ital' 0;
+    text-shadow:none;
+}
+
+#footer{
+    display:flex;
+    background:#8eb4ff;
+    justify-content:space-between;
+    padding:10px;
+    box-sizing:border-box;
+}
+
+#footer div{
+    align-self:end; /*부모에게 쓰려면 items, 자식에겐 self*/
+}

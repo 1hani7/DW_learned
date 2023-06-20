@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+<script>
+
+
+// 조건연산자
+/*
+//탑승조건 키 150이상
+var tall = parseInt(prompt("나의 키는 "));
+var result = (tall >= 150) ? "탑승가능" : "탑승불가";
+// ?는 참인가? 거짓인가? 에 대해 의문을 제시하는 역할
+// 이후 참일 경우 좌측이 출력, 거짓일 경우 우측이 출력
+// 출력값은 변수 이름에 저장됨 (이 경우는 result)
+document.write(result);
+*/
+
+
+// var eyes = parseInt(prompt("당신의 시력은?"));
+// // 내 시력이 1.0 이상이면 좋은 눈을 가지고 있군요라고 출력
+// // 1.0 미만이면 뭐가 보이긴 하냐? 라고 출력
+// var result = (eyes >= 1.044) ? "사륜안이세요?" : "눈은 장식이네요!" ;
+// document.write(result);
+
+
+// var time = 128; //128분
+// var cost = 1000; //기본요금 1000원
+// result = (time > 120)? cost*2 : cost; //cost=2000같이 변수를 변환할 순 없음
+// document.write("물품보관료는 " + result + "원입니다.");
+
+
+// 주차 기본 요금이 1000원임
+// 1시간 지나면 500원 추가됨
+// 2시간 지나면 1000원 추가됨
+// 주차 시간을 분으로 입력해서 얼마 지불해야 하는가 출력
+
+
+// var time = parseInt(prompt("몇 분 주차하셨나요?"));
+// var money = 1000;
+// var price = (60 < time) ? money+500 : money;
+// price = (120 < time) ? price+1000 : price;
+// document.write("주차요금은 " + price + "원입니다.");
+
+// 개량 버전
+// var time = parseInt(prompt("몇 분 주차하셨나요?"));
+// var cost = 1000;
+// var price = (time > 120) ? cost+1500 : (time > 60) ? cost+500 : cost;
+// document.write("주차요금은 " + price + "원입니다.")
+
+
+// 동전 앞면 뒷면 맞추기
+// alert("이것은 알림창");
+// Math.floor() - 내림 (소수점 아래는 다 쳐내림)
+// var num = Math.floor(Math.random()*45+79); // 랜덤난수발생기
+// alert(num);
+
+// var coin = Math.floor (Math.random()*2);
+// var choice = parseInt(prompt("0은 앞면, 1은 뒷면"));
+// choice = (choise = coin) ? "정답" : "오답" ;
+// document.write("결과는 " + choice + "입니다.");
+
+
+// // 기본 주사위를 던졌다. 값이 5보다 크면 승리 출력, 아니면 패배 출력
+// alert("주사위게임 한 번 해볼까요? 5보다 큰 수가 나오면 당신 승리입니다.");
+// var dice = Math.floor (Math.random()*6+1);
+// result = (dice > 5) ? "승리" : "패배" ;
+// document.write("결과는 " + dice + "입니다! 당신의 " + result + "란 소리죠.");
+
+// var result = (dice == 6) ? "승리" : "패배";
+// // ㄴ 또 다른 방법 (6이면 참, 6이 아니면 거짓이라는 식)
+
+
+
+// 두 개의 주사위를 던졌다.
+// 두 개의 주사위의 합이 9보다 크면 승리, 아니면 패배
+
+// alert("두 개의 주사위의 합이 9보다 크면 승리, 아니면 패배");
+// var one = Number(Math.floor (Math.random()*6)+1);
+// var two = Number(Math.floor (Math.random()*6)+1);
+// var sum = one + two;
+// var result =(sum > 9) ? "승리" : "패배"
+// document.write("결과는 <b style='font-size:30px;'>" + sum + "!</b> <br>당신의 " + result + "입니다.");
+
+
+
+// 조건연산자
+// (조건식) ? 참일 경우 값 : 거짓일 경우 값 ;
+
+
+// 오늘의 과제 B유형
+// 주사위 문제
+// 주사위 3개를 던진다.
+// 주사위 3개의 합이 10 이상이면 승리, 아니면 패배
+// 단, 주사위 3개의 숫자가 모두 같은 숫자라면 승리
+// 주사위 3개가 1,1,1이 나왔다면 승리, 222 나와도 승리
+
+var level = prompt("도전하실 숫자를 적으세요. (4 ~ 24)");
+
+var one = Number(Math.floor (Math.random()*6)+1);
+var two = Number(Math.floor (Math.random()*6)+1);
+var three = Number(Math.floor (Math.random()*6)+1);
+var four = Number(Math.floor (Math.random()*6)+1);
+
+var sum = one + two + three + four;
+var result = (sum > level || one==two==three==four) ? "승리" : "패배";
+
+var bigsmall = (sum > level) ? "큰 " : "작은 ";
+
+document.write("당신의 결과는 " + one + " 과 " + two + " 과 " + three + " 그리고 " + four + "이며,<br>합은 "
+                + level + " 보다 " + bigsmall + "<b>" + sum + "</b>이므로 당신의 <b class='red_text'>" + result + "</b>입니다.");
+
+</script>
+
+<style>
+    .red_text{color:red; font-size : 25px;}
+</style>
+
+</head>
+<body>
+    
+</body>
+</html>

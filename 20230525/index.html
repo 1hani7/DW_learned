@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #first{
+            height:300px;
+            width:100px;
+            display:inline-block;
+            position:relative;
+            float:right;
+        }
+        #two{}
+
+        #parent1{/*기본 상태에서 position은 static이고, 부모가 될 수 없음*/
+            position:relative;
+            width:300px;
+            height:1300px;
+            border:4px solid red;
+            border-radius:0%; /*단위는 px 말고도 다양하게 있음*/
+        }
+
+        #parent2{
+            position:fixed; /*[화면]의 좌상단을 기준으로 함*/
+            top:200px;
+            left:400px;
+            width:100px;
+            height:50px;
+            background:yellow;
+            margin-top:50px;
+        }
+        /* #parent1 div{}는 아래와 살짝 다름 */
+        #child1, #child2, #child3, #child4{
+            width:100px;
+            height:35px;
+        }
+        #child1{
+            background:blue;
+        }
+        #child2{
+            background:green;
+        }
+        #child3{
+            background:pink;
+            position:relative; /*div를 순서대로 삽입할 때*/
+            top:0;
+            left:0;
+        }
+        #child4{
+            background:violet;
+            position:absolute; /*div를 강제로 삽입할 때*/
+            top:0;
+            left:0;
+        }
+        #two{
+            margin-bottom:100px;
+        }
+        #stk{
+            position:sticky; /*좌표를 준 위치에 딱 붙어서 계속 따라옴
+                               웹사이트의 따라오는 상단바를 이걸로 만듬*/
+            top:0;
+            height:50px;
+            background:rgb(202, 234, 255);
+            z-index:100; /*Z축 값을 줘서 상대적으로 전면에 배치되도록 하는 것
+                           Z축값은 기본 1임*/
+        }
+        #stk ul li{
+            list-style-type:none;
+            padding-left:10px;
+            float:left;
+        }
+
+    </style>
+
+</head>
+<body>
+    
+    <div id="first">
+        이것은 div다.
+    </div>
+
+    <div id="two">
+        나는 두 번째 div다.
+    </div>
+
+    <div id=stk>
+        <ul>
+            <li>메뉴</li>
+            <li>메뉴2</li>
+            <li>메뉴3</li>
+        </ul>
+    </div>
+
+    <div id="parent1">
+        <div id="child1"></div>
+        <div id="child2"></div>
+        <div id="child3"></div>
+        <div id="child4"></div>
+        <!--div#child4 => tab키 하면 날먹 가능
+            클래스도 같은 식으로 날먹 가능함-->
+    </div>
+
+    <div id="parent2">
+
+    </div>
+
+</body>
+</html>
