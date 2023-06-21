@@ -82,8 +82,8 @@ function same_search(){
     }
 
     if (step==20){
-        alert("당신의 패배! 다음에 도전하세요.")
-        show=false; // 먼젓번 if문에 걸리게 됨
+        alert("당신의 패배!")
+        show=false; // 먼젓번 if문에 걸리게
         return; // 함수가 작동하기 전으로 돌아감
     }
     var count = document.getElementById("count");
