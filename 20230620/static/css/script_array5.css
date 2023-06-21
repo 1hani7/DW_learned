@@ -12,9 +12,23 @@ table{
 .picture{
     width:150px;
     height:150px;
-    border:2px dashed pink;
-    font-size:40px;
+    border:1px dashed pink;
+    font-size:30px;
     text-align: center;
     color:gray;
 }
 
+#start{
+    position:absolute;
+    left:44%;
+    width:100px;
+    height:50px;
+    top:20px;
+    font-size:25px;
+}
+
+#board{
+    position:absolute;
+    left:80px;
+    top:70px;
+}
