@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        window.onload=function(){
+            const sug = document.getElementById("sugar");
+            sug.addEventListener("click", sugar_cal)
+            const bmi = document.getElementById("calc")
+            bmi.addEventListener("click", bmi_calc)
+        }
+
+        let out="";
+
+        function sugar_cal(){
+            const sug = document.getElementById("write").value;
+            if(70<=sug&&sug<=90){
+                out+="공복혈당입니다.<br>"
+            }else if(90<sug && sug<=100){
+                out+="공복혈당과 식후2시간 혈당 사이입니다.<br>"
+            }else if(100<sug && sug<=140){
+                out+="식후 2시간 혈당입니다.<br>"
+            }
+
+            if(70<=sug && sug<=140){
+                out+="현재 정상혈당 범주입니다.<br>"
+            }else if((70*(57/1000)<=sug) && (sug<=(140*(57/1000)))){
+                out+="당화혈색소 증상이 의심됩니다."
+            }
+
+            document.getElementById("res").innerHTML=out;
+            document.getElementById("write").value="";
+            out="";
+        }
+
+        let ou = "";
+
+        function bmi_calc(){
+            const tall = document.getElementById("t").value;
+            const weight = document.getElementById("w").value;
+            const bmi = weight/((tall/100)*(tall/100))
+            
+            ou+="bmi : "+bmi;
+            if(bmi>=25){
+                ou+=" / 비만입니다."
+            }else if(23<=bmi && bmi<=24.9){
+                ou+=" / 과체중입니다."
+            }else if(18.5<bmi && bmi<=22.9){
+                ou+=" / 정상입니다."
+            }else{
+                ou+=" / 저체중입니다."
+            }
+            document.getElementById("result").innerHTML=ou;
+            document.getElementById("t").value="";
+            document.getElementById("w").value="";
+            ou="";
+        }
+
+        
+
+
+    </script>
+</head>
+<body>
+    
+    <input type="number" id="write">
+    <button id="sugar">진단</button>
+    <div id="res"></div>
+
+    <input type="text" id="t" value="키">
+    <input type="text" id="w" value="몸무게">
+    <button id="calc">BMI</button>
+    <div id="result"></div>
+
+</body>
+</html>
