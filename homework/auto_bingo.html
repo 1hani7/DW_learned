@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<script>
+
+window.onload=function(){
+    const stt = document.getElementById("start");
+    stt.addEventListener("click", draw);
+    
+}
+
+let num_box = new Array();
+
+var out="";
+
+let pare = new Array();
+
+var row_one=true;
+var row_two=true;
+var row_three=true;
+var row_four=true;
+var row_five=true;
+
+var col_one=true;
+var col_two=true;
+var col_three=true;
+var col_four=true;
+var col_five=true;
+
+var dia_one=true;
+var dia_two=true;
+
+let score=0;
+
+
+function draw(){
+    var s_bd = document.getElementById("score_board");
+    s_bd.innerHTML="";
+    pare=[];
+    score=0;
+    out="";
+    out+="<table>";
+    out+="<tr>";
+    for(var j=0; j<5; j++){
+        for(var i=0; i<5; i++){
+            var temp = Math.floor(Math.random()*50)+1;
+            if(num_box.indexOf(temp)==-1){
+                num_box.push(temp);
+                out+="<td class='pre_box tds'>"+temp+"</td>";
+            }else{
+                i--
+            }
+        }
+        out+="</tr>";
+    }
+    out+="</table>";
+    document.getElementById("board").innerHTML=out;
+    num_box=[];
+
+    var bin = document.getElementsByClassName("pre_box")
+    for(var i=0; i<bin.length; i++){
+        bin[i].addEventListener("click", choice);
+    }
+}
+
+
+function choice(){
+    com = setInterval(auto_ch, 100);
+}
+
+
+
+function auto_ch(){
+    var s_bd = document.getElementById("score_board");
+    
+
+    var bin = document.getElementsByClassName("tds")
+
+    var temp = Math.floor(Math.random()*25);
+    if(pare.indexOf(temp)==-1){
+        pare.push(temp);
+    }else{
+        return;
+    }
+
+    var last = pare[pare.length-1];
+    bin[last].classList.add("after_box");
+
+    // 가로줄
+    if( row_one &&
+        bin[0].classList.item(2)===bin[1].classList.item(2)&&
+        bin[1].classList.item(2)===bin[2].classList.item(2)&&
+        bin[2].classList.item(2)===bin[3].classList.item(2)&&
+        bin[3].classList.item(2)===bin[4].classList.item(2)&&
+        bin[0].classList.item(2)!=null){
+            row_one=false;
+            score++;
+            s_bd.innerHTML=score+"빙고!";
+    }
+
+    if( row_two &&
+        bin[5].classList.item(2)===bin[6].classList.item(2)&&
+        bin[6].classList.item(2)===bin[7].classList.item(2)&&
+        bin[7].classList.item(2)===bin[8].classList.item(2)&&
+        bin[8].classList.item(2)===bin[9].classList.item(2)&&
+        bin[5].classList.item(2)!=null){
+            row_two=false;
+            score++;
+            s_bd.innerHTML=score+"빙고!";
+    }
+
+    if( row_three &&
+        bin[10].classList.item(2)===bin[11].classList.item(2)&&
+        bin[11].classList.item(2)===bin[12].classList.item(2)&&
+        bin[12].classList.item(2)===bin[13].classList.item(2)&&
+        bin[13].classList.item(2)===bin[14].classList.item(2)&&
+        bin[10].classList.item(2)!=null){
+            row_three=false;
+            score++;
+            s_bd.innerHTML=score+"빙고!";
+    }
+
+    if( row_four &&
+        bin[15].classList.item(2)===bin[16].classList.item(2)&&
+        bin[16].classList.item(2)===bin[17].classList.item(2)&&
+        bin[17].classList.item(2)===bin[18].classList.item(2)&&
+        bin[18].classList.item(2)===bin[19].classList.item(2)&&
+        bin[15].classList.item(2)!=null){
+            row_four=false;
+            score++;
+            s_bd.innerHTML=score+"빙고!";
+    }
+
+    if( row_five &&
+        bin[20].classList.item(2)===bin[21].classList.item(2)&&
+        bin[21].classList.item(2)===bin[22].classList.item(2)&&
+        bin[22].classList.item(2)===bin[23].classList.item(2)&&
+        bin[23].classList.item(2)===bin[24].classList.item(2)&&
+        bin[20].classList.item(2)!=null){
+            row_five=false;
+            score++;
+            s_bd.innerHTML=score+"빙고!";
+    }
+
+    // 세로줄
+    if( col_one &&
+        bin[0].classList.item(2)===bin[5].classList.item(2)&&
+        bin[5].classList.item(2)===bin[10].classList.item(2)&&
+        bin[10].classList.item(2)===bin[15].classList.item(2)&&
+        bin[15].classList.item(2)===bin[20].classList.item(2)&&
+        bin[0].classList.item(2)!=null){
+            col_one=false;
+            score++;
+            s_bd.innerHTML=score+"빙고!";
+    }
+
+    if( col_two &&
+        bin[1].classList.item(2)===bin[6].classList.item(2)&&
+        bin[6].classList.item(2)===bin[11].classList.item(2)&&
+        bin[11].classList.item(2)===bin[16].classList.item(2)&&
+        bin[16].classList.item(2)===bin[21].classList.item(2)&&
+        bin[1].classList.item(2)!=null){
+            col_two=false;
+            score++;
+            s_bd.innerHTML=score+"빙고!";
+    }
+
+    if( col_three &&
+        bin[2].classList.item(2)===bin[7].classList.item(2)&&
+        bin[7].classList.item(2)===bin[12].classList.item(2)&&
+        bin[12].classList.item(2)===bin[17].classList.item(2)&&
+        bin[17].classList.item(2)===bin[22].classList.item(2)&&
+        bin[2].classList.item(2)!=null){
+            col_three=false;
+            score++;
+            s_bd.innerHTML=score+"빙고!";
+    }
+
+    if( col_four &&
+        bin[3].classList.item(2)===bin[8].classList.item(2)&&
+        bin[8].classList.item(2)===bin[13].classList.item(2)&&
+        bin[13].classList.item(2)===bin[18].classList.item(2)&&
+        bin[18].classList.item(2)===bin[23].classList.item(2)&&
+        bin[3].classList.item(2)!=null){
+            col_four=false;
+            score++;
+            s_bd.innerHTML=score+"빙고!";
+    }
+
+    if( col_five &&
+        bin[4].classList.item(2)===bin[9].classList.item(2)&&
+        bin[9].classList.item(2)===bin[14].classList.item(2)&&
+        bin[14].classList.item(2)===bin[19].classList.item(2)&&
+        bin[19].classList.item(2)===bin[24].classList.item(2)&&
+        bin[4].classList.item(2)!=null){
+            col_five=false;
+            score++;
+            s_bd.innerHTML=score+"빙고!";
+    }
+
+
+    // 대각선
+    if( dia_one &&
+        bin[0].classList.item(2)===bin[6].classList.item(2)&&
+        bin[6].classList.item(2)===bin[12].classList.item(2)&&
+        bin[12].classList.item(2)===bin[18].classList.item(2)&&
+        bin[18].classList.item(2)===bin[24].classList.item(2)&&
+        bin[0].classList.item(2)!=null){
+            dia_one=false;
+            score++;
+            s_bd.innerHTML=score+"빙고!";
+    }
+
+    if( dia_two &&
+        bin[4].classList.item(2)===bin[8].classList.item(2)&&
+        bin[8].classList.item(2)===bin[12].classList.item(2)&&
+        bin[12].classList.item(2)===bin[16].classList.item(2)&&
+        bin[16].classList.item(2)===bin[20].classList.item(2)&&
+        bin[4].classList.item(2)!=null){
+            dia_two=false;
+            score++;
+            s_bd.innerHTML=score+"빙고!";
+    }
+
+    // 올 빙고
+    if(score==12){
+        clearInterval(com);
+        var s_bd = document.getElementById("score_board");
+        s_bd.innerHTML="ALL BINGO!";
+        score=0;
+        row_one=true;
+        row_two=true;
+        row_three=true;
+        row_four=true;
+        row_five=true;
+
+        col_one=true;
+        col_two=true;
+        col_three=true;
+        col_four=true;
+        col_five=true;
+
+        dia_one=true;
+        dia_two=true;
+    }
+}
+
+
+</script>
+
+<style>
+#wrap{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#start{
+    margin-bottom: 20px;
+    width:200px;
+    height:50px;
+    font-weight: 700;
+}
+
+table{
+    border-collapse: collapse;
+    margin:0 auto;
+}
+.pre_box{
+    width:80px; height:80px;
+    border:1px solid black;
+    text-align:center;
+    font-size:30px;
+    font-weight:700;
+    background:white;
+}
+.pre_box:hover{
+    cursor:pointer;
+}
+.after_box{
+    border:none;
+    width:80px; height:80px;
+    background: paleturquoise;
+    color:white;
+    text-align:center;
+    font-size:30px;
+    font-weight:700;
+}
+
+#score_board{
+    margin-top:20px;
+    font-size:30px;
+}
+</style>
+
+</head>
+<body>
+
+    <div id="wrap">
+        <button id="start">게임시작</button>
+        <div id="board"></div>
+        <div id="score_board"></div>
+    </div>
+    
+</body>
+</html>
