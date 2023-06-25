@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<script>
+
+window.onload=function(){
+    const stt = document.getElementById("start");
+    stt.addEventListener("click", draw);
+    
+}
+
+let num_box = new Array();
+let com_box = new Array();
+
+var pare = new Array();
+
+
+var out="";
+
+let score=0;
+let com_score=0;
+
+var row_one=true;
+var row_two=true;
+var row_three=true;
+var row_four=true;
+var row_five=true;
+
+var col_one=true;
+var col_two=true;
+var col_three=true;
+var col_four=true;
+var col_five=true;
+
+var dia_one=true;
+var dia_two=true;
+
+
+var com_row_one=true;
+var com_row_two=true;
+var com_row_three=true;
+var com_row_four=true;
+var com_row_five=true;
+
+var com_col_one=true;
+var com_col_two=true;
+var com_col_three=true;
+var com_col_four=true;
+var com_col_five=true;
+
+var com_dia_one=true;
+var com_dia_two=true;
+
+
+
+function draw(){
+    com_box=[];
+    num_box=[];
+    var s_bd = document.getElementById("score_board");
+    var cs_bd = document.getElementById("com_score_board");
+    s_bd.innerHTML="";
+    cs_bd.innerHTML="";
+    
+    // 내 빙고판
+    out="";
+    out+="<table>";
+    out+="<tr>";
+    for(var j=0; j<5; j++){
+        for(var i=0; i<5; i++){
+            var temp = Math.floor(Math.random()*50)+1;
+            if(num_box.indexOf(temp)==-1){
+                num_box.push(temp);
+                out+="<td class='pre_box tds'>"+temp+"</td>";
+            }else{
+                i--
+            }
+        }
+        out+="</tr>";
+    }
+    out+="<td colspan=5 class='player_name'>플레이어</td>"
+    out+="</table>";
+
+    // 컴퓨터 빙고판
+    out+="<table>";
+    out+="<tr>";
+    for(var j=0; j<5; j++){
+        for(var i=0; i<5; i++){
+            var temp = Math.floor(Math.random()*50)+1;
+            if(com_box.indexOf(temp)==-1){
+                com_box.push(temp);
+                out+="<td class='com_pre_box com_tds'>"+temp+"</td>";
+            }else{
+                i--
+            }
+        }
+        out+="</tr>";
+    }
+    out+="<td colspan=5 class='computer_name'>컴퓨터</td>"
+    out+="</table>";
+
+    document.getElementById("board").innerHTML=out;
+    
+    pare=[];
+
+    var bin = document.getElementsByClassName("pre_box")
+    for(var i=0; i<bin.length; i++){
+        bin[i].addEventListener("click", choice);
+    }
+}
+
+
+
+function choice(){
+    this.removeEventListener("click", choice); // 중복 클릭 방지
+    this.classList.add("after_box");
+
+    var bin = document.getElementsByClassName("tds");
+    var s_bd = document.getElementById("score_board");
+    var cs_bd = document.getElementById("com_score_board")
+
+    var bn = document.getElementsByClassName("com_tds")
+
+    var thisnum = parseInt(this.textContent.trim());
+
+    
+    
+    setTimeout(function(){
+        var cs_bd = document.getElementById("com_score_board")
+        for(var i=0; i<25; i++){
+            var comnum = parseInt(bn[i].textContent.trim());
+            if(thisnum===comnum){
+                bn[i].classList.add("com_after_box");
+                pare.push(i);
+                alert("컴퓨터에게도 같은 숫자가 있습니다.");
+                break;
+                }
+        }
+
+        if(!com_box.includes(thisnum)){
+            var gate = false;
+
+            while(!gate){
+                var temp = Math.floor(Math.random()*25);
+                if(pare.indexOf(temp)==-1){
+                    pare.push(temp);
+                    gate=true;
+                }
+            }
+
+            
+            alert("컴퓨터에겐 이 숫자가 없습니다.");
+            bn[pare[pare.length-1]].classList.add("com_after_box");
+
+
+            var b = bn[pare[pare.length-1]].textContent.trim()
+
+            alert("컴퓨터는" + b + "을/를 선택했습니다.")
+
+            if(num_box.indexOf(parseInt(b))!=-1){
+                alert("그 숫자는 당신에게도 있습니다.")
+                for(var i=0; i<25; i++){
+                    if(bin[i].textContent==b){
+                        bin[i].classList.add("after_box");
+                    }
+                }
+            }
+        }
+
+        // com 가로줄
+        if( com_row_one &&
+        bn[0].classList.item(2)===bn[1].classList.item(2)&&
+        bn[1].classList.item(2)===bn[2].classList.item(2)&&
+        bn[2].classList.item(2)===bn[3].classList.item(2)&&
+        bn[3].classList.item(2)===bn[4].classList.item(2)&&
+        bn[0].classList.item(2)!=null){
+            com_row_one=false;
+            com_score++;
+            cs_bd.innerHTML="com " + com_score+"빙고!";
+    }
+        if( com_row_two &&
+            bn[5].classList.item(2)===bn[6].classList.item(2)&&
+            bn[6].classList.item(2)===bn[7].classList.item(2)&&
+            bn[7].classList.item(2)===bn[8].classList.item(2)&&
+            bn[8].classList.item(2)===bn[9].classList.item(2)&&
+            bn[5].classList.item(2)!=null){
+            com_row_two=false;
+            com_score++;
+            cs_bd.innerHTML="com "+ com_score+"빙고!";
+        }
+        if( com_row_three &&
+        bn[10].classList.item(2)===bn[11].classList.item(2)&&
+        bn[11].classList.item(2)===bn[12].classList.item(2)&&
+        bn[12].classList.item(2)===bn[13].classList.item(2)&&
+        bn[13].classList.item(2)===bn[14].classList.item(2)&&
+        bn[10].classList.item(2)!=null){
+            com_row_three=false;
+            com_score++;
+            cs_bd.innerHTML="com "+ com_score+"빙고!";
+        }
+        if( com_row_four &&
+            bn[15].classList.item(2)===bn[16].classList.item(2)&&
+            bn[16].classList.item(2)===bn[17].classList.item(2)&&
+            bn[17].classList.item(2)===bn[18].classList.item(2)&&
+            bn[18].classList.item(2)===bn[19].classList.item(2)&&
+            bn[15].classList.item(2)!=null){
+            com_row_four=false;
+            com_score++;
+            cs_bd.innerHTML="com "+ com_score+"빙고!";
+        }
+        if( com_row_five &&
+            bn[20].classList.item(2)===bn[21].classList.item(2)&&
+            bn[21].classList.item(2)===bn[22].classList.item(2)&&
+            bn[22].classList.item(2)===bn[23].classList.item(2)&&
+            bn[23].classList.item(2)===bn[24].classList.item(2)&&
+            bn[20].classList.item(2)!=null){
+            com_row_five=false;
+            com_score++;
+            cs_bd.innerHTML="com "+ com_score+"빙고!";
+        }
+
+
+        // com 세로줄
+    if( com_col_one &&
+        bn[0].classList.item(2)===bn[5].classList.item(2)&&
+        bn[5].classList.item(2)===bn[10].classList.item(2)&&
+        bn[10].classList.item(2)===bn[15].classList.item(2)&&
+        bn[15].classList.item(2)===bn[20].classList.item(2)&&
+        bn[0].classList.item(2)!=null){
+            com_col_one=false;
+            com_score++;
+            cs_bd.innerHTML="com "+ com_score+"빙고!";
+    }
+
+    if( com_col_two &&
+        bn[1].classList.item(2)===bn[6].classList.item(2)&&
+        bn[6].classList.item(2)===bn[11].classList.item(2)&&
+        bn[11].classList.item(2)===bn[16].classList.item(2)&&
+        bn[16].classList.item(2)===bn[21].classList.item(2)&&
+        bn[1].classList.item(2)!=null){
+            com_col_two=false;
+            com_score++;
+            cs_bd.innerHTML="com "+ com_score+"빙고!";
+    }
+
+    if( com_col_three &&
+        bn[2].classList.item(2)===bn[7].classList.item(2)&&
+        bn[7].classList.item(2)===bn[12].classList.item(2)&&
+        bn[12].classList.item(2)===bn[17].classList.item(2)&&
+        bn[17].classList.item(2)===bn[22].classList.item(2)&&
+        bn[2].classList.item(2)!=null){
+            com_col_three=false;
+            com_score++;
+            cs_bd.innerHTML="com "+ com_score+"빙고!";
+    }
+
+    if( com_col_four &&
+        bn[3].classList.item(2)===bn[8].classList.item(2)&&
+        bn[8].classList.item(2)===bn[13].classList.item(2)&&
+        bn[13].classList.item(2)===bn[18].classList.item(2)&&
+        bn[18].classList.item(2)===bn[23].classList.item(2)&&
+        bn[3].classList.item(2)!=null){
+            com_col_four=false;
+            com_score++;
+            cs_bd.innerHTML="com "+ com_score+"빙고!";
+    }
+
+    if( com_col_five &&
+        bn[4].classList.item(2)===bn[9].classList.item(2)&&
+        bn[9].classList.item(2)===bn[14].classList.item(2)&&
+        bn[14].classList.item(2)===bn[19].classList.item(2)&&
+        bn[19].classList.item(2)===bn[24].classList.item(2)&&
+        bn[4].classList.item(2)!=null){
+            com_col_five=false;
+            com_score++;
+            cs_bd.innerHTML="com "+ com_score+"빙고!";
+    }
+
+    // com 대각선
+    if( com_dia_one &&
+        bn[0].classList.item(2)===bn[6].classList.item(2)&&
+        bn[6].classList.item(2)===bn[12].classList.item(2)&&
+        bn[12].classList.item(2)===bn[18].classList.item(2)&&
+        bn[18].classList.item(2)===bn[24].classList.item(2)&&
+        bn[0].classList.item(2)!=null){
+            com_dia_one=false;
+            com_score++;
+            cs_bd.innerHTML="com "+ com_score+"빙고!";
+    }
+
+    if( com_dia_two &&
+        bn[4].classList.item(2)===bn[8].classList.item(2)&&
+        bn[8].classList.item(2)===bn[12].classList.item(2)&&
+        bn[12].classList.item(2)===bn[16].classList.item(2)&&
+        bn[16].classList.item(2)===bn[20].classList.item(2)&&
+        bn[4].classList.item(2)!=null){
+            com_dia_two=false;
+            com_score++;
+            cs_bd.innerHTML="com "+ com_score+"빙고!";
+    }
+
+    // com 올 빙고
+    if(com_score==12 && score!=12){
+        var cs_bd = document.getElementById("com_score_board");
+        cs_bd.innerHTML="ALL BINGO! COMPUTER WIN!";
+        com_score=0;
+        com_row_one=true;
+        com_row_two=true;
+        com_row_three=true;
+        com_row_four=true;
+        com_row_five=true;
+
+        com_col_one=true;
+        com_col_two=true;
+        com_col_three=true;
+        com_col_four=true;
+        com_col_five=true;
+
+        com_dia_one=true;
+        com_dia_two=true;
+
+        score=0;
+        row_one=true;
+        row_two=true;
+        row_three=true;
+        row_four=true;
+        row_five=true;
+
+        col_one=true;
+        col_two=true;
+        col_three=true;
+        col_four=true;
+        col_five=true;
+
+        dia_one=true;
+        dia_two=true;
+    }
+
+    if(score==12 && com_score==12){
+        var cs_bd = document.getElementById("com_score_board");
+        cs_bd.innerHTML="DRAW!";
+        com_score=0;
+        com_row_one=true;
+        com_row_two=true;
+        com_row_three=true;
+        com_row_four=true;
+        com_row_five=true;
+
+        com_col_one=true;
+        com_col_two=true;
+        com_col_three=true;
+        com_col_four=true;
+        com_col_five=true;
+
+        com_dia_one=true;
+        com_dia_two=true;
+
+        score=0;
+        row_one=true;
+        row_two=true;
+        row_three=true;
+        row_four=true;
+        row_five=true;
+
+        col_one=true;
+        col_two=true;
+        col_three=true;
+        col_four=true;
+        col_five=true;
+
+        dia_one=true;
+        dia_two=true;
+    }
+    
+    },400)
+    
+    
+    
+    // 가로줄
+    if( row_one &&
+        bin[0].classList.item(2)===bin[1].classList.item(2)&&
+        bin[1].classList.item(2)===bin[2].classList.item(2)&&
+        bin[2].classList.item(2)===bin[3].classList.item(2)&&
+        bin[3].classList.item(2)===bin[4].classList.item(2)&&
+        bin[0].classList.item(2)!=null){
+            row_one=false;
+            score++;
+            s_bd.innerHTML=score+"빙고!";
+    }
+
+    if( row_two &&
+        bin[5].classList.item(2)===bin[6].classList.item(2)&&
+        bin[6].classList.item(2)===bin[7].classList.item(2)&&
+        bin[7].classList.item(2)===bin[8].classList.item(2)&&
+        bin[8].classList.item(2)===bin[9].classList.item(2)&&
+        bin[5].classList.item(2)!=null){
+            row_two=false;
+            score++;
+            s_bd.innerHTML=score+"빙고!";
+    }
+
+    if( row_three &&
+        bin[10].classList.item(2)===bin[11].classList.item(2)&&
+        bin[11].classList.item(2)===bin[12].classList.item(2)&&
+        bin[12].classList.item(2)===bin[13].classList.item(2)&&
+        bin[13].classList.item(2)===bin[14].classList.item(2)&&
+        bin[10].classList.item(2)!=null){
+            row_three=false;
+            score++;
+            s_bd.innerHTML=score+"빙고!";
+    }
+
+    if( row_four &&
+        bin[15].classList.item(2)===bin[16].classList.item(2)&&
+        bin[16].classList.item(2)===bin[17].classList.item(2)&&
+        bin[17].classList.item(2)===bin[18].classList.item(2)&&
+        bin[18].classList.item(2)===bin[19].classList.item(2)&&
+        bin[15].classList.item(2)!=null){
+            row_four=false;
+            score++;
+            s_bd.innerHTML=score+"빙고!";
+    }
+
+    if( row_five &&
+        bin[20].classList.item(2)===bin[21].classList.item(2)&&
+        bin[21].classList.item(2)===bin[22].classList.item(2)&&
+        bin[22].classList.item(2)===bin[23].classList.item(2)&&
+        bin[23].classList.item(2)===bin[24].classList.item(2)&&
+        bin[20].classList.item(2)!=null){
+            row_five=false;
+            score++;
+            s_bd.innerHTML=score+"빙고!";
+    }
+
+    // 세로줄
+    if( col_one &&
+        bin[0].classList.item(2)===bin[5].classList.item(2)&&
+        bin[5].classList.item(2)===bin[10].classList.item(2)&&
+        bin[10].classList.item(2)===bin[15].classList.item(2)&&
+        bin[15].classList.item(2)===bin[20].classList.item(2)&&
+        bin[0].classList.item(2)!=null){
+            col_one=false;
+            score++;
+            s_bd.innerHTML=score+"빙고!";
+    }
+
+    if( col_two &&
+        bin[1].classList.item(2)===bin[6].classList.item(2)&&
+        bin[6].classList.item(2)===bin[11].classList.item(2)&&
+        bin[11].classList.item(2)===bin[16].classList.item(2)&&
+        bin[16].classList.item(2)===bin[21].classList.item(2)&&
+        bin[1].classList.item(2)!=null){
+            col_two=false;
+            score++;
+            s_bd.innerHTML=score+"빙고!";
+    }
+
+    if( col_three &&
+        bin[2].classList.item(2)===bin[7].classList.item(2)&&
+        bin[7].classList.item(2)===bin[12].classList.item(2)&&
+        bin[12].classList.item(2)===bin[17].classList.item(2)&&
+        bin[17].classList.item(2)===bin[22].classList.item(2)&&
+        bin[2].classList.item(2)!=null){
+            col_three=false;
+            score++;
+            s_bd.innerHTML=score+"빙고!";
+    }
+
+    if( col_four &&
+        bin[3].classList.item(2)===bin[8].classList.item(2)&&
+        bin[8].classList.item(2)===bin[13].classList.item(2)&&
+        bin[13].classList.item(2)===bin[18].classList.item(2)&&
+        bin[18].classList.item(2)===bin[23].classList.item(2)&&
+        bin[3].classList.item(2)!=null){
+            col_four=false;
+            score++;
+            s_bd.innerHTML=score+"빙고!";
+    }
+
+    if( col_five &&
+        bin[4].classList.item(2)===bin[9].classList.item(2)&&
+        bin[9].classList.item(2)===bin[14].classList.item(2)&&
+        bin[14].classList.item(2)===bin[19].classList.item(2)&&
+        bin[19].classList.item(2)===bin[24].classList.item(2)&&
+        bin[4].classList.item(2)!=null){
+            col_five=false;
+            score++;
+            s_bd.innerHTML=score+"빙고!";
+    }
+
+
+    // 대각선
+    if( dia_one &&
+        bin[0].classList.item(2)===bin[6].classList.item(2)&&
+        bin[6].classList.item(2)===bin[12].classList.item(2)&&
+        bin[12].classList.item(2)===bin[18].classList.item(2)&&
+        bin[18].classList.item(2)===bin[24].classList.item(2)&&
+        bin[0].classList.item(2)!=null){
+            dia_one=false;
+            score++;
+            s_bd.innerHTML=score+"빙고!";
+    }
+
+    if( dia_two &&
+        bin[4].classList.item(2)===bin[8].classList.item(2)&&
+        bin[8].classList.item(2)===bin[12].classList.item(2)&&
+        bin[12].classList.item(2)===bin[16].classList.item(2)&&
+        bin[16].classList.item(2)===bin[20].classList.item(2)&&
+        bin[4].classList.item(2)!=null){
+            dia_two=false;
+            score++;
+            s_bd.innerHTML=score+"빙고!";
+    }
+
+    // 올 빙고
+    if(score==12 && com_score!=12){
+        var s_bd = document.getElementById("score_board");
+        s_bd.innerHTML="ALL BINGO! PLAYER WIN!";
+        score=0;
+        row_one=true;
+        row_two=true;
+        row_three=true;
+        row_four=true;
+        row_five=true;
+
+        col_one=true;
+        col_two=true;
+        col_three=true;
+        col_four=true;
+        col_five=true;
+
+        dia_one=true;
+        dia_two=true;
+
+        com_score=0;
+        com_row_one=true;
+        com_row_two=true;
+        com_row_three=true;
+        com_row_four=true;
+        com_row_five=true;
+
+        com_col_one=true;
+        com_col_two=true;
+        com_col_three=true;
+        com_col_four=true;
+        com_col_five=true;
+
+        com_dia_one=true;
+        com_dia_two=true;
+    }
+
+    if(score==12 && com_score==12){
+        var s_bd = document.getElementById("score_board");
+        s_bd.innerHTML="DRAW!";
+        score=0;
+        row_one=true;
+        row_two=true;
+        row_three=true;
+        row_four=true;
+        row_five=true;
+
+        col_one=true;
+        col_two=true;
+        col_three=true;
+        col_four=true;
+        col_five=true;
+
+        dia_one=true;
+        dia_two=true;
+
+        com_score=0;
+        com_row_one=true;
+        com_row_two=true;
+        com_row_three=true;
+        com_row_four=true;
+        com_row_five=true;
+
+        com_col_one=true;
+        com_col_two=true;
+        com_col_three=true;
+        com_col_four=true;
+        com_col_five=true;
+
+        com_dia_one=true;
+        com_dia_two=true;
+    }
+
+}
+
+</script>
+
+<style>
+body{
+    background-image: url(./static/image/forest-4824759_1920.png);
+    background-repeat: no-repeat;
+    background-size: 100%, 100%;
+}
+
+#wrap{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin:10% 10%;
+}
+
+#start{
+    margin-top: 20px;;
+    margin-bottom: 20px;
+    width:150px;
+    height:40px;
+    font-weight: 700;
+    background: white;
+    border-radius: 10px;;
+    cursor: pointer;
+}
+
+#start:active{
+    filter: brightness(0.9);
+    translate: 2px 2px;
+}
+
+table{
+    border-collapse: collapse;
+    margin:0 auto;
+}
+.pre_box{
+    width:50px; height:50px;
+    border:1px solid black;
+    text-align:center;
+    font-size:30px;
+    font-weight:700;
+    background:white;
+    min-width:50px;
+}
+.pre_box:hover{
+    cursor:pointer;
+}
+
+.pre_box:active{
+    filter: brightness(0.9);
+    border:1px solid black;
+}
+
+.com_pre_box{
+    width:50px; height:50px;
+    border:1px solid black;
+    text-align:center;
+    font-size:30px;
+    -webkit-text-stroke: 1px black;
+    color:transparent;
+    background:white;
+    font-weight: 700;
+    min-width:50px;
+}
+
+.com_after_box{
+    width:50px; height:50px;
+    border:1px solid black;
+    text-align:center;
+    font-size:30px;
+    color:white;
+    background:red;
+    -webkit-text-stroke: 0px black;
+    border:none;
+    min-width:50px;
+}
+
+.after_box{
+    border:none;
+    width:50px; height:50px;
+    background: rgb(110, 216, 216);
+    color:white;
+    text-align:center;
+    font-size:30px;
+    font-weight:700;
+    min-width:50px;
+}
+
+#board{
+    display:flex;
+    gap:30px;
+}
+
+#score_board{
+    margin-top:20px;
+    font-size:30px;
+}
+
+#com_score_board{
+    margin-top:20px;
+    font-size:30px;
+}
+
+#me_title{
+    top:370px;
+    left:130px;
+    position:absolute;
+    font-weight:700;
+    border:1px dashed black;
+    width:100px;
+    height:50px;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 100%;
+}
+
+#com_title{
+    top:370px;
+    right:132px;
+    position:absolute;
+    font-weight:700;
+    border:1px dashed black;
+    width:100px;
+    height:50px;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 100%;
+}
+
+.player_name{
+    font-size: 25px;
+    font-weight: 700;
+    text-align: center;
+    padding-top: 20px;
+    color:rgb(150, 255, 255);
+}
+
+.computer_name{
+    font-size: 25px;
+    font-weight: 700;
+    text-align: center;
+    padding-top: 20px;
+    color:rgb(238, 71, 71);
+}
+
+</style>
+
+</head>
+<body>
+
+    <div id="wrap">
+        <button id="start">GAME START</button>
+        <div id="board"></div>
+        <div id="score_board"></div>
+        <div id="com_score_board"></div>
+    </div>
+    
+</body>
+</html>
