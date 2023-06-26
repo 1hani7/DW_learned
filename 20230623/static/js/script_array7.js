@@ -15,6 +15,8 @@ window.onresize=function(){ // 크기가 변경될 때마다 작동되는 함수
     */
 }
 
+let lotto = new Array(); // 역대 당첨 번호 저장 배열
+
 
 window.onload=function(){// 화면 로딩이 끝나면 시작되는 함수
     const icon = document.getElementsByClassName("strapIcon");
@@ -23,6 +25,22 @@ window.onload=function(){// 화면 로딩이 끝나면 시작되는 함수
 
     content = document.querySelector('#content')
     // id가 content인 녀석을 가져오는 새로운 방법 (let content = null로)
+
+    var file = document.querySelector("#lotto");
+    file.addEventListener("input", function(e){
+        let target = e.target; // 선택된 e 파일을 참조
+        let files = target.files; // 선택된 파일은 배열로 저장됨
+        // 첫째 파일을 참조해야 내가 선택한 파일을 읽을 수 있음
+        let reader = new FileReader();
+        reader.addEventListener("load", function(){
+            var str = reader.result; // result => 전체
+            var temp = str.split("\n"); // \n => 엔터키(new line)
+            for(var i in temp){ // var i=0; i<temp.length; i++와 같음 / 배열에게만 사용하는 for문
+                lotto.push(temp[i].split("\t")); // \t => 탭 (tab)(스페이스바 5번 효과, 변경가능)
+            }
+        });
+        reader.readAsText(files[0]);
+    });
 }
 
 
@@ -76,10 +94,21 @@ function open_close(){
 let content = null;
 
 function win_confirm(){
-    alert("QYd");
+    var out="<div id='input_box'>";
+    var input="";
+    for(var i=1; i<=6; i++)
+        input+="<input type='number' class='mynum'>"
+    out+=input + "</div>";
+
+    content.innerHTML=out;
 }
 
 function make_num(){
+    if(lotto.length==0){
+        alert("로또 파일을 먼저 선택해주세양")
+        return;
+    }
+
     let out ="<table class='makeTable'>";
 
     for(var n=1; n<=5; n++){
@@ -105,7 +134,7 @@ function make_num(){
 
         out += "<td class='numTd'>"+n+".</td>";
         for(var i=0; i<lucky_num.length; i++){
-            out+="<td class='numTd'>"+lucky_num[i]+"</td>";
+            out+="<td class='numTd_1'>"+lucky_num[i]+"</td>";
         }
         out += "</tr>"
         
@@ -121,15 +150,38 @@ function make_num(){
             }
         }
 
-        var ac = new Array();
+        
         // 산술적 복합성 값 구하기
+        var ac = new Array();
         for(var i=lucky_num.length-1; i>=1; i--){
-            for(var j=i-1; j=0; j--){
-                ac.push(box=lucky_num[i]-lucky_num[j]);
+            for(var k=i-1; k>=0; k--){
+                var tmp = lucky_num[i]-lucky_num[k];
+                if(ac.indexOf(tmp)==-1){
+                    ac.push(tmp);
+                }
             }
         }
 
-        out+="<td colspan='7'>총합 : "+total+"&nbsp;&nbsp;|&nbsp;&nbsp;홀/짝 : "+odd+"/"+even+"</td>";
+        // 역대 당첨 번호와 비교하기
+        /*2차원 배열을 사용함
+        i는 1차원 배열 부분의 인덱스를, k는 2차원 배열 부분의 인덱스를 표현함*/
+        for(var i in lotto){
+            for(var k=2; k<=7; k++){
+                if(ac.indexOf(lotto[i][k])!=-1){
+                    // 역대 당첨번호와 같은 숫자가 ac 배열에 있다면 ac배열 삭제하기
+                    // 배열 속 데이터를 삭제하는 방법
+                    // 1. arrayName.pop() => 맨 마지막 하나
+                    // 2. arrayName.splice(index, amount) => 특정 인덱스부터 amount개를 삭제
+                    var index = ac.indexOf(lotto[i][k]);
+                    ac.slice(index,1);
+                }
+            }
+        }
+
+        out+="<td colspan='7'>"+
+        "AC : "+ (ac.length - 5) +" "+
+        "총합 : "+total+" "+
+        "&nbsp;&nbsp;|&nbsp;&nbsp;홀/짝 : "+odd+"/"+even+"</td>";
     }
     out += "</table>"
 
