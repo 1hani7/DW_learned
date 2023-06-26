@@ -37,7 +37,7 @@ ul{
     background: pink;
     color:white;
     font-weight:700;
-    border-radius:100px;
+    border-radius:10px;
     text-shadow:0px 0px 4px rgb(204, 153, 153);
 }
 .menu_bt:hover{
@@ -165,6 +165,32 @@ ul{
 .mynum::-webkit-outer-spin-button,
 .mynum::-webkit-inner-spin-button{
     -webkit-appearance:none; margin:0;
+}
+
+#bt{
+    position:relative;
+    width:100%;
+    text-align: right;
+    right:100px;
+    top:-20px;
+}
+
+#bt button:hover{
+    cursor: pointer;
+}
+
+#bt button:active{
+    filter: brightness(0.9);
+    translate:2px 2px;
+}
+
+#bt button{
+    border:0;
+    background:rgb(241, 126, 145);
+    font-size:30px;
+    padding:5px 25px;
+    color:white;
+    border-radius: 10px;
 }
 
 /*

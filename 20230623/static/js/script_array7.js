@@ -35,6 +35,7 @@ window.onload=function(){// 화면 로딩이 끝나면 시작되는 함수
         reader.addEventListener("load", function(){
             var str = reader.result; // result => 전체
             var temp = str.split("\n"); // \n => 엔터키(new line)
+            
             for(var i in temp){ // var i=0; i<temp.length; i++와 같음 / 배열에게만 사용하는 for문
                 lotto.push(temp[i].split("\t")); // \t => 탭 (tab)(스페이스바 5번 효과, 변경가능)
             }
@@ -92,16 +93,6 @@ function open_close(){
 }
 
 let content = null;
-
-function win_confirm(){
-    var out="<div id='input_box'>";
-    var input="";
-    for(var i=1; i<=6; i++)
-        input+="<input type='number' class='mynum'>"
-    out+=input + "</div>";
-
-    content.innerHTML=out;
-}
 
 function make_num(){
     if(lotto.length==0){
@@ -186,9 +177,5 @@ function make_num(){
     out += "</table>"
 
     content.innerHTML=out;
-}
-
-function num_count(){
-    alert("QYd");
 }
 
