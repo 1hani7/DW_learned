@@ -165,6 +165,7 @@ function choice(){
                 alert("그 숫자는 당신에게도 있습니다.")
                 for(var i=0; i<25; i++){
                     if(bin[i].textContent==b){
+                        bin[i].removeEventListener("click", choice);
                         bin[i].classList.add("after_box");
                     }
                 }
