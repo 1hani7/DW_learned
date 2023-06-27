@@ -108,6 +108,7 @@ function draw(){
     pare=[];
 
     var bin = document.getElementsByClassName("pre_box")
+    // == querySelectorAll 클래스의 갯수가 바뀔 경우에 대응 가능함
     for(var i=0; i<bin.length; i++){
         bin[i].addEventListener("click", choice);
     }
@@ -377,7 +378,7 @@ function choice(){
         dia_two=true;
     }
     
-    },100)
+    },0) 
     
     
     
@@ -625,15 +626,19 @@ table{
 }
 .pre_box{
     width:50px; height:50px;
-    border:1px solid black;
+    border:2px solid rgb(112, 112, 112);
     text-align:center;
     font-size:30px;
     font-weight:700;
     background:white;
     min-width:50px;
+    box-shadow:
+        inset 0 0 3px 3px rgba(155, 155, 155, 0.4),
+        inset 0 0 3px 3px rgba(0,0,0,.05);
 }
 .pre_box:hover{
     cursor:pointer;
+    background:rgb(214, 214, 214);
 }
 
 .pre_box:active{
@@ -643,7 +648,7 @@ table{
 
 .com_pre_box{
     width:50px; height:50px;
-    border:1px solid black;
+    border:2px solid rgb(112, 112, 112);;
     text-align:center;
     font-size:30px;
     -webkit-text-stroke: 1px black;
@@ -651,6 +656,9 @@ table{
     background:white;
     font-weight: 700;
     min-width:50px;
+    box-shadow:
+        inset 0 0 3px 3px rgba(155, 155, 155, 0.4),
+        inset 0 0 3px 3px rgba(0,0,0,.05);
 }
 
 .com_after_box{
@@ -663,6 +671,7 @@ table{
     -webkit-text-stroke: 0px black;
     border:none;
     min-width:50px;
+    box-shadow:none;
 }
 
 .after_box{
@@ -674,6 +683,7 @@ table{
     font-size:30px;
     font-weight:700;
     min-width:50px;
+    box-shadow:none;
 }
 
 #board{

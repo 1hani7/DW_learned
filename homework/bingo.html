@@ -10,8 +10,21 @@
 window.onload=function(){
     const stt = document.getElementById("start");
     stt.addEventListener("click", draw);
-    
+
 }
+
+const fruit=[
+'수박','사과','귤','참외','토마토', 
+'키위', '감', '배', '포도','무화과',
+'석류','대추','망고','유자','자두',
+'딸기','복숭아','바나나','멜론','라임',
+'구아바','홍옥','용과','페피노','체리',
+'레몬','자몽','살구','파파야','코코넛',
+'홍시','복분자','머루','잣','밤',
+'낑깡','한라봉','두꾸','산딸기','뱀딸기',
+'앵두','레드향','신고','람부탄','두리안',
+'으름','거봉','여주','만다린','모과'];
+
 
 let num_box = new Array();
 
@@ -34,11 +47,13 @@ var col_five=true;
 var dia_one=true;
 var dia_two=true;
 
+var out_two="";
 
 function draw(){
     var s_bd = document.getElementById("score_board");
     s_bd.innerHTML="";
     
+    //빙고판
     out="";
     out+="<table>";
     out+="<tr>";
@@ -47,7 +62,7 @@ function draw(){
             var temp = Math.floor(Math.random()*50)+1;
             if(num_box.indexOf(temp)==-1){
                 num_box.push(temp);
-                out+="<td class='pre_box tds'>"+temp+"</td>";
+                out+="<td class='pre_box tds'>"+fruit[temp-1]+"</td>";
             }else{
                 i--
             }
@@ -55,21 +70,53 @@ function draw(){
         out+="</tr>";
     }
     out+="</table>";
+
+    //하단
+    out+="<table>";
+    out+="<tr>";
+    for(var j=0; j<2; j++){
+        for(var i=0; i<25; i++){
+            out+="<td class='tdds'>"+fruit[j*25+i]+"</td>";
+        }
+        out+="</tr>";
+    }
+    out+="</table>";
+
+
     document.getElementById("board").innerHTML=out;
     num_box=[];
 
-    var bin = document.getElementsByClassName("pre_box")
+    var bin = document.getElementsByClassName("tds")
     for(var i=0; i<bin.length; i++){
         bin[i].addEventListener("click", choice);
     }
+
+    var biin = document.getElementsByClassName("tdds")
+    for(var i=0; i<biin.length; i++){
+        biin[i].addEventListener("click", red);
+    }
 }
 
-
+function red(){
+    this.style.background="red";
+}
 
 function choice(){
-    this.classList.add("after_box");
-    var bin = document.getElementsByClassName("tds")
+
+    // this.removeEventListener("click", choice); // 중복 클릭 방지
+    this.classList.toggle("after_box");
+    var bin = document.getElementsByClassName("tds");
     var s_bd = document.getElementById("score_board");
+    var tdds = document.getElementsByClassName("tdds");
+
+    for(var j=0; j<50; j++){
+        if (tdds[j].textContent === this.textContent){
+            tdds[j].style.background="red";
+        }
+    }
+    
+
+
     // 가로줄
     if( row_one &&
         bin[0].classList.item(2)===bin[1].classList.item(2)&&
@@ -237,6 +284,10 @@ function choice(){
 
         dia_one=true;
         dia_two=true;
+        var bin = document.getElementsByClassName("tds")
+        for(var i=0; i<bin.length; i++){
+            bin[i].removeEventListener("click", choice);
+        }
     }
 }
 
@@ -258,14 +309,14 @@ function choice(){
 
 table{
     border-collapse: collapse;
-    margin:0 auto;
+    margin:30px auto;
 }
 .pre_box{
     width:80px; height:80px;
     border:1px solid black;
     text-align:center;
-    font-size:30px;
-    font-weight:700;
+    font-size:25px;
+    font-weight:500;
     background:white;
 }
 .pre_box:hover{
@@ -277,14 +328,24 @@ table{
     background: paleturquoise;
     color:white;
     text-align:center;
-    font-size:30px;
-    font-weight:700;
+    font-size:25px;
+    font-weight:500;
 }
 
 #score_board{
     margin-top:20px;
     font-size:30px;
 }
+
+.tdds{
+    border:1px solid black;
+    width:50px; height:50px;
+    font-size:10px;
+    text-align: center;
+    background:white;
+}
+
+
 </style>
 
 </head>
@@ -294,6 +355,7 @@ table{
         <button id="start">게임시작</button>
         <div id="board"></div>
         <div id="score_board"></div>
+        <div id="all"></div>
     </div>
     
 </body>
