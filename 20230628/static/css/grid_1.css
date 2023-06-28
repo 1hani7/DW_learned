@@ -4,16 +4,33 @@
     box-sizing: border-box;
 }
 
-#wrap{
-    margin:100px auto;
-    display:flex;
-    flex-wrap: wrap;
-    width:640px;
-    gap:20px;
+/*
+그리드 요소
+1. 컨테이너 - 전체를 감싸는 박스
+2. 아이템 - 컨테이너가 감싸는 자식 태그들
+3. 트랙 - 행과 열
+4. 셀 - 자식 태그 한 칸
+5. 라인 - 셀을 나누는 선
+   ㄴ 번호 - 1번부터 시작, 한 칸만 있으면 1,2가 있는 상태
+      (1만 있는 상태는 없음)
+
+/*
+/*
+minmax(최소값,최대값) - 각 셀의 최대 px 설정 가능
+auto-fill, auto-fit
+- 설정된 너비가 허용하는 최대 갯수로 채움
+- auto-fill : 최대 너비값은 유지
+- auto-fit : 너비를 꽉 채움
+*/
+
+#container{
+    margin:30px auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(200px,auto));
+    
+    grid-template-rows:100px 300px 100px;
 }
 
 .item{
-    width:200px;;
-    height:200px;
-    background: black;
+    border: 1px solid black;
 }

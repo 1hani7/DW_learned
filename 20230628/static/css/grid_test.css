@@ -1,0 +1,87 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+#container{
+    display:grid;
+    /* grid-template-columns: repeat(3, minmax(200px, auto));
+    grid-auto-rows:100px;
+    gap:10px; */
+    /*grid-auto-columns, grid-auto-rows
+    지정 크기에 맞춰 자동으로 반복해 채움
+    통제가 어려워서 모바일 or 소규모 구성에 사용됨*/
+
+    grid-template-columns: repeat(3, minmax(200px, auto));
+    grid-template-rows: repeat(5, 200px);
+    gap:10px;
+    /*grid의 장점 : 화면을 줄여도 배치가 깨지지 않는 기능을 더 쉽고 짧게 할 수 있음*/
+    /*gap : 행 간격, 열 간격 순서대로 할 수 있지만 호환성 때문에 X*/
+    
+    /*범용성을 고려하면*/
+    /* row-gap:20px;
+    column-gap:10px;
+    grid-row-gap:20px;
+    grid-column-gap: 10px; */
+    grid-template-areas:
+    "head head head"
+    "sideA main sideB"
+    " .     .     .  "
+    "foot foot foot"
+    ;
+}
+
+.item{
+    border: 1px solid black;
+}
+
+.item:nth-child(1){grid-area:head;}
+.item:nth-child(2){grid-area:sideA;}
+.item:nth-child(3){grid-area:main;}
+.item:nth-child(4){grid-area:sideB;}
+.item:nth-child(5){grid-area:foot;}
+
+/* .item:first-child{
+    grid-column:2;
+}
+
+.item:nth-child(3){
+    grid-column:2;
+}
+
+.item:nth-child(4){
+    grid-row:1/4;
+} */
+
+/* .item:first-child{
+    /*
+    grid-column-start, grid-column-end, grid-column
+    grid-row-start, grid-row-end, grid-row
+    */
+    /* grid-column-start:1; */
+    /* grid-column-end:3; */
+/* } */
+
+/* .item:nth-child(2){
+    grid-column-start:3;
+    grid-column-end:6;
+}
+
+.item:nth-child(4){
+    grid-row-start:5;
+    grid-row-end:7;
+    grid-column:1/4;
+}
+
+.item:nth-child(3){
+    grid-row-start:3;
+    grid-row-end:5;
+    grid-column-start:1;
+    grid-column-end:6;
+}
+
+.item:nth-child(5){
+    grid-row-start:2;
+    grid-row-end:3;
+} */
