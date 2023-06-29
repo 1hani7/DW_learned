@@ -1,0 +1,207 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+#container{
+    margin:0 auto;
+    width:960px;
+    display:grid;
+    grid-template-columns: repeat(6,1fr);
+    grid-template-rows: 140px 100px 680px 400px 550px 280px 200px;
+}
+
+#nav{
+    width:100%;
+    background: rgb(37, 64, 105);
+    grid-column:1/7;
+    height:30px;
+    position:sticky;
+    top:0;
+}
+
+h1{
+    font-size:20px;
+}
+
+#header{
+    grid-column: 1/7;
+    display:grid;
+    font-size:20px;
+    align-self: center;
+    justify-content: space-between;
+    grid-template-columns: 1fr 1fr;
+    font-weight:100;
+    align-items: center;
+}
+
+#header i{
+    justify-self:right;
+    font-size:40px;
+}
+
+#section1{
+    grid-column:1/7;
+    display:grid;
+    grid-template-columns: 5fr 3fr;
+    align-items: center;
+}
+
+#category ul{
+    display:grid;
+    grid-template-columns: repeat(5,1fr);
+    list-style-type: none;
+}
+
+#category ul li:nth-child(1){
+    text-decoration: underline;
+    text-underline-offset: 5px;
+}
+
+#section2{
+    grid-column:1/7;
+    display:grid;
+    grid-template-columns: repeat(3,300px);
+    grid-template-rows: 1fr 1fr;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.images{
+    width:300px;
+    height:300px;
+}
+
+.images:nth-child(1){
+    background: url(../image/bouquet-g82e44ccaf_1280.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.images:nth-child(2){
+    background: url(../image/butterfly-g168cc238b_1280.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.images:nth-child(3){
+    background: url(../image/cat-g6b501ae2f_1280.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.images:nth-child(4){
+    background: url(../image/cat-gaeb5a94f8_1280.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.images:nth-child(5){
+    background: url(../image/cherry-blossom-gbe978fc7e_1280.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.images:nth-child(6){
+    background: url(../image/duckling-ga377eb0a8_1280.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#section3{
+    grid-column: 1/7;
+    display:grid;
+    grid-template-columns: repeat(6,140px);
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logos{
+    align-self: self-start;
+    width:135px;
+    height:60px;
+    font-size:40px;
+    text-align: center;
+    color:rgb(197, 197, 197);
+}
+
+#Clients{
+    align-self: self-end;
+    text-align: center;
+    grid-column: 1/7;
+    justify-self: center;
+    height:100px;
+}
+
+#section4{
+    grid-column: 1/7;
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+}
+
+#My_Services{
+    align-self:self-end;
+    grid-column: 1/7;
+    text-align: center;
+}
+
+.explain{
+    width:240px;
+    height:350px;
+    padding:10px;
+}
+
+#section5{
+    background: rgb(223, 223, 223);
+    grid-column:1/7;
+    display:grid;
+    align-items: center;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+
+}
+
+.portrait{
+    background: gray;
+    width:80px;
+    height:80px;
+    border-radius: 100%;
+    justify-self: center;
+    align-self:center;
+}
+
+#section5 p{
+    justify-self: center;
+    align-self: self-start;
+}
+
+#footer{
+    display:grid;
+    align-items: center;
+    grid-column:1/7;
+    grid-template-columns: 4fr 1fr;
+    grid-template-rows: 1fr;
+}
+
+.sns{
+    display:grid;
+    justify-content: space-between;  
+    grid-template-columns: repeat(4,1fr);
+    gap:10px;
+}
+
+.sns > div {
+    display:grid;
+    width:40px;
+    height:40px;
+    border-radius: 100%;
+    background:rgb(245, 245, 245);
+    /* text-align:center;
+    line-height:50px; */
+}
+
+.sns > div > i{
+    align-self: center;
+    justify-self: center;
+}
