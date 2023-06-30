@@ -6,7 +6,8 @@
 */
 
 
-var path = "url(./static/image/"
+var path = "url(./static/image/" // 이미지 경로를 짧게 쓰기 위한 용도
+
 const name = ["dalma.png","saint.png","chi.jpg","maltiz.jpg",
             "pome.jpg","pug.jpg","bulldog.jpg","samo.jpg",
             "shep.jpg","coli.jpg","huskey.jpg","corgi.jpg",
@@ -21,27 +22,29 @@ const name2 = new Array(); // 32 => 16강 용도
 const name3 = new Array(); // 16 => 8강 용도
 const name4 = new Array(); // 8강 => 4강 용도
 const name5 = new Array(); // 4강 => 준결승 용도
-const name6 = new Array(); // 준결승 => 결승 용도
 
 
-var nums = new Array(); // 랜덤 순서 저장 배열
+var nums = new Array(); // 파일 이름들을 랜덤한 순서로 넣어줄 때 사용할 배열
 
-var comp = new Array(); // 중복 방지용 배열
+var comp = new Array(); // 랜덤값 중복없이 나타내기 위해 쓸 배열
 
 
-var is32=true; // 32강 끝났는지 체크
-var is16=false; // 16강 끝났는지 체크
+// 32강~결승까지의 단계를 구분해줄 때 사용할 변수들
+var is32=true;
+var is16=false;
 var is8=false;
 var is4=false;
 var is2=false;
 var final=false;
 
+
 window.onload=function(){
-    var left_screen = document.getElementById("left_screen");
-    var right_screen = document.getElementById("right_screen");
+    var left_screen = document.getElementById("left_screen"); // 왼쪽 스크린
+    var right_screen = document.getElementById("right_screen"); // 오른쪽 스크린
 
 
-    // 중복되지 않는 랜덤숫자 32개
+    // 중복되지 않는 랜덤숫자 32개 만들기
+    // (indexOf 이용한 방법과 큰 차이 없음)
     while(comp.length < 32){
         var temp = Math.floor(Math.random()*32);
         if(!comp.includes(temp)){
@@ -49,29 +52,33 @@ window.onload=function(){
         }
     }
     
-    // (랜덤숫자)번째의 이미지를 순서대로 다른 배열에 복사
+
+    /*랜덤 숫자를 인덱스로 사용,
+    name 배열 안의 (?랜덤?)번째 파일 이름을
+    nums 배열 안에 차곡차곡 넣어주길 반복*/
     for(var i=0; i<32; i++){
         nums.push(name[comp[i]]);
     };
 
 
     // 좌측 스크린 세팅
-    left_screen.style.background=path+nums[0];
+    left_screen.style.background=path+nums[0]; // nums에 넣어준 것들 중에 0번째 파일 이름
     left_screen.style.backgroundSize="contain";
     left_screen.style.backgroundRepeat="no-repeat";
     left_screen.style.backgroundPosition="center";
 
     // 우측 스크린 세팅
-    right_screen.style.background=path+nums[1];
+    right_screen.style.background=path+nums[1]; // nums에 넣어준 것들 중에 1번째 파일 이름
     right_screen.style.backgroundSize="contain";
     right_screen.style.backgroundRepeat="no-repeat";
     right_screen.style.backgroundPosition="center";
 
 
-    // 좌우 선택
+    // 좌우 스크린에 클릭 이벤트 넣어주기
     left_screen.addEventListener("click", choice);
     right_screen.addEventListener("click", choice);
     
+    // 제일 처음 상단에 뜨게 될 문구
     document.getElementById("head").innerHTML="멍냥이 월드컵 32강"
 }
 
@@ -82,25 +89,35 @@ a=0; // 왼쪽 사진 출현순서
 b=1; // 오른쪽 사진 출현순서
 
 function choice(){
-    var tb = this.style.background;
 
-    if(name2.length<16 && is32){ // 선택한 사진이 16개가 되기 전까지
+    var tb = this.style.background; // 내가 누른 스크린에 적용된 background 스타일
+
+
+    if(name2.length<16 && is32){ // 선택한 사진이 16개가 되기 전까지의 과정
         for(var i=0; i<=32; i++){
             if(tb.includes(nums[i])){
-                name2.push(nums[i]); // 선택된 사진의 파일명 name2에 저장
-                a=a+2 // 왼쪽사진 출현 순서 + 1
-                b=b+2 // 오른쪽사진 출현 순서 +1
+                name2.push(nums[i]);
+                /*내가 누른 스크린에 적용된 background 스타일과,
+                nums 안에 넣어둔 파일 이름 중 겹치는 부분을 name2라는 곳에 따로 빼둠
+                결과적으로 "이름.jpg" 부분만 따로 빼두는 셈이 됨*/
+
+                a=a+2 // 왼쪽사진 출현 순서 + 2
+                b=b+2 // 오른쪽사진 출현 순서 +2
+                /*왜 +2인가?
+                1번 사진 => 3번 사진 => 5번 사진
+                2번 사진 => 4번 사진 => 6번 사진
+                순으로 진행되어야 봤던 이미지가 또 한 번 뜨지 않게 됨*/
             }
         }
     
         // 새로 바뀐 왼쪽 사진
-        left_screen.style.background=path+nums[a];
+        left_screen.style.background=path+nums[a]; // 선택을 누를때마다 2씩 늘어나서 이미지도 바뀜
         left_screen.style.backgroundSize="contain";
         left_screen.style.backgroundRepeat="no-repeat";
         left_screen.style.backgroundPosition="center";
     
         // 새로 바뀐 오른쪽 사진
-        right_screen.style.background=path+nums[b];
+        right_screen.style.background=path+nums[b]; // 선택을 누를때마다 2씩 늘어나서 이미지도 바뀜
         right_screen.style.backgroundSize="contain";
         right_screen.style.backgroundRepeat="no-repeat";
         right_screen.style.backgroundPosition="center"; 
@@ -112,14 +129,17 @@ function choice(){
         document.getElementById("head").innerHTML="멍냥이 월드컵 16강"
 
         // 출현순서 초기화
+        // (다시 0번 사진과 1번 사진부터 띄워줘야 하기 때문)
         a=0;
         b=1;
 
         // 랜덤숫자 보관소 초기화
+        // 32강에서 뽑은 이름들의 순서를 '다시' 랜덤하게 섞어주기 위해
         comp=[];
 
         
         // 이미지 이름 보관소 초기화
+        // 역시 나 마찬가지로 '다시' 해주기 위해
         nums=[];
 
 
@@ -159,8 +179,8 @@ function choice(){
         for(var i=0; i<nums.length; i++){
             if(tb.includes(nums[i])){
                 name3.push(nums[i]); // 선택된 사진의 파일명 name2에 저장
-                a=a+2 // 왼쪽사진 출현 순서 + 1
-                b=b+2 // 오른쪽사진 출현 순서 +1
+                a=a+2 // 왼쪽사진 출현 순서 + 2
+                b=b+2 // 오른쪽사진 출현 순서 +2
             }
         }
     
@@ -228,8 +248,8 @@ function choice(){
         for(var i=0; i<nums.length; i++){
             if(tb.includes(nums[i])){
                 name4.push(nums[i]); // 선택된 사진의 파일명 name4에 저장
-                a=a+2 // 왼쪽사진 출현 순서 + 1
-                b=b+2 // 오른쪽사진 출현 순서 +1
+                a=a+2 // 왼쪽사진 출현 순서 + 2
+                b=b+2 // 오른쪽사진 출현 순서 + 2
             }
         }
 
@@ -296,8 +316,8 @@ function choice(){
         for(var i=0; i<nums.length; i++){
             if(tb.includes(nums[i])){
                 name5.push(nums[i]); // 선택된 사진의 파일명 name2에 저장
-                a=a+2 // 왼쪽사진 출현 순서 + 1
-                b=b+2 // 오른쪽사진 출현 순서 +1
+                a=a+2 // 왼쪽사진 출현 순서 + 2
+                b=b+2 // 오른쪽사진 출현 순서 + 2
             }
         }
 
@@ -334,14 +354,18 @@ function choice(){
         return;
     }
 
-    if(final){
+    if(final){ // 결승전
+
         for(var i=0; i<nums.length; i++){
             if(tb.includes(nums[i])){
-                var res = nums[i]; // 선택된 사진의 파일명 name2에 저장
+                var res = nums[i]; // 스타일 문구와 파일 이름 사이의 공통 부분만 쏙 빼오기
             }
         }
+
+        // 좌우 선택창의 사진들을 지워줌
         left_screen.style.background='';
         right_screen.style.background='';
+
 
         var fin = document.getElementById("final")
 
@@ -351,6 +375,9 @@ function choice(){
         fin.style.backgroundPosition="center"; 
         fin.style.display="block";
 
+
+        // 게임이 끝났는데 또 선택창이 눌리면 안 되니
+        // 클릭 이벤트 제거
         left_screen.removeEventListener("click", choice);
         right_screen.removeEventListener("click", choice);
     }
