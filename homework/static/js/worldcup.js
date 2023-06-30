@@ -356,6 +356,8 @@ function choice(){
 
     if(final){ // 결승전
 
+        document.getElementById("head").innerHTML="우승"
+
         for(var i=0; i<nums.length; i++){
             if(tb.includes(nums[i])){
                 var res = nums[i]; // 스타일 문구와 파일 이름 사이의 공통 부분만 쏙 빼오기
