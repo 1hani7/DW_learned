@@ -91,8 +91,10 @@ b=1; // 오른쪽 사진 출현순서
 function choice(){
 
     var tb = this.style.background; // 내가 누른 스크린에 적용된 background 스타일
+                                    // 예시 : url("./static/image/pug.jpg") center center / contain  no-repeat
+                                    // 확인 방법 => alert(tb);를 입력해서 내가 누른 이미지(this)의 background style을 띄울 수 있음
 
-
+    alert(tb);
     if(name2.length<16 && is32){ // 선택한 사진이 16개가 되기 전까지의 과정
         for(var i=0; i<=32; i++){
             if(tb.includes(nums[i])){
@@ -101,6 +103,16 @@ function choice(){
                 nums 안에 넣어둔 파일 이름 중 겹치는 부분을 name2라는 곳에 따로 빼둠
                 결과적으로 "이름.jpg" 부분만 따로 빼두는 셈이 됨*/
 
+                /*
+                예시
+                tb = url("./static/image/pug.jpg") center center / contain  no-repeat
+                이 안에, nums의 [i] 번째에 들어있던 이름 "pug.jpg"가 포함되어 있다면,
+                그 nums의 [i]번째 이미지를  name2에 넣어두어라
+
+                => 결과적으로 "pug.jpg"만 쏙 빼서 name2에 넣어줄 수 있음!
+                */
+
+                
                 a=a+2 // 왼쪽사진 출현 순서 + 2
                 b=b+2 // 오른쪽사진 출현 순서 +2
                 /*왜 +2인가?
