@@ -4,10 +4,9 @@
 }
 
 #subway{
+    margin:100px auto;
     width:1000px;
     height:500px;
-    display: flex;
-    flex-wrap: wrap;
 }
 
 .cells{
@@ -16,10 +15,21 @@
     border-top:10px solid rgb(255, 68, 68);
     font-weight:900;
     text-align: center;
-
-    
 }
 
-.cells:nth-child(n+9):nth-child(-n+16){
-    flex-direction: column-reverse;   
+.forward, .reverse{
+    display:flex;
+}
+
+.reverse{
+    display:flex;
+    flex-flow: row-reverse;
+}
+
+.forward cells:last-child{
+    border-right:10px solid rgb(255, 68, 68);
+}
+
+.reverse cells:last-child{
+
 }
