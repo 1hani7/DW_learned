@@ -84,7 +84,6 @@ window.onload=function(){
 
 
 
-
 a=0; // 왼쪽 사진 출현순서
 b=1; // 오른쪽 사진 출현순서
 
@@ -94,7 +93,6 @@ function choice(){
                                     // 예시 : url("./static/image/pug.jpg") center center / contain  no-repeat
                                     // 확인 방법 => alert(tb);를 입력해서 내가 누른 이미지(this)의 background style을 띄울 수 있음
 
-    alert(tb);
     if(name2.length<16 && is32){ // 선택한 사진이 16개가 되기 전까지의 과정
         for(var i=0; i<=32; i++){
             if(tb.includes(nums[i])){

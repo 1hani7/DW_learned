@@ -10,7 +10,7 @@
     height:1080px;
     display:grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows:100px 800px 180px;
+    grid-template-rows:100px 800px;
 }
 
 .middle{
