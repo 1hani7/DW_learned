@@ -98,7 +98,7 @@
 
             var nowYear = new Date();
             nowYear = nowYear.getFullYear();
-            if( nowYear - $("#userYear").val() >= 80){
+            if( nowYear - $("#userYear").val() >= 80  &&  $("#userYear").val()!=""){
                 alert("신중년 우선선발 대상자 입니다.");
                 // 만약 (현재연도 - #userYear.value)가 80 이상이라면
                     // alert("신중년 우선선발 대상자입니다.")
@@ -140,10 +140,6 @@
             }
 
         });
-
-
-
-
     </script>
 
 </body>
