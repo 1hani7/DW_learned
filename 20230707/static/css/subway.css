@@ -1,0 +1,126 @@
+*{
+    padding : 0;
+    margin : 0;
+    box-sizing: border-box;
+}
+
+#map{
+    width:1000px;
+    margin:0 auto;
+    display:flex;
+    flex-wrap: wrap;
+    row-gap:20px;
+}
+
+.station{
+    position:relative;
+    width:100px;
+    text-align: center;
+}
+
+.mark{
+    position: relative;
+}
+
+.rail{
+    position: absolute;
+    width:100%;
+    height:5px;
+    top:9px;
+    background:brown;
+    z-index: -1;
+}
+
+.fa-regular{
+    background:white;
+}
+
+.w95{
+    width:95%;
+}
+
+.w95-top{
+    border-top-right-radius: 33px;
+}
+
+.w95-bottom{
+    border-bottom-right-radius: 33px;
+}
+
+.w95-top-right{
+    left:5%;
+    border-top-left-radius: 33px;
+}
+
+.w95-bottom-right{
+    left:5%;
+    border-bottom-left-radius: 33px;
+}
+
+.rad{
+    width:100px;
+    height:88px;
+    position:absolute;
+    top:30px;
+    border:5px solid brown;
+    border-radius: 11px;
+}
+
+.left{
+    border-style: none solid none none;
+}
+
+.right{
+    border-style:none none none solid;
+}
+
+.train{
+    color:white;
+}
+
+.t-red{ /*1번 차량*/
+    color:rgb(194, 18, 18);
+}
+
+.t-blue{ /*2번 차량*/
+    color:rgb(30, 30, 231);
+}
+
+.t-purple{ /*3번 차량*/
+    color:rgb(134, 36, 134);
+}
+
+.t-coral{ /*4번 차량*/
+    color:rgb(255, 192, 192);
+}
+
+#modal{
+    display:none;
+    position:fixed;
+    width:100%;
+    top:0;
+    height:100vh;
+}
+
+#modal_bg{
+    position:absolute;
+    top:0;
+    width:100%;
+    height:100%;
+    background:black;
+    opacity: 0.4;
+}
+
+#bg{
+    width:300px;
+    height:150px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    position:relative;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    background:#fff;
+    border-radius: 10px;;
+}
