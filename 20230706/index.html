@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>네이버 회원가입</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="soo" content="shin"/>
+    <meta name="keywords" content="네이버, 회원가입, 계정"/>
+    <meta name="description" content="네이버 회원가입 페이지"/>
+    <!--검색 엔진이 meta 데이터를 가져감-->
+    <meta property="og:image" content="http://naver.com/static/image/og.jpg"/>
+    <meta property="og:title" content="네이버 회원가입"/>
+    <meta property="og:url" content="http://naver.com/"/>
+    <meta property="og:description" content="네이버 회원가입 페이지"/>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+<body>
+    <!--form : 양식, 서식 => 어딘가로 정보를 전달하게 될 것이라면 사용-->
+    <form id="joinForm" action="join.jsp" method="get" enctype="multipart/form-data">
+        <!--get : 주소창에 데이터가 표시됨 / post : 표시되지 않아 보안성이 나음-->
+        <!--enctype="multipart/form-data" : 파일 첨부 (post와 사용 추천)-->
+        성명 : <input id="userName" type="text" name="userName" placeholder="아무개"/><br />
+        생년월일 :
+        <select id="userYear" name="userYear">
+            <option value="">생년</option>
+        </select>년
+        <select id="userMonth" name="userMonth">
+            <option value="">월</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+            <option>10</option>
+            <option>11</option>
+            <option>12</option>
+        </select>월
+        <select id="userDate" name="userDate">
+            <option value="">일</option>
+        </select>일
+
+        <script>
+            for(var i=1; i<=31; i++){
+                document.getElementById("userDate").innerHTML+="<option>"+i+"</option>";
+            }
+
+            // 지금 시간을 캡처하자.
+            var now = new Date();
+
+            // 캡처한 시간에서 연도를 뽑아 year라고 부르자
+            var year = now.getFullYear();
+            // 100번 반복하자. 이때 i라는 숫자는 처음에 0이었다가
+            // 반복할때마다 1씩 늘어나다가 100까지 커졌을때 멈출 것이다.
+
+            // 현재 연도 - i를 반복
+
+            for(var i=0; i<100; i++){
+                document.getElementById("userYear").innerHTML+="<option>"+(year-i)+"</option>";
+            }
+        </script>
+
+        <br />
+        성별 : 
+        <label>
+            <input type="radio" name="gender" value="1" />여자
+        </label>
+        <label>
+            <input type="radio" name="gender" value="0" />남자
+        </label>
+        <br>
+        <button id="sign" type="button">가입</button>
+    </form>
+
+    <script>
+
+        // 유효성 검사
+
+        // id가 sign인 녀석을 클릭했을 때
+        $("#sign").click(function(){
+            // 다음과 같은 일이 벌어질 것이다.
+            var nameChk, birthChk, genderChk = false;
+            // 1. 이름체크 통과여부 nameChk. 처음에는 불통으로 간주
+            // 2. 생년월일 체크 통과여부 birthChk. 처음에는 불통으로 간주
+            // 3. 성별체크 통과여부 genderChk. 처음에는 불통으로 간주
+
+            if( $("#userName").val().length > 0 ){
+                nameChk = true;
+                // 만약 아이디가 userName이라는 칸의 값의 글자 수가 0초과라면
+                    // nameChk의 값을 true로 바꾸기 (통과한 것으로 인정)
+            }else{
+                nameChk = false;
+                // 그게 아니라면
+                    // nameChk의 값을 false로 바꾸기 (통과하지 못한 것으로 다시 간주)
+            }
+
+            var nowYear = new Date();
+            nowYear = nowYear.getFullYear();
+            if( nowYear - $("#userYear").val() >= 80  &&  $("#userYear").val()!=""){
+                alert("신중년 우선선발 대상자 입니다.");
+                // 만약 (현재연도 - #userYear.value)가 80 이상이라면
+                    // alert("신중년 우선선발 대상자입니다.")
+            }
+            
+            if( $("#userYear").val()=="" || $("#userMonth").val()=="" || $("#userDate").val()==""){
+                birthChk = false;
+                // 만약 #userYear의 값이 비어있거나 #userMonth의 값이 비어있거나
+                //      #userDate의 값이 비어있다면
+                    // birthChk의 값을 false로 바꾸기 (불통으로 간주)
+            }else{
+                birthChk = true;
+                // 그게 아니라면
+                    // birthChk의 값을 true로 바꾸기 (통과로 간주)
+            }
+            
+            
+            if( $("[name='gender']:checked").length == 0 ){
+                genderChk = false;
+                // 만약 name의 값이 gender이면서 체크된 녀석들의 숫자가 0이면
+                    // genderChk의 값을 false로 바꾸기 (통과하지 못한 걸로 간주)
+                }else{
+                // 그게 아니라면
+                    // genderChk의 값을 true로 바꾸기 (통과한 것으로 간주)
+                genderChk = true;
+            }
+            
+            
+            // 만약 nameChk가 참이고 동시에
+            //  birthChk가 참이고 동시에
+            //  genderChk가 참이라면
+                // #joinForm을 submit
+            // 그게 아니라면
+                // 경고창 : "입력 요소를 모두 채우시게"
+            if( nameChk && birthChk && genderChk ){
+                $("#joinForm").submit();
+            }else{
+                alert("입력 요소들을 전부 채워주세요.")
+            }
+
+        });
+    </script>
+
+</body>
+</html>
