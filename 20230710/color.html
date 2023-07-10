@@ -16,46 +16,63 @@
             border: 1px solid black;
             width:100px;
             height:50px;
+            cursor:pointer;
         }
     </style>
     <script>
         var color = '';
 
         window.onload=function(){
+            // 일단 div 8개 만들기 (클래스명은 color)
+            for(var i=0; i<8; i++){
+                document.getElementById("wrap").innerHTML+="<div class='color'></div>"
+            }
+
+
+            // 위에서 방금 만든 div들 가져오기
             var bt = document.getElementsByClassName("color");
 
             for(var i=0; i<bt.length; i++){
+                // 위에서 방금 만든 div들에게 버튼 기능 만들어줌
                 bt[i].addEventListener("click",painting);
-                random_color()
-                bt[i].style.background=color;
+                random_color(); // 랜덤컬러 만드는 함수 실행 (아래 참조)
+                bt[i].style.background=color; // i번째 div의 background를 칠함
+
+                // 이걸 div의 숫자만큼(8번) 반복해서 전부 랜덤색으로 칠해줌
             }
         }
 
+
+        // 랜덤한 rgb값과 그에 따른 색깔을 만들어 color라는 전역변수에 저장
+        // - 하는 기능을 가진 함수
         function random_color(){
-            var r = Math.floor(Math.random()*225)+1;
-            var g = Math.floor(Math.random()*225)+1;
-            var b = Math.floor(Math.random()*225)+1;
+            var r = Math.floor(Math.random()*225);
+            var g = Math.floor(Math.random()*225);
+            var b = Math.floor(Math.random()*225);
+            //왜 하필 225인가 : rgb는 각각 0~225의 수치 세 개를 섞어서 색상을 만들기 때문
+            // *참고로 r은 red, g는 green, b는 blue라는 뜻임
+
             color = `rgb(${r},${g},${b})`
+            // 예): rgb(100, 105, 220) 이런 식으로 저장되게 됨
         }
 
+
+        // 랜덤색상 버튼을 누르면 실행됨
         function painting(){
+            // 아까 만든 그 div들 가져오기
             var bt = document.getElementsByClassName("color");
+            // 부모 창에 출력된 테이블의 id를 가져오기
             var table = opener.document.getElementById("tbl");
             
+            // 이 함수를 실행시킨 녀석의 background 컬러를
+            // 부모 창에 출력됐던 table에게도 적용(저장) 시킴
             table.style.background = this.style.background;
         }
     </script>
 </head>
 <body>
     <div id="wrap">
-        <div class="color"></div>
-        <div class="color"></div>
-        <div class="color"></div>
-        <div class="color"></div>
-        <div class="color"></div>
-        <div class="color"></div>
-        <div class="color"></div>
-        <div class="color"></div>
+        
     </div>
 </body>
 </html>
