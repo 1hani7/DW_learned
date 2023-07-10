@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function send(){
+            var result = opener.document.getElementById("myTable");
+            var row = document.getElementById("row").value;
+            var col = document.getElementById("col").value;
+
+            var out="";
+
+            out+=`<table id=tbl>`;
+            for(var line=0; line<row; line++){
+                out+=`<tr>`
+                for(var cell=0; cell<col; cell++){
+                    out+=`<td></td>`
+                }
+                out+=`</tr>`
+            }
+            out+=`</table>`
+
+            result.innerHTML=out;
+        }
+    </script>
+</head>
+<body>
+
+    <div class="input">
+        줄 : <input type="number" id="row" /><br>
+        칸 : <input type="number" id="col" />
+    </div>
+    <button onclick="send()">만들기</button>
+
+</body>
+</html>

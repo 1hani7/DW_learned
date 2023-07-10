@@ -1,0 +1,35 @@
+<!--child.html-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="wrap">
+        <div id="title">
+            <h2>끄아아아아아앙</h2>
+        </div>
+        <div id="message"></div><br>
+        <div class="input">
+            <input type="text" id="name">
+        </div>
+        <div>
+            <button onclick="getParent()">부모값 가져오기</button>
+        </div>
+    </div>
+
+</body>
+</html>
+
+<script>
+
+function getParent(){
+    // "새 창을 열어준 대상"이라는 의미에서 opener(부모)
+    var animal = opener.document.getElementById("animal").value;
+    document.getElementById("name").value=animal;
+}
+
+</script>

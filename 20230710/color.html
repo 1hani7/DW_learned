@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #wrap{
+            display:grid;
+            width:450px;
+            height:130px;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+        }
+        .color{
+            border: 1px solid black;
+            width:100px;
+            height:50px;
+        }
+    </style>
+    <script>
+        var color = '';
+
+        window.onload=function(){
+            var bt = document.getElementsByClassName("color");
+
+            for(var i=0; i<bt.length; i++){
+                bt[i].addEventListener("click",painting);
+                random_color()
+                bt[i].style.background=color;
+            }
+        }
+
+        function random_color(){
+            var r = Math.floor(Math.random()*225)+1;
+            var g = Math.floor(Math.random()*225)+1;
+            var b = Math.floor(Math.random()*225)+1;
+            color = `rgb(${r},${g},${b})`
+        }
+
+        function painting(){
+            var bt = document.getElementsByClassName("color");
+            var table = opener.document.getElementById("tbl");
+            
+            table.style.background = this.style.background;
+        }
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <div class="color"></div>
+        <div class="color"></div>
+        <div class="color"></div>
+        <div class="color"></div>
+        <div class="color"></div>
+        <div class="color"></div>
+        <div class="color"></div>
+        <div class="color"></div>
+    </div>
+</body>
+</html>

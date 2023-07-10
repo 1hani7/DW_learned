@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./static/js/script_object.js"></script>
+    <script src="./static/js/object.js"></script>
+    <link rel="stylesheet" href="./static/css/object.css">
+</head>
+<body>
+    
+    <!--
+        DOM 구조
+        document object model (문서 객체 모델)
+        - html의 모든 태그를 스크립트에서 object로 다루기 위한 구조
+        - html 태그는 - element node, 요소, object
+        - html 태그 안의 text는 - text node
+        예) getElementById, getElementsByClassName, querySelector 같은 거
+
+        *자바스크립트는 HTML을 tree(나무) 구조로 이해함
+        *HTML 안의 태그를 가져오려면 뿌리인 document부터 타고 내려감
+        *그걸 통해서 태그를 가져오는 방식이 바로 DOM tree임
+
+        property - html 태그에 직접 부여할 수 있는 속성 (class, id, width, height,...)
+        method - html 태그를 제어하기 위한 함수
+        style - html 태그에 적용된 css에 접근
+        event listener - html 태그의 이벤트 (onclick, onchange, onmouseover)
+
+        자바스크립트 객체
+        BOM (browser object model)
+    
+        window 객체
+            - 브라우저 전체를 window 객체라고 한다.
+            - window라는 용어는 탐색창, 그린판, 메모장 한글, 엑셀 등의
+            프로그램이 실행되는 창 그 자체를 의미한다.
+            - 자바스크립트가 다룰 수있는 window 객체가 바로 브라우저
+
+        window.close() - 현재 브라우저 닫기
+        window.open() - 새 창에서 열기
+            새 창은 자식 취급이므로 부모로부터 제어 받을 수 있음
+            var a = window.open();
+            이렇게 함수 결과를 변수에 저장해두면 제어가 가능해짐
+            ㄴ a.document.getElementById("bb");
+            =>자식 페이지의 id="bb"인 태그를 부모가 가져옴
+        
+            자식 입장에서 부모를 지정하려면 opener(열어준 대상)로 표현함
+            ㄴ opener.document.getElementsByClassName("ddd");
+            =>부모 페이지에 class가 ddd인 태그를 자식이 가져오는 것
+    -->
+
+    <button onclick="exit()">브라우저 닫기</button>
+    <button onclick="winopen()">새창 열기</button>
+    <br>
+
+    <button onclick="child_write()">자식창에 넣기</button>
+    <button onclick="child_getName()">이름 가져오기</button>
+    <button onclick="child_close()">자식창 닫기</button>
+    <br>
+
+    <div id="name"></div>
+
+    <div id="">
+        <input type="text" id="animal">
+    </div>
+
+</body>
+</html>
