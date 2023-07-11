@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        #wrap{
+        #colorList{
             display:grid;
             width:450px;
             height:130px;
@@ -13,7 +13,6 @@
             grid-template-rows: repeat(2, 1fr);
         }
         .color{
-            border: 1px solid black;
             width:100px;
             height:50px;
             cursor:pointer;
@@ -25,13 +24,13 @@
         window.onload=function(){
             // 일단 div 8개 만들기 (클래스명은 color)
             for(var i=0; i<8; i++){
-                document.getElementById("wrap").innerHTML+="<div class='color'></div>"
+                document.getElementById("colorList").innerHTML+="<div class='color'></div>"
             }
 
 
             // 위에서 방금 만든 div들 가져오기
             var bt = document.getElementsByClassName("color");
-
+            
             for(var i=0; i<bt.length; i++){
                 // 위에서 방금 만든 div들에게 버튼 기능 만들어줌
                 bt[i].addEventListener("click",painting);
@@ -46,10 +45,10 @@
         // 랜덤한 rgb값과 그에 따른 색깔을 만들어 color라는 전역변수에 저장
         // - 하는 기능을 가진 함수
         function random_color(){
-            var r = Math.floor(Math.random()*225);
-            var g = Math.floor(Math.random()*225);
-            var b = Math.floor(Math.random()*225);
-            //왜 하필 225인가 : rgb는 각각 0~225의 수치 세 개를 섞어서 색상을 만들기 때문
+            var r = Math.floor(Math.random()*256);
+            var g = Math.floor(Math.random()*256);
+            var b = Math.floor(Math.random()*256);
+            //왜 하필 256인가 : rgb는 각각 0~256의 수치 세 개를 섞어서 색상을 만들기 때문
             // *참고로 r은 red, g는 green, b는 blue라는 뜻임
 
             color = `rgb(${r},${g},${b})`
@@ -59,8 +58,6 @@
 
         // 랜덤색상 버튼을 누르면 실행됨
         function painting(){
-            // 아까 만든 그 div들 가져오기
-            var bt = document.getElementsByClassName("color");
             // 부모 창에 출력된 테이블의 id를 가져오기
             var table = opener.document.getElementById("tbl");
             
@@ -71,7 +68,7 @@
     </script>
 </head>
 <body>
-    <div id="wrap">
+    <div id="colorList">
         
     </div>
 </body>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+    <style>
+        *{margin:0; padding:0; box-sizing: border-box;}
+        #wrap{
+            margin:40px auto;
+            width:900px;
+            height:300px;
+        }
+        #table{
+            width:100%;
+            height:100%;
+            display:flex;
+            justify-content: center;
+            font-size:17px;
+            border-collapse: collapse;
+        }
+        #table tr td:first-child{
+            text-align: right;
+            border-right:1px solid black;
+            padding:20px;
+        }
+        input{
+            margin-left:20px;
+            height:30px;
+        }
+        #join_bt{
+            text-align: center;
+            margin-top:40px;
+
+        }
+        #join_bt a{
+            height:30px;
+            width:100px;
+            line-height: 30px;
+            padding:10px;
+            border-radius: 3px;
+            font-size:15px;
+            font-weight: 900;
+            text-align:center;
+            text-decoration: none;
+        }
+        #join_bt a:first-child{
+            color:white;
+            background:brown; 
+        }
+        #join_bt a:nth-child(2){
+            color:#fff;
+            background:#222845; 
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <!--form : 다른 페이지에 데이터를 전달해줄 수 있는 유일한 태그
+                   전달할 데이터들은 name을 갖고 있어야 전달할 수 있음
+                   => 때문에 input 태그와 반드시 세트로 따라가야 함
+            * 전달된 데이터들은 '파라미터 값'이라고 부름-->
+        <form name="joinf" id="joinf" method="get" action="join_save.html">
+            <table id="table">
+                <tr>
+                    <td>아이디</td>
+                    <td><input type="text" name="id" id="id"></td>
+                </tr>
+                <tr>
+                    <td>비밀번호</td>
+                    <td><input type="text" name="pw" id="pw"></td>
+                </tr>
+                <tr>
+                    <td>이메일</td>
+                    <td><input type="text" name="email" id="email"></td>
+                </tr>
+                <tr>
+                    <td>연락처</td>
+                    <td><input type="text" name="tel" id="tel"></td>
+                </tr>
+                <tr>
+                    <td>생년월일</td>
+                    <td><input type="date" name="birth" id="birth"></td>
+                </tr>
+            </table>
+            <div id="join_bt">
+                <a href="javascript:cancel();">취소</a>
+                <a href="javascript:check();">회원가입</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
+
+<script>
+    function check(){
+        var fm = document.joinf; // form태그의 name
+        if(fm.id.value==""){
+            alert("아이디를 입력하세요.")
+            fm.id.focus();
+        }else if(fm.pw.value==""){
+            alert("비밀번호를 입력하세요.")
+            fm.pw.focus();
+        }else if(fm.email.value==""){
+            alert("이메일을 입력하세요.")
+            fm.email.focus();
+        }else if(fm.tel.value==""){
+            alert("전화번호를 입력하세요.")
+            fm.tel.focus();
+        }else if(fm.birth.value==""){
+            alert("생년월일을 입력하세요.")
+            fm.birth.focus();
+        }else{
+            fm.submit();
+            // ㄴ form 태그의 action을 동작시켜라
+        }
+    }
+
+    function cancel(){
+        location.href="script_object3.html";
+        // ㄴ location은 주소를 담당하는 객체
+        // ㄴ a 태그가 이걸로 동작함
+        // * 단, 데이터 전달은 못함
+    }
+</script>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script>
+
+const id_list=["aa","god","sky","note","skyblue","abcd","ksh","s3","gold1234"];
+
+var url = location.href; // 브라우저 주소값 (파라미터 값이 포함되어 있음)
+var params = url.split("?"); // ? 기준으로 자르기
+
+if(params.length==2){
+    params=params[1];
+    id = getParam("id", params);
+    password = getParam("pw", params);
+
+    if(id_list.indexOf(id) != -1){
+        alert("등록된 아이디입니다.");
+        history.back(); // history의 이전 페이지로 (이전 페이지 버튼과 같음)
+                        // back(-2)는 이전의 이전 페이지
+        // location.href="join.html";
+        // location.reload();는 새로고침
+    }
+    
+    document.write(`아이디:${id} 비밀번호:${password} 이메일:${email}`);
+}
+
+function getParam(name, parameter){
+    var temp =  parameter.split("&");
+    for(i=0; i<temp.length; i++){
+        if(temp[i].split("=")[0]===name)
+            return temp[i].split("=")[1];
+    }
+}
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>
