@@ -170,6 +170,15 @@ a:visited{ color:transparent; }
     color:white;
 }
 
+.main_menu:hover{
+    background:white;
+    color:#999;
+}
+
+.main_menu:hover .toplink a{
+    color:#999;
+}
+
 .main_menu .toplink{
     position:relative;
 }
@@ -208,4 +217,9 @@ a:visited{ color:transparent; }
 
 #banner{
     
+}
+
+.slide_item img{
+    width:292px;
+    height:192px;
 }
