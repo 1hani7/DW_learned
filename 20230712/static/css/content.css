@@ -104,6 +104,26 @@
     color:#fff;
 }
 
+#slider .direction-nav .prev:hover, #slider .direction-nav .next:hover{
+    background:#e68a00;
+    cursor:pointer;
+}
+
+#slider .viewport .eventslide{
+    /* position:relative;
+    left:0; */
+    transform:translate3d(0px, 0px, 0px);
+    transition: transform 1s ease; /*기본 위치가 정해져야 발동함 예):left:0; 같은 기준 위치*/ 
+}
+
+/*
+    슬라이드 하나씩
+    부모 태그에 position 준 다음, 버튼 누를 때마다 left나 right값 조정
+
+    한 번에 이동
+    부모 태그에 버튼 누를 때마다 transform:translate3d(-936px,0px,0px);
+*/
+
 .homebottom{
 
 }

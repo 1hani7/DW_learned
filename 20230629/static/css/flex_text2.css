@@ -1,0 +1,147 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+#nav{
+    width:100%;
+    background: rgb(37, 64, 105);
+    height:30px;
+    position:sticky;
+    top:0;
+}
+
+#container{
+    margin:0 auto;
+    width:960px;
+}
+
+h1{
+    font-size:20px;
+}
+
+#header{
+    display:flex;
+    font-size:20px;
+    align-self: center;
+    justify-content: space-between;
+    font-weight:100;
+    align-items: center;
+    height:140px;
+}
+
+#header i{
+    font-size:40px;
+}
+
+#section1{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    height:100px;
+}
+
+#category ul{
+    display:flex;
+    list-style-type: none;
+    justify-content: space-around;
+    width:450px;
+}
+
+#category ul li:nth-child(1){
+    text-decoration: underline;
+    text-underline-offset: 5px;
+}
+
+#section2{
+    margin-top:10px;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height:680px;
+}
+
+#section2 div{
+    border: 1px solid black;
+    width:300px;
+    height:300px;
+}
+
+#section3{
+    height:400px;
+    text-align: center;
+    display:flex;
+    flex-wrap: wrap;
+}
+
+#Clients{
+    align-self: end;
+    width:100%;
+    padding-bottom: 30px;
+}
+
+.logos{
+    width:16%;
+    font-size:40px;
+    color:rgb(197, 197, 197);
+}
+
+#section4{
+    display:flex;
+    height:550px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#section4 #My_Services{
+    width:100%;
+    display:flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: flex-end;
+}
+
+#section4 .explain{
+    margin-top:10px;
+    width:22%;
+}
+
+#section5{
+    height:280px;
+    background: rgb(223, 223, 223);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#section5 .portrait{
+    background: gray;
+    width:80px;
+    height:80px;
+    border-radius: 100%;
+    margin-bottom: 20px;
+}
+
+#footer{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    height:200px;
+}
+
+#footer .sns{
+    width:150px;
+    display:flex;
+    justify-content: space-between;
+}
+
+#footer .sns div{
+    background:rgb(245, 245, 245);
+    width:40px;
+    height:40px;
+    border-radius: 50%;
+    text-align: center;
+    line-height:40px;
+}
