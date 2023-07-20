@@ -5,29 +5,485 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keyword" content="향수, 향수 추천, 새로운 향수 브랜드">
     <title>UNICORN</title>
+
+    
+    <!-- 부트스트랩 아이콘 CDN-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    
+    <!-- 폰트CDN 나눔명조, Monsieur La Doulaise(필기체), Noto Sans KR-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Monsieur+La+Doulaise&family=Nanum+Myeongjo:wght@700&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- css -->
+    <link rel="stylesheet" href="./static/css/index.css">
+    <link rel="stylesheet" href="./static/css/banner_slide.css">
+    
+    <!-- js -->
+    <script src="./static/js/banner_slide.js"></script>
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    
 </head>
 <body>
+    <!-- top버튼 -->
+    <div id="top_button">
+        <a href="#"><i class="bi bi-chevron-bar-up"></i></a>
+    </div>
+
+    <!-- 네비게이터 -->
     <nav id="navigator">
         <div id="logo">
-            <img src="" alt="LOGO">
+            <img src="./static/image/top_logo.png" alt="">
         </div>
         <ul id="nav_menu">
-            <li class="nav_item">INTRODUCE</li>
-            <li class="nav_item">ABOUT US</li>
-            <li class="nav_item">PRODUCTS</li>
-            <li class="nav_item">GALLERY</li>
-            <li class="nav_item">MAP</li>
-            <li class="nav_item">CUSTOM</li>
+            <li class="nav_item"><a href="">INTRODUCE</a></li>
+            <li class="nav_item"><a href="">ABOUT US</a></li>
+            <li class="nav_item"><a href="">PRODUCTS</a></li>
+            <li class="nav_item"><a href="">GALLERY</a></li>
+            <li class="nav_item"><a href="">MAP</a></li>
+            <li class="nav_item"><a href="">CUSTOM</a></li>
         </ul>
     </nav>
     <div id="wrap">
-        <section id="top_banner">
-            <img src="" alt="">
-            <div id="scroll_ani">
+
+        <!-- 배너 슬라이드 -->
+        <div class="slider">
+            <div class="slide_viewer">
+              <div class="slide_group">
+                <div class="slide">
+                </div>
+                <div class="slide">
+                </div>
+                <div class="slide">
+                </div>
+                <div class="slide">
+                </div>
+              </div>
+            </div>
+          </div><!-- End // .slider -->
+          
+          <div class="slide_buttons">
+          </div>
+          <div class="directional_nav">
+            <div class="previous_btn" title="Previous">
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="65px" height="65px" viewBox="-11 -11.5 65 66">
+                <g>
+                  <g>
+                    <path fill="#474544" d="M-10.5,22.118C-10.5,4.132,4.133-10.5,22.118-10.5S54.736,4.132,54.736,22.118
+                      c0,17.985-14.633,32.618-32.618,32.618S-10.5,40.103-10.5,22.118z M-8.288,22.118c0,16.766,13.639,30.406,30.406,30.406 c16.765,0,30.405-13.641,30.405-30.406c0-16.766-13.641-30.406-30.405-30.406C5.35-8.288-8.288,5.352-8.288,22.118z"/>
+                    <path fill="#474544" d="M25.43,33.243L14.628,22.429c-0.433-0.432-0.433-1.132,0-1.564L25.43,10.051c0.432-0.432,1.132-0.432,1.563,0	c0.431,0.431,0.431,1.132,0,1.564L16.972,21.647l10.021,10.035c0.432,0.433,0.432,1.134,0,1.564	c-0.215,0.218-0.498,0.323-0.78,0.323C25.929,33.569,25.646,33.464,25.43,33.243z"/>
+                  </g>
+                </g>
+              </svg>
+            </div>
+            <div class="next_btn" title="Next">
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="65px" height="65px" viewBox="-11 -11.5 65 66">
+                <g>
+                  <g>
+                    <path fill="#474544" d="M22.118,54.736C4.132,54.736-10.5,40.103-10.5,22.118C-10.5,4.132,4.132-10.5,22.118-10.5	c17.985,0,32.618,14.632,32.618,32.618C54.736,40.103,40.103,54.736,22.118,54.736z M22.118-8.288	c-16.765,0-30.406,13.64-30.406,30.406c0,16.766,13.641,30.406,30.406,30.406c16.768,0,30.406-13.641,30.406-30.406 C52.524,5.352,38.885-8.288,22.118-8.288z"/>
+                    <path fill="#474544" d="M18.022,33.569c 0.282,0-0.566-0.105-0.781-0.323c-0.432-0.431-0.432-1.132,0-1.564l10.022-10.035 			L17.241,11.615c 0.431-0.432-0.431-1.133,0-1.564c0.432-0.432,1.132-0.432,1.564,0l10.803,10.814c0.433,0.432,0.433,1.132,0,1.564 L18.805,33.243C18.59,33.464,18.306,33.569,18.022,33.569z"/>
+                  </g>
+                </g>
+              </svg>
+            </div>
+            <div id="scroll_down">
+                <img src="./static/image/scroll_pointer.png" alt="">
+            </div>
+          </div><!-- End // .directional_nav -->
+          
+
+        <!-- 뒷배경에 하얀 장미 있는 인트로 -->
+        <section id="pre_intro"></section>
+        <div id="slogun">
+            <div class="sloguns">
+                <p>Die schönsten Momente des Alltags</p>
+                <p><span>일상</span>에서 가장 빛나는 <span>순간</span></p>
+            </div>
+            <div class="sloguns">
+                <p>Mit einem Duft und Eleganz, die Sie am meisten schätzen</p>
+                <p>가장 소중한 <span>당신</span>을 향기롭고 우아하게</p>
+            </div>
+            <div id="s_logo">
+                <img src="./static/image/logo_vertical.png" alt="logo">
+            </div>
+        </div>
+
+
+        <div id="background_image">
+        <!-- 흐린뒷배경     -->
+            <!-- 회사소개 첫부분 -->
+            <section id="introduce">
+                <div class="title_box">
+                    <h1 class="title">INTRODUCE.</h1>
+                    <div class="title_line"></div>
+                </div>
+                <div id="introduce_box">
+                    <div id="introduce_description_box">
+                        <img src="./static/image/logo_black.png" alt="LOGO">
+                        <div class="description_line"></div>
+                        <p class="description">
+                            UNICORN.은 향수 전문 제조 브랜드로,<br>
+                            1997년부터 향수 제조에 집중하고 있으며<br>
+                            현재 약 <b>250여 개 이상의 정식 가맹점을 통하여<br>
+                            활발한 사업 확장을 하고 있습니다.</b>
+                        </p>
+                        <p class="description">
+                            각국에서 엄중한 심사를 통해 선출한<br>
+                            최고의 조향사들을 통해 제조된 본 향수들은<br>
+                            단순한 사치품으로서의 가치를 넘어,<br>
+                            <b>고객의 품격</b>을 높이고 <b>마음을 치유</b>할 수 있도록<br>
+                            최선의 노력을 아끼지 않고 있습니다.
+                        </p>
+                        <p class="description">
+                            향을 찾아드리고 전달하는 모든 과정 속에서<br>
+                            ‘제품구매’ 그 이상의 경험을 느끼실 수 있도록,<br>
+                            UNICORN.이 고객님만을 위한 향수 전문가가<br>
+                            되어드리겠습니다.
+                        </p>
+                    </div>
+                    <div id="introduce_image">
+                        <img src="./static/image/intro_image.png" alt="">
+                    </div>
+                </div>
+            </section>
+    
+            <!-- ABOUT US 부분 -->
+            <section id="about_us">
+                <div class="title_box">
+                    <h1 class="title">ABOUT US.</h1>
+                    <div class="title_line"></div>
+                </div>
+                <div id="first_box">
+                    <img src="./static/image/about_us1.png" alt="">
+                    <div class="desc">
+                        <h3 class="about_title">AMROMA.</h3>
+                        <div class="hr"></div>
+                        <p>
+                            UNICORN은 강렬하고 퇴폐적인 기존 향수의 이미지에<br>
+                            벗어나 환상 속을 유영하듯 은은하고 고급스러운 아로마를
+                            추구합니다.
+                        </p>
+                    </div>
+                </div>
+                <div id="second_box">
+                   <div class="desc">
+                        <h3 class="about_title">COLOR.</h3>
+                        <div class="hr"></div>
+                        <p>
+                            UNICORN.의 핑크는 은은하고 과하지 않은,<br>
+                            순수하고 부드러운 향을 상징합니다.<br>
+                            <br>
+                            그러나 여린 것만으로는 돋보이기 힘듭니다.<br>
+                            강렬한 블랙이 당신을 더욱 완성시킬 것입니다.
+                        </p>
+                   </div>
+                    <img src="./static/image/about_us2.png" alt="">
+                </div>
+                <div id="third_box">
+                    <img src="./static/image/about_us3.png" alt="">                
+                    <div class="desc">
+                        <h3 class="about_title">FOR YOU.</h3>
+                        <div class="hr"></div>
+                        <p>
+                            갓 성인이 된 여성의 곁을 은은하게 맴도는 향기는<br>
+                            당신을 마치 숲 속의 한 마리 유니콘과 같이<br>
+                            신비롭고 우아하게 장식할 것입니다.
+                        </p>
+                    </div>
+                </div>
+            </section>
+    
+    
+            <!-- 커스텀 서비스 안내 부분 -->
+            <section id="service_box">
+                <div>
+                    <div id="service_box_top">
+                        <h2>CUSTOM SERVICE.</h2>
+                        <div><a href="">상담처 바로가기</a></div>
+                    </div>
+                    <div class="service_line"></div>
+                    <h3>다채로운 향기 컬러로 팔레트를 열겠습니다.</h3>
+                    <p>
+                        선택한 주인이 누구냐에 따라 향의 컬러는 뚜렷합니다.<br>
+                        자신만의 향기를 잘 선택할 수 있도록 맞춤 컨설팅으로 시작하세요.<br>
+                        UNICORN.의 팔레트를 여는 순간, 당신의 향기 여정이 시작됩니다.<br>
+                        <br>
+                        특별하게 엄선된 조향사들이 여러분을 기다리고 있습니다.
+                    </p>
+                </div>
+            </section>
+    
+    
+            <!-- OUR VISION 부분 -->
+            <section id="vision_box">
+                <div id="vision_wrap">
+                    <div id="vision_logo">
+                        <img src="./static/image/logo_black.png" alt="LOGO">
+                    </div>
+                    <div>
+                        <h3>OUR VISION.</h3>
+                        <div class="vision_line"></div>
+                        <p>
+                            수많은 이들의 향기를 찾아주는 길잡이가 되고자 합니다.<br>
+                            전문 조향사들에 의해 섬세하게 블렌딩된 향, 최고급 수입향료,<br>
+                            안전하고 품질이 검증된 제품에 대한 자부심으로 만들었습니다.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+
+
+        <!-- 대표상품 5종 부분 -->
+        <section id="product">
+            <div class="title_box">
+                <h1 class="title">PRODUCTS</h1>
+                <div class="title_line"></div>
+            </div>
+            
+            <!-- 1번 상품 -->
+            <div id="first_product">
+                <div class="product_part">
+                    <div class="product_display">
+                        <img src="./static/image/product1.png" alt="product_image_here">
+                        <button class="overlay_on">+</button>
+                    </div>
+                    <div class="product_title">
+                        <img src="./static/image/product1_name.png" alt="product_title_image_here">
+                    </div>
+                </div>
+                <div class="overlay_part">
+                    <img src="./static/image/overlay1.png" alt="product_status_here">
+                </div>
+            </div>
+
+            <!-- 2번 상품 -->
+            <div id="second_product">
+                <div class="product_part">
+                    <div class="product_display">
+                        <img src="./static/image/product2.png" alt="product_image_here">
+                        <button class="overlay_on">+</button>
+                    </div>
+                    <div class="product_title">
+                        <img src="./static/image/product2_name.png" alt="product_title_image_here">
+                    </div>
+                </div>
+                <div class="overlay_part">
+                    <img src="./static/image/overlay2.png" alt="product_status_here">
+                </div>
+            </div>
+
+            <!-- 3번 상품 -->
+            <div id="third_product">
+                <div class="product_part">
+                    <div class="product_display">
+                        <img src="./static/image/product3.png" alt="product_image_here">
+                        <button class="overlay_on">+</button>
+                    </div>
+                    <div class="product_title">
+                        <img src="./static/image/product3_name.png" alt="product_title_image_here">
+                    </div>
+                </div>
+                <div class="overlay_part">
+                    <img src="./static/image/overlay3.png" alt="product_status_here">
+                </div>
+            </div>
+
+            <!-- 4번 상품 -->
+            <div id="fourth_product">
+                <div class="product_part">
+                    <div class="product_display">
+                        <img src="./static/image/product4.png" alt="product_image_here">
+                        <button class="overlay_on">+</button>
+                    </div>
+                    <div class="product_title">
+                        <img src="./static/image/product4_name.png" alt="product_title_image_here">
+                    </div>
+                </div>
+                <div class="overlay_part">
+                    <img src="./static/image/overlay4.png" alt="product_status_here">
+                </div>
+            </div>
+
+            <!-- 5번 상품 -->
+            <div id="fifth_product">
+                <div class="product_part">
+                    <div class="product_display">
+                        <img src="./static/image/product5.png" alt="product_image_here">
+                        <button class="overlay_on">+</button>
+                    </div>
+                    <div class="product_title">
+                        <img src="./static/image/product5_name.png" alt="product_title_image_here">
+                    </div>
+                </div>
+                <div class="overlay_part">
+                    <img src="./static/image/overlay5.png" alt="product_status_here">
+                </div>
 
             </div>
         </section>
-        
+
+
+
+        <!-- 갤러리 부분 -->
+        <section id="gallery">
+            <div class="title_box">
+                <h1 class="title">GALLERY</h1>
+                <div class="title_line"></div>
+            </div>
+            <img src="" alt="" class="gal_img">
+            <img src="" alt="" class="gal_img">
+            <img src="" alt="" class="gal_img">
+            <img src="" alt="" class="gal_img">
+            <img src="" alt="" class="gal_img">
+            <img src="" alt="" class="gal_img">
+            <img src="" alt="" class="gal_img">
+            <img src="" alt="" class="gal_img">
+            <img src="" alt="" class="gal_img">
+        </section>
+
+        <!-- 지도 부분 -->
+        <section id="map_box">
+            <div class="title_box">
+                <h1 class="title">OFFLINE STORE</h1>
+                <div class="title_line"></div>
+            </div>
+            <div id="map">
+                <iframe src="" frameborder="0"></iframe>
+            </div>
+        </section>
+        <section id="selector_box">
+            <button class="slider"></button>
+            <div class="location"></div>
+            <div class="location"></div>
+            <div class="location"></div>
+            <div class="location"></div>
+            <div class="location"></div>
+            <div class="location"></div>
+            <div class="location"></div>
+            <button class="slider"></button>
+        </section>
+
+
+        <!-- 커스텀 오더 부분 -->
+        <section id="custom_order">
+            <div class="title_box">
+                <h1 class="title">CUSTOM ORDER.</h1>
+                <div class="title_line"></div>
+            </div>
+
+            <div class="profile">
+                <img src="" alt="" class="portrait">
+                <p>
+                    Evelyn Kim<br>
+                    @Evy_k<br>
+                    010-xxx-xxxx
+                </p>
+                <div class="profile_sns">
+                    <img src="" alt="" class="insta">
+                    <img src="" alt="" class="kakaotalk">
+                </div>
+            </div>
+
+            <div class="profile">
+                <img src="" alt="" class="portrait">
+                <p>
+                    Joseph Anderson<br>
+                    @aad_joe<br>
+                    010-xxx-xxxx
+                </p>
+                <div class="profile_sns">
+                    <img src="" alt="" class="insta">
+                    <img src="" alt="" class="kakaotalk">
+                </div>
+            </div>
+
+            <div class="profile">
+                <img src="" alt="" class="portrait">
+                <p>
+                    Kim Seon Hyang<br>
+                    @gygid27<br>
+                    010-xxx-xxxx
+                </p>
+                <div class="profile_sns">
+                    <img src="" alt="" class="insta">
+                    <img src="" alt="" class="kakaotalk">
+                </div>
+            </div>
+
+            <div class="profile">
+                <img src="" alt="" class="portrait">
+                <p>
+                    Nicolas de Barry<br>
+                    @nicBar<br>
+                    010-xxx-xxxx
+                </p>
+                <div class="profile_sns">
+                    <img src="" alt="" class="insta">
+                    <img src="" alt="" class="kakaotalk">
+                </div>
+            </div>
+        </section>
+
+
+        <!-- footer부분 -->
+        <footer id="footer">
+            <div class="top">
+                <div class="footer_logo_box">
+                    <img src="" alt="" id="footer_logo">
+                    <p>
+                        UNICORN.은 고객의 품격과 힐링을 생각하는 프리미엄 브랜드입니다.
+                    </p>
+                </div>
+                <div class="footer_sns_box">
+                    <div class=""></div>
+                    <div class=""></div>
+                    <div class=""></div>
+                    <div class=""></div>
+                </div>
+                <nav id="footer_nave">
+                    <div><a href="">INTRODUCE</a></div>
+                    <div><a href="">ABOUT US</a></div>
+                    <div><a href="">PRODUCTS</a></div>
+                    <div><a href="">GALLERY</a></div>
+                    <div><a href="">MAP</a></div>
+                    <div><a href="">CUSTOM</a></div>
+                </nav>
+                <div id="tel_box">
+                    <p>입점 및 제휴문의</p>
+                    <p>SS@cheerup.com</p>
+                    <h3>070-1234-5678</h3>
+                </div>
+            </div>
+
+            <div class="footer_line"></div>
+
+            <div class="bottom">
+                <p>
+                    대한민국 ⓒ 2023 UNICORN Inc. All Roghts Reserved
+                </p>
+                <p>
+                    상호명 UNICORN. 대표 S4 | 얼굴도 귀엽군 만지면 더 귀여우리 <br>
+                    | 개인정보보호책임자 신상수(SS@cheerup.com) | 통신판매신고번호 제 2023-선화동-2402
+                </p>
+                <p>
+                    고객센터 전화문의 070-1234-5678 | FAX 02-1234-5678 | 이메일 SS@cheerup.com <br>
+                    호스팅서비스사업자 (주)linkKOREA
+                </p>
+                <p>
+                    *UNICORN.에서 제공하는 모든 컨텐츠는 저작권법에 보호받는 저작물로서,
+                    무단으로 복제, 배포하는 경우에는 저작권법에 의하여 처벌을 받을 수 있습니다.
+                </p>
+                <p class="absolute_one">
+                    콘텐츠산업진흥법에 의한 콘텐츠 보호
+                </p>
+            </div>
+        </footer>
+
     </div>
 </body>
 </html>
