@@ -184,6 +184,7 @@ window.onload=function(){
 }
 
 
+// 지도 좌표 버튼
 function location_in(){
   if(this.textContent==="본사"){
     initMap(37.522925, 127.022780);
@@ -209,6 +210,8 @@ function location_in(){
 }
 
 
+
+// 지도 버튼 슬라이드 앞뒤
 let a = 0;
 
 function slide_next(){
@@ -225,6 +228,9 @@ function slide_prev(){
 }
 
 
+
+
+// 지도 그리기 (구글맵api 복사해옴)
 let map;
 
 async function initMap( lt, lg) {
