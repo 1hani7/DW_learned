@@ -15,16 +15,25 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Monsieur+La+Doulaise&family=Nanum+Myeongjo:wght@700&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
     
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    
+    <!-- js -->
+    <script src="./static/js/functions.js"></script>
+
     <!-- css -->
     <link rel="stylesheet" href="./static/css/index.css">
     <link rel="stylesheet" href="./static/css/banner_slide.css">
+
+    <!-- map -->
+    <script>
+        (g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})({
+          key: "AIzaSyB_887UTz6VBiMEt312IoHoHAa2j3Yn6O0",
+          // Add other bootstrap parameters as needed, using camel case.
+          // Use the 'v' parameter to indicate the version to load (alpha, beta, weekly, etc.)
+        });
+      </script>
     
-    <!-- js -->
-    <script src="./static/js/banner_slide.js"></script>
-    <script src="./static/js/overlay_move.js"></script>
-    
-    <!-- jquery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
     
 </head>
@@ -37,15 +46,15 @@
     <!-- 네비게이터 -->
     <nav id="navigator">
         <div id="logo">
-            <img src="./static/image/top_logo.png" alt="">
+            <a href=" "><img src="./static/image/top_logo.png" alt=""></a>
         </div>
         <ul id="nav_menu">
-            <li class="nav_item"><a href="">INTRODUCE</a></li>
-            <li class="nav_item"><a href="">ABOUT US</a></li>
-            <li class="nav_item"><a href="">PRODUCTS</a></li>
-            <li class="nav_item"><a href="">GALLERY</a></li>
-            <li class="nav_item"><a href="">MAP</a></li>
-            <li class="nav_item"><a href="">CUSTOM</a></li>
+            <li class="nav_item"><a href="#introduce">INTRODUCE</a></li>
+            <li class="nav_item"><a href="#about_us">ABOUT US</a></li>
+            <li class="nav_item"><a href="#product">PRODUCTS</a></li>
+            <li class="nav_item"><a href="#gallery">GALLERY</a></li>
+            <li class="nav_item"><a href="#map_box">MAP</a></li>
+            <li class="nav_item"><a href="#custom_order">CUSTOM</a></li>
         </ul>
     </nav>
     <div id="wrap">
@@ -90,7 +99,7 @@
                 </g>
               </svg>
             </div>
-            <div id="scroll_down">
+            <div  id="scroll_down">
                 <img src="./static/image/scroll_pointer.png" alt="">
             </div>
           </div><!-- End // .directional_nav -->
@@ -337,16 +346,24 @@
                 <h1 class="title">GALLERY</h1>
                 <div class="title_line"></div>
             </div>
-            <img src="" alt="" class="gal_img">
-            <img src="" alt="" class="gal_img">
-            <img src="" alt="" class="gal_img">
-            <img src="" alt="" class="gal_img">
-            <img src="" alt="" class="gal_img">
-            <img src="" alt="" class="gal_img">
-            <img src="" alt="" class="gal_img">
-            <img src="" alt="" class="gal_img">
-            <img src="" alt="" class="gal_img">
+            <div id="gal_box">
+                <img src="./static/image/gal1.png" alt="" class="gal_img">
+                <img src="./static/image/gal2.png" alt="" class="gal_img">
+                <img src="./static/image/gal3.png" alt="" class="gal_img">
+                <img src="./static/image/gal4.png" alt="" class="gal_img">
+                <img src="./static/image/gal5.png" alt="" class="gal_img">
+                <div class="grid">
+                    <div class="flex">
+                        <img src="./static/image/gal6.png" alt="" class="gal_img">
+                        <img src="./static/image/gal7.png" alt="" class="gal_img">
+                    </div>
+                    <img src="./static/image/gal8.png" alt="" class="gal_img">
+                </div>
+                <img src="./static/image/gal9.png" alt="" class="gal_img">
+            </div>
         </section>
+        
+
 
         <!-- 지도 부분 -->
         <section id="map_box">
@@ -354,20 +371,26 @@
                 <h1 class="title">OFFLINE STORE</h1>
                 <div class="title_line"></div>
             </div>
-            <div id="map">
-                <iframe src="" frameborder="0"></iframe>
-            </div>
+            <div id="map"></div>
         </section>
         <section id="selector_box">
-            <button class="slider"></button>
-            <div class="location"></div>
-            <div class="location"></div>
-            <div class="location"></div>
-            <div class="location"></div>
-            <div class="location"></div>
-            <div class="location"></div>
-            <div class="location"></div>
-            <button class="slider"></button>
+            <button class="slider">
+                <i class="bi bi-chevron-compact-left"></i>
+            </button>
+            <div id="bt_box">
+                <div id="bt">
+                    <div class="location"><span>본사</span></div>
+                    <div class="location"><span>인천</span></div>
+                    <div class="location"><span>대전</span></div>
+                    <div class="location"><span>대구</span></div>
+                    <div class="location"><span>부산</span></div>
+                    <div class="location"><span>청주</span></div>
+                    <div class="location"><span>홍대</span></div>
+                </div>
+            </div>
+            <button class="slider">
+                <i class="bi bi-chevron-compact-right"></i>
+            </button>
         </section>
 
 
@@ -378,114 +401,114 @@
                 <div class="title_line"></div>
             </div>
 
-            <div class="profile">
-                <img src="" alt="" class="portrait">
-                <p>
-                    Evelyn Kim<br>
-                    @Evy_k<br>
-                    010-xxx-xxxx
-                </p>
-                <div class="profile_sns">
-                    <img src="" alt="" class="insta">
-                    <img src="" alt="" class="kakaotalk">
+            <div id="profile_box">
+                <div class="profile">
+                    <img src="./static/image/profile1.png" alt="" class="portrait">
+                    <p>
+                        Evelyn Kim<br>
+                        @Evy_k<br>
+                        010-XXX-XXXX
+                    </p>
+                    <div class="profile_sns">
+                        <div class="insta"></div>
+                        <div class="kakao"></div>
+                    </div>
                 </div>
-            </div>
-
-            <div class="profile">
-                <img src="" alt="" class="portrait">
-                <p>
-                    Joseph Anderson<br>
-                    @aad_joe<br>
-                    010-xxx-xxxx
-                </p>
-                <div class="profile_sns">
-                    <img src="" alt="" class="insta">
-                    <img src="" alt="" class="kakaotalk">
+    
+                <div class="profile">
+                    <img src="./static/image/profile2.png" alt="" class="portrait">
+                    <p>
+                        Joseph Anderson<br>
+                        @aad_joe<br>
+                        010-XXX-XXX
+                    </p>
+                    <div class="profile_sns">
+                        <div class="insta"></div>
+                        <div class="kakao"></div>
+                    </div>
                 </div>
-            </div>
-
-            <div class="profile">
-                <img src="" alt="" class="portrait">
-                <p>
-                    Kim Seon Hyang<br>
-                    @gygid27<br>
-                    010-xxx-xxxx
-                </p>
-                <div class="profile_sns">
-                    <img src="" alt="" class="insta">
-                    <img src="" alt="" class="kakaotalk">
+    
+                <div class="profile">
+                    <img src="./static/image/profile3.png" alt="" class="portrait">
+                    <p>
+                        Kim Seon Hyang<br>
+                        @gygid27<br>
+                        010-XXX-XXXX
+                    </p>
+                    <div class="profile_sns">
+                        <div class="insta"></div>
+                        <div class="kakao"></div>
+                    </div>
                 </div>
-            </div>
-
-            <div class="profile">
-                <img src="" alt="" class="portrait">
-                <p>
-                    Nicolas de Barry<br>
-                    @nicBar<br>
-                    010-xxx-xxxx
-                </p>
-                <div class="profile_sns">
-                    <img src="" alt="" class="insta">
-                    <img src="" alt="" class="kakaotalk">
+    
+                <div class="profile">
+                    <img src="./static/image/profile4.png" alt="" class="portrait">
+                    <p>
+                        Nicolas de Barry<br>
+                        @nicBar<br>
+                        010-XXX-XXXX
+                    </p>
+                    <div class="profile_sns">
+                        <div class="insta"></div>
+                        <div class="kakao"></div>
+                    </div>
                 </div>
             </div>
         </section>
 
 
         <!-- footer부분 -->
-        <footer id="footer">
-            <div class="top">
-                <div class="footer_logo_box">
-                    <img src="" alt="" id="footer_logo">
-                    <p>
-                        UNICORN.은 고객의 품격과 힐링을 생각하는 프리미엄 브랜드입니다.
-                    </p>
-                </div>
-                <div class="footer_sns_box">
-                    <div class=""></div>
-                    <div class=""></div>
-                    <div class=""></div>
-                    <div class=""></div>
-                </div>
-                <nav id="footer_nave">
-                    <div><a href="">INTRODUCE</a></div>
-                    <div><a href="">ABOUT US</a></div>
-                    <div><a href="">PRODUCTS</a></div>
-                    <div><a href="">GALLERY</a></div>
-                    <div><a href="">MAP</a></div>
-                    <div><a href="">CUSTOM</a></div>
-                </nav>
-                <div id="tel_box">
-                    <p>입점 및 제휴문의</p>
-                    <p>SS@cheerup.com</p>
-                    <h3>070-1234-5678</h3>
-                </div>
-            </div>
-
-            <div class="footer_line"></div>
-
-            <div class="bottom">
-                <p>
-                    대한민국 ⓒ 2023 UNICORN Inc. All Roghts Reserved
-                </p>
-                <p>
-                    상호명 UNICORN. 대표 S4 | 얼굴도 귀엽군 만지면 더 귀여우리 <br>
-                    | 개인정보보호책임자 신상수(SS@cheerup.com) | 통신판매신고번호 제 2023-선화동-2402
-                </p>
-                <p>
-                    고객센터 전화문의 070-1234-5678 | FAX 02-1234-5678 | 이메일 SS@cheerup.com <br>
-                    호스팅서비스사업자 (주)linkKOREA
-                </p>
-                <p>
-                    *UNICORN.에서 제공하는 모든 컨텐츠는 저작권법에 보호받는 저작물로서,
-                    무단으로 복제, 배포하는 경우에는 저작권법에 의하여 처벌을 받을 수 있습니다.
-                </p>
-                <p class="absolute_one">
-                    콘텐츠산업진흥법에 의한 콘텐츠 보호
-                </p>
-            </div>
-        </footer>
-
+        
     </div>
+    <footer id="footer">
+        <div class="top">
+            <div class="footer_logo_box">
+                <img src="./static/image/logo_vertical.png" alt="" id="footer_logo">
+                <p>
+                    UNICORN.은 고객의 품격과 힐링을 생각하는 프리미엄 브랜드입니다.
+                </p>
+            </div>
+            <div class="footer_sns_box">
+                <div><img src="./static/image/twitter.png" alt=""></div>
+                <div><img src="./static/image/facebook.png" alt=""></div>
+                <div><img src="./static/image/youtube.png" alt=""></div>
+                <div><img src="./static/image/instargram.png" alt=""></div>
+            </div>
+            <nav id="footer_nav">
+                <div><a href="">INTRODUCE</a></div>
+                <div><a href="">ABOUT US</a></div>
+                <div><a href="">PRODUCTS</a></div>
+                <div><a href="">GALLERY</a></div>
+                <div><a href="">MAP</a></div>
+                <div><a href="">CUSTOM</a></div>
+            </nav>
+            <div id="tel_box">
+                <p>입점 및 제휴문의</p>
+                <p>SS@cheerup.com</p>
+                <h3>070-1234-5678</h3>
+            </div>
+        </div>
+
+        <div class="footer_line"></div>
+
+        <div class="bottom">
+            <p>
+                대한민국 ⓒ 2023 UNICORN Inc. All Roghts Reserved<br>
+                상호명 UNICORN. 대표 S4 | 얼굴도 귀엽군 만지면 더 귀여우리 <br>
+                | 개인정보보호책임자 신상수(SS@cheerup.com) | 통신판매신고번호 제 2023-선화동-2402
+            </p>
+            <p>
+                고객센터 전화문의 070-1234-5678 | FAX 02-1234-5678 | 이메일 SS@cheerup.com <br>
+                호스팅서비스사업자 (주)linkKOREA
+            </p>
+            <p>
+                *UNICORN.에서 제공하는 모든 컨텐츠는 저작권법에 보호받는 저작물로서,
+                무단으로 복제, 배포하는 경우에는 저작권법에 의하여 처벌을 받을 수 있습니다.
+            </p>
+            <p class="absolute_one">
+                콘텐츠산업진흥법에 의한 콘텐츠 보호
+            </p>
+        </div>
+    </footer>
 </body>
 </html>
