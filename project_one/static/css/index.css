@@ -402,11 +402,29 @@ html{
     font-size:60px;
     line-height:65px;
     border: none;
+    cursor:pointer;
+}
+
+.overlay_on:hover{
+    filter: brightness(0.7);
+}
+.overlay_on:active{
+    transform: translate(2px, 2px);
 }
 
 .overlay_part{
-    width:1500px;
-    height:939px;
-    background:black;
-    opacity: 0.7;
+    position:absolute;
+    width:1000px;
+    height:626px;
+    background:rgba(0, 0, 0, 0.7);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    transform: translate(100%);
+    opacity:0;
+    cursor:pointer;
+}
+
+.overlay_part img{
+    width:950px;
 }
