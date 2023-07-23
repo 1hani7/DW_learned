@@ -1,4 +1,29 @@
 window.onload=function(){
+    
+    // 우클릭 방지
+    document.oncontextmenu=function(){return false;}
+
+    // 스크롤 효과들
+    window.addEventListener("scroll", function(){
+      console.log("스크롤 Y값:", scrollY);
+      appear( "slogun", 900 );
+      expose( "introduce", 3400 );
+      expose( "about_us", 4700 );
+      expose( "sercive", 7600 );
+      if(window.scrollY >= 7600){
+        var cus_link = document.getElementById("cus_link");
+        cus_link.style.transform="translateX(0)";
+        cus_link.style.opacity="1";
+        cus_link.style.transition="2s"
+      }
+      expose( "vision", 8800 );
+      appear( "map_box", 20600 );
+      appear( "selector_box", 21000 );
+      expose( "custom_order", 22000 );
+    });
+
+
+    
 
     var overlay_part = document.getElementsByClassName("overlay_part");
     var overlay_on = document.getElementsByClassName("overlay_on");
@@ -181,7 +206,33 @@ window.onload=function(){
       for(var i=0; i<lo_btn.length; i++){
         lo_btn[i].addEventListener("click", location_in)
       }
+
+
+}// window.onload부분 끝
+
+
+// 서서히 나타내기 함수
+function expose( name, Y ){
+  var which = document.getElementById(name);
+
+    if(window.scrollY >= Y){
+      which.style.opacity="1";
+      which.style.transition="3s";
+    }
 }
+
+
+// 서서히 올라가면서 나타내기 함수
+function appear( name, Y ){
+  var which = document.getElementById(name);
+
+    if(window.scrollY >= Y){
+      which.style.opacity="1";
+      which.style.transition="3s";
+      which.style.transform="translateY(0)";
+    }
+}
+
 
 
 // 지도 좌표 버튼
