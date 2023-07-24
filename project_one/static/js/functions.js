@@ -1,11 +1,34 @@
 window.onload=function(){
+    var lastScrollTop = 0;
     
     // 우클릭 방지
     document.oncontextmenu=function(){return false;}
 
+
     // 스크롤 효과들
     window.addEventListener("scroll", function(){
+      
+
+      var scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+      // 스크롤 방향 확인
+      if (scrollTop > lastScrollTop) {
+        // 스크롤을 내릴 때
+        document.getElementById("navigator").style.opacity="0";
+        document.getElementById("navigator").style.transition="1s";
+      } else {
+        // 스크롤을 올릴 때
+        document.getElementById("navigator").style.opacity="1";
+        document.getElementById("navigator").style.transition="1s";
+      }
+
+      lastScrollTop = scrollTop;
+
+      // 스크롤값 확인용
       console.log("스크롤 Y값:", scrollY);
+      
+
+      // 스크롤값 따라서 나타내기 or 날아오기 효과
       appear( "slogun", 900 );
       if(window.scrollY >= 3000){
         var title = document.getElementsByClassName("title_box")[0];
