@@ -62,35 +62,35 @@ window.onload=function(){
     
 
     var overlay_part = document.getElementsByClassName("overlay_part");
-    var overlay_on = document.getElementsByClassName("overlay_on");
+    var product_part = document.getElementsByClassName("product_part");
 
     // 오버레이
     // 띄우기
-    overlay_on[0].addEventListener("click", function(){
+    product_part[0].addEventListener("mouseover", function(){
         overlay_part[0].style.transform="translateX(0)";
         overlay_part[0].style.opacity="1";
         overlay_part[0].style.transition="2s";
     });
 
-    overlay_on[1].addEventListener("click", function(){
+    product_part[1].addEventListener("mouseover", function(){
         overlay_part[1].style.transform="translateX(0)";
         overlay_part[1].style.opacity="1";
         overlay_part[1].style.transition="2s";
     });
 
-    overlay_on[2].addEventListener("click", function(){
+    product_part[2].addEventListener("mouseover", function(){
         overlay_part[2].style.transform="translateX(0)";
         overlay_part[2].style.opacity="1";
         overlay_part[2].style.transition="2s";
     });
 
-    overlay_on[3].addEventListener("click", function(){
+    product_part[3].addEventListener("mouseover", function(){
         overlay_part[3].style.transform="translateX(0)";
         overlay_part[3].style.opacity="1";
         overlay_part[3].style.transition="2s";
     });
 
-    overlay_on[4].addEventListener("click", function(){
+    product_part[4].addEventListener("mouseover", function(){
         overlay_part[4].style.transform="translateX(0)";
         overlay_part[4].style.opacity="1";
         overlay_part[4].style.transition="2s";
@@ -99,31 +99,31 @@ window.onload=function(){
 
 
     // 끄기
-    overlay_part[0].addEventListener("click", function(){
+    document.getElementById("first_product").addEventListener("mouseleave", function(){
         overlay_part[0].style.transform="translateX(100%)";
         overlay_part[0].style.opacity="0";
         overlay_part[0].style.transition="1s";
     });
 
-    overlay_part[1].addEventListener("click", function(){
+    document.getElementById("second_product").addEventListener("mouseleave", function(){
         overlay_part[1].style.transform="translateX(100%)";
         overlay_part[1].style.opacity="0";
         overlay_part[1].style.transition="1s";
     });
 
-    overlay_part[2].addEventListener("click", function(){
+    document.getElementById("third_product").addEventListener("mouseleave", function(){
         overlay_part[2].style.transform="translateX(100%)";
         overlay_part[2].style.opacity="0";
         overlay_part[2].style.transition="1s";
     });
 
-    overlay_part[3].addEventListener("click", function(){
+    document.getElementById("fourth_product").addEventListener("mouseleave", function(){
         overlay_part[3].style.transform="translateX(100%)";
         overlay_part[3].style.opacity="0";
         overlay_part[3].style.transition="1s";
     });
 
-    overlay_part[4].addEventListener("click", function(){
+    document.getElementById("fifth_product").addEventListener("mouseleave", function(){
         overlay_part[4].style.transform="translateX(100%)";
         overlay_part[4].style.opacity="0";
         overlay_part[4].style.transition="1s";

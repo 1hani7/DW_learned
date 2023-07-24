@@ -425,6 +425,7 @@ html{
 }
 
 .overlay_on{
+    display:none;
     width:65px;
     height:65px;
     background: black;
@@ -457,7 +458,6 @@ html{
     align-items: center;
     transform: translateX(100%);
     opacity:0;
-    cursor:pointer;
 }
 
 .overlay_part img{
@@ -576,7 +576,7 @@ html{
 }
 
 .location:nth-child(1){
-    background:url(https://upload.wikimedia.org/wikipedia/commons/3/3f/The_Body_Shop_in_the_Prudential_Center%2C_Boston_MA.jpg);
+    background:url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTV6y5vF1OvsPHX0d1nuVo0bi8IT8Yf_20PKw&usqp=CAU);
     background-size: cover;
 }
 .location:nth-child(2){
@@ -600,7 +600,7 @@ html{
     background-size: cover;
 }
 .location:nth-child(7){
-    background:url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTV6y5vF1OvsPHX0d1nuVo0bi8IT8Yf_20PKw&usqp=CAU);
+    background:url(https://upload.wikimedia.org/wikipedia/commons/3/3f/The_Body_Shop_in_the_Prudential_Center%2C_Boston_MA.jpg);
     background-size: cover;
 }
 
