@@ -7,8 +7,20 @@ window.onload=function(){
     window.addEventListener("scroll", function(){
       console.log("스크롤 Y값:", scrollY);
       appear( "slogun", 900 );
+      if(window.scrollY >= 3000){
+        var title = document.getElementsByClassName("title_box")[0];
+        title.style.transform="translateX(0)";
+        title.style.opacity="1";
+        title.style.transition="2s"
+      }
       expose( "introduce", 3400 );
       expose( "about_us", 4700 );
+      if(window.scrollY >= 4500){
+        var title = document.getElementsByClassName("title_box")[1];
+        title.style.transform="translateX(0)";
+        title.style.opacity="1";
+        title.style.transition="2s"
+      }
       expose( "sercive", 7600 );
       if(window.scrollY >= 7600){
         var cus_link = document.getElementById("cus_link");
@@ -17,8 +29,32 @@ window.onload=function(){
         cus_link.style.transition="2s"
       }
       expose( "vision", 8800 );
+      if(window.scrollY >= 10000){
+        var title = document.getElementsByClassName("title_box")[2];
+        title.style.transform="translateX(0)";
+        title.style.opacity="1";
+        title.style.transition="2s"
+      }
+      if(window.scrollY >= 14875){
+        var title = document.getElementsByClassName("title_box")[3];
+        title.style.transform="translateX(0)";
+        title.style.opacity="1";
+        title.style.transition="2s"
+      }
       appear( "map_box", 20600 );
+      if(window.scrollY >= 20000){
+        var title = document.getElementsByClassName("title_box")[4];
+        title.style.transform="translateX(0)";
+        title.style.opacity="1";
+        title.style.transition="2s"
+      }
       appear( "selector_box", 21000 );
+      if(window.scrollY >= 22000){
+        var title = document.getElementsByClassName("title_box")[5];
+        title.style.transform="translateX(0)";
+        title.style.opacity="1";
+        title.style.transition="2s"
+      }
       expose( "custom_order", 22000 );
     });
 

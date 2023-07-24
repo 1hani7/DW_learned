@@ -157,6 +157,8 @@ html{
     text-align: center;
     position:relative;
     margin-bottom: 30px;
+    opacity:0;
+    transform: translateY(50%);
 }
 
 .title_box .title{
