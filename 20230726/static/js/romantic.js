@@ -74,6 +74,8 @@ function resave_list(){
     var re_period=document.getElementById("re_period");
     var re_satisfaction=document.getElementById("re_satisfaction");
 
+    if ( value_check( [re_place,re_money,re_period] ) ) return;
+
     var idx = this.parentNode.dataset.idx;
 
     list[idx].place=re_place.value;
@@ -81,7 +83,6 @@ function resave_list(){
     list[idx].period=re_period.value;
     list[idx].satisfaction=re_satisfaction.options[re_satisfaction.selectedIndex].value;
 
-    if ( value_check( [re_place,re_money,re_period] ) ) return;
 
     screen_show();
 }
