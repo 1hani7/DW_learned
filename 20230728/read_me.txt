@@ -14,7 +14,7 @@ $(function(){})
 .value => .val();
 
 
-//display 건드림
+//display 건드림 + 너비높이 건드림
 .hide(시간)
 .show(시간)
 .toggle(시간)

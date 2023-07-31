@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card_animation</title>
+<link rel="stylesheet" href="./static/css/card_ani.css">
+</head>
+<body>
+    <div class="main-content-1">
+        <div class="sticky">
+            <div class="card-frame">
+                <div class="card">
+                    <div class="front">CHICKEN</div>
+                    <div class="back"></div>
+                </div>
+                <div class="card">
+                    <div class="front">PINEAPPLE</div>
+                    <div class="back"></div>
+                </div>
+                <div class="card">
+                    <div class="front">FISH&<br>CHIPS</div>
+                    <div class="back"></div>
+                </div>
+                <div class="card">
+                    <div class="front">NOODLES</div>
+                    <div class="back"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        class CardFlipOnScroll{
+            constructor(wrapper, sticky){
+                this.wrapper = wrapper;
+                this.sticky = sticky;
+                this.card = sticky.querySelectorAll('.card');
+                this.length = this.card.length;
+
+                this.start = 0;
+                this.end = 0;
+                this.step = 0;
+            }
+            init(){
+                this.start = this.wrapper.offsetTop;
+                this.end = this.wrapper + this.wrapper.offsetHeight - innerHeight * 1.2;
+                this.step = (this.end - this.start) / (this.length * 2);
+            }
+            animate(){
+                this.card.forEach((card, i)=>{
+                    const s = this.start + this.step*i;
+                    const e = s + this.step * (this.length + 1);
+                });
+
+                if(scrollY <= s){
+                    card.style.transform = `
+                        perspective(100vw)
+                        translateX(100vw)
+                        rotateY(180deg)
+                    `
+                }else if(scrollY > s && scrollY <= e - this.step){
+                    card.style.transform = `
+                        perspective(100vw)
+                        translateX(${100 - (scrollY - s) / (e - s) * 100}vw)
+                        rotateY(180deg)
+                    `
+                }else if(scrollY > e - this.step && scrollY <= e){
+                    card.style.transform = `
+                        perspective(100vw)
+                        translateX(${100 - (scrollY - s) / (e - s) * 100}vw)
+                        rotateY(${180 -  -(scrollY - (e - this.step)) / this.step * 180}deg)
+                    `
+                }else if(scrollY > e){
+                    card.style.transform = `
+                        perspective(100vw)
+                        translateX(10vw)
+                        rotateY(0deg)
+                    `
+                }
+            }
+        }
+        const mainContent1 = document.querySelectorAll('.main-content-1')[0];
+        const sticky = document.querySelectorAll('.sticky')[0];
+        const cardFlipOnScroll = new CardFlipOnScroll(mainContent1, sticky);
+        
+        window.onload=function(){
+            cardFlipOnScroll.init();
+        };
+
+        window.addEventListener("scroll", () => {
+            cardFlipOnScroll.animate();
+        })
+        window.addEventListener("resize", () => {
+            cardFlipOnScroll.init();
+        })
+    </script>
+</body>
+</html>
