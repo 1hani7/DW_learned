@@ -27,7 +27,7 @@ ul,ol{ list-style-type: none; }
     cursor:pointer;
 }
 
-#header #menu_wrap #menu_list{
+.menu_list{
     position:absolute;
     z-index: 10;
     width:0;
@@ -36,7 +36,7 @@ ul,ol{ list-style-type: none; }
     height:200px;
 }
 
-#header #menu_wrap #menu_list li{
+#header #menu_wrap .menu_list li{
     padding:10px;
     border-bottom:1px solid black;
     background:yellow;
@@ -44,7 +44,7 @@ ul,ol{ list-style-type: none; }
     white-space: nowrap;
 }
 
-#header #menu_wrap #menu_list li:hover{
+#header #menu_wrap .menu_list li:hover{
     filter:brightness(0.8);
     cursor:pointer;
     transition: 0.5s;
@@ -66,5 +66,6 @@ ul,ol{ list-style-type: none; }
 }
 
 .show{
-    width:132px;
+    width:600px;
+    transition:1s;
 }
