@@ -11,6 +11,9 @@
     display:flex;
     flex-direction: column;
 }
+#input_box div{
+    padding:5px 0;
+}
 #input_box input{
     width:50%;
     align-self: flex-start;

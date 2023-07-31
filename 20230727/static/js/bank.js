@@ -57,7 +57,7 @@ function nums_check(one, two, three){
 
 function list(name, money, num){
     this.name=name;
-    this.money=money;
+    this.money=Number(money);
     this.account_num=num;
 }
 
