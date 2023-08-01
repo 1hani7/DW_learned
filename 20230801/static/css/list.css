@@ -1,0 +1,29 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+ul{list-style-type: none;}
+input{outline:none;}
+
+#wrap{
+    width:1000px;
+    margin:0 auto;
+}
+
+#search_wrap{
+    text-align: center;
+    padding:20px;
+}
+
+#data_box #data_list{
+    width:100%;
+    display:flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+#data_box #data_list .data{
+    height:300px;
+}

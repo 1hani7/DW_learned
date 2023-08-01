@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+<script>
+    $(function(){
+
+        var parent = $("#child1_1").parents("#origin");
+        parent.css("background","pink");
+        
+        $(".grandchild").parentsUntil("#origin").css("background","green");
+
+        $("#parent2").children(":last").css("font-size","20px");
+
+        $("#parent2").find("li:eq(0)").css("background","lightblue");
+
+        $("#child1_1").click(function(){
+            // $(this).siblings("#child1_2").children("span:eq(1)").css("display","block");
+            $(this).next().children("span:eq(1)").css("display","block");
+        });
+
+
+        $("li").first().css("color","red");
+        $("li").last().css("color","blue");
+        $("li").eq(2).css("color","yellow");
+
+        $("li").filter(".child_li").css("font-weight", "700");
+        $("li").not(".child_li").css("font-weight", "100");
+
+    });
+</script>
+</head>
+<body>
+    
+    <div id="origin">
+        <div id="parent1" style="font-size:50px;">
+            <b id="child1_1">child1_1</b>
+            <p id="child1_2">
+                <span class="grandchild">나 증손이야(딸)</span>
+                <span class="grandchild">나 증손이야(아들)</span>
+            </p>
+        </div>
+        <div id="parent2">
+            <div id="child2_1">Where did he go?</div>
+            <ul id="child2_2">
+                <li class="child_li">공부공부공부</li>
+                <li class="child_li">공부해서 남 주나?</li>
+                <li class="child_li">방법이 잘못됐으면 다른 방법으로...</li>
+                <li>좋으니 사랑해서</li>
+                <li>사랑을 시작할 때</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>
