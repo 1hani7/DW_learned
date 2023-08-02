@@ -21,4 +21,4 @@ $(function(){
 });
 
 
-20230802 - JSON 시작
+20230802 - JSON 시작 / new XMLHttpRequest() 객체로 서버와 주고받기 채팅
