@@ -1,0 +1,52 @@
+{
+    "person" :
+    [
+        {
+            "name" : "신상수",
+            "age" : 26,
+            "hobby" : "music"
+        }
+    ,
+        {
+            "name" : "김창식",
+            "age" : 28,
+            "hobby" : "game"
+        }
+    ,   
+        {
+            "name" : "오대수",
+            "age" : 41,
+            "hobby" : "fishing"
+        }
+    ,   
+        {
+            "name" : "구봉석",
+            "age" : 33,
+            "hobby" : "fishing"
+        }
+    ,   
+        {
+            "name" : "구장철",
+            "age" : 45,
+            "hobby" : "game"
+        }
+    ,   
+        {
+            "name" : "전계림",
+            "age" : 37,
+            "hobby" : "killing_monsters"
+        }
+    ,   
+        {
+            "name" : "오태식",
+            "age" : 25,
+            "hobby" : "game"
+        }
+    ,   
+        {
+            "name" : "다나카 쿄스케",
+            "age" : 22,
+            "hobby" : "music"
+        }
+    ]
+}

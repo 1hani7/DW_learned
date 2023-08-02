@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+<script>
+    // JSON - javascript object notation
+
+    let 신상수 = {
+        name:"신상수",
+        age:26,
+        gender:"male"
+    }
+    var j = JSON.stringify(신상수);
+
+    console.log(신상수);
+    console.log(j);
+    console.log(JSON.parse(j));
+
+    let jdata ="";
+
+    $(function(){
+        $.getJSON("./test_jason.json",function(data){
+            //console.log(data);
+            // $("#list").html("<tr><td>"+data.person[1].name+"</td>"+"<td>"+data.person[1].age+"</td>"+"<td>"+data.person[1].phone+"</td></tr>");
+            
+            // 새로운 반복문 (배열 전용)
+            $.each( data.person , function(i,item){ // i는 배열의 인덱스, item은 배열의 각 공간, p[n]==item
+                if( item.hobby==="game" && item.age>=20 ){
+                    $("#list").append( "<tr><td>"+item.name+"</td><td>"+
+                                       item.age+"</td><td>"+item.hobby+"</td><td>" );
+                };
+            } );
+        });
+    });
+
+
+</script>
+</head>
+<body>
+    <table id="list">
+
+    </table>
+</body>
+</html>
