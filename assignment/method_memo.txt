@@ -1,0 +1,59 @@
+.reduce()
+
+.filter() 메서드는 callback 함수에서 반환하는 값이 true인 요소들만
+새로운 배열에 포함합니다. 반환값이 false인 요소는 제외됩니다.
+
+.map((num)=>{})    - 배열 요소 각각의 내용을 바꿔줌
+
+.reverse() 배열 역순 재배치
+
+
+[...배열명] 배열 복사 (문자열에 쓰면 .split('')와 같은 효과)
+
+
+true와 false는 각각 1과 0의 숫자를 가짐
++를 붙여주면 불리언 값이 숫자값으로 변환됨
+
+조건연산자에서도 사용가능
+k%2?k+1:k-1;
+k%2가 1, 즉 홀수, 즉 true
+k%2가 0, 즉 짝수, 즉 false
+
+for문에 들어가는 i 가 무조건 0일 필요도, 1씩만 늘어날 필요도 없다
+
+
+
+// 비구조화 할당 (배열)
+const dot = [5, 10];
+const [num, num2] = dot;
+이러면 인덱스를 사용하지 않아도 배열 요소를 사용할 수 있음
+예시=>function solution(dot) {
+        const [num,num2] = dot;
+        const check = num * num2 > 0;
+        return num > 0 ? (check ? 1 : 4) : (check ? 3 : 2);
+    }
+
+
+
+//수학 함수:
+Math.abs(x): 주어진 숫자의 절댓값을 반환합니다.
+Math.ceil(x): 주어진 숫자를 올림하여 정수로 반환합니다.
+Math.floor(x): 주어진 숫자를 내림하여 정수로 반환합니다.
+Math.round(x): 주어진 숫자를 반올림하여 가장 가까운 정수로 반환합니다.
+Math.max(x1, x2, ..., xn): 주어진 숫자 중 가장 큰 값을 반환합니다.
+Math.min(x1, x2, ..., xn): 주어진 숫자 중 가장 작은 값을 반환합니다.
+Math.pow(base, exponent): 지수 연산을 수행하여 base의 exponent 제곱 값을 반환합니다.
+Math.sqrt(x): 주어진 숫자의 제곱근 값을 반환합니다.
+Math.random(): 0 이상 1 미만의 난수를 반환합니다.
+
+삼각 함수:
+Math.sin(x): 주어진 각도의 사인 값을 반환합니다.
+Math.cos(x): 주어진 각도의 코사인 값을 반환합니다.
+Math.tan(x): 주어진 각도의 탄젠트 값을 반환합니다.
+Math.asin(x): 사인 역함수를 계산하여 각도를 반환합니다.
+Math.acos(x): 코사인 역함수를 계산하여 각도를 반환합니다.
+Math.atan(x): 탄젠트 역함수를 계산하여 각도를 반환합니다.
+
+상수:
+Math.PI: 원주율(π) 값을 반환합니다.
+Math.E: 자연 상수(e) 값을 반환합니다.
