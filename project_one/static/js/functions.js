@@ -233,6 +233,7 @@ function slide_prev(){
 // 지도 그리기 (구글맵api 복사해옴)
 let map;
 
+
 async function initMap( lt, lg) {
   const { Map } = await google.maps.importLibrary("maps");
 
