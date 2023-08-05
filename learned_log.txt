@@ -1,0 +1,24 @@
+20230623
+lucky_num.sort(function(a,b){return a-b;})
+        // 배열 오름차순 정리 함수
+        // 두 개의 값을 계산해서 양수(+)라면 자리를 바꿔주는 원리 / 버블정렬 알고리즘
+        // b-a로 한다면 내림차순이 됨
+
+
+20230727 - 객체 저장하기, 수정하기, 삭제하기, 출력하기
+
+20230728 - jquery시작
+
+20230801 - jquery filter 기능
+$(function(){
+    $("#keyword").on("keyup",function(){
+        let word = $(this).val();
+        $(".data img").filter(function(){
+            let isSearch = $(this).attr("alt").indexOf(word) > -1;
+            $(this).parent().toggle(isSearch);
+        });
+    });
+});
+
+
+20230802 - JSON 시작 / new XMLHttpRequest() 객체로 서버와 주고받기 채팅

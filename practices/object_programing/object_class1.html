@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+    class Person{
+        constructor( name, age, height, weight, birthday ){
+            this.name=name;
+            this.age=age;
+            this.height=height;
+            this.weight=weight;
+            this.birthday=birthday;
+        }
+        bornYear(){
+            let date = new Date();
+            let year = date.getFullYear();
+            return Number(year)-Number(this.age);
+        }
+        bmiCal(){
+            return parseInt(Number(this.weight) / (Number(this.height/100) * Number(this.height/100)));
+        }
+    }
+
+    class Area extends Person{
+        
+    }
+
+    let shin = new Person( "신신신", 28, 190, 95, "01/14" );
+    let jung = new Person( "정정정", 31, 175, 65, "06/25" );
+
+    console.log('shin', shin, shin.bornYear(), shin.bmiCal());
+    console.log('jung', jung, jung.bornYear(), jung.bmiCal());
+</script>
+
+</html>

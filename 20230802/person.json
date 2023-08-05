@@ -1,0 +1,12 @@
+{
+"persons":
+[
+{"name":"박창식","age":"25","height":"175","weight":"78"}
+,
+{"name":"금태양","age":"28","height":"180","weight":"65"}
+,
+{"name":"안동국","age":"24","height":"170","weight":"70"}
+,
+{"name":"임정식","age":"30","height":"165","weight":"71"}
+]
+}

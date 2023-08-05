@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+</head>
+<body>
+    
+<style>
+    #box1{ width:100px; height:100px; background:tomato; margin-top:10px; };
+</style>
+<fieldset>
+    <legend>jquery 애니메이션1 - 크기변화</legend>
+    <button id="ani1">적용</button>
+    <div id="box1"></div>
+</fieldset>
+<script>
+    $("#ani1").click(()=>{
+        $("#box1").animate( { width:"300px", height:"150px" }, 2000 );
+    });
+</script>
+
+<style>
+    #box2{ width:100px; height:100px; background:seagreen; position:relative; margin-top:10px; }
+</style>
+<fieldset>
+    <legend> jquery 애니메이션2 - 위치 이동 </legend>
+    <button id="ani2">이동</button>
+    <div id="box2"></div>
+</fieldset>
+<script>
+    $("#ani2").click(()=>{
+        setInterval(()=>{
+            $("#box2").animate( { left:"300px", width:"200px", rotate:"15deg" }, 250 );
+            $("#box2").animate( { top:"300px", rotate:"-45deg" }, 250 );
+            $("#box2").animate( { left:"0", rotate:"45deg" }, 250 );
+            $("#box2").animate( { top:"0", width:"100px", rotate:"-25deg" }, 250 );
+        });
+    });
+</script>
+
+<style>
+    #box3{ width:20px; height:100px; background:darkmagenta; margin-top:10px;}
+</style>
+<fieldset>
+    <legend>jquery 애니메이션3 - 증가</legend>
+    <div id="box3"></div>
+</fieldset>
+<script>
+    $("#box3").click(function(){
+        setInterval(()=>{
+            $(this).animate( {width:"400px"} );
+            $(this).animate( {width:"0"} );
+        })
+    });
+</script>
+
+<style>
+    #box4{ width:100px; height:100px; position:relative; background:bisque; }
+</style>
+<fieldset>
+    <legend>jquery 애니메이션4 - 여러개 순차적용</legend>
+    <button id="ani3">적용</button>
+    <div id="box4"></div>
+</fieldset>
+<script>
+    $("#ani3").click(()=>{
+        setInterval(()=>{
+            $("#box4").animate( {width:"300px",opacity:"0.5",rotate:"45deg"} );
+            $("#box4").animate( {left:"200px",width:"100px",rotate:"90deg"} );
+            $("#box4").animate( {height:"300px",opacity:"1",rotate:"135deg"});
+            $("#box4").animate( {top:"200px",height:"100px",rotate:"180deg"});
+            $("#box4").animate( {left:"0px", rotate:"256deg"});
+            $("#box4").animate( {top:0, rotate:"15deg"} );
+        });
+    });
+</script>
+
+</body>
+</html>

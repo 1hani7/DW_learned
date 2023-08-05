@@ -1,0 +1,27 @@
+<!-- json_test4.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    $.getJSON("./전국건강증진센터표준데이터.json",data=>{
+        console.log(data)
+
+        var keySet = Object.keys(data.records[0]);
+        console.log(keySet);
+
+        console.log(data.records[4][keySet[0]]); // data.records[0].건강증진센터명
+
+        var search = data.records.filter(item=>item[keySet[2]].indexOf("대전") != -1);
+        console.log(search)
+    });
+</script>

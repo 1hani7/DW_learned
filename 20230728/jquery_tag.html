@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <style>
+        #text1{font-size:20px;}
+    </style>
+    <button id="bt1">버튼1</button>
+    <p id="text1"> <b>하늘</b>은 말했다. 여기서 끝날 운명이라고. </p>
+
+    <input type="text" id="name">
+    <br>
+    <button id="bt2">버튼2</button>
+    <a id="naver">네이버 이동</a>
+
+    <img class="image">
+    <img class="image">
+    <img class="image">
+
+
+    <button id="bt3">버튼3</button>
+    <div id="box1">
+        <p id="p1"> 고통스럽다. </p>
+    </div>
+
+    <button id="bt4">버튼4</button>
+    <div id="box2" style="border:1px solid black; height:150px">
+        <div id="list1"> 신상수 사용설명서 </div>
+        <div id="list2"> 1. 뒤통수의 빨간 버튼을 눌러서 가동 </div>
+        <div id="list3"> 2. 레버를 당기면 빔이 나옴 </div>
+        <div class="list"> 3. 정수리에 개폐장치가 숨겨져 있음 </div>
+        <div class="list"> 4. 손목을 뽑으면 USB 단자가 나옴 </div>
+    </div>
+
+    <script>
+        $("#bt4").click(function(){
+            $("div").remove(".list,#list3")
+            // $("#list1").remove();
+            // $("#box2").empty();
+        });
+
+        var i=0;
+        $("#bt3").click(function(){
+            $("#p1").prepend("<p>"+i+"냠냠</p>"); // 내용 맨 앞에 추가
+            $("#p1").append("<p>죽어버릴까?</p>"); // 내용 맨 뒤에 추가
+            $("#p1").before("뭐지");
+            $("#p1").after("개소리 ㄴ");
+            i++;
+        });
+
+        $("#bt2").click(function(){
+            $(".image").attr("src","https://loremflickr.com/200/200/car");
+            $("#naver").attr("href", "https://www.naver.com");
+            // 속성값 바꿔주기
+        });
+        $("#bt1").click(function(){
+            alert( $("#text1").html() ); // html 내용
+            alert( $("#text1").text() ); // 텍스트 내용
+            alert( $("#name").val() ); // value값
+            $("#name").val("끄앙");
+            // $("#name").val("");
+        });
+    </script>
+</body>
+</html>

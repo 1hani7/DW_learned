@@ -78,6 +78,7 @@ html{
     position:relative;
     max-width: 1500px;
     margin:0 auto;
+    overflow:hidden;
 }
 
 #scroll_down{
@@ -122,9 +123,9 @@ html{
     color:white;
     text-align: center;
     top:2200px;
-    left:50%;
-    transform: translate(-50%);
     width:100%;
+    transform: translateY(10%);
+    opacity: 0;
 }
 
 #slogun .sloguns{
@@ -148,6 +149,7 @@ html{
 #introduce{
     width:100%;
     margin-bottom:380px;
+    opacity:0;
 }
 
 .title_box{
@@ -155,6 +157,8 @@ html{
     text-align: center;
     position:relative;
     margin-bottom: 30px;
+    opacity:0;
+    transform: translateY(50%);
 }
 
 .title_box .title{
@@ -215,6 +219,7 @@ html{
 #about_us{
     width:957px;
     margin:0 auto;
+    opacity: 0;
 }
 
 #about_us .title_box .title{
@@ -262,6 +267,12 @@ html{
     text-align: right;
 }
 
+
+
+#sercive{
+    opacity: 0;
+}
+
 #service_box{
     margin-top:680px;
     width:100%;
@@ -277,6 +288,11 @@ html{
     display:flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+#cus_link{
+    transform:translateX(100%);
+    opacity:0;
 }
 
 #service_box #service_box_top{
@@ -320,6 +336,11 @@ html{
 }
 
 
+
+
+#vision{
+    opacity: 0;
+}
 
 #vision_box{
     margin-top:526px;
@@ -404,6 +425,7 @@ html{
 }
 
 .overlay_on{
+    display:none;
     width:65px;
     height:65px;
     background: black;
@@ -436,7 +458,6 @@ html{
     align-items: center;
     transform: translateX(100%);
     opacity:0;
-    cursor:pointer;
 }
 
 .overlay_part img{
@@ -475,6 +496,8 @@ html{
 
 #map_box{
     margin-top:600px;
+    transform:translateY(10%);
+    opacity:0;
 }
 
 #map{
@@ -490,6 +513,8 @@ html{
     height:250px;
     position:relative;
     display:flex;
+    opacity:0;
+    transform: translateY(10%);
 }
 
 #selector_box .slider{
@@ -551,7 +576,7 @@ html{
 }
 
 .location:nth-child(1){
-    background:url(https://upload.wikimedia.org/wikipedia/commons/3/3f/The_Body_Shop_in_the_Prudential_Center%2C_Boston_MA.jpg);
+    background:url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTV6y5vF1OvsPHX0d1nuVo0bi8IT8Yf_20PKw&usqp=CAU);
     background-size: cover;
 }
 .location:nth-child(2){
@@ -575,7 +600,7 @@ html{
     background-size: cover;
 }
 .location:nth-child(7){
-    background:url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTV6y5vF1OvsPHX0d1nuVo0bi8IT8Yf_20PKw&usqp=CAU);
+    background:url(https://upload.wikimedia.org/wikipedia/commons/3/3f/The_Body_Shop_in_the_Prudential_Center%2C_Boston_MA.jpg);
     background-size: cover;
 }
 
@@ -584,6 +609,7 @@ html{
 #custom_order{
     margin:0 auto;
     margin-top:500px;
+    opacity: 0;
 }
 
 #profile_box{
@@ -655,8 +681,8 @@ html{
 
 
 #footer .top .footer_sns_box div{
-    width:50px;
-    height:50px;
+    width:70px;
+    height:70px;
     background:#9C9C9C;
     border-radius: 50%;
     display:flex;

@@ -1,35 +1,119 @@
 window.onload=function(){
+    var lastScrollTop = 0;
+    
+    // 우클릭 방지
+    document.oncontextmenu=function(){return false;}
+
+
+    // 스크롤 효과들
+    window.addEventListener("scroll", function(){
+      
+
+      var scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+      // 스크롤 방향 확인
+      if (scrollTop > lastScrollTop) {
+        // 스크롤을 내릴 때
+        document.getElementById("navigator").style.opacity="0";
+        document.getElementById("navigator").style.transition="1s";
+      } else {
+        // 스크롤을 올릴 때
+        document.getElementById("navigator").style.opacity="1";
+        document.getElementById("navigator").style.transition="1s";
+      }
+
+      lastScrollTop = scrollTop;
+
+      // 스크롤값 확인용
+      console.log("스크롤 Y값:", scrollY);
+      
+
+      // 스크롤값 따라서 나타내기 or 날아오기 효과
+      appear( "slogun", 900 );
+      if(window.scrollY >= 3000){
+        var title = document.getElementsByClassName("title_box")[0];
+        title.style.transform="translateX(0)";
+        title.style.opacity="1";
+        title.style.transition="2s"
+      }
+      expose( "introduce", 3400 );
+      expose( "about_us", 4700 );
+      if(window.scrollY >= 4500){
+        var title = document.getElementsByClassName("title_box")[1];
+        title.style.transform="translateX(0)";
+        title.style.opacity="1";
+        title.style.transition="2s"
+      }
+      expose( "sercive", 7600 );
+      if(window.scrollY >= 7600){
+        var cus_link = document.getElementById("cus_link");
+        cus_link.style.transform="translateX(0)";
+        cus_link.style.opacity="1";
+        cus_link.style.transition="2s"
+      }
+      expose( "vision", 8800 );
+      if(window.scrollY >= 10000){
+        var title = document.getElementsByClassName("title_box")[2];
+        title.style.transform="translateX(0)";
+        title.style.opacity="1";
+        title.style.transition="2s"
+      }
+      if(window.scrollY >= 14875){
+        var title = document.getElementsByClassName("title_box")[3];
+        title.style.transform="translateX(0)";
+        title.style.opacity="1";
+        title.style.transition="2s"
+      }
+      appear( "map_box", 20600 );
+      if(window.scrollY >= 20000){
+        var title = document.getElementsByClassName("title_box")[4];
+        title.style.transform="translateX(0)";
+        title.style.opacity="1";
+        title.style.transition="2s"
+      }
+      appear( "selector_box", 21000 );
+      if(window.scrollY >= 22000){
+        var title = document.getElementsByClassName("title_box")[5];
+        title.style.transform="translateX(0)";
+        title.style.opacity="1";
+        title.style.transition="2s"
+      }
+      expose( "custom_order", 22000 );
+    });
+
+
+    
 
     var overlay_part = document.getElementsByClassName("overlay_part");
-    var overlay_on = document.getElementsByClassName("overlay_on");
+    var product_part = document.getElementsByClassName("product_part");
 
     // 오버레이
     // 띄우기
-    overlay_on[0].addEventListener("click", function(){
+    product_part[0].addEventListener("mouseover", function(){
         overlay_part[0].style.transform="translateX(0)";
         overlay_part[0].style.opacity="1";
         overlay_part[0].style.transition="2s";
     });
 
-    overlay_on[1].addEventListener("click", function(){
+    product_part[1].addEventListener("mouseover", function(){
         overlay_part[1].style.transform="translateX(0)";
         overlay_part[1].style.opacity="1";
         overlay_part[1].style.transition="2s";
     });
 
-    overlay_on[2].addEventListener("click", function(){
+    product_part[2].addEventListener("mouseover", function(){
         overlay_part[2].style.transform="translateX(0)";
         overlay_part[2].style.opacity="1";
         overlay_part[2].style.transition="2s";
     });
 
-    overlay_on[3].addEventListener("click", function(){
+    product_part[3].addEventListener("mouseover", function(){
         overlay_part[3].style.transform="translateX(0)";
         overlay_part[3].style.opacity="1";
         overlay_part[3].style.transition="2s";
     });
 
-    overlay_on[4].addEventListener("click", function(){
+    product_part[4].addEventListener("mouseover", function(){
         overlay_part[4].style.transform="translateX(0)";
         overlay_part[4].style.opacity="1";
         overlay_part[4].style.transition="2s";
@@ -38,31 +122,31 @@ window.onload=function(){
 
 
     // 끄기
-    overlay_part[0].addEventListener("click", function(){
+    document.getElementById("first_product").addEventListener("mouseleave", function(){
         overlay_part[0].style.transform="translateX(100%)";
         overlay_part[0].style.opacity="0";
         overlay_part[0].style.transition="1s";
     });
 
-    overlay_part[1].addEventListener("click", function(){
+    document.getElementById("second_product").addEventListener("mouseleave", function(){
         overlay_part[1].style.transform="translateX(100%)";
         overlay_part[1].style.opacity="0";
         overlay_part[1].style.transition="1s";
     });
 
-    overlay_part[2].addEventListener("click", function(){
+    document.getElementById("third_product").addEventListener("mouseleave", function(){
         overlay_part[2].style.transform="translateX(100%)";
         overlay_part[2].style.opacity="0";
         overlay_part[2].style.transition="1s";
     });
 
-    overlay_part[3].addEventListener("click", function(){
+    document.getElementById("fourth_product").addEventListener("mouseleave", function(){
         overlay_part[3].style.transform="translateX(100%)";
         overlay_part[3].style.opacity="0";
         overlay_part[3].style.transition="1s";
     });
 
-    overlay_part[4].addEventListener("click", function(){
+    document.getElementById("fifth_product").addEventListener("mouseleave", function(){
         overlay_part[4].style.transform="translateX(100%)";
         overlay_part[4].style.opacity="0";
         overlay_part[4].style.transition="1s";
@@ -181,7 +265,33 @@ window.onload=function(){
       for(var i=0; i<lo_btn.length; i++){
         lo_btn[i].addEventListener("click", location_in)
       }
+
+
+}// window.onload부분 끝
+
+
+// 서서히 나타내기 함수
+function expose( name, Y ){
+  var which = document.getElementById(name);
+
+    if(window.scrollY >= Y){
+      which.style.opacity="1";
+      which.style.transition="3s";
+    }
 }
+
+
+// 서서히 올라가면서 나타내기 함수
+function appear( name, Y ){
+  var which = document.getElementById(name);
+
+    if(window.scrollY >= Y){
+      which.style.opacity="1";
+      which.style.transition="3s";
+      which.style.transform="translateY(0)";
+    }
+}
+
 
 
 // 지도 좌표 버튼
