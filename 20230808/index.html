@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>인공어초시설_현황</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./static/css/search.css">
+    <script src="./static/js/search.js"></script>
+</head>
+<body>
+    <!--
+        인천광역시 인공어초시설 현황 데이터 활용
+
+        어초 종류, 어초 수량, 설치년도 별로 검색 가능하게 만들기
+        체크박스를 사용
+    -->
+
+    <div id="Hwrap">
+        <header id="header">
+            <div id="sort_box">
+                <span>사각</span><input type="checkbox" name="sort" value="사각">
+                <span>강제(어선)</span><input type="checkbox" name="sort" value="강제(어선)">
+                <span>강제(상자형)</span><input type="checkbox" name="sort" value="강제(상자형)">
+                <span>패조류용세라믹</span><input type="checkbox" name="sort" value="패조류용세라믹">
+                <span>대형전주</span><input type="checkbox" name="sort" value="대형전주">
+                <span>신요철</span><input type="checkbox" name="sort" value="신요철">
+                <span>정삼각뿔</span><input type="checkbox" name="sort" value="정삼각뿔">
+                <span>폴리콘</span><input type="checkbox" name="sort" value="폴리콘">
+            </div>
+            <div id="amount_box">
+                <span>10개 이상</span><input type="radio" name="amount" value="10">
+                <span>50개 이상</span><input type="radio" name="amount" value="50">
+                <span>100개 이상</span><input type="radio" name="amount" value="100">
+                <span>150개 이상</span><input type="radio" name="amount" value="150">
+                <span>200개 이상</span><input type="radio" name="amount" value="200">
+                <span>250개 이상</span><input type="radio" name="amount" value="250">
+                <span>300개 이상</span><input type="radio" name="amount" value="300">
+            </div>
+            <div id="year_box">
+                <span>1900년대</span><input type="checkbox" name="year" value="1900">
+                <span>2000년대</span><input type="checkbox" name="year" value="2000">
+            </div>
+        </header>
+
+        <div id="list">
+
+        </div>
+    </div>
+
+</body>
+</html>
