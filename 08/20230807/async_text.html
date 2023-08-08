@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script>
+    
+    // Promise를 이용한 비동기 처리
+    function pfunc(){
+        return new Promise(function(a,b){
+            a(1);
+        });
+    }
+    console.log("시작");
+    pfunc().then(console.log);
+            // Promise 객체 안의 a(1)이 then 안으로 전달
+    console.log("끝");
+// 일반적으로 pc는 큐 구조로 실행 (먼저 들어온 게 먼저 실행)
+// Promise의 then을 실행하면 micro 큐 라는 구조로 따로 들어감
+// micro 큐 => 큐의 명령이 다 끝난 다음 여기 들어간 게 실행됨
+    
+
+</script>
+</head>
+<body>
+    
+</body>
+</html>

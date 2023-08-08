@@ -1,0 +1,50 @@
+// 자바스크립트 비동기 - async, await, promise
+1. 콜백함수 - 단점 :  무한 콜백, callback hell => 왜 되지? 왜 안 되지? => 잘 안 씀
+2. promise 
+3. async / await
+
+
+// 콜백을 이용한 비동기 처리 (잘 안 씀)
+    let stat=0, end=0;
+    function work(call){
+        setTimeout(function(){
+            start = Date.now();
+            for(let i=0; i<100000000; i++){}
+            end = Date.now();
+            call()
+        },0)
+    }
+    console.log("작업전")
+    work(function(){console.log(end-start);})
+
+
+
+// Promise 객체 이용
+function getData(){
+    return new Promise(function(resolve, reject){
+        $.getJSON("./전국건강증진센터표준데이터.json",function(data){
+            resolve(data.records);   // 성공할 경우
+            reject("가져오기 실패"); // 실패할 경우
+        });
+    });
+}
+
+getData().then(function(data){ // promise 객체의 결과를 받아보려면 .then 매개변수로
+        console.log(data); // 성공 내용
+        view(data);
+}, function(error){console.log(error);}) // 실패 내용
+
+
+
+// async, await 방법
+
+async function getData(){
+    var data=await fetch("./전국건강증진센터표준데이터.json").then(function(res){ return res.json();}).then(function(r){return r;});
+    console.log(data.records);
+    return data.records;
+}
+
+$(async function(){
+    data_list = await getData();
+    view(data_list);
+});
