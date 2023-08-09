@@ -39,49 +39,53 @@ $(async function(){
     var cv = $("#Canvas")[0];
     var ctx = cv.getContext("2d");
 
-    
+    $("#rect").click(function(){
+        ctx.fillStyle="pink";
+        ctx.fillRect(10,10,100,150);
+    });
 
-    // ctx.moveTo(30,10);
-    // ctx.lineTo(30,70);
-    // ctx.lineTo(80,70);
-    // ctx.lineTo(80,10);
-    // ctx.lineTo(80,35);
-    // ctx.lineTo(30,35);
-    // ctx.stroke();
+    $("#circle").click(()=>{
+        ctx.beginPath();
+        ctx.fillStyle="orange";
+        ctx.strokeStyle="black";
+        ctx.arc(60,100,50,0,2*Math.PI);
+        // ctx.stroke();
+        ctx.fill();
+    })
 
-    // ctx.moveTo(110,5);
-    // ctx.lineTo(110,75);
-    // ctx.lineTo(110,45);
-    // ctx.lineTo(135,45);
-    // ctx.stroke();
-
-    // ctx.fillStyle="#b281ff";
-    // ctx.fillRect(10, 10, 50, 33.5);
-
-    // ctx.strokeRect(50,85,60,33.5)
-
-    // ctx.beginPath();
-    // ctx.strokeStyle="red";
-    // ctx.fillStyle="#b281ff";
-    // ctx.arc(200,200,50,0,2.8*Math.PI,true);
-    // ctx.stroke();
-    // ctx.fill();
-
-
-    // ctx.font="30px Arial";
-    // ctx.fillStyle="pink";
-    // ctx.strokeStyle="hotpink";
-    // ctx.fillText("눈빛교환", 200,50);
-    // ctx.strokeText("구교환", 215,90);
-
-
-    // // Gradient
-    // var grd=ctx.createLinearGradient(10,0,100,0);
-    // // createConicGradient , createRadialGradient
-    // grd.addColorStop(0,"blue");
-    // grd.addColorStop(0.9,"brown");
-    // grd.addColorStop(1,"white");
-    // ctx.fillStyle=grd;
-    // ctx.fillRect(0,300,200,100)
-
+    var step1 = 2;
+    var step2 = 2;
+    $("#move").click(()=>{
+        var x = 52;
+        var y = 150;
+        setInterval(function(){
+            x+=step1;
+            y+=step2;
+            ctx.clearRect(0,0,500,500);
+            ctx.beginPath();
+            ctx.arc(Math.abs(x),Math.abs(y),50,0,2*Math.PI);
+            ctx.fillStyle="orange";
+            ctx.fill();
+            if(x>=450) {
+                x=-450;
+                step2 = Math.floor(Math.random()*2)+1;
+            }
+            if(Math.abs(x)<=50) {
+                x=50;
+                step2 = Math.floor(Math.random()*2)+1;
+            }
+            if(y>=450) {
+                y=-450;
+                step1 = Math.floor(Math.random()*2)+1;
+            }
+            if(Math.abs(y)<=50) {
+                y=50;
+                step1 = Math.floor(Math.random()*2)+1;
+            }
+        },1)
+    });
 });
+
+function step_ch(name){
+    name = Math.floor(Math.random()*2)+1;
+}

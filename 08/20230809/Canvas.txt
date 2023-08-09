@@ -40,4 +40,15 @@ ctx.strokeText("구교환", 215,90);
 
 
 // 그레디언트 Gradient
-var grd=ctx.createLinearGradient(0,0,100,0);
+var grd=ctx.createLinearGradient(10,0,100,0);
+// createConicGradient , createRadialGradient
+grd.addColorStop(0,"blue");
+grd.addColorStop(0.9,"brown");
+grd.addColorStop(1,"white");
+ctx.fillStyle=grd;
+ctx.fillRect(0,300,200,100)
+
+
+// 지우기
+ctx.clearRect(8,48,104,104);
+ㄴ 사각형 그리는 요령과 같음 (사각형 만큼 지워진다 생각)
