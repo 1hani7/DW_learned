@@ -83,8 +83,8 @@ Math.abs(x): 주어진 숫자의 절댓값을 반환합니다.
 Math.ceil(x): 주어진 숫자를 올림하여 정수로 반환합니다.
 Math.floor(x): 주어진 숫자를 내림하여 정수로 반환합니다. (== ~~())
 Math.round(x): 주어진 숫자를 반올림하여 가장 가까운 정수로 반환합니다.
-Math.max(x1, x2, ..., xn): 주어진 숫자 중 가장 큰 값을 반환합니다.*
-Math.min(x1, x2, ..., xn): 주어진 숫자 중 가장 작은 값을 반환합니다.*
+Math.max(...spread): 주어진 숫자 중 가장 큰 값을 반환합니다.*
+Math.min(...spread): 주어진 숫자 중 가장 작은 값을 반환합니다.*
 Math.pow(base, exponent): 지수 연산을 수행하여 base의 exponent 제곱 값을 반환합니다.
 Math.sqrt(x): 주어진 숫자의 제곱근 값을 반환합니다.
 Math.random(): 0 이상 1 미만의 난수를 반환합니다.
