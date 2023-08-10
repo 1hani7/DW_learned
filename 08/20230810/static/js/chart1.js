@@ -12,6 +12,31 @@ let cnt = 0;
 $(function(){
     ctx = $("#Canvas")[0].getContext("2d");
 
+    // 피자 조각 모양 그래프 만들기
+    ctx.beginPath();
+    ctx.moveTo(400,350); // 중심점 추가
+    ctx.arc(400,350,300,270*Math.PI/180,18*Math.PI/180,false);
+    ctx.fillStyle="purple";
+    ctx.fill();
+
+    ctx.beginPath();
+    ctx.moveTo(400,350);
+    ctx.arc(400,350,300,18*Math.PI/180,90*Math.PI/180,false);
+    ctx.fillStyle="red";
+    ctx.fill();
+
+    ctx.beginPath();
+    ctx.moveTo(400,350);
+    ctx.arc(400,350,300,90*Math.PI/180,223.2*Math.PI/180,false);
+    ctx.fillStyle="brown";
+    ctx.fill();
+
+    ctx.beginPath();
+    ctx.moveTo(400,350);
+    ctx.arc(400,350,300,223.2*Math.PI/180,270*Math.PI/180,false);
+    ctx.fillStyle="pink";
+    ctx.fill();
+
     $("#reg").click(function(){
         var name = $("#name").val();
         var tall = $("#tall").val();
@@ -71,10 +96,7 @@ function draw(name, tall){
         oldy=600-tall;
     }
 
+
+
     cnt++;
-    // for(var i=0; i<tall/10; i++){
-    //     ctx.fillStyle=color[cnt];
-    //     ctx.fillRect(100+(20*i),40+50*cnt,50,20);
-    // }
-    // cnt++;
 }
