@@ -105,7 +105,10 @@ const draw2 = () =>{
 
     var pc = 1/(total/bike);
     var bike_deg = 270+360*pc;
+    console.log(pc, bike_deg);
     bike_deg = Math.round((bike_deg>360?bike_deg-360:bike_deg)*100)/100;
+    console.log(bike_deg);
+
 
     ctx2.beginPath();
     ctx2.moveTo(350,350);
