@@ -53,12 +53,35 @@ $(async function(){
         ctx.fill();
     })
 
+    // var step1 = 1;
+    // var step2 = 1;
+    // $("#move").click(()=>{
+    //     var x = Math.floor(Math.random()*400+50);
+    //     var y = Math.floor(Math.random()*400+50);
+    //     setInterval(function(){
+    //         x+=step1;
+    //         y+=step2;
+    //         ctx.clearRect(0,0,500,500);
+    //         ctx.beginPath();
+    //         ctx.arc(x,y,50,0,2*Math.PI);
+    //         ctx.fillStyle="orange";
+    //         ctx.fill();
+    //         if(x>=450 || x<=50) {
+    //             step1 *=  -1;
+    //         }
+    //         if(y>=450 || y<=50) {
+    //             step2 *=  -1
+    //         }
+    //     },1)
+    // });
+
     var step1 = 2;
     var step2 = 2;
     $("#move").click(()=>{
-        var x = 52;
-        var y = 150;
+        var x = Math.floor(Math.random()*400+50);
+        var y = Math.floor(Math.random()*400+50);
         setInterval(function(){
+            var ran = Math.floor(Math.random()*2)+1;
             x+=step1;
             y+=step2;
             ctx.clearRect(0,0,500,500);
@@ -68,19 +91,17 @@ $(async function(){
             ctx.fill();
             if(x>=450) {
                 x=-450;
-                step2 = Math.floor(Math.random()*2)+1;
+                step2 = ran;
             }
             if(Math.abs(x)<=50) {
                 x=50;
-                step2 = Math.floor(Math.random()*2)+1;
+                step2 = ran;
             }
             if(y>=450) {
                 y=-450;
-                step1 = Math.floor(Math.random()*2)+1;
             }
             if(Math.abs(y)<=50) {
                 y=50;
-                step1 = Math.floor(Math.random()*2)+1;
             }
         },1)
     });
