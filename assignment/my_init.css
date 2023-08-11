@@ -58,3 +58,44 @@ b, strong {
     다양한 문서들을 참고함
 */
 
+a {
+    background-color: transparent;
+}
+
+small {
+    font-size: 80%;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+iframe, img {
+    border-style: none;
+}
+
+select {
+    text-transform: none;
+}
+
+canvas {
+    display: inline-block;
+}
+
+[hidden] {
+    display: none;
+}
+
+[aria-busy="true"] {
+    cursor: progress;
+}
+
+[aria-disabled="true"],
+[disabled] {
+   cursor: not-allowed;
+}
