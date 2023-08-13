@@ -48,6 +48,8 @@ function result(){
     let you = $("#you").val().toUpperCase();
     let n = data[me][you];
 
+    console.log(data);
+
     $("#result_box").show();
     $("#result").empty();
     $("#result").css("background",color[n-1]);
