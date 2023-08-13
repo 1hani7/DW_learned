@@ -19,6 +19,14 @@
     scroll-behavior: smooth;
 }
 
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:1rem;
+    font-weight:400;
+    line-height:1;
+    -webkit-text-size-adjust: 100%;
+}
+
 ::before, ::after {
     text-decoration: inherit;
     vertical-align: inherit;
@@ -39,8 +47,28 @@ table{
     border-spacing: 0;
 }
 
-input, textarea{
+input:focus{
     outline: none;
+    appearance: none;
+    border-radius: none;
+    -webkit-appearance: none;
+    -webkit-border-radius:none;
+}
+
+input,
+button,
+select,
+optgroup,
+textarea {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+button,
+select {
+  text-transform: none;
 }
 
 a{
@@ -52,11 +80,6 @@ a{
 b, strong {
   font-weight: bolder;
 }
-
-/*
-    여기서부턴 브라우저 호환성을 위해
-    다양한 문서들을 참고함
-*/
 
 a {
     background-color: transparent;
