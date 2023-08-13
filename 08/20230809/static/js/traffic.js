@@ -19,6 +19,7 @@ $(async function(){
                                                  환자수:Number(item.trnfPcnt)};
         }
     });
+    console.log(fire_stat);
     var keys = Object.keys(fire_stat); // key만 담음
 
     $.each(keys,function(i,key){
