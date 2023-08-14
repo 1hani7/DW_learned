@@ -30,20 +30,21 @@ $(async function(){
     g = $("#gu").val();
     data2 = await getData();
     data2 = data2.hsmpList;
-
+    
     $("#gu").change(async function(){
         s = $("#si").val();
         g = $("#gu").val();
         data2 = await getData();
         data2 = data2.hsmpList;
+        printResult();
     })
     $("#si").change(async function(){
         s = $("#si").val();
         g = $("#gu").val();
         data2 = await getData();
         data2 = data2.hsmpList;
+        printResult();
     })
-
     $("input[type=checkbox]").change(function(){printResult();});
     $("input[type=text]").on("keyup",function(){printResult();});
 });
@@ -59,12 +60,10 @@ function printResult(){
     $("input[name=housetynm]:checked").each(function(){housetynm.push($(this).val())});
 
 
-    console.log();
-
     $("#result").empty();
     $.each(data2, function(i, item){
         $("#result").append(
-    "<tr class='listLine'><td>"+item.hsmpNm+"</td><td>"+item.competDe+"</td><td>"+item.suplyPrvuseAr+
+    "<tr class='listLine'><td>"+item.rnAdres+"</td><td>"+item.competDe+"</td><td>"+item.suplyPrvuseAr+
     "</td><td>"+item.suplyCmnuseAr+"</td><td>"+item.houseTyNm+"</td><td>"+item.parkngCo+
     "</td><td>"+item.bassRentGtn+"</td><td>"+item.bassMtRntchrg+"</td><td>"+item.hshldCo+"</td></tr>"
         );
@@ -89,10 +88,10 @@ function printResult(){
         }
 
         if(prvusear.length!=0 && isShow){
-            if(prvusear.indexOf('1')>-1 && parseInt(data2[idx].suplyPrvuseAr) <= 20) isShow=true;
-            else if(prvusear.indexOf('2')>-1 && parseInt(data2[idx].suplyPrvuseAr) >= 20 && data2[idx].suplyPrvuseAr <= 40) isShow=true;
-            else if(prvusear.indexOf('3')>-1 && parseInt(data2[idx].suplyPrvuseAr) >= 40 && data2[idx].suplyPrvuseAr <= 60) isShow=true;
-            else if(prvusear.indexOf('4')>-1 && parseInt(data2[idx].suplyPrvuseAr) >= 60) isShow=true;
+            if(prvusear.indexOf('1')>-1 && data2[idx].suplyPrvuseAr <= 20) isShow=true;
+            else if(prvusear.indexOf('2')>-1 && data2[idx].suplyPrvuseAr >= 20 && data2[idx].suplyPrvuseAr <= 40) isShow=true;
+            else if(prvusear.indexOf('3')>-1 && data2[idx].suplyPrvuseAr >= 40 && data2[idx].suplyPrvuseAr <= 60) isShow=true;
+            else if(prvusear.indexOf('4')>-1 && data2[idx].suplyPrvuseAr >= 60) isShow=true;
             else isShow=false;
         }
 
