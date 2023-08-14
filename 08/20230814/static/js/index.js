@@ -26,12 +26,22 @@ $(async function(){
 
     makeOptions();
 
+    s = $("#si").val();
+    g = $("#gu").val();
+    data2 = await getData();
+    data2 = data2.hsmpList;
+
     $("#gu").change(async function(){
         s = $("#si").val();
         g = $("#gu").val();
         data2 = await getData();
         data2 = data2.hsmpList;
-        console.log(data2);
+    })
+    $("#si").change(async function(){
+        s = $("#si").val();
+        g = $("#gu").val();
+        data2 = await getData();
+        data2 = data2.hsmpList;
     })
 
     $("input[type=checkbox]").change(function(){printResult();});
