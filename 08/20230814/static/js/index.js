@@ -12,8 +12,8 @@ async function getRental(){
 }
 
 async function getData(){
-    // console.log("https://data.myhome.go.kr/rentalHouseList?ServiceKey="+sKey+"&brtcCode="+data.시도[s]+"&signguCode="+g);
-    var t = await fetch("https://data.myhome.go.kr:443/rentalHouseList?ServiceKey="+sKey+"&brtcCode="+data.시도[s]+"&signguCode="+g).then(res=>res.json());
+    var t = await fetch("http://krdrive.ipdisk.co.kr:8000/test/aaa.php?ServiceKey="+sKey+
+                       "&brtcCode="+data.시도[s]+"&signguCode="+g+"&numOfRows=500").then(res=>res.json());
     return t;
 }
 
@@ -30,8 +30,66 @@ $(async function(){
         s = $("#si").val();
         g = $("#gu").val();
         data2 = await getData();
+        data2 = data2.hsmpList;
+        console.log(data2);
     })
+
+    $("input[type=checkbox]").change(function(){printResult();});
+    $("input[type=text]").on("keyup",function(){printResult();});
 });
+
+function printResult(){
+    let rentgtn_val = $("#rentgtn").val();
+    let rntchrg_val = $("#rntchrg").val();
+    const prvusear = new Array();
+    const housetynm = new Array();
+    
+
+    $("input[name=prvusear]:checked").each(function(){prvusear.push($(this).val())});
+    $("input[name=housetynm]:checked").each(function(){housetynm.push($(this).val())});
+
+
+    console.log();
+
+    $("#result").empty();
+    $.each(data2, function(i, item){
+        $("#result").append(
+    "<tr class='listLine'><td>"+item.hsmpNm+"</td><td>"+item.competDe+"</td><td>"+item.suplyPrvuseAr+
+    "</td><td>"+item.suplyCmnuseAr+"</td><td>"+item.houseTyNm+"</td><td>"+item.parkngCo+
+    "</td><td>"+item.bassRentGtn+"</td><td>"+item.bassMtRntchrg+"</td><td>"+item.hshldCo+"</td></tr>"
+        );
+    })
+
+    $(".listLine").filter(function(){
+        let isShow = true;
+        var idx = $(this).index();
+
+        if(housetynm.length!=0 && isShow){
+            if(housetynm.indexOf(data2[idx].houseTyNm)==-1) isShow=false;
+        }
+
+        if(rentgtn_val.length!=0 && isShow){
+            if(Number(data2[idx].bassRentGtn) >= Number(rentgtn_val)) isShow=true;
+            else isShow = false;
+        }
+
+        if(rntchrg_val.length!=0 && isShow){
+            if(Number(data2[idx].bassMtRntchrg) >= Number(rntchrg_val)) isShow=true;
+            else isShow = false;
+        }
+
+        if(prvusear.length!=0 && isShow){
+            if(prvusear.indexOf('1')>-1 && parseInt(data2[idx].suplyPrvuseAr) <= 20) isShow=true;
+            else if(prvusear.indexOf('2')>-1 && parseInt(data2[idx].suplyPrvuseAr) >= 20 && data2[idx].suplyPrvuseAr <= 40) isShow=true;
+            else if(prvusear.indexOf('3')>-1 && parseInt(data2[idx].suplyPrvuseAr) >= 40 && data2[idx].suplyPrvuseAr <= 60) isShow=true;
+            else if(prvusear.indexOf('4')>-1 && parseInt(data2[idx].suplyPrvuseAr) >= 60) isShow=true;
+            else isShow=false;
+        }
+
+        $(this).toggle(isShow);
+    })
+
+};
 
 
 
