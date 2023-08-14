@@ -4,10 +4,11 @@ select:focus{outline:none;}
 td{border:1px solid black; padding:5px; text-align: center;}
 tr:nth-child(even){background: rgb(227, 227, 227);}
 select{
-    width:100px;
+    width:110px;
+    height:30px;
     margin-left:20px;
     position:relative;
-    top:-2.5px;
+    top:-2px;
 }
 #wrap{
     width:900px;
@@ -17,10 +18,11 @@ select{
     width:100%;
     border:1px solid black;
     border-radius: 7px;
-    padding: 10px 15px;
+    padding: 15px;
 }
 .select_box, .check_box{
     display:flex;
+    align-items: center;
     column-gap: 50px;
     padding-bottom:10px;
     margin-bottom:10px;
@@ -28,6 +30,8 @@ select{
 }
 .check_box input{
     margin-left:10px;
+    position:relative;
+    top:1px;
 }
 .search_wrap input{
     height:30px; width:200px;
