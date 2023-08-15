@@ -106,15 +106,3 @@ canvas {
     display: inline-block;
 }
 
-[hidden] {
-    display: none;
-}
-
-[aria-busy="true"] {
-    cursor: progress;
-}
-
-[aria-disabled="true"],
-[disabled] {
-   cursor: not-allowed;
-}
