@@ -358,18 +358,18 @@ canvas {
 .font12{font-size:6.5rem;}
 
 @media (max-width:767px) {
-    .font1{font-size:1rem;}
-    .font2{font-size:1.5rem;}
-    .font3{font-size:2rem;}
-    .font4{font-size:2.5rem;}
-    .font5{font-size:3rem;}
-    .font6{font-size:3.5rem;}
-    .font7{font-size:4rem;}
-    .font8{font-size:4.5rem;}
-    .font9{font-size:5rem;}
-    .font10{font-size:5.5rem;}
-    .font11{font-size:6rem;}
-    .font12{font-size:6.5rem;}
+    .font1{font-size:0.75rem;}
+    .font2{font-size:1rem;}
+    .font3{font-size:1.25rem;}
+    .font4{font-size:1.5rem;}
+    .font5{font-size:1.75rem;}
+    .font6{font-size:2rem;}
+    .font7{font-size:2.25rem;}
+    .font8{font-size:2.5rem;}
+    .font9{font-size:2.75rem;}
+    .font10{font-size:3rem;}
+    .font11{font-size:3.25rem;}
+    .font12{font-size:3.5rem;}
 }
 
 
@@ -385,4 +385,127 @@ canvas {
 .bold4{font-weight:900;}
 
 
-/*[]*/
+/*[containers]*/
+.con-xs{max-width:900px;}
+.con-s{max-width:1000px;}
+.con-l{max-width:1100px;}
+.con-xl{max-width:1200px;}
+@media (max-width:767px){
+    .con-xs{max-width:767px;}
+    .con-s{max-width:767px;}
+    .con-l{max-width:767px;}
+    .con-xl{max-width:767px;}
+}
+/*percentage widths*/
+.width5{width:5%;}
+.width10{width:10%;}
+.width15{width:15%;}
+.width20{width:20%;}
+.width25{width:25%;}
+.width30{width:30%;}
+.width35{width:35%;}
+.width40{width:40%;}
+.width45{width:45%;}
+.width50{width:50%;}
+.width55{width:55%;}
+.width60{width:60%;}
+.width65{width:65%;}
+.width70{width:70%;}
+.width75{width:75%;}
+.width80{width:80%;}
+.width85{width:85%;}
+.width90{width:90%;}
+.width95{width:95%;}
+.width100{width:100%;}
+
+
+/*[position]*/
+.p-relative{position:relative;}
+.p-absolute{position:absolute;}
+.p-fixed{position:fixed;}
+.p-sticky{position:sticky;}
+
+/*top*/
+.top5{top:5%;}
+.top10{top:10%;}
+.top15{top:15%;}
+.top20{top:20%;}
+.top25{top:25%;}
+.top30{top:30%;}
+.top35{top:35%;}
+.top40{top:40%;}
+.top45{top:45%;}
+.top50{top:50%;}
+.top55{top:55%;}
+.top60{top:60%;}
+.top65{top:65%;}
+.top70{top:70%;}
+.top75{top:75%;}
+.top80{top:80%;}
+.top85{top:85%;}
+.top90{top:90%;}
+.top95{top:95%;}
+.top100{top:100%;}
+/*bottom*/
+.bottom5{bottom:5%;}
+.bottom10{bottom:10%;}
+.bottom15{bottom:15%;}
+.bottom20{bottom:20%;}
+.bottom25{bottom:25%;}
+.bottom30{bottom:30%;}
+.bottom35{bottom:35%;}
+.bottom40{bottom:40%;}
+.bottom45{bottom:45%;}
+.bottom50{bottom:50%;}
+.bottom55{bottom:55%;}
+.bottom60{bottom:60%;}
+.bottom65{bottom:65%;}
+.bottom70{bottom:70%;}
+.bottom75{bottom:75%;}
+.bottom80{bottom:80%;}
+.bottom85{bottom:85%;}
+.bottom90{bottom:90%;}
+.bottom95{bottom:95%;}
+.bottom100{bottom:100%;}
+/*left*/
+.left5{left:5%; transform:translate(-5%)}
+.left10{left:10%; transform:translate(-10%)}
+.left15{left:15%; transform:translate(-15%)}
+.left20{left:20%; transform:translate(-20%)}
+.left25{left:25%; transform:translate(-25%)}
+.left30{left:30%; transform:translate(-30%)}
+.left35{left:35%; transform:translate(-35%)}
+.left40{left:40%; transform:translate(-40%)}
+.left45{left:45%; transform:translate(-45%)}
+.left50{left:50%; transform:translate(-50%)}
+.left55{left:55%; transform:translate(-55%)}
+.left60{left:60%; transform:translate(-60%)}
+.left65{left:65%; transform:translate(-65%)}
+.left70{left:70%; transform:translate(-70%)}
+.left75{left:75%; transform:translate(-75%)}
+.left80{left:80%; transform:translate(-80%)}
+.left85{left:85%; transform:translate(-85%)}
+.left90{left:90%; transform:translate(-90%)}
+.left95{left:95%; transform:translate(-95%)}
+.left100{left:100%; transform:translate(-100%)}
+/*right*/
+.rightt5{right:5%; transform:translate(5%)}
+.right10{right:10%; transform:translate(10%)}
+.right15{right:15%; transform:translate(15%)}
+.right20{right:20%; transform:translate(20%)}
+.right25{right:25%; transform:translate(25%)}
+.right30{right:30%; transform:translate(30%)}
+.right35{right:35%; transform:translate(35%)}
+.right40{right:40%; transform:translate(40%)}
+.right45{right:45%; transform:translate(45%)}
+.right50{right:50%; transform:translate(50%)}
+.right55{right:55%; transform:translate(55%)}
+.right60{right:60%; transform:translate(60%)}
+.right65{right:65%; transform:translate(65%)}
+.right70{right:70%; transform:translate(70%)}
+.right75{right:75%; transform:translate(75%)}
+.right80{right:80%; transform:translate(80%)}
+.right85{right:85%; transform:translate(85%)}
+.right90{right:90%; transform:translate(90%)}
+.right95{right:95%; transform:translate(95%)}
+.right100{right:100%; transform:translate(100%)}
