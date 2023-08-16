@@ -55,7 +55,7 @@ const hlove_data = {
     label:"hlove",
     data:hlove,
     backgroundColor:'tomato',
-    pointBorderWidth:20,
+    pointBorderWidth:15,
     borderColor:"tomato",
 }
 
@@ -72,6 +72,9 @@ new Chart(ctx,{
                 display:true,
                 text:"복합 차트"
             }
+        },
+        scales:{
+        y:{min:0, max:110, ticks:{stepSize:5}}
         }
     }
 })
