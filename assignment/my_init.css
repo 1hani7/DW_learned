@@ -357,6 +357,21 @@ canvas {
 .font11{font-size:6rem;}
 .font12{font-size:6.5rem;}
 
+@media (max-width:767px) {
+    .font1{font-size:1rem;}
+    .font2{font-size:1.5rem;}
+    .font3{font-size:2rem;}
+    .font4{font-size:2.5rem;}
+    .font5{font-size:3rem;}
+    .font6{font-size:3.5rem;}
+    .font7{font-size:4rem;}
+    .font8{font-size:4.5rem;}
+    .font9{font-size:5rem;}
+    .font10{font-size:5.5rem;}
+    .font11{font-size:6rem;}
+    .font12{font-size:6.5rem;}
+}
+
 
 /*[font-weight]*/
 .light1{font-weight:100;}

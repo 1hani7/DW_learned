@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+<style>
+    #board{width:800px; height:800px; box-shadow:3px 3px 10px grey; margin:2rem auto;}
+</style>
+</head>
+<body>
+    <div id="board">
+        <canvas id="mixedChart" width="800" height="800"></canvas>
+    </div>
+</body>
+</html>
+<script>
+    /*
+        혼합차트 만들기 ( 막대, 꺾은선 )
+    */
+
+const day = ["5월","6월","7월","8월","9월"];
+const clove = [34,56,86,43,12]; // 막대
+const plove = [11,24,95,35,23]; // 막대
+const nlove = [8,43,100,100,100]; // 막대
+const hlove = [0,5,70,89,94,14]; // 꺾은선 그래프
+
+const ctx = $("#mixedChart")[0];
+
+const clove_data = {
+    type:'bar',
+    label:"clove",
+    data:clove,
+    backgroundColor:'mistyrose',
+}
+
+const plove_data = {
+    type:'bar',
+    label:"plove",
+    data:plove,
+    backgroundColor:'pink',
+}
+
+const nlove_data = {
+    type:'bar',
+    label:'nlove',
+    data:nlove,
+    backgroundColor:'violet',
+}
+
+const hlove_data = {
+    type:'line',
+    label:"hlove",
+    data:hlove,
+    backgroundColor:'tomato',
+    pointBorderWidth:20,
+    borderColor:"tomato",
+}
+
+const totalData = {
+    labels:day,
+    datasets:[hlove_data, clove_data, plove_data, nlove_data]
+}
+
+new Chart(ctx,{
+    data:totalData,
+    options:{
+        plugins:{
+            title:{
+                display:true,
+                text:"복합 차트"
+            }
+        }
+    }
+})
+
+</script>

@@ -11,13 +11,16 @@
     ㄴ text-align 관련 부분도 추가
 
 4. 너비, 높이 관련 클래스 => ()
-    ㄴ max-width 사용
+    ㄴ 큰 컨테이너만 max-width로 표현
+    ㄴ 내부에 들어갈 것들은 퍼센티지로만 표현
+    ㄴ 혹은 flex-grow를 이용
 
 5. position과 left, rignt, top, bottom 관련 클래스
     ㄴ 화면비 변경을 고려(%)
 
 6. flex 관련 클래스 => (justify, align, wrap, 너비%로 몇 줄씩 나오게 할지)
     ㄴ 반응형 고려
+    ㄴ gap
 
 7. grid 관련 클래스 => (몇 줄로 만들 것인지, 몇부터 몇까지 차지할 것인지 경우의 수)
 
