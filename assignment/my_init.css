@@ -39,6 +39,7 @@
     --background-orange:#ffd782;
     --background-black:#000000;
     --background-white:#fff;
+    font-size:16px;
 }
 
 body{
@@ -260,7 +261,7 @@ canvas {
 .mar10{margin:5.5rem;}
 .mar11{margin:6rem;}
 /*margin center*/
-.marC0{margin:0 auto;}
+.marC{margin:0 auto;}
 .marC1{margin:1rem auto;}
 .marC2{margin:1.5rem auto;}
 .marC3{margin:2rem auto;}
@@ -309,5 +310,64 @@ canvas {
 .marB14{margin-bottom:7.5rem;}
 .marB15{margin-bottom:8rem;}
 /*margin left*/
-
+.marL1{margin-left:1rem;}
+.marL2{margin-left:1.5rem;}
+.marL3{margin-left:2rem;}
+.marL4{margin-left:2.5rem;}
+.marL5{margin-left:3rem;}
+.marL6{margin-left:3.5rem;}
+.marL7{margin-left:4rem;}
+.marL8{margin-left:4.5rem;}
+.marL9{margin-left:5rem;}
+.marL10{margin-left:5.5rem;}
+.marL11{margin-left:6rem;}
+.marL12{margin-left:6.5rem;}
+.marL13{margin-left:7rem;}
+.marL14{margin-left:7.5rem;}
+.marL15{margin-left:8rem;}
 /*margin right*/
+.marR1{margin-right:1rem;}
+.marR2{margin-right:1.5rem;}
+.marR3{margin-right:2rem;}
+.marR4{margin-right:2.5rem;}
+.marR5{margin-right:3rem;}
+.marR6{margin-right:3.5rem;}
+.marR7{margin-right:4rem;}
+.marR8{margin-right:4.5rem;}
+.marR9{margin-right:5rem;}
+.marR10{margin-right:5.5rem;}
+.marR11{margin-right:6rem;}
+.marR12{margin-right:6.5rem;}
+.marR13{margin-right:7rem;}
+.marR14{margin-right:7.5rem;}
+.marR15{margin-right:8rem;}
+
+
+/*[font-size]*/
+.font1{font-size:1rem;}
+.font2{font-size:1.5rem;}
+.font3{font-size:2rem;}
+.font4{font-size:2.5rem;}
+.font5{font-size:3rem;}
+.font6{font-size:3.5rem;}
+.font7{font-size:4rem;}
+.font8{font-size:4.5rem;}
+.font9{font-size:5rem;}
+.font10{font-size:5.5rem;}
+.font11{font-size:6rem;}
+.font12{font-size:6.5rem;}
+
+
+/*[font-weight]*/
+.light1{font-weight:100;}
+.light2{font-weight:200;}
+.light3{font-weight:300;}
+.light4{font-weight:400;}
+.normal{font-weight:500;}
+.bold1{font-weight:600;}
+.bold2{font-weight:700;}
+.bold3{font-weight:800;}
+.bold4{font-weight:900;}
+
+
+/*[]*/
