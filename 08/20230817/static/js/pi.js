@@ -6,14 +6,15 @@ const category=[
 let ctx1 = "", ctx2 = "", pi1='', pi2='';
 const income=[]; // 수입 money 저장 배열
 const expen=[]; // 지출 money 저장 배열
-
+const expen2=[(Math.floor(Math.random()*100))*1000,(Math.floor(Math.random()*100))*1000,(Math.floor(Math.random()*100))*1000];
+console.log(expen2)
 
 $(function(){
     ctx1 = $("#pi1")[0]; // 첫번째 캔버스
     ctx2 = $("#pi2")[0]; // 두번째 캔버스
 // 머니 배열 초기화
 for(var i=0; i<category[0].length; i++) income.push((10-i)*10000);
-for(var i=0; i<category[1].length; i++) expen.push((Math.floor(Math.random)*100)*1000);
+for(var i=0; i<category[1].length; i++) expen.push((Math.floor(Math.random()*100))*1000);
 income_pi();
 expen_pi();
 
@@ -65,10 +66,10 @@ function income_pi(){
                 backgroundColor:colors,
                 borderAlign:"center", // center, inner
                 borderWidth:2,
-                borderColor:"crimson",
+                borderColor:"firebrick",
                 borderDash:[5,5], // [선의 길이 , 선의 간격]
                 borderDashOffset:2, // 테두리 갯수를 지정
-                rotation:45, // 기울기
+                rotation:0, // 기울기
             }],
         },
         options:{
@@ -77,10 +78,13 @@ function income_pi(){
                     formatter:function(value,context){
                         var idx = context.dataIndex;
                         var lb = context.chart.data.labels[idx];
-                        return lb+" "+value.toLocaleString()+"원";
+                        var total = context.chart.getDatasetMeta(0).total;
+                        
+                        return Math.round(value/total*100)+"% "+lb+" "+value.toLocaleString()+"원";
                     },
-                    color:"white",
-                    align:"center",
+                    color:"black",
+                    align:"center", // start, end, center, right, left, bottom, top
+                    anchor:"center", // center, start, end
                     font:{
                         size:"13px",
                     },
@@ -95,6 +99,50 @@ function income_pi(){
     });
 }
 
-function expen_pi(){
+const colors2 = ["#FF3B3B","#FF80BD","#FF006F","#FFBE30","#ffd782","#ff3f92","#c681ee"];
 
+function expen_pi(){
+    pi2 = new Chart(ctx2,{
+        plugins:[ChartDataLabels],
+        type:"doughnut",
+        data:{
+            labels:category[1],
+            datasets:[{
+                label:category[1].slice(0,4),
+                data:expen.slice(0,4),
+                backgroundColor:colors2,
+                borderWidth:0,
+                borderWidth:3,
+                borderColor:"firebrick",
+                ratation:0,
+            },{
+                data:expen2,
+                label:category[1].slice(4,7),
+                backgroundColor:colors,
+                borderWidth:0,
+                borderWidth:3,
+                borderColor:"firebrick",
+                ratation:0,
+            }]
+        },
+        options:{
+            plugins:{
+                datalabels:{
+                    formatter:function(value,context){
+                        var idx = context.dataIndex;
+                        var lb = context.chart.data.labels[idx];
+                        var total = context.chart.getDatasetMeta(0).total;
+                        
+                        return Math.round(value/total*100)+"% "+lb+" "+value.toLocaleString()+"원";
+                    },
+                    color:"black",
+                    align:"center", // start, end, center, right, left, bottom, top
+                    anchor:"center", // center, start, end
+                    font:{
+                        size:"13px",
+                    },
+                },
+            }
+        }
+    })
 }

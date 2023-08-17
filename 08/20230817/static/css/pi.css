@@ -48,5 +48,5 @@ input:focus{outline:none;}
     border-radius: 5px; line-height:25px;
     color:white; font-size:16px;
 }
-#chatr_board{display:flex; justify-content: space-evenly;}
+#chart_board{display:flex; justify-content: space-evenly;}
 #chart1, #chart2{width:600px; height:600px;}
