@@ -19,20 +19,22 @@
 [Clear] 5. position과 left, right, top, bottom 관련 클래스
     ㄴ 화면비 변경을 고려(%)
 
-[Now]6. flex 관련 클래스 => (justify, align, wrap, 너비%로 몇 줄씩 나오게 할지)
+[Clear]6. flex 관련 클래스 => (justify, align, wrap, 너비%로 몇 줄씩 나오게 할지)
     ㄴ 반응형 고려
     ㄴ gap
 
 
-border-radius 관련
+[Clear]border-radius 관련
 
 7. grid 관련 클래스 => (몇 줄로 만들 것인지, 몇부터 몇까지 차지할 것인지 경우의 수)
 
-8. text-shadow, box-shadow 관련
+[Clear] img 태그 position 관련
 
-9. table 관련 => (border-spacing, collapse)
+[Clear]8. text-shadow, box-shadow 관련
 
-10. display 변경 관련 => (inline-block, block, none)
+[Clear]9. table 관련 => (border-spacing, collapse)
 
-11. list-style-type 변경 관련
+[Clear]10. display 변경 관련 => (inline-block, block, none)
+
+[Clear]11. list-style-type 변경 관련
     ㄴ .list-square 같은 느낌으로?
