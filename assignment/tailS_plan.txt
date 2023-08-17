@@ -19,9 +19,12 @@
 [Clear] 5. position과 left, right, top, bottom 관련 클래스
     ㄴ 화면비 변경을 고려(%)
 
-6. flex 관련 클래스 => (justify, align, wrap, 너비%로 몇 줄씩 나오게 할지)
+[Now]6. flex 관련 클래스 => (justify, align, wrap, 너비%로 몇 줄씩 나오게 할지)
     ㄴ 반응형 고려
     ㄴ gap
+
+
+border-radius 관련
 
 7. grid 관련 클래스 => (몇 줄로 만들 것인지, 몇부터 몇까지 차지할 것인지 경우의 수)
 

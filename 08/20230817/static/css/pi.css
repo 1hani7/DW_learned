@@ -1,0 +1,52 @@
+*{padding:0; margin:0; box-sizing: border-box;}
+input:focus{outline:none;}
+
+#wrap{
+    width:1300px;
+    margin:0 auto;
+    text-align: center;
+    position:relative;
+}
+#wrap h1{
+    padding:20px 0;
+}
+#data_input{
+    width:100%;
+    position:relative;
+}
+#data_input .labels{
+    display:inline-block;
+    border:1px solid salmon;
+    padding: 10px 30px;
+    border-radius: 5px;
+    font-weight:800;
+    color:salmon;
+}
+#data_input .choice{
+    border:none;
+    background:sandybrown;
+    color:#fff;
+    font-weight:800;
+}
+.input_wrap{
+    display:flex; align-items:center; justify-content: center;
+    padding:10px 0; column-gap: 10px;
+}
+.category{
+    width:150px; height:25px; border-color:sandybrown;
+    border-radius: 5px;
+    padding:0 5px;
+}
+.money{
+    width:150px; height:25px; border-radius: 5px;
+    outline:none;
+    border:1px solid sandybrown;
+}
+.bt{
+    height:25px; padding:0 20px;
+    background:salmon; border:none;
+    border-radius: 5px; line-height:25px;
+    color:white; font-size:16px;
+}
+#chatr_board{display:flex; justify-content: space-evenly;}
+#chart1, #chart2{width:600px; height:600px;}
