@@ -9,7 +9,7 @@
 <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
 
 <!--chart.js-->
-<script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.0.0-beta/dist/chart.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-autocolors"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
 
@@ -43,6 +43,7 @@
                 borderColor:"LightCoral",
                 borderWidth:1,
                 pointRadius:0,
+                fill:false,
                 animation:function(context){
                     var delay = 0;
                     var idx = context.dataIndex;
@@ -52,7 +53,7 @@
                         started[idx] = true;
                     }
                     var {x,y} = idx>0 ? chart.getDatasetMeta(0).data[idx-1].
-                    getProps(['x','y'], true) : {x:0, y:chart.scales.y.getPixelforValue(100)};
+                    getProps(['x','y'], true) : {x:0, y:chart.scales.y.getPixelForValue(100)};
 
                     return { 
                         x:{easing:"linear",duration:delayBP, from:x, delay},
@@ -66,7 +67,13 @@
             scales:{
                 x:{type:"linear"}
             }
-        }
+        },
+        plugins:[{
+            id:'force_line_update',
+            beforeDatasetDraw(chart,ctx){
+                ctx.meta.dataset.points = ctx.meta.data;
+            }
+        }]
     });
 
 </script>
