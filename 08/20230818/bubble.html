@@ -51,13 +51,14 @@
                 data:data,
                 backgroundColor:function(context){ // 데이터 갯수만큼 반복문
                     var 인덱스 = context.dataIndex;
-                    var r = context.chart.getDatasetMeta(0)._dataset.data[인덱스].r; // datasets가 배열이니까 0번,1번, 2번 인덱스 식으로 찾아주는 것
-                    
+                    var r = context.chart.getDatasetMeta(0)._dataset.data[인덱스].r;
+                    // datasets가 배열이니까 0번,1번, 2번 인덱스 식으로 찾아주는 것
+                    // 두 번째 데이터는 context.chart.getDatasetMeta(1)로 찾아줄 수 있음
+                    // 자세한 건 context와 context.chart.getDatasetMeta(0)를 console.log()
+
+                    console.log(context);
+                    console.log(context.chart.getDatasetMeta(0));
                     return r <= 20 ? "#ff3f92" : r <= 40 ? "#c681ee" : r<=60 ? "#FF80BD" : "#ff5555";
-                    // var r = Math.floor(Math.random()*140)+100;
-                    // var g = Math.floor(Math.random()*0);
-                    // var b = Math.floor(Math.random()*70);
-                    // return "rgba("+r+","+g+","+b+","+"0.7)";
                 },
             }]
         }

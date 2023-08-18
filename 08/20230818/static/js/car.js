@@ -142,14 +142,14 @@ $( async function(){
 });
 
 
-function refine(temp){
+function refine(temp){ // data 배열 안에 temp를 재구성해서 넣어주는 함수
     $.each(temp,function(i,c){
         var type='';
 
         // 작성 순서에 주의할 것*
 
         if( (type=include(c.DTCONT)) == '' || c.PURPOS_DIV==="사업용") return true;
-        // 콜백함수의 if문의 return값이 true라면 이번 if문은 무시됨 * 중요
+        // 콜백함수의 if문의 return값이 true라면 이번 반복이 무시됨 * 중요
         // => 즉, json파일의 객체의  DTCONT의 값이 types 배열 안의 무엇과도 같지 않거나,
         // PURPOS_DIV가 사업용인, 즉 비사업용이 아닌 경우라면 이번 반복은 스킵됨
         // * false가 return되었다면 전체적인 반복 자체가 완전히 중단됨 * 중요
