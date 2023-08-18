@@ -38,7 +38,7 @@ const types=["하이브리드","수소","경유","휘발유","전기"];
 async function getData(){
     var temp = await fetch("./연료별용도별자동차등록현황.json").then((res)=>res.json());
     console.log(temp);
-    refine(temp);
+    refine(temp); // data 객체 내부를 필요한 값들로 채우는 함수
 }
 
 
@@ -145,17 +145,27 @@ $( async function(){
 function refine(temp){
     $.each(temp,function(i,c){
         var type='';
+
+        // 작성 순서에 주의할 것*
+
         if( (type=include(c.DTCONT)) == '' || c.PURPOS_DIV==="사업용") return true;
-        if( !(type in data))
-            data[type]=new Object();
-        if( !( c.REG_YY in data[type]) )
+        // 콜백함수의 if문의 return값이 true라면 이번 if문은 무시됨 * 중요
+        // => 즉, json파일의 객체의  DTCONT의 값이 types 배열 안의 무엇과도 같지 않거나,
+        // PURPOS_DIV가 사업용인, 즉 비사업용이 아닌 경우라면 이번 반복은 스킵됨
+        // * false가 return되었다면 전체적인 반복 자체가 완전히 중단됨 * 중요
+         
+        if( !(type in data)) // type 의 값이 data 안에 key로 존재하지 않는지 확인하는 if문
+            data[type]=new Object(); // 없다면, 없는 type 값으로 오브젝트를 새로 생성
+
+        if( !( c.REG_YY in data[type]) ) // data[type] 안에 연도가 들어있지 않다면 승용차값이 들어간 객체 틀을 생성
             data[type][c.REG_YY]=Number(c.RIDNG_ODR);
-        else
+
+        else // data[type] 안에 연도가 들어있다면 해당 연도의 value값에 승용차값 추가
             data[type][c.REG_YY]+=Number(c.RIDNG_ODR);
     });
     console.log(data);
 }
-function include(kind){
+function include(kind){ // 이번 data 객체의 DTCONT의 값이 types 배열 안의 무언가와 같다면 해당 값을 리턴
     for(var i in types){
         if(kind.indexOf(types[i]) > -1)
             return types[i];

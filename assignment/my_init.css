@@ -925,24 +925,24 @@ canvas {
 
 
 
-/*media on*/
+/*화면비가 줄어들면 꺼지도록*/
 
 /* PC , 테블릿 가로*/ 
 @media all and (min-width:768px) and (max-width:1023px) { 
-    .xl-wide-on{display:block;}
+    .under-pc-off{display:none;}
 } 
   
   /* 테블릿 세로*/ 
   @media all and (min-width:768px) and (max-width:1023px) { 
-    .l-wide-on{display:block;}
+    .under-tablet-off{display:none;}
 } 
   
   /* 모바일 가로, 테블릿 세로*/ 
   @media all and (min-width:480px) and (max-width:767px) {
-    .s-wide-on{display:block;}
+    .under-tablet-phone-off{display:none;}
 } 
   
   /* 모바일 가로, 테블릿 세로*/ 
   @media all and (max-width:479px) {
-    .xs-wide-on{display:block;}
+    .under-phone-off{display:none;}
 }
