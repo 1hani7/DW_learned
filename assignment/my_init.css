@@ -190,6 +190,7 @@ canvas {
 .bg-white{background-color: var(--background-white);}
 .bg-black{background-color: var(--background-black);}
 
+/*수정사항 - 굵기, 스타일, 색깔 따로따로 다시 만들기*/
 /*[border]*/
 .border-red{border:1px solid var(--color-red);}
 .border-pink{border:1px solid var(--color-pink);}
