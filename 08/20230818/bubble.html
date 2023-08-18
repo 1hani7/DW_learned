@@ -1,0 +1,65 @@
+<!--bubble.html-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<!--jquery-->
+<script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+
+<!--chart.js-->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-autocolors"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+
+<!--bootstrap-->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+<style>#bb{width:700px; height:700px; margin:3rem auto; box-shadow: 2px 2px 5px gray;}</style>
+
+</head>
+<body>
+    <div id="bb">
+        <canvas id="bubble" width="700" height="700"></canvas>
+    </div>
+</body>
+</html>
+
+<script>
+
+    const data = [];
+    for(var i=1; i<=23; i++){
+        data.push( { x:i, y:Math.floor(Math.random()*101),
+                    r:Math.floor(Math.random()*60)+10 } );
+    }
+    
+
+    console.log()
+
+    // 버블 차트
+    // x축, y축, r=원의 크기
+    // ex):동물원 방문자 기록 => x:월, y:연령대, r:인원수(버블 크기)
+    // 세포 분포도, 인구 분포도, 화학작용에 대한 결과물 등등
+
+    const ctx = $("#bubble")[0];
+    new Chart(ctx,{
+        type:"bubble",
+        data:{
+            datasets:[{
+                label:"상수의 시간대별 무지성도 변화",
+                data:data,
+                backgroundColor:function(context){ // 데이터 갯수만큼 반복문
+                    var 인덱스 = context.dataIndex;
+                    var r = context.chart.getDatasetMeta(0)._dataset.data[인덱스].r; // datasets가 배열이니까 0번,1번, 2번 인덱스 식으로 찾아주는 것
+                    
+                    return r <= 20 ? "#ff3f92" : r <= 40 ? "#c681ee" : r<=60 ? "#FF80BD" : "#ff5555";
+                    // var r = Math.floor(Math.random()*140)+100;
+                    // var g = Math.floor(Math.random()*0);
+                    // var b = Math.floor(Math.random()*70);
+                    // return "rgba("+r+","+g+","+b+","+"0.7)";
+                },
+            }]
+        }
+    })
+</script>

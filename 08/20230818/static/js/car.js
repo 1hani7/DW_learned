@@ -1,0 +1,164 @@
+// let data = [];
+// let names = ["하이브리드","수소","경유","휘발유","전기"];
+// let fuels = new Set();
+
+// let res = new Object();
+
+// async function getData(){
+//     return await fetch("./연료별용도별자동차등록현황.json").then(r=>r.json());
+// }
+
+// $(async function(){
+//     data = await getData();
+//     console.log(data);
+
+//     $.each(data,function(i,item){
+//         fuels.add(item.DTCONT)
+        
+//         if(item.REG_YY in res && item.PURPOS_DIV == "비사업용" && item.REG_YY == res[item.REG_YY].연도){
+//             if(item.DTCONT.indexOf(names[0])!=-1)  res[item.REG_YY].하이브리드 += Number(item.RIDNG_ODR);
+//             if(item.DTCONT==names[1])  res[item.REG_YY].수소 += Number(item.RIDNG_ODR);
+//             if(item.DTCONT==names[2])  res[item.REG_YY].경유 += Number(item.RIDNG_ODR);
+//             if(item.DTCONT.indexOf(names[3])!=-1)  res[item.REG_YY].휘발유 += Number(item.RIDNG_ODR);
+//             if(item.DTCONT==names[4])  res[item.REG_YY].전기 += Number(item.RIDNG_ODR);
+//         }else if(!(item.REG_YY in res)){
+//             res[item.REG_YY] = {연도:item.REG_YY,전기:Number(0),하이브리드:Number(0),휘발유:Number(0),경유:Number(0),수소:Number(0)};
+//         }
+//     });
+    
+//     console.log(res);
+//     console.log(fuels);
+// });
+
+
+let data=new Object();
+
+const types=["하이브리드","수소","경유","휘발유","전기"];
+
+async function getData(){
+    var temp = await fetch("./연료별용도별자동차등록현황.json").then((res)=>res.json());
+    console.log(temp);
+    refine(temp);
+}
+
+
+$( async function(){
+    await getData();
+    const ctx = $("#car")[0];
+
+    // let keys = Object.keys(data);
+    let years = Object.keys(data[types[0]]);
+    var fuel = Object.keys(data);
+    console.log(fuel);
+    // const color = ["green","blue","orange","tomato","yellowgreen"]    
+    // var dataset=[];
+    // $.each(fuel,function(i,t){
+    //     dataset.push({
+    //         label:t,
+    //         data:data[t],
+    //         borderColor:color[i],
+    //         backgroundColor:color[i],
+    //     })
+    // })
+
+    new Chart(ctx,{
+        type:"line",
+        data:{
+            labels:years,
+            datasets:
+            [
+                {
+                    label:fuel[0],
+                    data:data[fuel[0]],
+                    borderColor:"green",
+                    backgroundColor:"green",
+                    yAxisID:"수소",
+                },
+                {
+                    label:fuel[1],
+                    data:data[fuel[1]],
+                    borderColor:"blue",
+                    backgroundColor:"blue",
+                    yAxisID:"전기",
+                },
+                {
+                    label:fuel[2],
+                    data:data[fuel[2]],
+                    borderColor:"orange",
+                    backgroundColor:"orange",
+                    yAxisID:"하이브리드",
+                },
+                {
+                    label:fuel[3],
+                    data:data[fuel[3]],
+                    borderColor:"tomato",
+                    backgroundColor:"tomato",
+                    yAxisID:"휘발유",
+                },
+                {
+                    label:fuel[4],
+                    data:data[fuel[4]],
+                    borderColor:"yellowgreen",
+                    backgroundColor:"yellowgreen",
+                    yAxisID:"경유",
+                },
+            ],
+        },
+        options:{
+            scales:{
+                "수소":{
+                    min:500,
+                    max:7000,
+                    ticks:{color:"green"},
+                    position:"right",
+                },
+                "전기":{
+                    min:11000,
+                    max:52000,
+                    ticks:{color:"blue"},
+                    position:"right",
+                },
+                "하이브리드":{
+                    min:14000,
+                    max:31000,
+                    ticks:{color:"orange"},
+                    position:"right",
+                },
+                "휘발유":{
+                    min:2700000,
+                    max:3100000,
+                    ticks:{color:"tomato"},
+                    position:"right",
+                },
+                "경유":{
+                    min:1400000,
+                    max:1500000,
+                    ticks:{color:"yellowgreen"},
+                    position:"right",
+                }
+            }
+        }
+    });
+});
+
+
+function refine(temp){
+    $.each(temp,function(i,c){
+        var type='';
+        if( (type=include(c.DTCONT)) == '' || c.PURPOS_DIV==="사업용") return true;
+        if( !(type in data))
+            data[type]=new Object();
+        if( !( c.REG_YY in data[type]) )
+            data[type][c.REG_YY]=Number(c.RIDNG_ODR);
+        else
+            data[type][c.REG_YY]+=Number(c.RIDNG_ODR);
+    });
+    console.log(data);
+}
+function include(kind){
+    for(var i in types){
+        if(kind.indexOf(types[i]) > -1)
+            return types[i];
+    }
+    return '';
+}

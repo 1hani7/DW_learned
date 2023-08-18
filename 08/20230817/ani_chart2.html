@@ -43,7 +43,7 @@
                 borderColor:"LightCoral",
                 borderWidth:1,
                 pointRadius:0,
-                fill:false,
+                fill:true,
                 animation:function(context){
                     var delay = 0;
                     var idx = context.dataIndex;
@@ -54,11 +54,12 @@
                     }
                     var {x,y} = idx>0 ? chart.getDatasetMeta(0).data[idx-1].
                     getProps(['x','y'], true) : {x:0, y:chart.scales.y.getPixelForValue(100)};
-
+                    // console.log(chart.getDatasetMeta(0).data[idx-1])
+                    // console.log(chart.scales.y.getPixelForValue(100))
                     return { 
                         x:{easing:"linear",duration:delayBP, from:x, delay},
                         y:{easing:"linear",duration:delayBP*500, from:y, delay},
-                        skip:{type:"boolean",duration:delayBP, from:true, to:false, delay:delay}
+                        skip:{type:"boolean",duration:delayBP, from:true, to:false, delay:delay},
                      };
                 },
             }]
