@@ -7,9 +7,21 @@ async function getData(){
 
 
 function refine(temp){
-    $.each(temp,function(i,item){
+    $.each(temp,function(key,item){
         var type = '';
         if( (type=include(c.DTCONT)) == '' || item.PURPOS_DIV === '사업용' ) return true;
-        
+        if( !(item.REG_YY in data[type]) )
+            data[type][c.REGYY] = Number(item.RIDNG_ODR);
+        if( !(type in data[type]) )
+            data[type][c.REG_YY] = Number(item.RIDNG_ODR);
+
     });
 };
+
+function include(name){
+    for(var i=0; i<types.length; i++){
+        if(name.indexOf(types[i]) > -1)
+            return types[i]
+    }
+    return '';
+}

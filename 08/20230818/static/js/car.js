@@ -162,10 +162,14 @@ function refine(temp){ // data 배열 안에 temp를 재구성해서 넣어주�
 
         else // data[type] 안에 연도가 들어있다면 해당 연도의 value값에 승용차값 추가
             data[type][c.REG_YY]+=Number(c.RIDNG_ODR);
+        
+        console.log(data[type]);
     });
     console.log(data);
 }
-function include(kind){ // 이번 data 객체의 DTCONT의 값이 types 배열 안의 무언가와 같다면 해당 값을 리턴
+function include(kind){
+    // 이번 data 객체의 DTCONT의 값이 types 배열 안의 무언가와 같다면 해당 값을 리턴
+    // 해당 값은 type이란 변수에 저장되어 조건문에 사용됨 => 이 조건문은 이번 반복을 건너뛸 것인가 결정하게 됨
     for(var i in types){
         if(kind.indexOf(types[i]) > -1)
             return types[i];

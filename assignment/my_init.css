@@ -141,6 +141,39 @@ canvas {
 }
 
 
+/*[containers]*/
+.con-xs{max-width:900px;}
+.con-s{max-width:1000px;}
+.con-l{max-width:1100px;}
+.con-xl{max-width:1200px;}
+
+
+/*[font-size]*/
+.font-1{font-size:1rem;}
+.font-2{font-size:1.5rem;}
+.font-3{font-size:2rem;}
+.font-4{font-size:2.5rem;}
+.font-5{font-size:3rem;}
+.font-6{font-size:3.5rem;}
+.font-7{font-size:4rem;}
+.font-8{font-size:4.5rem;}
+.font-9{font-size:5rem;}
+.font-10{font-size:5.5rem;}
+.font-11{font-size:6rem;}
+.font-12{font-size:6.5rem;}
+
+
+/*[font-weight]*/
+.light-1{font-weight:100;}
+.light-2{font-weight:200;}
+.light-3{font-weight:300;}
+.light-4{font-weight:400;}
+.normal{font-weight:500;}
+.bold-1{font-weight:600;}
+.bold-2{font-weight:700;}
+.bold-3{font-weight:800;}
+.bold-4{font-weight:900;}
+
 
 /*[폰트 컬러]*/
 .font-red{color:var(--color-red);}
@@ -158,12 +191,12 @@ canvas {
 .font-white{color:var(--color-white);}
 
 /*text align*/
-.text-C{text-align: center;}
-.text-L{text-align: left;}
-.text-R{text-align: right;}
-.text-Vc{vertical-align: center;}
-.text-Vt{vertical-align: top;}
-.text-Vb{vertical-align: bottom;}
+.text-center{text-align: center;}
+.text-left{text-align: left;}
+.text-right{text-align: right;}
+.text-vr-center{vertical-align: center;}
+.text-vr-top{vertical-align: top;}
+.text-vr-bottom{vertical-align: bottom;}
 
 /*[배경색]*/
 .bg-red{background-color:var(--background-red);}
@@ -179,6 +212,21 @@ canvas {
 .bg-orange{background-color: var(--background-orange);}
 .bg-white{background-color: var(--background-white);}
 .bg-black{background-color: var(--background-black);}
+/*내부요소 일괄 배경색*/
+.bg-red-all > * {background-color:var(--background-red);}
+.bg-pink-all > * {background-color:var(--background-pink) ;}
+.bg-magenta-all > * {background-color:var(--background-magenta);}
+.bg-purple-all > * {background-color: var(--background-purple);}
+.bg-indigo-all > * {background-color: var(--background-indigo);}
+.bg-blue-all > * {background-color: var(--background-blue);}
+.bg-cyan-all > * {background-color: var(--background-cyan);}
+.bg-green-all > * {background-color: var(--background-green);}
+.bg-yg-all > * {background-color: var(--background-yellowgreen);}
+.bg-yellow-all > * {background-color: var(--background-yellow);}
+.bg-orange-all > * {background-color: var(--background-orange);}
+.bg-white-all > * {background-color: var(--background-white);}
+.bg-black-all > * {background-color: var(--background-black);}
+
 
 /*수정사항 - 굵기, 스타일, 색깔 따로따로 다시 만들기*/
 /*border color*/
@@ -195,6 +243,21 @@ canvas {
 .border-orange{border-color:var(--color-orange);}
 .border-white{border-color: var(--color-white);}
 .border-black{border-color: var(--color-black);}
+/*내부요소 일괄 border color*/
+.border-red-all > * {border-color: var(--color-red);}
+.border-pink-all > * {border-color: var(--color-pink);}
+.border-magenta-all > * {border-color: var(--color-magenta);}
+.border-purple-all > * {border-color: var(--color-purple);}
+.border-indigo-all > * {border-color: var(--color-indigo);}
+.border-blue-all > * {border-color: var(--color-blue);}
+.border-cyan-all > * {border-color: var(--color-cyan);}
+.border-green-all > * {border-color: var(--color-green);}
+.border-yg-all > * {border-color: var(--color-yellowgreen);}
+.border-yellow-all > * {border-color: var(--color-yellow);}
+.border-orange-all > * {border-color:var(--color-orange);}
+.border-white-all > * {border-color: var(--color-white);}
+.border-black-all > * {border-color: var(--color-black);}
+
 /*border style*/
 .border-solid{border-style: solid;}
 .border-dashed{border-style: dashed;}
@@ -204,6 +267,16 @@ canvas {
 .border-ridge{border-style: ridge;}
 .border-inset{border-style: inset;}
 .border-outset{border-style: outset;}
+/*내부요소 일괄 border style*/
+.border-solid-all > * {border-style: solid;}
+.border-dashed-all > * {border-style: dashed;}
+.border-dotted-all > * {border-style: dotted;}
+.border-double-all > * {border-style: double;}
+.border-groove-all > * {border-style: groove;}
+.border-ridge-all > * {border-style: ridge;}
+.border-inset-all > * {border-style: inset;}
+.border-outset-all > * {border-style: outset;}
+
 /*border width*/
 .border-half{border-width:0.5px;}
 .border-1px{border-width:1px;}
@@ -218,6 +291,21 @@ canvas {
 .border-10px{border-width:10px;}
 .border-11px{border-width:11px;}
 .border-12px{border-width:12px;}
+/*내부요소 일괄 border width*/
+.border-half-all > * {border-width:0.5px;}
+.border-1px-all > * {border-width:1px;}
+.border-2px-all > * {border-width:2px;}
+.border-3px-all > * {border-width:3px;}
+.border-4px-all > * {border-width:4px;}
+.border-5px-all > * {border-width:5px;}
+.border-6px-all > * {border-width:6px;}
+.border-7px-all > * {border-width:7px;}
+.border-8px-all > * {border-width:8px;}
+.border-9px-all > * {border-width:9px;}
+.border-10px-all > * {border-width:10px;}
+.border-11px-all > * {border-width:11px;}
+.border-12px-all > * {border-width:12px;}
+
 
 /*border top*/
 .border-top-half{border-top-width:0.5px;}
@@ -233,6 +321,21 @@ canvas {
 .border-top-10px{border-top-width:10px;}
 .border-top-11px{border-top-width:11px;}
 .border-top-12px{border-top-width:12px;}
+/*내부 전체 border top*/
+.border-top-half-all > * {border-top-width:0.5px;}
+.border-top-1px-all > * {border-top-width:1px;}
+.border-top-2px-all > * {border-top-width:2px;}
+.border-top-3px-all > * {border-top-width:3px;}
+.border-top-4px-all > * {border-top-width:4px;}
+.border-top-5px-all > * {border-top-width:5px;}
+.border-top-6px-all > * {border-top-width:6px;}
+.border-top-7px-all > * {border-top-width:7px;}
+.border-top-8px-all > * {border-top-width:8px;}
+.border-top-9px-all > * {border-top-width:9px;}
+.border-top-10px-all > * {border-top-width:10px;}
+.border-top-11px-all > * {border-top-width:11px;}
+.border-top-12px-all > * {border-top-width:12px;}
+
 /*border bottom*/
 .border-bottom-half{border-bottom-width:0.5px;}
 .border-bottom-1px{border-bottom-width:1px;}
@@ -247,6 +350,21 @@ canvas {
 .border-bottom-10px{border-bottom-width:10px;}
 .border-bottom-11px{border-bottom-width:11px;}
 .border-bottom-12px{border-bottom-width:12px;}
+/*내부 전체 border bottom*/
+.border-bottom-half-all > * {border-bottom-width:0.5px;}
+.border-bottom-1px-all > * {border-bottom-width:1px;}
+.border-bottom-2px-all > * {border-bottom-width:2px;}
+.border-bottom-3px-all > * {border-bottom-width:3px;}
+.border-bottom-4px-all > * {border-bottom-width:4px;}
+.border-bottom-5px-all > * {border-bottom-width:5px;}
+.border-bottom-6px-all > * {border-bottom-width:6px;}
+.border-bottom-7px-all > * {border-bottom-width:7px;}
+.border-bottom-8px-all > * {border-bottom-width:8px;}
+.border-bottom-9px-all > * {border-bottom-width:9px;}
+.border-bottom-10px-all > * {border-bottom-width:10px;}
+.border-bottom-11px-all > * {border-bottom-width:11px;}
+.border-bottom-12px-all > * {border-bottom-width:12px;}
+
 /*border left*/
 .border-left-half{border-left-width:0.5px;}
 .border-left-1px{border-left-width:1px;}
@@ -261,6 +379,21 @@ canvas {
 .border-left-10px{border-left-width:10px;}
 .border-left-11px{border-left-width:11px;}
 .border-left-12px{border-left-width:12px;}
+/*내부 전체 border left*/
+.border-left-half-all > * {border-left-width:0.5px;}
+.border-left-1px-all > * {border-left-width:1px;}
+.border-left-2px-all > * {border-left-width:2px;}
+.border-left-3px-all > * {border-left-width:3px;}
+.border-left-4px-all > * {border-left-width:4px;}
+.border-left-5px-all > * {border-left-width:5px;}
+.border-left-6px-all > * {border-left-width:6px;}
+.border-left-7px-all > * {border-left-width:7px;}
+.border-left-8px-all > * {border-left-width:8px;}
+.border-left-9px-all > * {border-left-width:9px;}
+.border-left-10px-all > * {border-left-width:10px;}
+.border-left-11px-all > * {border-left-width:11px;}
+.border-left-12px-all > * {border-left-width:12px;}
+
 /*border right*/
 .border-right-half{border-right-width:0.5px;}
 .border-right-1px{border-right-width:1px;}
@@ -275,14 +408,32 @@ canvas {
 .border-right-10px{border-right-width:10px;}
 .border-right-11px{border-right-width:11px;}
 .border-right-12px{border-right-width:12px;}
+/*내부 전체 border right*/
+.border-right-half-all > * {border-right-width:0.5px;}
+.border-right-1px-all > * {border-right-width:1px;}
+.border-right-2px-all > * {border-right-width:2px;}
+.border-right-3px-all > * {border-right-width:3px;}
+.border-right-4px-all > * {border-right-width:4px;}
+.border-right-5px-all > * {border-right-width:5px;}
+.border-right-6px-all > * {border-right-width:6px;}
+.border-right-7px-all > * {border-right-width:7px;}
+.border-right-8px-all > * {border-right-width:8px;}
+.border-right-9px-all > * {border-right-width:9px;}
+.border-right-10px-all > * {border-right-width:10px;}
+.border-right-11px-all > * {border-right-width:11px;}
+.border-right-12px-all > * {border-right-width:12px;}
 
 
 /*[box-shadow]*/
 .box-shadow{box-shadow:3px 3px 5px gray;}
+/*내부 전체*/
+.box-shadow-all > * {box-shadow:3px 3px 5px gray;}
 
 
 /*[box-shadow-inset]*/
 .box-shadow-inset{box-shadow:inset 3px 3px 5px gray;}
+/*내부 전체*/
+.box-shadow-inset-all > * {box-shadow:inset 3px 3px 5px gray;}
 
 
 /*[text-shadow]*/
@@ -302,37 +453,57 @@ canvas {
 
 
 /*[border radius]*/
-.radius1{border-radius: 3px;}
-.radius2{border-radius: 8px;}
-.radius3{border-radius: 11px;}
-.radius4{border-radius: 16px;}
-.round{border-radius: 50%;}
+.radius-1{border-radius: 5px;}
+.radius-2{border-radius: 8px;}
+.radius-3{border-radius: 14px;}
+.radius-4{border-radius: 20px;}
+.radius-5{border-radius: 25px;}
+.radius-round{border-radius: 50%;}
+/*내부요소 일괄 radius*/
+.radius-1-all > * {border-radius: 3px;}
+.radius-2-all > * {border-radius: 8px;}
+.radius-3-all > * {border-radius: 11px;}
+.radius-4-all > * {border-radius: 16px;}
+.radius-round-all > * {border-radius: 50%;}
 
 /*[opacity]*/
-.op10{opacity: 1;}
-.op9{opacity: 0.9;}
-.op8{opacity: 0.8;}
-.op7{opacity: 0.7;}
-.op6{opacity: 0.6;}
-.op5{opacity: 0.5;}
-.op4{opacity: 0.4;}
-.op3{opacity: 0.3;}
-.op2{opacity: 0.2;}
-.op1{opacity: 0.1;}
-.op0{opacity: 0;}
+.opacity-10{opacity: 1;}
+.opacity-9{opacity: 0.9;}
+.opacity-8{opacity: 0.8;}
+.opacity-7{opacity: 0.7;}
+.opacity-6{opacity: 0.6;}
+.opacity-5{opacity: 0.5;}
+.opacity-4{opacity: 0.4;}
+.opacity-3{opacity: 0.3;}
+.opacity-2{opacity: 0.2;}
+.opacity-1{opacity: 0.1;}
+.opacity-0{opacity: 0;}
 
 /*[padding]*/
-.pad1{padding:1rem;}
-.pad2{padding:1.5rem;}
-.pad3{padding:2rem;}
-.pad4{padding:2.5rem;}
-.pad5{padding:3rem;}
-.pad6{padding:3.5rem;}
-.pad7{padding:4rem;}
-.pad8{padding:4.5rem;}
-.pad9{padding:5rem;}
-.pad10{padding:5.5rem;}
-.pad11{padding:6rem;}
+.pad-1{padding:1rem;}
+.pad-2{padding:1.5rem;}
+.pad-3{padding:2rem;}
+.pad-4{padding:2.5rem;}
+.pad-5{padding:3rem;}
+.pad-6{padding:3.5rem;}
+.pad-7{padding:4rem;}
+.pad-8{padding:4.5rem;}
+.pad-9{padding:5rem;}
+.pad-10{padding:5.5rem;}
+.pad-11{padding:6rem;}
+/*내부 요소 padding*/
+.pad-1-all > * {padding:1rem;}
+.pad-2-all > * {padding:1.5rem;}
+.pad-3-all > * {padding:2rem;}
+.pad-4-all > * {padding:2.5rem;}
+.pad-5-all > * {padding:3rem;}
+.pad-6-all > * {padding:3.5rem;}
+.pad-7-all > * {padding:4rem;}
+.pad-8-all > * {padding:4.5rem;}
+.pad-9-all > * {padding:5rem;}
+.pad-10-all > * {padding:5.5rem;}
+.pad-11-all > * {padding:6rem;}
+
 /*padding vertical*/
 .pad-vr-1{padding:1rem 0;}
 .pad-vr-2{padding:1.5rem 0;}
@@ -345,6 +516,20 @@ canvas {
 .pad-vr-9{padding:5rem 0;}
 .pad-vr-10{padding:5.5rem 0;}
 .pad-vr-11{padding:7rem 0;}
+/*내부 전체 padding vertical*/
+.pad-vr-1-all > * {padding:1rem 0;}
+.pad-vr-2-all > * {padding:1.5rem 0;}
+.pad-vr-3-all > * {padding:2rem 0;}
+.pad-vr-4-all > * {padding:2.5rem 0;}
+.pad-vr-5-all > * {padding:3rem 0;}
+.pad-vr-6-all > * {padding:3.5rem 0;}
+.pad-vr-7-all > * {padding:4rem 0;}
+.pad-vr-8-all > * {padding:4.5rem 0;}
+.pad-vr-9-all > * {padding:5rem 0;}
+.pad-vr-10-all > * {padding:5.5rem 0;}
+.pad-vr-11-all > * {padding:7rem 0;}
+
+
 /*padding horizontal*/
 .pad-hr-1{padding:0 1rem;}
 .pad-hr-2{padding:0 1.5rem;}
@@ -357,70 +542,146 @@ canvas {
 .pad-hr-9{padding:0 5rem;}
 .pad-hr-10{padding:0 5.5rem;}
 .pad-hr-11{padding:0 6rem;}
+/*내부 전체 padding horizontal*/
+.pad-hr-1 > * {padding:0 1rem;}
+.pad-hr-2 > * {padding:0 1.5rem;}
+.pad-hr-3 > * {padding:0 2rem;}
+.pad-hr-4 > * {padding:0 2.5rem;}
+.pad-hr-5 > * {padding:0 3rem;}
+.pad-hr-6 > * {padding:0 3.5rem;}
+.pad-hr-7 > * {padding:0 4rem;}
+.pad-hr-8 > * {padding:0 4.5rem;}
+.pad-hr-9 > * {padding:0 5rem;}
+.pad-hr-10 > * {padding:0 5.5rem;}
+.pad-hr-11 > * {padding:0 6rem;}
+
 /*padding top*/
-.padT1{padding-top:1rem;}
-.padT2{padding-top:1.5rem;}
-.padT3{padding-top:2rem;}
-.padT4{padding-top:2.5rem;}
-.padT5{padding-top:3rem;}
-.padT6{padding-top:3.5rem;}
-.padT7{padding-top:4rem;}
-.padT8{padding-top:4.5rem;}
-.padT9{padding-top:5rem;}
-.padT10{padding-top:5.5rem;}
-.padT11{padding-top:6rem;}
+.pad-top-1{padding-top:1rem;}
+.pad-top-2{padding-top:1.5rem;}
+.pad-top-3{padding-top:2rem;}
+.pad-top-4{padding-top:2.5rem;}
+.pad-top-5{padding-top:3rem;}
+.pad-top-6{padding-top:3.5rem;}
+.pad-top-7{padding-top:4rem;}
+.pad-top-8{padding-top:4.5rem;}
+.pad-top-9{padding-top:5rem;}
+.pad-top-10{padding-top:5.5rem;}
+.pad-top-11{padding-top:6rem;}
+/*내부 전체 padding top*/
+.pad-top-1-all > * {padding-top:1rem;}
+.pad-top-2-all > * {padding-top:1.5rem;}
+.pad-top-3-all > * {padding-top:2rem;}
+.pad-top-4-all > * {padding-top:2.5rem;}
+.pad-top-5-all > * {padding-top:3rem;}
+.pad-top-6-all > * {padding-top:3.5rem;}
+.pad-top-7-all > * {padding-top:4rem;}
+.pad-top-8-all > * {padding-top:4.5rem;}
+.pad-top-9-all > * {padding-top:5rem;}
+.pad-top-10-all > * {padding-top:5.5rem;}
+.pad-top-11-all > * {padding-top:6rem;}
+
 /*padding bottom*/
-.padB1{padding-bottom:1rem;}
-.padB2{padding-bottom:1.5rem;}
-.padB3{padding-bottom:2rem;}
-.padB4{padding-bottom:2.5rem;}
-.padB5{padding-bottom:3rem;}
-.padB6{padding-bottom:3.5rem;}
-.padB7{padding-bottom:4rem;}
-.padB8{padding-bottom:4.5rem;}
-.padB9{padding-bottom:5rem;}
-.padB10{padding-bottom:5.5rem;}
-.padB11{padding-bottom:6rem;}
+.pad-bottom-1{padding-bottom:1rem;}
+.pad-bottom-2{padding-bottom:1.5rem;}
+.pad-bottom-3{padding-bottom:2rem;}
+.pad-bottom-4{padding-bottom:2.5rem;}
+.pad-bottom-5{padding-bottom:3rem;}
+.pad-bottom-6{padding-bottom:3.5rem;}
+.pad-bottom-7{padding-bottom:4rem;}
+.pad-bottom-8{padding-bottom:4.5rem;}
+.pad-bottom-9{padding-bottom:5rem;}
+.pad-bottom-10{padding-bottom:5.5rem;}
+.pad-bottom-11{padding-bottom:6rem;}
+/*내부 전체 padding bottom*/
+.pad-bottom-1-all > * {padding-bottom:1rem;}
+.pad-bottom-2-all > * {padding-bottom:1.5rem;}
+.pad-bottom-3-all > * {padding-bottom:2rem;}
+.pad-bottom-4-all > * {padding-bottom:2.5rem;}
+.pad-bottom-5-all > * {padding-bottom:3rem;}
+.pad-bottom-6-all > * {padding-bottom:3.5rem;}
+.pad-bottom-7-all > * {padding-bottom:4rem;}
+.pad-bottom-8-all > * {padding-bottom:4.5rem;}
+.pad-bottom-9-all > * {padding-bottom:5rem;}
+.pad-bottom-10-all > * {padding-bottom:5.5rem;}
+.pad-bottom-11-all > * {padding-bottom:6rem;}
+
 /*padding left*/
-.padL1{padding-left:1rem;}
-.padL2{padding-left:1.5rem;}
-.padL3{padding-left:2rem;}
-.padL4{padding-left:2.5rem;}
-.padL5{padding-left:3rem;}
-.padL6{padding-left:3.5rem;}
-.padL7{padding-left:4rem;}
-.padL8{padding-left:4.5rem;}
-.padL9{padding-left:5rem;}
-.padL10{padding-left:5.5rem;}
-.padL11{padding-left:6rem;}
+.pad-left-1{padding-left:1rem;}
+.pad-left-2{padding-left:1.5rem;}
+.pad-left-3{padding-left:2rem;}
+.pad-left-4{padding-left:2.5rem;}
+.pad-left-5{padding-left:3rem;}
+.pad-left-6{padding-left:3.5rem;}
+.pad-left-7{padding-left:4rem;}
+.pad-left-8{padding-left:4.5rem;}
+.pad-left-9{padding-left:5rem;}
+.pad-left-10{padding-left:5.5rem;}
+.pad-left-11{padding-left:6rem;}
+/*내부 전체 padding left*/
+.pad-left-1-all > * {padding-left:1rem;}
+.pad-left-2-all > * {padding-left:1.5rem;}
+.pad-left-3-all > * {padding-left:2rem;}
+.pad-left-4-all > * {padding-left:2.5rem;}
+.pad-left-5-all > * {padding-left:3rem;}
+.pad-left-6-all > * {padding-left:3.5rem;}
+.pad-left-7-all > * {padding-left:4rem;}
+.pad-left-8-all > * {padding-left:4.5rem;}
+.pad-left-9-all > * {padding-left:5rem;}
+.pad-left-10-all > * {padding-left:5.5rem;}
+.pad-left-11-all > * {padding-left:6rem;}
+
 /*padding right*/
-.padR1{padding-right:1rem;}
-.padR2{padding-right:1.5rem;}
-.padR3{padding-right:2rem;}
-.padR4{padding-right:2.5rem;}
-.padR5{padding-right:3rem;}
-.padR6{padding-right:3.5rem;}
-.padR7{padding-right:4rem;}
-.padR8{padding-right:4.5rem;}
-.padR9{padding-right:5rem;}
-.padR10{padding-right:5.5rem;}
-.padR11{padding-right:6rem;}
+.pad-right-1{padding-right:1rem;}
+.pad-right-2{padding-right:1.5rem;}
+.pad-right-3{padding-right:2rem;}
+.pad-right-4{padding-right:2.5rem;}
+.pad-right-5{padding-right:3rem;}
+.pad-right-6{padding-right:3.5rem;}
+.pad-right-7{padding-right:4rem;}
+.pad-right-8{padding-right:4.5rem;}
+.pad-right-9{padding-right:5rem;}
+.pad-right-10{padding-right:5.5rem;}
+.pad-right-11{padding-right:6rem;}
+/*내부 전체 padding right*/
+.pad-right-1-all > * {padding-right:1rem;}
+.pad-right-2-all > * {padding-right:1.5rem;}
+.pad-right-3-all > * {padding-right:2rem;}
+.pad-right-4-all > * {padding-right:2.5rem;}
+.pad-right-5-all > * {padding-right:3rem;}
+.pad-right-6-all > * {padding-right:3.5rem;}
+.pad-right-7-all > * {padding-right:4rem;}
+.pad-right-8-all > * {padding-right:4.5rem;}
+.pad-right-9-all > * {padding-right:5rem;}
+.pad-right-10-all > * {padding-right:5.5rem;}
+.pad-right-11-all > * {padding-right:6rem;}
 
 
 /*[margin]*/
 
 /*just margin*/
-.mar1{margin:1rem;}
-.mar2{margin:1.5rem;}
-.mar3{margin:2rem;}
-.mar4{margin:2.5rem;}
-.mar5{margin:3rem;}
-.mar6{margin:3.5rem;}
-.mar7{margin:4rem;}
-.mar8{margin:4.5rem;}
-.mar9{margin:5rem;}
-.mar10{margin:5.5rem;}
-.mar11{margin:6rem;}
+.mar-1{margin:1rem;}
+.mar-2{margin:1.5rem;}
+.mar-3{margin:2rem;}
+.mar-4{margin:2.5rem;}
+.mar-5{margin:3rem;}
+.mar-6{margin:3.5rem;}
+.mar-7{margin:4rem;}
+.mar-8{margin:4.5rem;}
+.mar-9{margin:5rem;}
+.mar-10{margin:5.5rem;}
+.mar-11{margin:6rem;}
+/*내부 전체 just margin*/
+.mar-1-all > * {margin:1rem;}
+.mar-2-all > * {margin:1.5rem;}
+.mar-3-all > * {margin:2rem;}
+.mar-4-all > * {margin:2.5rem;}
+.mar-5-all > * {margin:3rem;}
+.mar-6-all > * {margin:3.5rem;}
+.mar-7-all > * {margin:4rem;}
+.mar-8-all > * {margin:4.5rem;}
+.mar-9-all > * {margin:5rem;}
+.mar-10-all > * {margin:5.5rem;}
+.mar-11-all > * {margin:6rem;}
 
 /*padding vertical*/
 .mar-vr-1{margin:1rem, 0;}
@@ -434,6 +695,19 @@ canvas {
 .mar-vr-9{margin:5rem, 0;}
 .mar-vr-10{margin:5.5rem, 0;}
 .mar-vr-11{margin:7rem, 0;}
+/*내부 전체 padding vertical*/
+.mar-vr-1-all > * {margin:1rem, 0;}
+.mar-vr-2-all > * {margin:1.5rem, 0;}
+.mar-vr-3-all > * {margin:2rem, 0;}
+.mar-vr-4-all > * {margin:2.5rem, 0;}
+.mar-vr-5-all > * {margin:3rem, 0;}
+.mar-vr-6-all > * {margin:3.5rem, 0;}
+.mar-vr-7-all > * {margin:4rem, 0;}
+.mar-vr-8-all > * {margin:4.5rem, 0;}
+.mar-vr-9-all > * {margin:5rem, 0;}
+.mar-vr-10-all > * {margin:5.5rem, 0;}
+.mar-vr-11-all > * {margin:7rem, 0;}
+
 /*padding horizontal*/
 .mar-hr-1{margin:0, 1rem;}
 .mar-hr-2{margin:0, 1.5rem;}
@@ -446,244 +720,304 @@ canvas {
 .mar-hr-9{margin:0, 5rem;}
 .mar-hr-10{margin:0, 5.5rem;}
 .mar-hr-11{margin:0, 6rem;}
+/*내부 전체 padding horizontal*/
+.mar-hr-1-all > * {margin:0, 1rem;}
+.mar-hr-2-all > * {margin:0, 1.5rem;}
+.mar-hr-3-all > * {margin:0, 2rem;}
+.mar-hr-4-all > * {margin:0, 2.5rem;}
+.mar-hr-5-all > * {margin:0, 3rem;}
+.mar-hr-6-all > * {margin:0, 3.5rem;}
+.mar-hr-7-all > * {margin:0, 4rem;}
+.mar-hr-8-all > * {margin:0, 4.5rem;}
+.mar-hr-9-all > * {margin:0, 5rem;}
+.mar-hr-10-all > * {margin:0, 5.5rem;}
+.mar-hr-11-all > * {margin:0, 6rem;}
+
 /*margin center*/
-.marC{margin:0 auto;}
-.marC1{margin:1rem auto;}
-.marC2{margin:1.5rem auto;}
-.marC3{margin:2rem auto;}
-.marC4{margin:2.5rem auto;}
-.marC5{margin:3rem auto;}
-.marC6{margin:3.5rem auto;}
-.marC7{margin:4rem auto;}
-.marC8{margin:4.5rem auto;}
-.marC9{margin:5rem auto;}
-.marC10{margin:5.5rem auto;}
-.marC11{margin:6rem auto;}
-.marC12{margin:6.5rem auto;}
-.marC13{margin:7rem auto;}
-.marC14{margin:7.5rem auto;}
-.marC15{margin:8rem auto;}
+.mar-center{margin:0 auto;}
+.mar-center-1{margin:1rem auto;}
+.mar-center-2{margin:1.5rem auto;}
+.mar-center-3{margin:2rem auto;}
+.mar-center-4{margin:2.5rem auto;}
+.mar-center-5{margin:3rem auto;}
+.mar-center-6{margin:3.5rem auto;}
+.mar-center-7{margin:4rem auto;}
+.mar-center-8{margin:4.5rem auto;}
+.mar-center-9{margin:5rem auto;}
+.mar-center-10{margin:5.5rem auto;}
+.mar-center-11{margin:6rem auto;}
+.mar-center-12{margin:6.5rem auto;}
+.mar-center-13{margin:7rem auto;}
+.mar-center-14{margin:7.5rem auto;}
+.mar-center-15{margin:8rem auto;}
+/*내부 전체 margin center*/
+.mar-center-all > * {margin:0 auto;}
+.mar-center-1-all > * {margin:1rem auto;}
+.mar-center-2-all > * {margin:1.5rem auto;}
+.mar-center-3-all > * {margin:2rem auto;}
+.mar-center-4-all > * {margin:2.5rem auto;}
+.mar-center-5-all > * {margin:3rem auto;}
+.mar-center-6-all > * {margin:3.5rem auto;}
+.mar-center-7-all > * {margin:4rem auto;}
+.mar-center-8-all > * {margin:4.5rem auto;}
+.mar-center-9-all > * {margin:5rem auto;}
+.mar-center-10-all > * {margin:5.5rem auto;}
+.mar-center-11-all > * {margin:6rem auto;}
+.mar-center-12-all > * {margin:6.5rem auto;}
+.mar-center-13-all > * {margin:7rem auto;}
+.mar-center-14-all > * {margin:7.5rem auto;}
+.mar-center-15-all > * {margin:8rem auto;}
+
 /*margin top*/
-.marT1{margin-top:1rem;}
-.marT2{margin-top:1.5rem;}
-.marT3{margin-top:2rem;}
-.marT4{margin-top:2.5rem;}
-.marT5{margin-top:3rem;}
-.marT6{margin-top:3.5rem;}
-.marT7{margin-top:4rem;}
-.marT8{margin-top:4.5rem;}
-.marT9{margin-top:5rem;}
-.marT10{margin-top:5.5rem;}
-.marT11{margin-top:6rem;}
-.marT12{margin-top:6.5rem;}
-.marT13{margin-top:7rem;}
-.marT14{margin-top:7.5rem;}
-.marT15{margin-top:8rem;}
+.mar-top-1{margin-top:1rem;}
+.mar-top-2{margin-top:1.5rem;}
+.mar-top-3{margin-top:2rem;}
+.mar-top-4{margin-top:2.5rem;}
+.mar-top-5{margin-top:3rem;}
+.mar-top-6{margin-top:3.5rem;}
+.mar-top-7{margin-top:4rem;}
+.mar-top-8{margin-top:4.5rem;}
+.mar-top-9{margin-top:5rem;}
+.mar-top-10{margin-top:5.5rem;}
+.mar-top-11{margin-top:6rem;}
+.mar-top-12{margin-top:6.5rem;}
+.mar-top-13{margin-top:7rem;}
+.mar-top-14{margin-top:7.5rem;}
+.mar-top-15{margin-top:8rem;}
+/*내부 전체 margin top*/
+.mar-top-1-all > * {margin-top:1rem;}
+.mar-top-2-all > * {margin-top:1.5rem;}
+.mar-top-3-all > * {margin-top:2rem;}
+.mar-top-4-all > * {margin-top:2.5rem;}
+.mar-top-5-all > * {margin-top:3rem;}
+.mar-top-6-all > * {margin-top:3.5rem;}
+.mar-top-7-all > * {margin-top:4rem;}
+.mar-top-8-all > * {margin-top:4.5rem;}
+.mar-top-9-all > * {margin-top:5rem;}
+.mar-top-10-all > * {margin-top:5.5rem;}
+.mar-top-11-all > * {margin-top:6rem;}
+.mar-top-12-all > * {margin-top:6.5rem;}
+.mar-top-13-all > * {margin-top:7rem;}
+.mar-top-14-all > * {margin-top:7.5rem;}
+.mar-top-15-all > * {margin-top:8rem;}
+
 /*margin bottom*/
-.marB1{margin-bottom:1rem;}
-.marB2{margin-bottom:1.5rem;}
-.marB3{margin-bottom:2rem;}
-.marB4{margin-bottom:2.5rem;}
-.marB5{margin-bottom:3rem;}
-.marB6{margin-bottom:3.5rem;}
-.marB7{margin-bottom:4rem;}
-.marB8{margin-bottom:4.5rem;}
-.marB9{margin-bottom:5rem;}
-.marB10{margin-bottom:5.5rem;}
-.marB11{margin-bottom:6rem;}
-.marB12{margin-bottom:6.5rem;}
-.marB13{margin-bottom:7rem;}
-.marB14{margin-bottom:7.5rem;}
-.marB15{margin-bottom:8rem;}
+.mar-bottom-1{margin-bottom:1rem;}
+.mar-bottom-2{margin-bottom:1.5rem;}
+.mar-bottom-3{margin-bottom:2rem;}
+.mar-bottom-4{margin-bottom:2.5rem;}
+.mar-bottom-5{margin-bottom:3rem;}
+.mar-bottom-6{margin-bottom:3.5rem;}
+.mar-bottom-7{margin-bottom:4rem;}
+.mar-bottom-8{margin-bottom:4.5rem;}
+.mar-bottom-9{margin-bottom:5rem;}
+.mar-bottom-10{margin-bottom:5.5rem;}
+.mar-bottom-11{margin-bottom:6rem;}
+.mar-bottom-12{margin-bottom:6.5rem;}
+.mar-bottom-13{margin-bottom:7rem;}
+.mar-bottom-14{margin-bottom:7.5rem;}
+.mar-bottom-15{margin-bottom:8rem;}
+/*내부 전체 margin bottom*/
+.mar-bottom-1-all > * {margin-bottom:1rem;}
+.mar-bottom-2-all > * {margin-bottom:1.5rem;}
+.mar-bottom-3-all > * {margin-bottom:2rem;}
+.mar-bottom-4-all > * {margin-bottom:2.5rem;}
+.mar-bottom-5-all > * {margin-bottom:3rem;}
+.mar-bottom-6-all > * {margin-bottom:3.5rem;}
+.mar-bottom-7-all > * {margin-bottom:4rem;}
+.mar-bottom-8-all > * {margin-bottom:4.5rem;}
+.mar-bottom-9-all > * {margin-bottom:5rem;}
+.mar-bottom-10-all > * {margin-bottom:5.5rem;}
+.mar-bottom-11-all > * {margin-bottom:6rem;}
+.mar-bottom-12-all > * {margin-bottom:6.5rem;}
+.mar-bottom-13-all > * {margin-bottom:7rem;}
+.mar-bottom-14-all > * {margin-bottom:7.5rem;}
+.mar-bottom-15-all > * {margin-bottom:8rem;}
+
 /*margin left*/
-.marL1{margin-left:1rem;}
-.marL2{margin-left:1.5rem;}
-.marL3{margin-left:2rem;}
-.marL4{margin-left:2.5rem;}
-.marL5{margin-left:3rem;}
-.marL6{margin-left:3.5rem;}
-.marL7{margin-left:4rem;}
-.marL8{margin-left:4.5rem;}
-.marL9{margin-left:5rem;}
-.marL10{margin-left:5.5rem;}
-.marL11{margin-left:6rem;}
-.marL12{margin-left:6.5rem;}
-.marL13{margin-left:7rem;}
-.marL14{margin-left:7.5rem;}
-.marL15{margin-left:8rem;}
+.mar-left-1{margin-left:1rem;}
+.mar-left-2{margin-left:1.5rem;}
+.mar-left-3{margin-left:2rem;}
+.mar-left-4{margin-left:2.5rem;}
+.mar-left-5{margin-left:3rem;}
+.mar-left-6{margin-left:3.5rem;}
+.mar-left-7{margin-left:4rem;}
+.mar-left-8{margin-left:4.5rem;}
+.mar-left-9{margin-left:5rem;}
+.mar-left-10{margin-left:5.5rem;}
+.mar-left-11{margin-left:6rem;}
+.mar-left-12{margin-left:6.5rem;}
+.mar-left-13{margin-left:7rem;}
+.mar-left-14{margin-left:7.5rem;}
+.mar-left-15{margin-left:8rem;}
+/*내부 전체 margin left*/
+.mar-left-1-all > * {margin-left:1rem;}
+.mar-left-2-all > * {margin-left:1.5rem;}
+.mar-left-3-all > * {margin-left:2rem;}
+.mar-left-4-all > * {margin-left:2.5rem;}
+.mar-left-5-all > * {margin-left:3rem;}
+.mar-left-6-all > * {margin-left:3.5rem;}
+.mar-left-7-all > * {margin-left:4rem;}
+.mar-left-8-all > * {margin-left:4.5rem;}
+.mar-left-9-all > * {margin-left:5rem;}
+.mar-left-10-all > * {margin-left:5.5rem;}
+.mar-left-11-all > * {margin-left:6rem;}
+.mar-left-12-all > * {margin-left:6.5rem;}
+.mar-left-13-all > * {margin-left:7rem;}
+.mar-left-14-all > * {margin-left:7.5rem;}
+.mar-left-15-all > * {margin-left:8rem;}
+
 /*margin right*/
-.marR1{margin-right:1rem;}
-.marR2{margin-right:1.5rem;}
-.marR3{margin-right:2rem;}
-.marR4{margin-right:2.5rem;}
-.marR5{margin-right:3rem;}
-.marR6{margin-right:3.5rem;}
-.marR7{margin-right:4rem;}
-.marR8{margin-right:4.5rem;}
-.marR9{margin-right:5rem;}
-.marR10{margin-right:5.5rem;}
-.marR11{margin-right:6rem;}
-.marR12{margin-right:6.5rem;}
-.marR13{margin-right:7rem;}
-.marR14{margin-right:7.5rem;}
-.marR15{margin-right:8rem;}
+.mar-right-1{margin-right:1rem;}
+.mar-right-2{margin-right:1.5rem;}
+.mar-right-3{margin-right:2rem;}
+.mar-right-4{margin-right:2.5rem;}
+.mar-right-5{margin-right:3rem;}
+.mar-right-6{margin-right:3.5rem;}
+.mar-right-7{margin-right:4rem;}
+.mar-right-8{margin-right:4.5rem;}
+.mar-right-9{margin-right:5rem;}
+.mar-right-10{margin-right:5.5rem;}
+.mar-right-11{margin-right:6rem;}
+.mar-right-12{margin-right:6.5rem;}
+.mar-right-13{margin-right:7rem;}
+.mar-right-14{margin-right:7.5rem;}
+.mar-right-15{margin-right:8rem;}
+/*내부 전체 margin right*/
+.mar-right-1-all > * {margin-right:1rem;}
+.mar-right-2-all > * {margin-right:1.5rem;}
+.mar-right-3-all > * {margin-right:2rem;}
+.mar-right-4-all > * {margin-right:2.5rem;}
+.mar-right-5-all > * {margin-right:3rem;}
+.mar-right-6-all > * {margin-right:3.5rem;}
+.mar-right-7-all > * {margin-right:4rem;}
+.mar-right-8-all > * {margin-right:4.5rem;}
+.mar-right-9-all > * {margin-right:5rem;}
+.mar-right-10-all > * {margin-right:5.5rem;}
+.mar-right-11-all > * {margin-right:6rem;}
+.mar-right-12-all > * {margin-right:6.5rem;}
+.mar-right-13-all > * {margin-right:7rem;}
+.mar-right-14-all > * {margin-right:7.5rem;}
+.mar-right-15-all > * {margin-right:8rem;}
 
 
-/*[font-size]*/
-.font1{font-size:1rem;}
-.font2{font-size:1.5rem;}
-.font3{font-size:2rem;}
-.font4{font-size:2.5rem;}
-.font5{font-size:3rem;}
-.font6{font-size:3.5rem;}
-.font7{font-size:4rem;}
-.font8{font-size:4.5rem;}
-.font9{font-size:5rem;}
-.font10{font-size:5.5rem;}
-.font11{font-size:6rem;}
-.font12{font-size:6.5rem;}
-
-
-/*[font-weight]*/
-.light1{font-weight:100;}
-.light2{font-weight:200;}
-.light3{font-weight:300;}
-.light4{font-weight:400;}
-.normal{font-weight:500;}
-.bold1{font-weight:600;}
-.bold2{font-weight:700;}
-.bold3{font-weight:800;}
-.bold4{font-weight:900;}
-
-
-/*[containers]*/
-.con-xs{max-width:900px;}
-.con-s{max-width:1000px;}
-.con-l{max-width:1100px;}
-.con-xl{max-width:1200px;}
-@media (max-width:767px){
-    .con-xs{max-width:100vw;}
-    .con-s{max-width:100vw;}
-    .con-l{max-width:100vw;}
-    .con-xl{max-width:100vw;}
-}
 /*percentage widths*/
-.width5{width:5%;}
-.width10{width:10%;}
-.width15{width:15%;}
-.width20{width:20%;}
-.width25{width:25%;}
-.width30{width:30%;}
-.width35{width:35%;}
-.width40{width:40%;}
-.width45{width:45%;}
-.width50{width:50%;}
-.width55{width:55%;}
-.width60{width:60%;}
-.width65{width:65%;}
-.width70{width:70%;}
-.width75{width:75%;}
-.width80{width:80%;}
-.width85{width:85%;}
-.width90{width:90%;}
-.width95{width:95%;}
-.width100{width:100%;}
+.width-5{width:5%;}
+.width-10{width:10%;}
+.width-15{width:15%;}
+.width-20{width:20%;}
+.width-25{width:25%;}
+.width-30{width:30%;}
+.width-35{width:35%;}
+.width-40{width:40%;}
+.width-45{width:45%;}
+.width-50{width:50%;}
+.width-55{width:55%;}
+.width-60{width:60%;}
+.width-65{width:65%;}
+.width-70{width:70%;}
+.width-75{width:75%;}
+.width-80{width:80%;}
+.width-85{width:85%;}
+.width-90{width:90%;}
+.width-95{width:95%;}
+.width-100{width:100%;}
 
 
 /*[position]*/
-.p-relative{position:relative;}
-.p-absolute{position:absolute;}
-.p-fixed{position:fixed;}
-.p-sticky{position:sticky;}
+.relative{position:relative;}
+.absolute{position:absolute;}
+.fixed{position:fixed;}
+.sticky{position:sticky;}
 
 /*top*/
-.top0{top:0;}
-.top5{top:5%;}
-.top10{top:10%;}
-.top15{top:15%;}
-.top20{top:20%;}
-.top25{top:25%;}
-.top30{top:30%;}
-.top35{top:35%;}
-.top40{top:40%;}
-.top45{top:45%;}
-.top50{top:50%;}
-.top55{top:55%;}
-.top60{top:60%;}
-.top65{top:65%;}
-.top70{top:70%;}
-.top75{top:75%;}
-.top80{top:80%;}
-.top85{top:85%;}
-.top90{top:90%;}
-.top95{top:95%;}
-.top100{top:100%;}
+.top-0{top:0;}
+.top-5{top:5%;}
+.top-10{top:10%;}
+.top-15{top:15%;}
+.top-20{top:20%;}
+.top-25{top:25%;}
+.top-30{top:30%;}
+.top-35{top:35%;}
+.top-40{top:40%;}
+.top-45{top:45%;}
+.top-50{top:50%;}
+.top-55{top:55%;}
+.top-60{top:60%;}
+.top-65{top:65%;}
+.top-70{top:70%;}
+.top-75{top:75%;}
+.top-80{top:80%;}
+.top-85{top:85%;}
+.top-90{top:90%;}
+.top-95{top:95%;}
+.top-100{top:100%;}
 /*bottom*/
-.bottom0{bottom:0;}
-.bottom5{bottom:5%;}
-.bottom10{bottom:10%;}
-.bottom15{bottom:15%;}
-.bottom20{bottom:20%;}
-.bottom25{bottom:25%;}
-.bottom30{bottom:30%;}
-.bottom35{bottom:35%;}
-.bottom40{bottom:40%;}
-.bottom45{bottom:45%;}
-.bottom50{bottom:50%;}
-.bottom55{bottom:55%;}
-.bottom60{bottom:60%;}
-.bottom65{bottom:65%;}
-.bottom70{bottom:70%;}
-.bottom75{bottom:75%;}
-.bottom80{bottom:80%;}
-.bottom85{bottom:85%;}
-.bottom90{bottom:90%;}
-.bottom95{bottom:95%;}
-.bottom100{bottom:100%;}
+.bottom-0{bottom:0;}
+.bottom-5{bottom:5%;}
+.bottom-10{bottom:10%;}
+.bottom-15{bottom:15%;}
+.bottom-20{bottom:20%;}
+.bottom-25{bottom:25%;}
+.bottom-30{bottom:30%;}
+.bottom-35{bottom:35%;}
+.bottom-40{bottom:40%;}
+.bottom-45{bottom:45%;}
+.bottom-50{bottom:50%;}
+.bottom-55{bottom:55%;}
+.bottom-60{bottom:60%;}
+.bottom-65{bottom:65%;}
+.bottom-70{bottom:70%;}
+.bottom-75{bottom:75%;}
+.bottom-80{bottom:80%;}
+.bottom-85{bottom:85%;}
+.bottom-90{bottom:90%;}
+.bottom-95{bottom:95%;}
+.bottom-100{bottom:100%;}
 /*left*/
-.left0{left:0;}
-.left5{left:5%; transform:translate(-5%)}
-.left10{left:10%; transform:translate(-10%)}
-.left15{left:15%; transform:translate(-15%)}
-.left20{left:20%; transform:translate(-20%)}
-.left25{left:25%; transform:translate(-25%)}
-.left30{left:30%; transform:translate(-30%)}
-.left35{left:35%; transform:translate(-35%)}
-.left40{left:40%; transform:translate(-40%)}
-.left45{left:45%; transform:translate(-45%)}
-.left50{left:50%; transform:translate(-50%)}
-.left55{left:55%; transform:translate(-55%)}
-.left60{left:60%; transform:translate(-60%)}
-.left65{left:65%; transform:translate(-65%)}
-.left70{left:70%; transform:translate(-70%)}
-.left75{left:75%; transform:translate(-75%)}
-.left80{left:80%; transform:translate(-80%)}
-.left85{left:85%; transform:translate(-85%)}
-.left90{left:90%; transform:translate(-90%)}
-.left95{left:95%; transform:translate(-95%)}
-.left100{left:100%; transform:translate(-100%)}
+.left-0{left:0;}
+.left-5{left:5%; transform:translate(-5%)}
+.left-10{left:10%; transform:translate(-10%)}
+.left-15{left:15%; transform:translate(-15%)}
+.left-20{left:20%; transform:translate(-20%)}
+.left-25{left:25%; transform:translate(-25%)}
+.left-30{left:30%; transform:translate(-30%)}
+.left-35{left:35%; transform:translate(-35%)}
+.left-40{left:40%; transform:translate(-40%)}
+.left-45{left:45%; transform:translate(-45%)}
+.left-50{left:50%; transform:translate(-50%)}
+.left-55{left:55%; transform:translate(-55%)}
+.left-60{left:60%; transform:translate(-60%)}
+.left-65{left:65%; transform:translate(-65%)}
+.left-70{left:70%; transform:translate(-70%)}
+.left-75{left:75%; transform:translate(-75%)}
+.left-80{left:80%; transform:translate(-80%)}
+.left-85{left:85%; transform:translate(-85%)}
+.left-90{left:90%; transform:translate(-90%)}
+.left-95{left:95%; transform:translate(-95%)}
+.left-100{left:100%; transform:translate(-100%)}
 /*right*/
-.right0{right:0;}
-.right5{right:5%; transform:translate(5%)}
-.right10{right:10%; transform:translate(10%)}
-.right15{right:15%; transform:translate(15%)}
-.right20{right:20%; transform:translate(20%)}
-.right25{right:25%; transform:translate(25%)}
-.right30{right:30%; transform:translate(30%)}
-.right35{right:35%; transform:translate(35%)}
-.right40{right:40%; transform:translate(40%)}
-.right45{right:45%; transform:translate(45%)}
-.right50{right:50%; transform:translate(50%)}
-.right55{right:55%; transform:translate(55%)}
-.right60{right:60%; transform:translate(60%)}
-.right65{right:65%; transform:translate(65%)}
-.right70{right:70%; transform:translate(70%)}
-.right75{right:75%; transform:translate(75%)}
-.right80{right:80%; transform:translate(80%)}
-.right85{right:85%; transform:translate(85%)}
-.right90{right:90%; transform:translate(90%)}
-.right95{right:95%; transform:translate(95%)}
-.right100{right:100%; transform:translate(100%)}
+.right-0{right:0;}
+.right-5{right:5%; transform:translate(5%)}
+.right-10{right:10%; transform:translate(10%)}
+.right-15{right:15%; transform:translate(15%)}
+.right-20{right:20%; transform:translate(20%)}
+.right-25{right:25%; transform:translate(25%)}
+.right-30{right:30%; transform:translate(30%)}
+.right-35{right:35%; transform:translate(35%)}
+.right-40{right:40%; transform:translate(40%)}
+.right-45{right:45%; transform:translate(45%)}
+.right-50{right:50%; transform:translate(50%)}
+.right-55{right:55%; transform:translate(55%)}
+.right-60{right:60%; transform:translate(60%)}
+.right-65{right:65%; transform:translate(65%)}
+.right-70{right:70%; transform:translate(70%)}
+.right-75{right:75%; transform:translate(75%)}
+.right-80{right:80%; transform:translate(80%)}
+.right-85{right:85%; transform:translate(85%)}
+.right-90{right:90%; transform:translate(90%)}
+.right-95{right:95%; transform:translate(95%)}
+.right-100{right:100%; transform:translate(100%)}
 
 
 /*[flex]*/
@@ -729,10 +1063,12 @@ canvas {
 }
 
 /*flex-self*/
-.self-start{align-self: flex-start;}
-.self-end{align-self:flex-end;}
-.self-left{justify-self: left;}
-.self-right{justify-self: right;}
+.align-self-center{align-self: center;}
+.align-self-start{align-self: flex-start;}
+.align-self-end{align-self:flex-end;}
+.justify-self-center{justify-self: center;}
+.justify-self-left{justify-self: left;}
+.justify-self-right{justify-self: right;}
 
 /*flex-col*/
 .flex-col-auto > * {width: auto;}
@@ -784,39 +1120,42 @@ canvas {
 
 
 /*order*/
-.order1{order:1;}
-.order2{order:2;}
-.order3{order:3;}
-.order4{order:4;}
-.order5{order:5;}
-.order6{order:6;}
-.order7{order:7;}
-.order8{order:8;}
-.order9{order:9;}
-.order10{order:10;}
-.order11{order:11;}
-.order12{order:12;}
-.order13{order:13;}
-.order14{order:14;}
-.order15{order:15;}
-.order16{order:16;}
-.order17{order:17;}
-.order18{order:18;}
-.order19{order:19;}
-.order20{order:20;}
+.order-1{order:1;}
+.order-2{order:2;}
+.order-3{order:3;}
+.order-4{order:4;}
+.order-5{order:5;}
+.order-6{order:6;}
+.order-7{order:7;}
+.order-8{order:8;}
+.order-9{order:9;}
+.order-10{order:10;}
+.order-11{order:11;}
+.order-12{order:12;}
+.order-13{order:13;}
+.order-14{order:14;}
+.order-15{order:15;}
+.order-16{order:16;}
+.order-17{order:17;}
+.order-18{order:18;}
+.order-19{order:19;}
+.order-20{order:20;}
 
 
 /*flex-grow*/
-.grow1{flex-grow:1;}
-.grow2{flex-grow:2;}
-.grow3{flex-grow:3;}
-.grow4{flex-grow:4;}
-.grow5{flex-grow:5;}
-.grow6{flex-grow:6;}
-.grow7{flex-grow:7;}
+.grow-1{flex-grow:1;}
+.grow-2{flex-grow:2;}
+.grow-3{flex-grow:3;}
+.grow-4{flex-grow:4;}
+.grow-5{flex-grow:5;}
+.grow-6{flex-grow:6;}
+.grow-7{flex-grow:7;}
+/*내부요소 flex grow (전부 일정하게 채우기)*/
+.grow-all > * {flex-grow:1;}
 
 
 /*[grid]*/
+/*grid는 레이아웃 고정 시에 사용 (반응형은 flex로)*/
 /*grid column*/
 .grid-col-2{display:grid; grid-template-columns:repeat(2, 1fr);}
 .grid-col-3{display:grid; grid-template-columns:repeat(3, 1fr);}
@@ -831,14 +1170,14 @@ canvas {
 .grid-row-6{display:grid; grid-template-rows:repeat(6, 1fr);}
 
 /*[gap]*/
-.gap1{gap:0.5rem;}
-.gap2{gap:1rem;}
-.gap3{gap:1.5rem;}
-.gap4{gap:2rem;}
-.gap5{gap:2.5rem;}
-.gap6{gap:3rem;}
-.gap7{gap:3.5rem;}
-.gap8{gap:4rem;}
+.gap-1{gap:0.5rem;}
+.gap-2{gap:1rem;}
+.gap-3{gap:1.5rem;}
+.gap-4{gap:2rem;}
+.gap-5{gap:2.5rem;}
+.gap-6{gap:3rem;}
+.gap-7{gap:3.5rem;}
+.gap-8{gap:4rem;}
 /*row-gap*/
 .row-gap1{row-gap:0.5rem;}
 .row-gap2{row-gap:1rem;}
