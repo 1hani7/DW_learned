@@ -19,7 +19,7 @@ function refine(temp){
 };
 
 function include(name){
-    for(var i=0; i<types.length; i++){
+    for(var i in types){
         if(name.indexOf(types[i]) > -1)
             return types[i]
     }

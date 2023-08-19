@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let keys=[];
+        window.onload=function(){
+            const person={
+                name : "신상수",
+                age : 26,
+                like : "뼈다귀해장국",
+                hobby : "music",
+                addr:{
+                    country:"대한민국",
+                    city:"대전"
+                }
+            }
+        
+            for (const key in person) {
+                if (person.hasOwnProperty(key)) {
+                    let value = person[key];
+                    console.log(`Key: ${key}, Value: ${value}`);
+                    keys.push(key);
+                }
+            }
+            console.log(keys);
+            console.log(person[keys[keys.length-1]])
+            console.log(person["addr"]["city"]);
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

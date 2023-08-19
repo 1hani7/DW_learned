@@ -1,0 +1,105 @@
+// 객체를 다루는 방법들 정리
+
+{예시용 객체}
+const person={
+    name : "신상수",
+    age : 26,
+    like : "뼈다귀해장국",
+    hobby : "music",
+    addr:{
+        country:"대한민국",
+        city:"대전"
+    }
+}
+
+
+// 값 접근법
+
+[1] 도트(.)로 직접 접근
+    person.name;
+
+[2] 브라켓[] 접근
+
+        문자열
+    (1) person["name"];
+
+        변수
+    (2) const a = "name";
+        person[a];
+
+        배열[idx]
+    (3) const a = ["name","age","like"];
+        person[a[0]]
+
+        반복문
+    (4) const a = ["name","age","like"];
+        for(var i in a){
+            person[a[i]]
+        }
+
+        이중 브라켓 1
+    (5) console.log( person["addr"]["country"] ); // "대한민국"
+
+        이중 브라켓 2
+        const a = ["name","age","like","addr"];
+        const b = ["country","city"];
+        console.log( person[a[3]][b[0]] ); // "대한민국"
+
+[3] 비구조화
+
+    const { name, age } = person;
+    console.log( name ); // "신상수"
+    console.log( age ); // 26
+
+
+[4] if문으로 속성값 존재 확인
+
+        키값 이름으로 확인
+    (1) if( "name" in person ){ return "존재함"; }
+
+        변수로 확인
+    (2) let n = "name";
+        if( n in person ){ return "존재함"; }
+
+        배열로 확인
+    (3) const a = ["name","age","like","addr"];
+        if( a[0] in person ){ return "존재함"; }
+     
+
+[5] key나 value를 따로 빼기
+
+    const personKey = Object.keys(person);
+    const personValue = Object.values(person);
+
+    이 값들은 배열로 저장되기 때문에
+    브라켓 접근방식을 사용해서 원하는 객체값에 접근하기 용이해짐
+
+
+
+[6] $.each() 내장함수에서의 모습
+
+    $.each(person, function(key, value){});
+
+    콜백함수에 매개변수로 key값과 value값이 들어감
+    ( 배열과 달리 index값이 아니므로 주의 )
+
+
+
+[7] for 반복문에서의 모습
+
+    for (const key in person) {
+        if (person.hasOwnProperty(key)) {
+            let value = person[key];
+            console.log(`Key: ${key}, Value: ${value}`);
+            // arr.push(key);
+        }
+    }
+
+    for문에서 객체를 사용할 시 인덱스(i값)가 아니라 key값을 사용하게 되고,
+    이를 응용해서 key값만 배열에 따로 저장한 다음 응용할 수 있음
+
+
+
+[8] 객체 데이터 재구성하기
+
+    
