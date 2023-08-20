@@ -40,26 +40,45 @@ backgroundColor                // 배경색
 borderWidth                    // 테두리 너비
 borderRadius                   // 테두리 라운딩
 borderColor                    // 테두리 색
-barPercentage                  // 막대 너비 비율 ( 1.2가 꽉 찬 너비 )
+barPercentage                  // 막대 너비 비율 ( 0.9가 기본 )
 barThickness                   // 막대 너비 ( 고정px, 단위 생략 입력 )
 borderSkipped                  // start, end, middle, bottom, left, top, right
-categoryPercentage:0.1,        //
-ratation:                      //
+categoryPercentage:            // 카테고리 간격 및 너비 ( 0.8이 기본 )
+rotation:                      // 차트 기울이기 ( type : "pie", "doughnut" 의 경우 )
 indexAxis:                     // 그래프 "x"방향 or "y"방향
 hoverBackgroundColor           // hover시의 배경색
-            ㄴ BorderColor, BorderWidth, BorderRadius 등등 가능
+            ㄴ hoverBorderColor, hoverBorderWidth, hoverBorderRadius 등등 사용 가능
 base:                          // 시작값 입력 => 평균값을 입력하면 평균 이상인지 이하인지 확인 가능
 
 
 // options
 scale:{
-    x:{ stacked:true },
-    y:{ stacked:true },
-    x:{ min: , max: },
-    y:{ min: , max: },
+    x:{ stacked:true },        // x축, 차트 쌓임
+    y:{ stacked:true },        // y축, 차트 쌓임
+    x:{ min: , max: },         // x축 최대값과 최소값
+    y:{ min: , max: },         // y축 최대값과 최소값
 }
 
 // plugins
+
+=> 차트 값별로 라벨 표시 plugin
+plugins:[ChartDataLabels]
+plugins:{
+            datalabels:{
+                formatter:function(v,c){
+                    return v + "개";
+                }, color:"white"
+            },
+            title:{
+                display:true,
+                text:"커피누적"
+            }
+        }
+
+=> autocolors
+
+
+// animation
 
 // 콜백함수
 

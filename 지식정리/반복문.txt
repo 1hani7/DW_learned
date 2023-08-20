@@ -1,0 +1,19 @@
+// 반복문 정리
+
+for( )
+
+
+for...in 반복문
+    객체의 경우 => for (const key in object) {};
+                              ㄴ  key값
+
+    배열의 경우 => for (var index in array) {};
+                              ㄴ  index값
+
+
+for...of 반복문
+    배열의 경우 => for (var item of array) {};
+                            ㄴ 배열 내의 각 요소
+
+    문자열의 경우 => for (var char of text) {};
+                              ㄴ 글자 하나하나

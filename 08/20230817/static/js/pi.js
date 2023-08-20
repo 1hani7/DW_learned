@@ -122,7 +122,7 @@ function expen_pi(){
                 borderWidth:0,
                 borderWidth:3,
                 borderColor:"firebrick",
-                ratation:0,
+                rotation:0,
             }]
         },
         options:{
