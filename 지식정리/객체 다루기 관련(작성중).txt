@@ -102,4 +102,35 @@ const person={
 
 [8] 객체 데이터 재구성하기
 
-    
+    json과 같은 대규모의 데이터들을 다루기 용이하게 하기 위해선
+    원하는 데이터들만 따로 뽑아서 저장하고 관리할 수 있어야 함
+
+    이하는 그 과정에서 필요한 작업들
+
+
+    - 객체 생성, 객체 내부에 객체 생성 및 값 할당
+
+            let data = new.Object(); // 객체 생성
+
+            data.name = new.Object(); // 객체 내부에 새로운 객체 1
+
+            data["name"] = new.Object(); // 객체 내부에 새로운 객체 2
+
+            var a = "name"
+            data[a] = new.Object(); // 객체 내부에 새로운 객체 3
+
+
+
+            // 객체 내부의 객체의 객체 + 값 할당
+
+            data.name.firstName = "신"; // 1
+            data["name"]["firstName"] = "신"; // 2
+             
+            const arr = ["name","firstName"]; // 3
+            data[arr[0]][arr[1]] = "신";
+
+            결과 => data:{
+                        name:{
+                            firstName : "신"
+                        }
+                    }
