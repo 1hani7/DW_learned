@@ -142,13 +142,13 @@ table{
     border-spacing: 0;
 }
 
-input:focus{
+/* input:focus{
     outline: none;
     appearance: none;
     border-radius: none;
     -webkit-appearance: none;
     -webkit-border-radius:none;
-}
+} */
 
 input,
 button,
@@ -676,6 +676,7 @@ canvas {
 .border-outset-all > * {border-style: outset;}
 
 /*border width*/
+.border-none{border:none;}
 .border-half{border-width:0.5px;}
 .border-1px{border-width:1px;}
 .border-2px{border-width:2px;}

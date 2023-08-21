@@ -81,5 +81,10 @@ plugins:{
 // animation
 
 // 콜백함수
+    대상요소 : function(context){
+        return ;
+    }
+
+    context // 
 
     context.chart.getDatasetMeta(0)

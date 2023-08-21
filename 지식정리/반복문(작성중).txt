@@ -3,6 +3,9 @@
 for( )
 
 
+.forEach()
+
+
 for...in 반복문
     객체의 경우 => for (const key in object) {};
                               ㄴ  key값

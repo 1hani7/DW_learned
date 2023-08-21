@@ -157,10 +157,11 @@ function refine(temp){ // data 배열 안에 temp를 재구성해서 넣어주�
         if( !(type in data)) // type 의 값이 data 안에 key로 존재하지 않는지 확인하는 if문
             data[type]=new Object(); // 없다면, 없는 type 값으로 오브젝트를 새로 생성
 
-        if( !( c.REG_YY in data[type]) ) // data[type] 안에 연도가 들어있지 않다면 승용차값이 들어간 객체 틀을 생성
-            data[type][c.REG_YY]=Number(c.RIDNG_ODR);
+        if( !( c.REG_YY in data[type]) ) // data[type] 안에 연도가 key로 들어있지 않다면 승용차값이 들어간 객체 틀을 생성
+            data[type][c.REG_YY]=Number(c.RIDNG_ODR); // == data.타입.연도=승용차수; => 객체에 직접 값을 넣어주는 문법
+                                                                                     // ㄴ 객체 첫날에 선생님이 알려주신 방법 중 하나
 
-        else // data[type] 안에 연도가 들어있다면 해당 연도의 value값에 승용차값 추가
+        else // data[type] 안에 연도가 key로 들어있다면 해당 연도의 value값에 승용차값 추가
             data[type][c.REG_YY]+=Number(c.RIDNG_ODR);
         
         console.log(data[type]);

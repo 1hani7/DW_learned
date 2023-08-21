@@ -1,0 +1,94 @@
+<!--json_test2.html-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<!--jquery-->
+<script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+<!--css-->
+<link rel="stylesheet" href="./static/css/my_init.css">
+</head>
+<style>
+    li > span {display:inline-block;}
+    #title > b {display:inline-block;}
+</style>
+<body>
+    <div class="mar-center-2 width-50">
+        <div class="pad-vr-half-all
+                    border-black-all border-solid-all border-1px-all">
+            <div class="mar-right-half-all border-none">
+                <input type="checkbox" name="department" value="com" id="com">
+                <label for="com">컴퓨터공학과</label>
+                <input type="checkbox" name="department" value="info" id="info" class="mar-left-1">
+                <label for="info">정보통신학과</label>
+            </div>
+            <div id="title" class="flex-col-5 text-center">
+                <b>학번</b> <b>이름</b> <b>학과</b>
+                <b>c언어</b> <b>웹</b>
+            </div>
+        </div>
+        <ul id="list"
+            class="list-none width-100 border-black border-solid border-1px mar-top-1 text-center">
+
+        </ul>
+    </div>
+</body>
+</html>
+<script>
+
+    let data = [];
+
+    async function Get(){
+        var temp = await fetch("./data/test3.json").then(r=>r.json()).then(r=>r);
+        return temp.score;
+    }
+
+    // ========================================= //
+
+    $(async function(){
+        data = await Get();
+
+        console.log(data);
+
+        $.each(data,function(i,item){
+            $("#list").append(
+                "<li class='width-100 flex-col-5 text-center pad-half-all'>"+
+                    "<span class='hak'>"+item.학번+"</span>"+
+                    "<span class='name'>"+item.이름+"</span>"+
+                    "<span class='dept'>"+item.학과+"</span>"+
+                    "<span class='c'>"+item.C언어+"</span>"+
+                    "<span class='web'>"+item.웹+"</span>"+
+                    "</li>"
+            )
+        });
+
+        $("input[name=department]").change(function(){
+            var dept = new Array();
+            $("input[name=department]:checked").each(function(){
+                dept.push( $(this).val() );
+            });
+            console.log(dept);
+
+            $("#list > li").filter(function(){
+                var hasDept = true;
+                if( dept.length != 0 ){
+                    hasDept=false;
+                    for(var i in dept){
+                        if( $(this).text().indexOf(dept[i]=="com"?"컴퓨터공학과":"정보통신학과") > -1 )
+                            hasDept = true;
+                    };
+                }
+                $(this).toggle(hasDept);          
+            });
+        });
+
+    });
+
+    // ========================================= //
+
+    
+
+
+</script>

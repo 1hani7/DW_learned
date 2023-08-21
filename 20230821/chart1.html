@@ -1,0 +1,113 @@
+<!-- chart1.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<!--jquery-->
+<script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+
+<!--chart.js-->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-autocolors"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+
+<!--bootstrap-->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+<!--css-->
+<link rel="stylesheet" href="./static/css/my_init.css">
+</head>
+<body>
+    
+    <div class="width-100">
+        <div class="mar-center-2 font-1 width-35 flex-row-between">
+            <!-- <label for="search" class="font-bold-1">검색창</label> -->
+            <input type="text" placeholder="검색어 입력..." id="keyword"
+                   class="border-black border-solid border-1px radius-5 pad-half pad-left-1 width-80">
+            <button class="pad-half cursor-pointer click-translate radius-2
+                           font-blue-gray700 font-bold-1 mar-left-1 width-15
+                           border-bottom-2px border-right-2px border-solid border-gray300"
+                    id="bt">
+                검색
+            </button>
+        </div>
+        <div class="mar-center-2 width-35">
+            <table class="width-100">
+                <tr class="border-bottom-1px-all border-red600-all border-solid-all
+                           width-100 flex-row-between pad-1-all">
+                    <th class="width-30">이름</th><th class="width-70">현재상태</th>
+                </tr>
+            </table>
+            <table id="state_detail" class="width-100 mar-top-2">
+                
+            </table>
+        </div>
+    </div>
+
+</body>
+</html>
+<script>
+
+    let data = [];
+
+    // $.getJSON("./data/test.json",function(data){
+    //     // console.log(data);
+    // });
+
+    // $.ajax({
+    //     url:"./data/test.json",
+    //     method:"GET",
+    //     data:"",
+    //     dataType:"json",
+    //     success:function(d){
+    //         // console.log("ajax로 가져옴 : " + d);
+    //     },
+    //     error:function(){
+    //         console.log("삭제해라 애송이")
+    //     }
+    // });
+
+    async function getData(){
+        var temp = await fetch("./data/test.json").then(res=>res.json()).then(r=>r);
+        return temp;
+    };
+
+
+    $(async function(){
+        data = await getData();
+        console.log(data);
+
+        let key_arr = Object.keys(data);
+        console.log(key_arr);
+
+        $.each(key_arr, function(index, value){
+            $("#state_detail").append(
+                "<tr class='nameList width-100 pad-1-all'>"+
+                "<td class='name width-30 font-bold-1'>"+
+                value+"</td><td class='width-70 state'>"+
+                data[value]+"</td></tr>"
+            );
+        });
+
+        // $("#state_detail > tr").filter(":nth-child(even)").css("background","var(--red100)");
+        // $("#state_detail > tr > td").filter(".state").css("background","var(--red100)");
+        $("#state_detail > tr").filter(function(i){
+            // return i==0 || i==3;
+            return i%2==0;
+        }).css("background","var(--red100)");
+
+        $("#bt").click(function(){
+            const word = $("#keyword").val();
+            $(".nameList").filter(function(){
+                const isShow = $(this).children(":first").text().indexOf(word) > -1 ? true : false;
+                $(this).toggle(isShow);
+            });
+            // $(".nameList").filter(function(){
+            //     return $(this).text().indexOf(word) == -1;
+            // }).hide();
+        });
+    });
+
+</script>

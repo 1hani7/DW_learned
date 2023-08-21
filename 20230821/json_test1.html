@@ -1,0 +1,105 @@
+<!--json_test.html-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<!--jquery-->
+<script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+
+<!--chart.js-->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-autocolors"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+
+<!--bootstrap-->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+<!--css-->
+<link rel="stylesheet" href="./static/css/my_init.css">
+</head>
+<body>
+    
+    <div class="width-35 mar-center-2">
+        <div id="search_box" class="width-100 flex-row-between">
+            <input type="text" id="search" placeholder="검색어 입력..."
+                   class="border-1px border-black border-solid radius-4 width-70
+                          pad-vr-half pad-left-1">
+            <button id="search_bt"
+                    class="pad-hr-2 pad-top-half pad-bottom-half radius-2
+                           border-bottom-2px border-right-2px border-gray300 border-solid
+                           click-press font-bold-1 font-orange800">
+                   검색
+            </button>
+        </div>
+        <div>
+            <table id="res_list" 
+                   class="width-100 mar-top-2">
+                <tr class="border-black-all border-solid-all border-1px-all
+                           pad-1-all">
+                    <th>가게</th> <th>메뉴</th>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+</body>
+</html>
+
+<script>
+
+    let data = [];
+
+    async function getData(){
+        var temp = await fetch("./data/test2.json").then(res=>res.json()).then(res=>res);
+        return temp
+    }
+
+
+    // =============================================== //
+
+    $(async function(){
+        data = await getData();
+        let keys = Object.keys(data);
+
+        makeIt(keys);
+
+        evenColor();
+
+        $("#search_bt").click(function(){
+            filtering();
+        });
+        $("#search").on("keypress",function(e){
+            let k = e.keyCode;
+            if( k == 13 ) filtering();
+        });
+    });
+
+    // =============================================== //
+
+
+    function evenColor(){
+        $(".list").filter(function(i){
+            return i % 2 == 0;
+        }).css("background","var(--orange100)");
+    };
+
+    function makeIt(keys){
+        $.each(keys, function(i, item){
+            $("#res_list").append(
+                "<tr class='list pad-half-all border-black-all border-solid-all border-1px-all'><td>"+
+                item+"</td><td class='menu'>"+data[item]+"</td></tr>"
+            );
+        })
+    }
+
+    function filtering(){
+        let word = $("#search").val();
+        $(".list").filter(function(){
+            let isShow = $(this).children(".menu").text().indexOf(word) > -1;
+            $(this).toggle(isShow);
+        });
+    };
+
+</script>
