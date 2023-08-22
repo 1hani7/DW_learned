@@ -4,7 +4,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    border: 0;
+    /* border: 0; */
     font-size: 100%;
     font-family: inherit;
     vertical-align: center;
@@ -142,13 +142,13 @@ table{
     border-spacing: 0;
 }
 
-/* input:focus{
+input:focus{
     outline: none;
     appearance: none;
     border-radius: none;
     -webkit-appearance: none;
     -webkit-border-radius:none;
-} */
+}
 
 input,
 button,

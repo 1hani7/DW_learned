@@ -17,12 +17,54 @@
 
 <!--css-->
 <link rel="stylesheet" href="./static/css/my_init.css">
+
+<!--js-->
+<script src="./static/js/test5.js"></script>
 </head>
 <body>
-    
+    <div class="pad-2 mar-center-1 mar-bottom-1-all" style="width:603px">
+        <h2 id="main_title"></h2>
+        <div class="mar-bottom-1-all border-1px border-solid border-black pad-2
+                    radius-3">
+            <div class="flex-row-between">
+                <div>
+                    <input type="text" name="word" id="word"
+                           placeholder="검색어 입력..."
+                           class="border-1px border-solid border-black radius-3
+                                  pad-vr-half pad-left-1" />
+                    <i class="bi bi-search-heart pad-left-1 font-2"></i>
+                </div>
+                <button class="border-bottom-2px border-right-2px
+                               border-solid border-gray300 pad-half
+                               radius-2 cursor-pointer click-press font-bold-1"
+                        id="search_bt">
+                    상세검색
+                </button>
+            </div>
+            <div class="search_detail mar-bottom-1-all hide">
+                <div class="tall_range width-100 flex-row-between pad-vr-half-all">
+                    <label class="pad-right-2 font-bold-1">키</label>
+                    <input type="text" id="minTall" name="minTall" class="pad-left-1" /> ~
+                    <input type="text" id="maxTall" name="maxTall" class="pad-left-1" />
+                </div>
+                <div class="eyes-range width-100 flex-row-between pad-vr-half-all">
+                    <label class="pad-right-half font-bold-1">시력</label>
+                    <input type="text" id="minEyes" name="minEyes" class="pad-left-1" /> ~
+                    <input type="text" id="maxEyes" name="maxEyes" class="pad-left-1" />
+                </div>
+                <div class="width-100">
+                    <label class="font-bold-1">반&nbsp;</label>
+                    <select id="cls" class="width-10 mar-left-2">
+                        <option value="1">1</option><option value="2">2</option>
+                        <option value="3">3</option><option value="4">4</option>
+                        <option value="5">5</option><option value="6">6</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div id="list_wrap" class="flex-wrap flex-row-between row-gap3">
+
+        </div>
+    </div>
 </body>
 </html>
-
-<script>
-    
-</script>
