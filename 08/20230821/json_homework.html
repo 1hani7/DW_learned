@@ -9,6 +9,11 @@
 <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
 <!--css-->
 <link rel="stylesheet" href="./static/css/my_init.css">
+<style>
+    .blue{color:var(--blue300)}
+    .gray{color:var(--gray300)}
+    .orange{color:var(--orange600)}
+</style>
 </head>
 <body>
     <div class="mar-center-2 width-60 flex-col-between gap-1
@@ -18,9 +23,9 @@
                    class="border-black border-1px border-solid radius-2 pad-hr-1" />
         </div>
         <div class="flex gap-3 mar-top-1">
-            <div><input type="radio" name="weather" id="weather" value="맑음" /> 맑음</div>
-            <div><input type="radio" name="weather" id="weather" value="흐림" /> 흐림</div>
-            <div><input type="radio" name="weather" id="weather" value="천둥" /> 천둥</div>
+            <div><input type="radio" name="weather" id="w1" value="맑음" /><label for="w1"> 맑음</label></div>
+            <div><input type="radio" name="weather" id="w2" value="흐림" /><label for="w2"> 흐림</label></div>
+            <div><input type="radio" name="weather" id="w3" value="천둥" /><label for="w3"> 천둥</label></div>
         </div>
     </div>
     <table class="mar-center-2 width-60">
@@ -52,37 +57,45 @@
     $(async function(){
         data = await getData();
 
+        let keys = Object.keys(data[0]);
+
+
         $.each(data,function(i,v){
+            var color = v[keys[2]].indexOf("맑음")>-1?"blue":v[keys[2]].indexOf("흐림")>-1?"gray":"orange"
+
+            // var d = v.작성일.slice(0,4)+"-"+v.작성일.slice(4,6)+"-"+v.작성일.slice(6);
+
             $("#diary").append(
-                "<tr class='list border-black-all border-solid-all border-1px-all pad-half-all'><td>"+
-                v.작성일+"</td><td>"+v.제목+
-                "</td><td>"+v.날씨+
-                "</td><td>"+v.내용+
+                "<tr class='list pad-1-all'>"+
+                "<td class='date'>"+v[keys[0]]+
+                "</td><td class='title'>"+v[keys[1]]+
+                "</td><td class='wt font-bold-1 "+color+"'>"+v[keys[2]]+
+                "</td><td class='detail'>"+v[keys[3]]+
                 "</td></tr>"
             )
         });
 
         $(".list").filter(function(i){
             return i%2==0;
-        }).css("background","var(--red200)");
+        }).css("background","var(--blue-gray200)");
 
-        $("input[name=date]").change(function(){
-            var v = $(this).val().split("-").join("");
-            $(".list").filter(function(){
-                var isShow = $(this).text().indexOf(v) > -1;
-                $(this).toggle(isShow);
-            });
-        });
-
-        $("input[name=weather]").change(function(){
-            var v = $("input[name=weather]:checked").val();
-            $(".list").filter(function(){
-                var isShow = $(this).text().indexOf(v) > -1;
-                $(this).toggle(isShow);
-            });
-        });
+        $("input[name=date]").change(search); // ()를 빼고 부르면 자동 실행되지 않음!
+        $("input[name=weather]").change(search);
     });
 
+    function search(){
+        var sDate = $("#date").val().split("-").join("");
+        var sWeather = $("input[name=weather]:checked").val();
+        $(".list").filter(function(){
+            var classDate = $(this).find(".date");
+            var classWt = $(this).find(".wt");
+            
+            var hasDate = sDate == '' ? false : classDate.text().indexOf(sDate) > -1;
+            var hasWeather = sWeather == 'undefined' ? true : classWt.text().indexOf(sWeather) > -1;
+
+            $(this).toggle(hasDate || hasWeather);
+        });
+    };
 
 
 </script>
