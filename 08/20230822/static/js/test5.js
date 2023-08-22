@@ -34,8 +34,8 @@ function detail_search(){
     var minT=0, maxT=0, minW=0, maxW=0, classV=0;
     minT = parseInt($("#minTall").val()) == '' ? 0 : $("#minTall").val();
     maxT = parseInt($("#maxTall").val()) == '' ? 0 : $("#maxTall").val();
-    minW = parseInt($("#minEyes").val()) == '' ? 0 : $("#minEyes").val();
-    maxW = parseInt($("#maxEyes").val()) == '' ? 0 : $("#maxEyes").val();
+    minW = parseInt($("#minEyes").val()) == '' ? 0 : $("#minEyes").val()*10;
+    maxW = parseInt($("#maxEyes").val()) == '' ? 0 : $("#maxEyes").val()*10;
     classV = Number($("#cls").val());
 
     $(".info").filter(function(){
@@ -44,10 +44,11 @@ function detail_search(){
             var T = parseInt($(this).find(".t").text().slice(3));
             if( minT > T || maxT < T ) isShow = false;
             
-            var W1 = $(this).find(".e").text().split(" ")[2].split("좌")[1];
-            var W2 = $(this).find(".e").text().split(" ")[3].split("우")[1];
+            var W1 = $(this).find(".e").text().split(" ")[2].split("좌")[1]*10;
+            var W2 = $(this).find(".e").text().split(" ")[3].split("우")[1]*10;
             if( minW < W1 || maxW < W1 ) isShow = false;
-            if( minW < W2 || maxW < W2 ) isShow = false;
+            else if( minW < W2 || maxW < W2 ) isShow = false;
+            else isShow = true;
 
             var C  = $(this).find(".ban").text();
             if( parseInt(C) === classV ) isShow = true;
