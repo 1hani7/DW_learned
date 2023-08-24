@@ -12,13 +12,16 @@
 
 <!--chart.js -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+
 <link rel="stylesheet" href="./static/css/test6.css">
 <script src="./static/js/test6.js"></script>   
 </head>
 <body>
+    <b id="outer_bt" class="icon close"><i class="bi bi-list"></i></b>
     <div id="wrap">
-        <div id="side" class="sideclose">
-            <b id="icon" class="close"><i class="bi bi-list"></i></b>
+        <div id="side" class="sideclose" style="display:none">
+            <b id="" class="icon close"><i class="bi bi-list"></i></b>
             <input type="text" id="word">
             <h3>수입</h3>
             <ul id="expen">
@@ -40,11 +43,20 @@
             </ul>
             <h3>금액</h3>
             <div><input type="number" id="money"> 이하</div>
+            <h3>차트 / 목록</h3>
+            <div id="dpBox">
+                <button id="showChart">차트</button>
+                <button id="showList">리스트</button>
+            </div>
+            <div id="darkBg"></div>
         </div>
         <div id="title"></div>
         <div id="main">
-            <div id="incomeList">
+            <div id="resChart" style="display:none">
+                <div><canvas id='bar' width='900px' height='800px'></canvas></div>
+                <div><canvas id='bar2' width='900px' height='800px'></canvas></div>
             </div>
+            <div id="incomeList"></div>
             <div id="expendList"></div>
         </div>
     </div>

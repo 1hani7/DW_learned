@@ -12,24 +12,36 @@ input[type=checkbox]{margin-right:5px;}
     min-width:700px;
     margin:0 auto;
 }
-.sideclose{/*side  접혀있는 모습  */
-    position:absolute;
-    left:-300px; top:0;
-    padding:100px 50px;
+#side{
+    backdrop-filter:blur(10px);
+    color:white;
+    position:fixed;
+    left:0; top:0;
+    width:300px;
+    background-color:#206cb3a9;
+    padding:30px;
     display:flex;
     flex-direction: column;
-    background:#222845;    color:#fff;
-    height:100%;    row-gap:20px;    width:300px;
-    transition: left 1s ease;
+    height:100vh;
+    row-gap:20px;
+    z-index:1000;
 }
-.close{ /* 접혀있을때 아이콘 모습 */
-    position:absolute;
-    top:45px;left:300px;color:#222845;
-    font-size:30px;    cursor:pointer;
-    transition: left 1s ease 0.5s;
+#darkBg{
+    position:fixed;
+    top:0;left:0;
+    z-index:-2;
+    width:100vw;
+    height:100vh;
+    background:rgba(0, 0, 0, 0.2);
 }
-.open{    left:50px;color:#fff;} /*  펼쳐 질때 아이콘 모습 */
-.sideopen{    left:0;  }   /* side 펼치면  */
+.icon{
+    font-size:35px;
+    cursor:pointer;
+}
+#outer_bt{
+    position:fixed;
+    left:30px; top:30px;
+}
 #word, #money{
     height:30px; 
     border-radius: 5px; 
@@ -95,12 +107,11 @@ input[type=checkbox]{margin-right:5px;}
 }
 
 .red{
-    background:rgb(255, 170, 170);
+    background:#FF855D;
 }
 
 .blue{
-    color:white;
-    background:rgb(193, 193, 255);
+    background:#6690FF;
 }
 
 .box{
@@ -116,16 +127,52 @@ input[type=checkbox]{margin-right:5px;}
     box-shadow: 3px 3px 5px rgb(189, 189, 189);
     color:rgb(31, 31, 31);
     text-align: center;
+    transition: transform 0.3s ease-in-out;
 }
 .box li{
     padding:15px;
 }
 .box li:nth-child(2) u{
     display:inline-block;
-    background-color: #8f8f8f77;
+    background-color: rgba(0, 0, 0, 0.15);
     border-radius:30px;
     height:35px;
     line-height:35px;
     width:130px;
     text-align: center;
+}
+
+#dpBox{
+    display: flex;
+    justify-content: space-between;
+}
+#dpBox button{
+    color:white;
+    font-size: 20px;
+    font-weight:700;
+    width:45%;
+    height:50px;
+    border:none;
+    background:#4381df;
+    border-radius: 15px;
+    cursor:pointer;
+    border-bottom:3.5px solid rgba(0, 0, 0, 0.295);
+    border-right:3.5px solid rgba(0, 0, 0, 0.295);
+}
+#dpBox button:hover{filter:brightness(0.85);}
+#dpBox button:active{
+    border:none;
+    box-shadow: inset 3px 3px 0 rgba(0, 0, 0, 0.295);
+    filter:none;
+}
+#resChart{
+    display:flex;
+    width:900px; height:800px;
+    margin:0 auto;
+}
+#resChart div{
+    width:50%;
+}
+#bar, #bar2{
+    width:900px; height:800px;
 }
