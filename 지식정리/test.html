@@ -28,6 +28,19 @@
             console.log(keys);
             console.log(person[keys[keys.length-1]])
             console.log(person["addr"]["city"]);
+
+            let t = new Object();
+            t.분류="소고기";
+            t.이름="채끝살";
+            t.가격=Number(320000);
+            t.원산지=new Object(); // 2차원 객체 뚫어줄 때는 이렇게
+            t.원산지["국가"]="호주"; // 뚫어준 다음부터는 브라켓 문법으로 추가
+            t.원산지["지역"]="시드니"; 
+            t.등급=new Object();
+            t.등급["영미권등급"]="prime";
+            t.등급["국내등급"]="++1"
+
+            console.log(t);
         }
     </script>
 </head>
