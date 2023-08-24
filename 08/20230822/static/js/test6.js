@@ -75,26 +75,25 @@ function search(){
     })
 
     $(".box").filter(function(){
-        let isShow = false;
+        let isShow = true;
         console.log();
         
         if( word != '' ){
-            if( $(this).text().indexOf(word) > -1 )
-                isShow = true;
-        }else if( word != '' )
-                isShow = true;
+            if( $(this).text().indexOf(word) == -1 )
+                isShow = false;
+        }
 
         if( C_arr.length != 0 ){
             for(var i in C_arr){
-                if( $(this).find(".c").text().indexOf(C_arr[i]) > -1 )
-                    isShow = true;
+                if( $(this).find(".c").text().indexOf(C_arr[i]) == -1 )
+                    isShow = false;
             }
         }
 
         if( money != '' ){
-            if( $(this).find(".mo").text().replace(/\D/g, '') <= money )
+            if( $(this).find(".mo").text().replace(/\D/g, '') > money )
                                                   // ㄴ 문자열 제거하는 정규표현식
-                isShow = true;
+                isShow = false;
         }
 
         $(this).toggle(isShow);
