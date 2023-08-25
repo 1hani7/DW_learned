@@ -1,0 +1,63 @@
+#board_container{
+    display:grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows:repeat(7, calc(1400px / 9));
+}
+.pan{ display:flex; align-items: end; }
+.center{
+    background:url("https://i.pinimg.com/564x/9d/18/85/9d188592304f48bb6a2b4e45ac45ba1d.jpg") center no-repeat;
+    background-size:cover;
+    grid-area:center;
+}
+.location_name{background:rgb(67, 119, 115); width:100%; color:#fff; text-align: center;
+padding:5px 0; border-right:1px solid #aaa;}
+
+#items{
+    position:absolute;
+    top:50%; left:50%;
+    transform: translate(-50%, 0);
+    height:300px; width:500px;
+}
+
+#items #dice_bt{
+    position:relative;
+    bottom:0;left:50%;transform: translate(-50%, 0);
+    color:#fff; padding:5px 30px;
+    font-size:25px; font-weight:800;
+    background:rgb(67, 119, 115);
+    border:0; border-radius: 5px;
+    cursor:pointer;
+}
+#items #dice_bt:hover{filter: brightness(0.85);}
+#items #dice_bt:active{
+    box-shadow: inset 5px 5px 0px rgba(0,0,0,0.25);
+    filter:none;
+}
+
+#dice_wrap{
+    position:relative;
+    width:100px;    height:100px;
+    margin:0px auto;
+    perspective:700px; /*원근감 효과(3D)*/
+}
+#dice_wrap:after{
+    position:absolute;
+    left:50%; bottom:-60px;
+    transform:translateX(-50%);
+    display:block;
+    content:""; width:120px; height:10px;
+    filter: blur(10px);
+    background:rgb(0,0,0,0.7);
+}
+#dice_wrap .dice{
+    position:absolute;
+    width:100%; height:100%;
+    transition: all 1.5s;
+    transform-style: preserve-3d;
+    animation: turn 6s linear infinite;
+}
+
+@keyframes turn{
+    0%{transform:rotateX(0deg) rotateY(0deg) rotateZ(0deg);}
+    100%{transform:rotateX(360deg) rotateY(360deg) rotateZ(360deg);}
+}
