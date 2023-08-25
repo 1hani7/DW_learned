@@ -3,7 +3,7 @@
     grid-template-columns: repeat(9, 1fr);
     grid-template-rows:repeat(7, calc(1400px / 9));
 }
-.pan{ display:flex; align-items: end; }
+.pan{ display:flex; align-items: end; position:relative;}
 .center{
     background:url("https://i.pinimg.com/564x/9d/18/85/9d188592304f48bb6a2b4e45ac45ba1d.jpg") center no-repeat;
     background-size:cover;

@@ -8,7 +8,7 @@ var gamer=[];
 $(function(){
     board.fill(0);
     initBoard();
-    draw();
+    
     $("#setBt").click(setOpen);
     $("#dice_bt").click(dice_turn);
     t=setInterval( ()=>{
@@ -16,6 +16,7 @@ $(function(){
             console.log(gamer);
             $("#dice_bt").attr('disabled',false);
             clearInterval(t);
+            draw();
         };
     }, 50 );
 });
