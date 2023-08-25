@@ -21,7 +21,7 @@ padding:5px 0; border-right:1px solid #aaa;}
 
 #items #dice_bt{
     position:relative;
-    bottom:0;left:50%;transform: translate(-50%, 0);
+    bottom:-30%;left:50%;transform: translate(-50%, 0);
     color:#fff; padding:5px 30px;
     font-size:25px; font-weight:800;
     background:rgb(67, 119, 115);
@@ -47,15 +47,28 @@ padding:5px 0; border-right:1px solid #aaa;}
     display:block;
     content:""; width:120px; height:10px;
     filter: blur(10px);
-    background:rgb(0,0,0,0.7);
+    background:rgb(0,0,0,0.9);
 }
 #dice_wrap .dice{
     position:absolute;
     width:100%; height:100%;
     transition: all 1.5s;
-    transform-style: preserve-3d;
-    animation: turn 6s linear infinite;
+    transform-style: preserve-3d; /* 3D 스타일로 */
+    /* animation: turn 20s linear infinite; */
 }
+#dice_wrap .dice > div{
+    position:absolute; top:0; left:0;
+    display:flex; justify-content: center; align-items: center;
+    width:100%; height:100%; font-size:40px;
+    border:5px solid #444;
+    background:rgba(255, 84, 68, 0.89);
+}
+#dice_wrap .dice > div:nth-child(1){transform:translateZ(50px);}
+#dice_wrap .dice > div:nth-child(2){transform:translateX(-50px) rotateY(-90deg);}
+#dice_wrap .dice > div:nth-child(3){transform:translateY(-50px) rotateX(-270deg);}
+#dice_wrap .dice > div:nth-child(4){transform:translateY(50px) rotateX(270deg);}
+#dice_wrap .dice > div:nth-child(5){transform:translateX(50px) rotateY(90deg);}
+#dice_wrap .dice > div:nth-child(6){transform:translateZ(-50px) rotateY(-180deg);}
 
 @keyframes turn{
     0%{transform:rotateX(0deg) rotateY(0deg) rotateZ(0deg);}

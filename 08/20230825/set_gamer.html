@@ -37,8 +37,8 @@
             $(".name").each(function(i, item){
                 opener.gamer.push( { [$(this).val()]:(i+1) } )
             });
-            console.log(opener.gamer)
-            // window.close();
+            // console.log(opener.gamer)
+            window.close();
         });
         $("#add").click(function(){
             var top = Number($(this).css("top").split("px")[0]);

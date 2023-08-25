@@ -54,3 +54,8 @@ function setOpen(){
     var child = window.open("set_gamer.html","참가자설정",
     "width=300,height=150,top=400,left=750");
 };
+
+function dice_turn(){
+    $(".dice").css("animation","turn 20s linear infinite");
+}
+
