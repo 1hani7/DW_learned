@@ -17,6 +17,7 @@
 <script src="./static/js/onload.js"></script>
 <script src="./static/js/menuSlide.js"></script>
 <script src="./static/js/bannserSlides.js"></script>
+<script src="./static/js/showCaseSet.js"></script>
 </head>
 <body>
     <div id="slide_menu"
@@ -103,9 +104,42 @@
                 <i id="slideR" class="bi bi-chevron-compact-right"></i>
             </div>
         </div>
-        <section id="contents">
+        <section id="contents"
+                 class="width-100">
+            <div id="eventTitle"
+                 class="width-100 flex-row-between mar-center-3">
+                <h3>현재 이벤트</h3>
+                <div class="width-20 bg-black"
+                     style="height:2px"></div>
+                <div>혜택1</div>
+                <div>혜택2</div>
+                <div>혜택3</div>
+                <div>혜택4</div>
+                <div class="border-black">
+                    혜택 바로 보기
+                </div>
+            </div>
+            <section id="showCase"
+                     class="width-100 flex">
+                <div class="width-50">
+                    <h2>관련 문구</h2>
+                    <h4>부가설명1<br>부가설명2</h4>
+                </div>
+                <div id="productsShowcase"
+                     class="flex-wrap width-50 gap-1">
 
+                </div>
+            </section>
         </section>
     </div>
+    <footer id="footer"
+            class="width-100 bg-blue-gray"
+            style="height:300px">
+        <div id="footerContents"
+             class="mar-center"
+             style='width:900px; height:100%;'>
+
+        </div>
+    </footer>
 </body>
 </html>

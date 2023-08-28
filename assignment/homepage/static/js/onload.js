@@ -1,7 +1,10 @@
 let slideLocation = 0;
+let data = [];
 
 
-$(function(){
+$(async function(){
+    await getData();
     slideToggles();
     bannerSlide();
+    showCaseSet("#productsShowcase");
 });

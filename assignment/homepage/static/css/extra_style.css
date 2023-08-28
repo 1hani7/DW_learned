@@ -11,6 +11,11 @@
 #slideBt{height:100%;}
 #slideBt i{height:100%; display:flex; align-items: center; z-index:2;}
 .bannerNav{background:rgba(0,0,0,0.3); color:white;}
+.showCase{
+    border:1px solid black; border-radius: 5px;
+    width:30%;
+}
+.showCaseImg{width:100px; height:100px;}
 
 
 #menu_wrap ul li:hover{background:rgba(0,0,0,0.2);}
