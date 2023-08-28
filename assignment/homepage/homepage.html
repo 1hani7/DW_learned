@@ -18,6 +18,7 @@
 <script src="./static/js/menuSlide.js"></script>
 <script src="./static/js/bannserSlides.js"></script>
 <script src="./static/js/showCaseSet.js"></script>
+<script src="./static/js/recShowcase.js"></script>
 </head>
 <body>
     <div id="slide_menu"
@@ -81,6 +82,7 @@
     </div>
     
     <div id="wrap" class="mar-center">
+
         <div id="banner" class="relative">
             <div id="slideBox" class="flex absolute">
                 <div class="slideImg bg-red" data-idx="0"><img src="" alt="B1"></div>
@@ -89,7 +91,7 @@
                 <div class="slideImg bg-green" data-idx="3"><img src="" alt="B4"></div>
             </div>
             <div id="banner_box"
-                 class="text-center pad-vr-1-all
+                 class="text-center pad-vr-1-all tablet-vertical-off
                         flex absolute bottom-0 left-50 cursor-pointer-all"
                  style="width:300px;">
                 <div class="bannerNav width-25" data-idx="0">배너1</div>
@@ -97,6 +99,13 @@
                 <div class="bannerNav width-25" data-idx="-2">배너3</div>
                 <div class="bannerNav width-25" data-idx="-3">배너4</div>
             </div>
+            <div id="dotIndex"
+                 class="flex-row-evenly relative left-50 radius-round-all radius-4">
+                <div class="idxDot"></div>
+                <div class="idxDot"></div>
+                <div class="idxDot"></div>
+                <div class="idxDot"></div>
+            </div>   
             <div id="slideBt"
                  class="font-3 font-bol flex-row-between width-100 cursor-pointer-all
                         tablet-vertical-off">
@@ -104,6 +113,7 @@
                 <i id="slideR" class="bi bi-chevron-compact-right"></i>
             </div>
         </div>
+
         <section id="contents"
                  class="width-100">
             <div id="eventTitle"
@@ -120,13 +130,47 @@
                 </div>
             </div>
             <section id="showCase"
-                     class="width-100 flex">
-                <div class="width-50">
+                     class="width-100 flex mar-center-6">
+                <div class="width-35 relative mar-center-1-all">
                     <h2>관련 문구</h2>
                     <h4>부가설명1<br>부가설명2</h4>
+                    <button class="goBt">바로가기</button>
                 </div>
                 <div id="productsShowcase"
-                     class="flex-wrap width-50 gap-1">
+                     class="flex-wrap width-65 gap-1">
+
+                </div>
+            </section>
+
+            <section id="bestSeller" class="mar-center-6">
+                <div class="flex">
+                    <div class="width-50 mar-center-1-all">
+                        <h2>BEST SELLER</h2>
+                        <h4>홍보 문구 1절<br>
+                            홍보 문구 2절</h4>
+                    </div>
+                    <div class="width-50"></div>
+                </div>
+                <div id="bsImgWrap" class="flex-row-between">
+                    <div class="bsImgBox align-self-start">
+                        <img src="" alt="img1" style=""/>
+                    </div>
+                    <div class="bsImgBox align-self-center">
+                        <img src="" alt="img2" style=""/>
+                    </div>
+                    <div class="bsImgBox align-self-end">
+                        <img src="" alt="img3" style=""/>
+                    </div>
+                </div>
+            </section>
+
+            <section id="recommended">
+                <div class="width-50 mar-center-1-all">
+                    <h2>RECOMMENDED</h2>
+                    <h4>이러이러한 사람들에게 추천<br>
+                        어디 한 번 써보시게나</h4>
+                </div>
+                <div id="recShowcase">
 
                 </div>
             </section>
@@ -138,7 +182,9 @@
         <div id="footerContents"
              class="mar-center"
              style='width:900px; height:100%;'>
+            <div>
 
+            </div>
         </div>
     </footer>
 </body>

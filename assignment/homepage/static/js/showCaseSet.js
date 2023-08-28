@@ -10,7 +10,7 @@ async function showCaseSet(id){
         t+=1;
         $("#productsShowcase").append(
             "<div class='showCase'>"+
-            "<div><img class='showCaseImg' alt='showCaseImg'></div>"+
+            "<div class='showCaseImg_box'><img class='showCaseImg' alt='showCaseImg'></div>"+
             "<h4>"+val.제품명+"</h4>"+
             "<div>"+val.제품부제명+"</div>"+
             "<div>"+val.상품설명+"</div>"+

@@ -7,4 +7,5 @@ $(async function(){
     slideToggles();
     bannerSlide();
     showCaseSet("#productsShowcase");
+    recShowcaseSet();
 });

@@ -2,7 +2,8 @@
     #slide_menu{display:none;}
     #darkBg{display:none;}
     #slide_bt_outer{display:none;}
-    
+    #dotIndex{display:none;}
+    #sBanner{display:none;}
 }
 @media (max-width:768px){
     #wrap{max-width:100%};
