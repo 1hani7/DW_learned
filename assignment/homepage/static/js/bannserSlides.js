@@ -2,10 +2,9 @@
 
 // 배너 슬라이드 관련
 function bannerSlide(){
-    var w = parseInt($(".slideImg").eq(0).css("width"));
+    var w = parseInt($("#banner").css("width"));
     $(window).resize(function(){
-        w = parseInt($(".slideImg").eq(0).css("width"));
-        console.log(window.innerWidth);
+        w = parseInt($("#banner").css("width"));
     });
 
     // 좌우 버튼 슬라이드
