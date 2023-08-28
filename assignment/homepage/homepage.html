@@ -19,6 +19,7 @@
 <script src="./static/js/bannserSlides.js"></script>
 <script src="./static/js/showCaseSet.js"></script>
 <script src="./static/js/recShowcase.js"></script>
+<script src="./static/js/pointCardSlide.js"></script>
 </head>
 <body>
     <!--우측 fixed 버튼들-->
@@ -141,10 +142,10 @@
                 <h4>EVENT NOW!</h4>
                 <div class="width-20 bg-black"
                      style="height:2px"></div>
-                <div>혜택1</div>
-                <div>혜택2</div>
-                <div>혜택3</div>
-                <div>혜택4</div>
+                <div><a class="hover-with-dot" href="">무료쿠폰</a></div>
+                <div><a class="hover-with-dot" href="">배송비무료</a></div>
+                <div><a class="hover-with-dot" href="">포인트 적립</a></div>
+                <div><a class="hover-with-dot" href="">SNS 공유</a></div>
                 <a href="">
                     <div class="goBt text-center flex-row-between"
                          style="width:120px; font-size:16px">
@@ -241,8 +242,64 @@
                     </div>
                 </div>
 
-                <div class="width-100 absolute left-0 bg-orange"
-                     style="height:400px;">
+                <div class="width-100 absolute left-0 bg-orange flex-all-center"
+                     style="height:450px;">
+                     <div id="carSlideBox" class="relative"
+                          style="width:900px; height:100%; overflow:hidden;">
+                        <div id="cardSlide" class="flex absolute left-0">
+                            <div class="cards relative flex-row-between"
+                                 style="width:900px; height:100%;">
+                                <img src="" alt="pointImg1"
+                                     style="width:100%; height:450px;">
+                                <div class="flex-right bg-dark absolute right-0" 
+                                     style="width:40%; height:450px;">
+                                    <div class="pad-vr-1-all pad-right-2-all text-right font-white">
+                                        <h3>이벤트 관련 문구</h3>
+                                        <p>이벤트에 관한 슬로건 문구</p>
+                                        <p>이벤트에 관한 설명 문구</p>
+                                        <p>2023/08/01 ~ 2023/09/30</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cards relative flex-row-between"
+                                 style="width:900px; height:100%;">
+                                <img src="" alt="pointImg2"
+                                     style="width:100%; height:450px;">
+                                <div class="flex-right bg-dark absolute right-0" 
+                                     style="width:40%; height:450px;">
+                                    <div class="pad-vr-1-all pad-right-2-all text-right font-white">
+                                        <h3>이벤트 관련 문구</h3>
+                                        <p>이벤트에 관한 슬로건 문구</p>
+                                        <p>이벤트에 관한 설명 문구</p>
+                                        <p>2023/08/01 ~ 2023/09/30</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cards relative flex-row-between"
+                                 style="width:900px; height:100%;">
+                                <img src="" alt="pointImg3"
+                                     style="width:100%; height:450px;">
+                                <div class="flex-right bg-dark absolute right-0" 
+                                     style="width:40%; height:450px;">
+                                    <div class="pad-vr-1-all pad-right-2-all text-right font-white">
+                                        <h3>이벤트 관련 문구</h3>
+                                        <p>이벤트에 관한 슬로건 문구</p>
+                                        <p>이벤트에 관한 설명 문구</p>
+                                        <p>2023/08/01 ~ 2023/09/30</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute left-0 flex-row-between
+                                    font-white font-2 font-bold-1 cursor-pointer-all"
+                             style="top:410px; width:200px;">
+                            <div id="cardL"><i class="bi bi-chevron-left"></i></div>
+                            <div data-idx="0" class="cardIdx">01</div>
+                            <div data-idx="-1" class="cardIdx">02</div>
+                            <div data-idx="-2" class="cardIdx">03</div>
+                            <div id="cardR"><i class="bi bi-chevron-right"></i></div>
+                        </div>
+                    </div>
                 </div>
             </section>
         </section>

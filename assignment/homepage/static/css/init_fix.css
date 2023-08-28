@@ -202,6 +202,7 @@ canvas {
 .bg-purple{background-color:var(--purple600);}
 .bg-blue-gray{background-color:var(--blue-gray600);}
 .bg-gray{background-color:var(--gray400);}
+.bg-dark{background-color:rgba(0,0,0,0.3);}
 
 
 /*내부요소 일괄 배경색*/

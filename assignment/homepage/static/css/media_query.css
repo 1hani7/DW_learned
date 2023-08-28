@@ -10,7 +10,12 @@
 /*태블릿 세로 이하*/
 @media (max-width:768px){
     #wrap{max-width:100%};
+
+    /*슬라이드 배너*/
     #banner_box{width:100%;}
     .slideImg{width:768px}
+
+    /*이벤트 타이틀*/
+    #eventTitle{flex-direction: column;}
     
 }

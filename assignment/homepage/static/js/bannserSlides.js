@@ -37,14 +37,6 @@ function bannerSlide(){
         var tmp = $(this).data("idx");
         slideLocation = tmp*w;
         $("#slideBox").css("left", slideLocation+"px");
-        // 현재 슬라이드 표시
-        $(".bannerNav").each(function(i){
-            if( slideLocation == -(w*i) ){
-                $(".bannerNav").eq(i).css("border-bottom", "3px solid white")
-            }else{
-                $(".bannerNav").eq(i).css("border-bottom", "none")
-            }
-        });
     });
 
     //자동 슬라이드

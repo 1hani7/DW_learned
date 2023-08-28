@@ -1,4 +1,5 @@
 let slideLocation = 0;
+let cardSlideLocation = 0;
 let data = [];
 let picks = [];
 
@@ -10,6 +11,7 @@ $(async function(){
     showCaseSet("#productsShowcase"); // DISPLAY 세팅
     await getData2(); // 추천상품 관련 Json fetch
     recshowCaseSet("#recShowcase"); // 추천상품 목록 세팅
+    pointCardSlide(); // 포인트카드 슬라이드쇼
 
     $("#quickMenuOpen").click(function(){
         $("#quickMenuItems").slideToggle(500);
