@@ -1,0 +1,13 @@
+@media (min-width:768px){
+    #slide_menu{display:none;}
+    #darkBg{display:none;}
+    #slide_bt_outer{display:none;}
+    
+}
+@media (max-width:768px){
+    #wrap{max-width:100%};
+    #banner_box{
+        width:100%;
+    }
+    .slideImg{width:768px}
+}
