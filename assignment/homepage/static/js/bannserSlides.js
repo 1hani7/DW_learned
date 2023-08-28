@@ -4,17 +4,19 @@
 function bannerSlide(){
     var w = parseInt($("#banner").css("width"));
 
-    // 리사이징 이슈 해결
+    // 배너 버튼 표시 시작값
+    $(".bannerNav").eq(0).css("border-bottom", "3px solid white")
+    $(".slideDot").eq(0).css("background", "white")
+
+    // 화면비 변경시 첫 좌표로 ( 배너 너비 맞춤 )
     $(window).resize(function(){
-        if( window.innerWidth <= 768 ) $("#slideBox").css("left", "0px");
-        if( window.innerWidth >= 768 ) $("#slideBox").css("left", "0px");
-        var wholeSize = $(".slideImg").length;
-        w = parseInt($("#banner").css("width"));
-        $(".slideImg").each(function(i,v){
-            $(this).css("width",w+"px")
-        });
-        $("#slideBox").css("width", w*wholeSize+"px");
-        $("#slideBox").css("left", "0px");
+        var tWidth = parseInt($("#banner").css("width"));
+        $(".slideImg").each(function(){
+            $(this).css("width", tWidth+'px')
+        })
+        w = parseInt($(".slideImg").eq(0).css("width"));
+        slideLocation = 0;
+        $("#slideBox").css("left", slideLocation+"px");
     });
 
     // 좌우 버튼 슬라이드
@@ -35,6 +37,14 @@ function bannerSlide(){
         var tmp = $(this).data("idx");
         slideLocation = tmp*w;
         $("#slideBox").css("left", slideLocation+"px");
+        // 현재 슬라이드 표시
+        $(".bannerNav").each(function(i){
+            if( slideLocation == -(w*i) ){
+                $(".bannerNav").eq(i).css("border-bottom", "3px solid white")
+            }else{
+                $(".bannerNav").eq(i).css("border-bottom", "none")
+            }
+        });
     });
 
     //자동 슬라이드
@@ -42,7 +52,10 @@ function bannerSlide(){
         slideRightSide(w);
     },8000);
 
-    // 현재 슬라이드 위치 표시
+    // 현재 슬라이드 표시 기능
+    setInterval(function(){
+        slideIdxCheck(w);
+    },10)
 
     // 슬라이드 드래그
     slideDrag(BS);
@@ -77,3 +90,24 @@ function slideDrag(BS){
         }
     });
 };
+
+
+// 현재 슬라이드 표시 기능
+function slideIdxCheck(w){
+    // 배너 버튼 표시 (넓은화면)
+    $(".bannerNav").each(function(i){
+        if( slideLocation == -(w*i) ){
+            $(".bannerNav").eq(i).css("border-bottom", "3px solid white")
+        }else{
+            $(".bannerNav").eq(i).css("border-bottom", "none")
+        }
+    });
+    // 배너 번호 표시 (좁은화면)
+    $(".idxDot").each(function(i){
+        if( slideLocation == -(w*i) ){
+            $(".idxDot").eq(i).css("background", "white")
+        }else{
+            $(".idxDot").eq(i).css("background", "rgba(0,0,0,0.3)")
+        }
+    });
+}

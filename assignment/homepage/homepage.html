@@ -21,6 +21,20 @@
 <script src="./static/js/recShowcase.js"></script>
 </head>
 <body>
+    <!--우측 fixed 버튼들-->
+    <div id="fixedBt"
+         class="fixed right-5 bottom-10 flex-col-evenly
+                tablet-vertical-off">
+        <a href="#">
+            <div class="box-shadow-out cursor-pointer radius-round
+                        flex-all-center bg-white"
+                 style="width:45px; height:45px;">
+                <i class="bi bi-chevron-up"></i>
+            </div>
+        </a>
+    </div>
+
+    <!--소형 화면 좌측 슬라이드 메뉴-->
     <div id="slide_menu"
          class="tablet-vertical-on fixed top-0 bg-white relatives z-index-9"
          style="width:300px; height:100vh;">
@@ -51,6 +65,7 @@
     style="width:100vw; height:100vh; display:none;">
     </div>
 
+    <!--상단 네비게이션 바-->
     <nav id="nav"
          class="flex-row-around width-100 tablet-vertical-off">
         <div id="logo_wrap">
@@ -76,6 +91,7 @@
         </div>
     </nav>
 
+    <!--슬라이드 메뉴 열기 버튼-->
     <div id="slide_bt_outer"
          class="tablet-vertical-on pad-1">
         <i class="bi bi-list font-3"></i>
@@ -83,6 +99,7 @@
     
     <div id="wrap" class="mar-center">
 
+        <!--배너 슬라이드쇼-->
         <div id="banner" class="relative">
             <div id="slideBox" class="flex absolute">
                 <div class="slideImg bg-red" data-idx="0"><img src="" alt="B1"></div>
@@ -114,76 +131,194 @@
             </div>
         </div>
 
+        <!--페이지 내부-->
         <section id="contents"
                  class="width-100">
+
+            <!--이벤트 타이틀-->
             <div id="eventTitle"
-                 class="width-100 flex-row-between mar-center-3">
-                <h3>현재 이벤트</h3>
+                 class="width-100 flex-row-between">
+                <h4>EVENT NOW!</h4>
                 <div class="width-20 bg-black"
                      style="height:2px"></div>
                 <div>혜택1</div>
                 <div>혜택2</div>
                 <div>혜택3</div>
                 <div>혜택4</div>
-                <div class="border-black">
-                    혜택 바로 보기
-                </div>
+                <a href="">
+                    <div class="goBt text-center flex-row-between"
+                         style="width:120px; font-size:16px">
+                        <i class="bi bi-plus-circle"></i>
+                        더 보기
+                    </div>
+                </a>
             </div>
+
+            <!--쇼케이스 + 리뷰-->
             <section id="showCase"
-                     class="width-100 flex mar-center-6">
-                <div class="width-35 relative mar-center-1-all">
-                    <h2>관련 문구</h2>
-                    <h4>부가설명1<br>부가설명2</h4>
-                    <button class="goBt">바로가기</button>
+                     class="width-100 flex mar-center-15">
+                <div class="width-35 relative mar-bottom-2-all">
+                    <h2>DISPLAY</h2>
+                    <h5>부가설명1<br>부가설명2</h5>
+                    <button class="goBt">
+                        상품 페이지로
+                        <i class="bi bi-arrow-right-short"></i>
+                    </button>
                 </div>
                 <div id="productsShowcase"
-                     class="flex-wrap width-65 gap-1">
+                     class="flex-wrap cursor-pointer-all width-65 gap-3">
 
                 </div>
             </section>
 
-            <section id="bestSeller" class="mar-center-6">
+            <!--베스트셀러-->
+            <section id="bestSeller" class="mar-center-15">
                 <div class="flex">
-                    <div class="width-50 mar-center-1-all">
+                    <div class="width-50 mar-bottom-2-all">
                         <h2>BEST SELLER</h2>
-                        <h4>홍보 문구 1절<br>
-                            홍보 문구 2절</h4>
+                        <h5>9월의 베스트셀러 상품<br>
+                            세련된 가을을 준비하는 당신을 위해
+                        </h5>
                     </div>
-                    <div class="width-50"></div>
                 </div>
-                <div id="bsImgWrap" class="flex-row-between">
-                    <div class="bsImgBox align-self-start">
+                <div id="bsImgWrap" class="flex-row-between cursor-pointer-all">
+                    <div class="bsImgBox align-self-end">
                         <img src="" alt="img1" style=""/>
                     </div>
                     <div class="bsImgBox align-self-center">
                         <img src="" alt="img2" style=""/>
                     </div>
-                    <div class="bsImgBox align-self-end">
+                    <div class="bsImgBox align-self-start">
                         <img src="" alt="img3" style=""/>
                     </div>
                 </div>
             </section>
 
-            <section id="recommended">
-                <div class="width-50 mar-center-1-all">
+            <!--추천상품-->
+            <section id="recommended" class="mar-center-15">
+                <div class="width-50 mar-bottom-2-all">
                     <h2>RECOMMENDED</h2>
-                    <h4>이러이러한 사람들에게 추천<br>
-                        어디 한 번 써보시게나</h4>
+                    <h5>이러이러한 사람들에게 추천<br>
+                        어디 한 번 써보시게나</h5>
                 </div>
-                <div id="recShowcase">
+                <div id="recShowcase"
+                     class="flex-wrap flex-col-3 border-solid-all
+                            radius-2-all gap-3 grow-all cursor-pointer-all">
 
+                </div>
+            </section>
+
+            <!--체크포인트 이벤트-->
+            <section id="extraEvent" class="mar-center-15"
+                     style="height:800px;">
+                <div class="width-100 mar-bottom-2-all">
+                    <h2>CHECK CARD POINT</h2>
+                    <h5>체크카드 포인트 관련 이벤트</h5>
+                    <div class="flex-row-between">
+                        <ul class="font-2 font-bold-1 pad-vr-half-all">
+                            <li>
+                                <i class="bi bi-check2-square"></i>
+                                &nbsp;매달 누적되는 캐시백 포인트로 알뜰쇼핑!
+                            </li>
+                            <li>
+                                <i class="bi bi-check2-square"></i>
+                                &nbsp;최대 5%까지 제공되는 특별한 할인 혜택!
+                            </li>
+                            <li>
+                                <i class="bi bi-check2-square"></i>
+                                &nbsp;제휴 브랜드 카드 적용시 첫 회에 한하여 사은품 증정!
+                            </li>
+                        </ul>
+                        <a href="" class="align-self-start">
+                            <div class="bg-blue-gray font-white
+                                        text-center radius-4 hover-brightness
+                                        cursor-pointer flex-row-evenly"
+                                 style="width:150px; height:40px;">
+                                 <i class="bi bi-patch-question font-2"></i>
+                                 자세히 보기
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="width-100 absolute left-0 bg-orange"
+                     style="height:400px;">
                 </div>
             </section>
         </section>
     </div>
+
+    <!--footer-->
     <footer id="footer"
-            class="width-100 bg-blue-gray"
+            class="width-100 font-white"
             style="height:300px">
         <div id="footerContents"
              class="mar-center"
              style='width:900px; height:100%;'>
-            <div>
-
+            <div class="flex-row-between">
+                <ul class="flex-row-evenly pad-vr-3 width-45
+                           pad-right-1-all">
+                    <li><a href="">이용약관</a></li>
+                    <li><a href="">개인정보처리방침</a></li>
+                    <li><a href="">이용안내</a></li>
+                    <li><a href="">제휴 문의</a></li>
+                </ul>
+                <div id="quickMenuOpen" class="cursor-pointer pad-half">
+                    <div class="flex-all-center hover-brightness">
+                        <h4>Quick Menu&nbsp;</h4>
+                        <i class="bi bi-caret-down-fill"></i>
+                    </div>
+                    <div class="relative"
+                         style="width:100px;">
+                        <ul id="quickMenuItems"
+                            class="pad-half-all cursor-pointer-all
+                                   text-center-all absolute"
+                            style="width:175px; right:-66px; top:10px;
+                                   display:none;">
+                            <li><a href="">메뉴1</a></li>
+                            <li><a href="">메뉴2</a></li>
+                            <li><a href="">메뉴3</a></li>
+                            <li><a href="">메뉴4</a></li>
+                            <li><a href="">메뉴5</a></li>
+                            <li><a href="">메뉴6</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="flex-row-between gap-2">
+                <div class="align-self-start width-15">
+                    <img src="" alt="logo_here">
+                </div>
+                <div class="pad-bottom-half-all">
+                    <p>상호명 : (주)S2쇼핑</p>
+                    <p>대전광역시 서구 변동서로 15-16</p>
+                    <p>대표자 : 신향수</p>
+                    <p>사업자등록번호 : 123-12-12345</p>
+                    <p>통신판매업 : 2023-대전서구-12345</p>
+                    <p>대표전화 : 010-1234-1234<br>FAX : 042-1234-5678</p>
+                    <p>E-mail : S2shoping@naver.com</p>
+                </div>
+                <div class="align-self-start">
+                    <h1 class="pad-bottom-half">1644-1234</h1>
+                    <div class="flex-row-between">
+                        <div class="pad-bottom-half-all">
+                            <h6>평일</h5>
+                            <h6>점심시간</h5>
+                        </div>
+                        <div class="pad-bottom-half-all">
+                            <h6>09:30 ~ 18:00</h5>
+                            <h6>12:50 ~ 13:40</h5>
+                        </div>
+                    </div>
+                    <p class="pad-vr-half">※ 토, 일, 공휴일 휴무</p>
+                </div>
+                <div class="align-self-start mar-bottom-1-all text-right">
+                    <i class="bi bi-c-circle font-4"></i>
+                    <p class="mar-top-1">
+                        현 페이지는<br>저작권보호법에 의하여<br>보호받고 있습니다.<br><br>
+                        불법적인 악용 및 무단 복제는<br>처벌 대상이 될 수 있습니다.
+                    </p>
+                </div>
             </div>
         </div>
     </footer>

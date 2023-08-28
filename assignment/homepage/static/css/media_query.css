@@ -1,3 +1,4 @@
+/*태블릿 세로 이상*/
 @media (min-width:768px){
     #slide_menu{display:none;}
     #darkBg{display:none;}
@@ -5,10 +6,11 @@
     #dotIndex{display:none;}
     #sBanner{display:none;}
 }
+
+/*태블릿 세로 이하*/
 @media (max-width:768px){
     #wrap{max-width:100%};
-    #banner_box{
-        width:100%;
-    }
+    #banner_box{width:100%;}
     .slideImg{width:768px}
+    
 }
