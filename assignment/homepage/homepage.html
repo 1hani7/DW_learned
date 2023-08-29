@@ -83,7 +83,7 @@
             </ul>
         </div>
         <div id="sign_wrap">
-            <ul class="flex-row-evenly pad-half-all font-half cursor-pointer-all">
+            <ul class="flex-row-evenly pad-half-all cursor-pointer-all">
                 <li><a href="#">Login</a></li>
                 <li><a href="#">Sign in</a></li>
                 <li><a href="#"><i class="bi bi-search"></i></a></li>
@@ -138,14 +138,16 @@
 
             <!--이벤트 타이틀-->
             <div id="eventTitle"
-                 class="width-100 flex-row-between">
+                 class="width-100 flex-row-between tablet-vertical-off">
                 <h4>EVENT NOW!</h4>
                 <div class="width-20 bg-black"
                      style="height:2px"></div>
-                <div><a class="hover-with-dot" href="">무료쿠폰</a></div>
-                <div><a class="hover-with-dot" href="">배송비무료</a></div>
-                <div><a class="hover-with-dot" href="">포인트 적립</a></div>
-                <div><a class="hover-with-dot" href="">SNS 공유</a></div>
+                <div class="flex gap-3">
+                    <div><a class="hover-with-dot" href="">무료쿠폰</a></div>
+                    <div><a class="hover-with-dot" href="">배송비무료</a></div>
+                    <div><a class="hover-with-dot" href="">포인트 적립</a></div>
+                    <div><a class="hover-with-dot" href="">SNS 공유</a></div>
+                </div>
                 <a href="">
                     <div class="goBt text-center flex-row-between"
                          style="width:120px; font-size:16px">
@@ -155,32 +157,31 @@
                 </a>
             </div>
 
-            <!--쇼케이스 + 리뷰-->
+            <!--DISPLAY (쇼케이스 + 리뷰)-->
             <section id="showCase"
                      class="width-100 flex mar-center-15">
-                <div class="width-35 relative mar-bottom-2-all">
+                <div class="sectionTitle width-30 relative mar-bottom-2-all">
                     <h2>DISPLAY</h2>
-                    <h5>부가설명1<br>부가설명2</h5>
+                    <h5>수백 명의 리뷰어들이 선택한<br>
+                        요즘 제일 인기 있는 핫템들!</h5>
                     <button class="goBt">
-                        상품 페이지로
+                        상품 더 보기
                         <i class="bi bi-arrow-right-short"></i>
                     </button>
                 </div>
                 <div id="productsShowcase"
-                     class="flex-wrap cursor-pointer-all width-65 gap-3">
+                     class="flex-wrap cursor-pointer-all width-70 gap-3">
 
                 </div>
             </section>
 
             <!--베스트셀러-->
             <section id="bestSeller" class="mar-center-15">
-                <div class="flex">
-                    <div class="width-50 mar-bottom-2-all">
-                        <h2>BEST SELLER</h2>
-                        <h5>9월의 베스트셀러 상품<br>
-                            세련된 가을을 준비하는 당신을 위해
-                        </h5>
-                    </div>
+                <div class="sectionTitle width-50 mar-bottom-2-all">
+                    <h2>BEST SELLER</h2>
+                    <h5>9월의 베스트셀러 상품<br>
+                        세련된 가을을 준비하는 당신을 위해
+                    </h5>
                 </div>
                 <div id="bsImgWrap" class="flex-row-between cursor-pointer-all">
                     <div class="bsImgBox align-self-end">
@@ -197,14 +198,14 @@
 
             <!--추천상품-->
             <section id="recommended" class="mar-center-15">
-                <div class="width-50 mar-bottom-2-all">
+                <div class="sectionTitle width-50">
                     <h2>RECOMMENDED</h2>
-                    <h5>이러이러한 사람들에게 추천<br>
-                        어디 한 번 써보시게나</h5>
+                    <h5>이번 달의 당신을 위한 크리에이터픽<br>
+                        미리 준비하는 가을을 더욱 세련되고 완벽하게</h5>
                 </div>
                 <div id="recShowcase"
                      class="flex-wrap flex-col-3 border-solid-all
-                            radius-2-all gap-3 grow-all cursor-pointer-all">
+                            radius-2-all gap-5 cursor-pointer-all">
 
                 </div>
             </section>
@@ -212,11 +213,12 @@
             <!--체크포인트 이벤트-->
             <section id="extraEvent" class="mar-center-15"
                      style="height:800px;">
-                <div class="width-100 mar-bottom-2-all">
+                <div class="sectionTitle width-100 mar-bottom-2-all">
                     <h2>CHECK CARD POINT</h2>
-                    <h5>체크카드 포인트 관련 이벤트</h5>
+                    <h5>본점 제휴카드 최대 5%까지 제공되는 무제한 혜택</h5>
                     <div class="flex-row-between">
-                        <ul class="font-2 font-bold-1 pad-vr-half-all">
+                        <ul class="cardSubTitle font-2 font-bold-1 pad-vr-half-all"
+                            style="text-align:left;">
                             <li>
                                 <i class="bi bi-check2-square"></i>
                                 &nbsp;매달 누적되는 캐시백 포인트로 알뜰쇼핑!
@@ -230,7 +232,7 @@
                                 &nbsp;제휴 브랜드 카드 적용시 첫 회에 한하여 사은품 증정!
                             </li>
                         </ul>
-                        <a href="" class="align-self-start">
+                        <a href="" class="align-self-start tablet-vertical-off">
                             <div class="bg-blue-gray font-white
                                         text-center radius-4 hover-brightness
                                         cursor-pointer flex-row-evenly"
@@ -254,7 +256,7 @@
                                 <div class="flex-right bg-dark absolute right-0" 
                                      style="width:40%; height:450px;">
                                     <div class="pad-vr-1-all pad-right-2-all text-right font-white">
-                                        <h3>이벤트 관련 문구</h3>
+                                        <h3 style="padding-right:24px;">이벤트 관련 문구</h3>
                                         <p>이벤트에 관한 슬로건 문구</p>
                                         <p>이벤트에 관한 설명 문구</p>
                                         <p>2023/08/01 ~ 2023/09/30</p>
@@ -268,7 +270,7 @@
                                 <div class="flex-right bg-dark absolute right-0" 
                                      style="width:40%; height:450px;">
                                     <div class="pad-vr-1-all pad-right-2-all text-right font-white">
-                                        <h3>이벤트 관련 문구</h3>
+                                        <h3 style="padding-right:24px;">이벤트 관련 문구</h3>
                                         <p>이벤트에 관한 슬로건 문구</p>
                                         <p>이벤트에 관한 설명 문구</p>
                                         <p>2023/08/01 ~ 2023/09/30</p>
@@ -282,7 +284,7 @@
                                 <div class="flex-right bg-dark absolute right-0" 
                                      style="width:40%; height:450px;">
                                     <div class="pad-vr-1-all pad-right-2-all text-right font-white">
-                                        <h3>이벤트 관련 문구</h3>
+                                        <h3 style="padding-right:24px;">이벤트 관련 문구</h3>
                                         <p>이벤트에 관한 슬로건 문구</p>
                                         <p>이벤트에 관한 설명 문구</p>
                                         <p>2023/08/01 ~ 2023/09/30</p>
@@ -310,17 +312,16 @@
             class="width-100 font-white"
             style="height:300px">
         <div id="footerContents"
-             class="mar-center"
-             style='width:900px; height:100%;'>
-            <div class="flex-row-between">
-                <ul class="flex-row-evenly pad-vr-3 width-45
-                           pad-right-1-all">
+             class="mar-center">
+            <div class="footerUpperWrap flex-row-between">
+                <ul class="footerAsk flex-row-evenly pad-vr-3 width-45
+                           pad-right-1-all text-center-all">
                     <li><a href="">이용약관</a></li>
                     <li><a href="">개인정보처리방침</a></li>
                     <li><a href="">이용안내</a></li>
                     <li><a href="">제휴 문의</a></li>
                 </ul>
-                <div id="quickMenuOpen" class="cursor-pointer pad-half">
+                <div id="quickMenuOpen" class="cursor-pointer pad-half tablet-vertical-off">
                     <div class="flex-all-center hover-brightness">
                         <h4>Quick Menu&nbsp;</h4>
                         <i class="bi bi-caret-down-fill"></i>
@@ -342,11 +343,11 @@
                     </div>
                 </div>
             </div>
-            <div class="flex-row-between gap-2">
+            <div class="footerLowerWrap flex-row-between gap-2">
                 <div class="align-self-start width-15">
                     <img src="" alt="logo_here">
                 </div>
-                <div class="pad-bottom-half-all">
+                <div class="pad-bottom-half-all tablet-vertical-off">
                     <p>상호명 : (주)S2쇼핑</p>
                     <p>대전광역시 서구 변동서로 15-16</p>
                     <p>대표자 : 신향수</p>
@@ -369,7 +370,8 @@
                     </div>
                     <p class="pad-vr-half">※ 토, 일, 공휴일 휴무</p>
                 </div>
-                <div class="align-self-start mar-bottom-1-all text-right">
+                <div class="align-self-start mar-bottom-1-all text-right
+                            tablet-vertical-off">
                     <i class="bi bi-c-circle font-4"></i>
                     <p class="mar-top-1">
                         현 페이지는<br>저작권보호법에 의하여<br>보호받고 있습니다.<br><br>

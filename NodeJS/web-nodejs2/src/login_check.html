@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<!--jquery-->
+<script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    <script>
+        // parse=function(href){
+        //     var tmp = href.split("?")[1];
+        //     var obj = new Object();
+        //     $.each(tmp.split("&"),function(i,t){
+        //         var param = t.split("=");
+        //         obj[param[0]] = param[1];
+        //     });
+        //     console.log(obj);
+        //     return obj;
+        // }
+
+        // // 특수문자를 주소에서 쓸 수 있도록 변형 => encode
+        // // 다시 특수문자로 변형하려면 => decode
+        // // decode 방식 => decodeURI / decodeURIComponent
+        // $.getJSON("./data/member.json",function(member){
+        //     var href = decodeURIComponent(location.href);
+        //     var query = parse(href);
+            
+        //     var isSuccess = false;
+        //     $.each(member, function(i,m){
+        //         if( m.sdmId === query.sdmId ){
+        //             if( m.sdmPw === query.sdmPw ){
+        //                 isSuccess = true;
+        //             }
+        //         }
+        //     });
+        //     if( isSuccess ) document.write("로그인성공");
+        //     else document.write("로그인 실패");
+        // });
+
+        function getCookie(name){
+            var cookies = document.cookie.split(";");
+            for(var i in cookies){
+                var cookie  = cookies[i].trim();
+                if( cookie.startsWith(name+"=") ){
+                    return cookie.substring(name.length+1, cookie.length);
+                }
+            }
+            return '';
+        }
+        var isLogin = getCookie("isLogin");
+        var id = getCookie("id");
+
+        document.write(isLogin+"  "+id);
+
+    </script>
+</head>
+<body>
+
+    <h3>로그인을 처리하는 페이지</h3>
+</body>
+</html>

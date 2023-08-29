@@ -87,8 +87,9 @@ h5{ line-height:35px;}
 }
 .showCaseImg_box{
     border:1px dashed black;
-    width:100%; height:130px;
+    width:100%; height:160px;
 }
+
 
 /*베스트셀러*/
 #bsImgWrap{ height:700px; }
@@ -100,10 +101,13 @@ h5{ line-height:35px;}
 
 
 /*추천상품*/
+.sectionTitle > * {
+    margin-bottom:25px;
+}
 .picks{
     height:370px; padding:15px;
     display:flex; flex-direction:column;
-    justify-content: space-between;
+    flex-grow:1;
 }
 .picks .picksImg_box{
     border:1px dashed black;
@@ -116,6 +120,7 @@ h5{ line-height:35px;}
 
 /*footer*/
 #footer{background:rgba(0,0,0,0.85);}
+#footerContents{width:900px; height:100%;}
 #quickMenuOpen{ border-bottom:2px solid white; }
 #quickMenuItems{
     background:rgba(0,0,0,0.3); 

@@ -15,7 +15,39 @@
     #banner_box{width:100%;}
     .slideImg{width:768px}
 
+    /*각 섹션별 타이틀*/
+    .sectionTitle{width:100%; text-align: center; margin:0, auto;}
+
+    /*DISPLAY 쇼케이스*/
+    #showCase{display:block; height:1300px;}
+    #productsShowcase{width:95%; margin:0 auto;}
+    .showCase{width:43%;}
+    .showCase > * {padding:15px 0;}
+    #sectionTitle .goBt{ text-align:right; }
+
     /*이벤트 타이틀*/
-    #eventTitle{flex-direction: column;}
-    
+    #eventTitle{flex-direction:column; height:150px;}
+
+    /*베스트셀러*/
+    #bsImgWrap{flex-direction: column; row-gap:40px; width:95%; margin:0 auto;}
+    #bsImgWrap > * {align-self: center; width:100%; border-radius: 0;}
+
+    /*추천상품*/
+    #recommended{width:95%; margin:0 auto;}
+
+    /*체크카드 포인트*/
+    .cardSubTitle{margin:0 auto;}
+
+    /*footer*/
+    #footer{width:100%;}
+    #footerContents{width:100%;}
+    #quickMenuOpen{border:none;}
+    .footerAsk{width:100%; padding:17px 0;}
+    .footerUpperWrap{width:100%; justify-content: center; font-size: 20px;}
+    .footerLowerWrap{justify-content: space-evenly; margin-top:35px;}
+}
+
+/*스마트폰 세로 이하*/
+@media (max-width:479px){
+    .sectionTitle div ul{font-size:17px;}
 }

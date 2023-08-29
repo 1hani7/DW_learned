@@ -879,8 +879,8 @@ canvas {
 
 /*[flex]*/
 .flex-all-center{display:flex; justify-content: center; align-items: center;}
-.flex-wrap{display:flex; flex-wrap:wrap; justify-content: left;}
-.flex-wrap-reverse{display:flex; flex-wrap:wrap-reverse; justify-content: left;}
+.flex-wrap{display:flex; flex-wrap:wrap; justify-content: space-between;}
+.flex-wrap-reverse{display:flex; flex-wrap:wrap-reverse; justify-content: space-between;}
 
 /*flex row*/
 .flex-row-around{display:flex; justify-content: space-around; align-items: center;}

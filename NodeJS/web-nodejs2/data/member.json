@@ -1,0 +1,66 @@
+[
+    {
+        "id":1,
+        "sdmId":"kim@naver.com",
+        "sdmPw":"1234",
+        "tel":"010-1234-5678",
+        "addr":"대전 어딘가",
+        "wDate":"2024-04-06"
+    },
+    {
+        "id":2,
+        "sdmId":"1hani7@naver.com",
+        "sdmPw":"tlstkdtn75!",
+        "tel":"010-2352-6625",
+        "addr":"대전 변동",
+        "wDate":"2024-05-09"
+    },
+    {
+        "id":3,
+        "sdmId":"jonj53@gmail.com",
+        "sdmPw":"15132e1",
+        "tel":"010-1234-5678",
+        "addr":"서울특별시 어딘가",
+        "wDate":"2023-12-12"
+    },
+    {
+        "id":4,
+        "sdmId":"ghi421@gmail.com",
+        "sdmPw":"fwefa156",
+        "tel":"010-1234-5678",
+        "addr":"부산광역시 어딘가",
+        "wDate":"2025-06-17"
+    },
+    {
+        "id":5,
+        "sdmId":"sunhyang27@naver.com",
+        "sdmPw":"ssl0114",
+        "tel":"010-1234-5678",
+        "addr":"대전광역시 판암동",
+        "wDate":"2024-05-09"
+    },
+    {
+        "id":6,
+        "sdmId":"gaoig72@gmail.com",
+        "sdmPw":"gadah46hat",
+        "tel":"010-1234-5678",
+        "addr":"중국",
+        "wDate":"2029-09-14"
+    },
+    {
+        "id":7,
+        "sdmId":"njffg52368@naver.com",
+        "sdmPw":"adhj34jr!",
+        "tel":"010-1234-5678",
+        "addr":"전라도 정읍",
+        "wDate":"2026-05-30"
+    },
+    {
+        "id":8,
+        "sdmId":"aghgah15@gmail.com",
+        "sdmPw":"wdiojb2124",
+        "tel":"010-1234-5678",
+        "addr":"강원도 철원",
+        "wDate":"2031-01-26"
+    }
+]
