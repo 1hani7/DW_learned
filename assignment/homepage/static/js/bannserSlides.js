@@ -3,6 +3,12 @@
 // 배너 슬라이드 관련
 function bannerSlide(){
     var w = parseInt($("#banner").css("width"));
+    var nw = parseInt($("#banner").css("width"));
+
+    // 슬라이드 이미지 너비 초기값
+    $(".slideImg").each(function(){
+        $(this).css("width", nw+'px')
+    })
 
     // 배너 버튼 표시 시작값
     $(".bannerNav").eq(0).css("border-bottom", "3px solid white")
@@ -10,11 +16,10 @@ function bannerSlide(){
 
     // 화면비 변경시 첫 좌표로 ( 배너 너비 맞춤 )
     $(window).resize(function(){
-        var tWidth = parseInt($("#banner").css("width"));
+        var nw = parseInt($("#banner").css("width"));
         $(".slideImg").each(function(){
-            $(this).css("width", tWidth+'px')
+            $(this).css("width", nw+'px')
         })
-        w = parseInt($(".slideImg").eq(0).css("width"));
         slideLocation = 0;
         $("#slideBox").css("left", slideLocation+"px");
     });
@@ -47,10 +52,10 @@ function bannerSlide(){
     // 현재 슬라이드 표시 기능
     setInterval(function(){
         slideIdxCheck(w);
-    },10)
+    },100)
 
-    // 슬라이드 드래그
-    slideDrag(BS);
+    // 터치 드래그
+    touchDrag(w);
 };
 
 function slideRightSide(w){
@@ -61,23 +66,21 @@ function slideRightSide(w){
         $("#slideBox").css("left", (slideLocation-=w)+"px");
 };
 
-function slideDrag(BS){
+function touchDrag(w){
     let prevX = 0;
-    var isDragging = false;
-    var d = '';
-    $(".slideImg").on("mousedown",function(e){
-        prevX = e.clientX;
-        isDragging = true;
+    $(".slideImg").on("touchstart",".slideImg", function(e){
+        var touch = e.originalEvent.touches[0];
+        prevX = touch.screenX;
+        console.log(prevX);
     });
-    $(".slideImg").on("mouseup",function(e){
-        var w = parseInt($(".slideImg").css("width"));
-        var x = e.clientX;
-
-        isDragging = false;
-
+    $(".slideImg").on("touchend",function(e){
+        var touch = e.originalEvent.touches[0];
+        var x = touch.screenX;
+        // console.log(prevX, x)
         if( x > prevX && slideLocation != 0 ){
             $("#slideBox").css("left", (slideLocation+=w)+"px");
-        }else if( x < prevX && slideLocation != ($(".slideImg").length-1)*(-(w)) ){
+        }
+        if( x < prevX && slideLocation != ($(".slideImg").length-1)*(-(w)) ){
             $("#slideBox").css("left", (slideLocation-=w)+"px");
         }
     });
