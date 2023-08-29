@@ -58,6 +58,7 @@ function bannerSlide(){
     touchDrag(w);
 };
 
+// 우측으로 슬라이드 함수
 function slideRightSide(w){
     if( slideLocation == ($(".slideImg").length-1)*(-(w)) ){
         slideLocation = 0;
@@ -66,21 +67,20 @@ function slideRightSide(w){
         $("#slideBox").css("left", (slideLocation-=w)+"px");
 };
 
+// 터치 드래그 함수
 function touchDrag(w){
-    let prevX = 0;
-    $(".slideImg").on("touchstart",".slideImg", function(e){
-        var touch = e.originalEvent.touches[0];
-        prevX = touch.screenX;
-        console.log(prevX);
+    let startX = 0;
+    let endX = 0;
+    var lastLocation = ($(".slideImg").length-1)*(-(w));
+    $(".slideImg").on("touchstart", function(e){
+        startX = e.originalEvent.changedTouches[0].clientX;
     });
-    $(".slideImg").on("touchend",function(e){
-        var touch = e.originalEvent.touches[0];
-        var x = touch.screenX;
-        // console.log(prevX, x)
-        if( x > prevX && slideLocation != 0 ){
+    $(".slideImg").on("touchend", function(e){
+        endX = e.originalEvent.changedTouches[0].clientX;
+        if( endX > startX && slideLocation != 0 ){
             $("#slideBox").css("left", (slideLocation+=w)+"px");
         }
-        if( x < prevX && slideLocation != ($(".slideImg").length-1)*(-(w)) ){
+        if( endX < startX && slideLocation != lastLocation ){
             $("#slideBox").css("left", (slideLocation-=w)+"px");
         }
     });

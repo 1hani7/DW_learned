@@ -1,11 +1,15 @@
 function pointCardSlide(){
     var w = parseInt($("#carSlideBox").css("width"));
 
+    // 슬라이드 이미지 너비 초기값
+    $(".cards").each(function(){
+        $(this).css("width", w+'px')
+    })
+
     // 화면비 변경시 첫 좌표로 ( 배너 너비 맞춤 )
     $(window).resize(function(){
-        var tWidth = parseInt($("#carSlideBox").css("width"));
         $(".cards").each(function(){
-            $(this).css("width", tWidth+'px')
+            $(this).css("width", w+'px')
         })
         w = parseInt($(".slideImg").eq(0).css("width"));
         cardSlideLocation = 0;
@@ -14,12 +18,7 @@ function pointCardSlide(){
 
     // 좌우 버튼 슬라이드
     $("#cardR").click(function(){
-        if( cardSlideLocation == ($(".cards").length-1)*(-w) ){
-            cardSlideLocation=0;
-            $("#cardSlide").css("left", cardSlideLocation + "px");
-        }else{
-            $("#cardSlide").css("left", (cardSlideLocation-=w) + "px");
-        }
+        slideRight(w);
     });
     $("#cardL").click(function(){
         console.log(cardSlideLocation);
@@ -37,11 +36,21 @@ function pointCardSlide(){
         $("#cardSlide").css("left", cardSlideLocation+"px");
     });
 
-    // 현재 슬라이드 번호 표시
+    // 현재 슬라이드 번호 강조
     setInterval(function(){
         cardIdxCheck(w);
-    },10)
+    },100)
+
+    // 자동 슬라이드
+    setInterval(function(){
+        slideRight(w);
+    },6000);
+
+    // 터치 드래그
+    touchNDrag(w);
 }
+
+// 현재 슬라이드 번호 강조
 function cardIdxCheck(w){
     $(".cardIdx").each(function(i){
         if( cardSlideLocation == -(w*i) ){
@@ -51,3 +60,32 @@ function cardIdxCheck(w){
         }
     });
 }
+
+// 슬라이드 오른쪽으로
+function slideRight(w){
+    if( cardSlideLocation == ($(".cards").length-1)*(-w) ){
+        cardSlideLocation=0;
+        $("#cardSlide").css("left", cardSlideLocation + "px");
+    }else{
+        $("#cardSlide").css("left", (cardSlideLocation-=w) + "px");
+    }
+}
+
+// 터치 드래그 함수
+function touchNDrag(w){
+    let startX = 0;
+    let endX = 0;
+    var lastLocation = ($(".cards").length-1)*(-(w));
+    $(".cards").on("touchstart", function(e){
+        startX = e.originalEvent.changedTouches[0].clientX;
+    });
+    $(".cards").on("touchend", function(e){
+        endX = e.originalEvent.changedTouches[0].clientX;
+        if( endX > startX && cardSlideLocation != 0 ){
+            $("#cardSlide").css("left", (cardSlideLocation+=w)+"px");
+        }
+        if( endX < startX && cardSlideLocation != lastLocation ){
+            $("#cardSlide").css("left", (cardSlideLocation-=w)+"px");
+        }
+    });
+};

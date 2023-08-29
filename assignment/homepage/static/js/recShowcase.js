@@ -9,14 +9,17 @@ function recshowCaseSet(id){
         if(t >= 9){return false;}
         t+=1;
         $(id).append(
-            "<a href='"+""+"'><div class='picks'>"+
-            "<div class='picksImg_box'><img class='picksImg' alt='picksImg'></div>"+
-            "<h4>"+val.제품명+"</h4>"+
-            "<div>"+val.제품부제명+"</div>"+
+            "<a href='"+""+"'><div class='picks box-shadow-out'>"+
+            "<div class='picksImg_box'>"+
+            "<img class='picksImg radius-2' alt='picksImg'"+
+            "src='"+val.url+"'>"+
+            "</div>"+
+            "<h4 style='border-bottom:4px double gray'>"+val.제품명+"</h4>"+
+            "<div class='font-gray font-bold-1'>"+val.제품부제명+"</div>"+
             "<div>"+val.상품설명+"</div>"+
-            "<div>"+val.상품평점+"</div>"+
+            "<h6>"+val.상품평점+"</h6>"+
             "</div></a>"
         )
     });
-    console.log(picks);
+    // console.log(picks);
 }

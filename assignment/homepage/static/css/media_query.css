@@ -5,6 +5,7 @@
     #slide_bt_outer{display:none;}
     #dotIndex{display:none;}
     #sBanner{display:none;}
+    .tablet-vertical-on{display:none;}
 }
 
 /*태블릿 세로 이하*/
@@ -16,13 +17,12 @@
     .slideImg{width:768px}
 
     /*각 섹션별 타이틀*/
-    .sectionTitle{width:100%; text-align: center; margin:0, auto;}
+    .sectionTitle{width:100%; text-align: center; margin:70px auto;}
 
     /*DISPLAY 쇼케이스*/
     #showCase{display:block; height:1300px;}
     #productsShowcase{width:95%; margin:0 auto;}
     .showCase{width:43%;}
-    .showCase > * {padding:15px 0;}
     #sectionTitle .goBt{ text-align:right; }
 
     /*이벤트 타이틀*/
@@ -30,7 +30,7 @@
 
     /*베스트셀러*/
     #bsImgWrap{flex-direction: column; row-gap:40px; width:95%; margin:0 auto;}
-    #bsImgWrap > * {align-self: center; width:100%; border-radius: 0;}
+    #bsImgWrap > * {align-self: center; width:100%; border-radius: 10px;}
 
     /*추천상품*/
     #recommended{width:95%; margin:0 auto;}
@@ -44,10 +44,38 @@
     #quickMenuOpen{border:none;}
     .footerAsk{width:100%; padding:17px 0;}
     .footerUpperWrap{width:100%; justify-content: center; font-size: 20px;}
-    .footerLowerWrap{justify-content: space-evenly; margin-top:35px;}
+    .footerLowerWrap{justify-content: space-around; align-items: center; margin-top:35px;}
+    .footerLowerWrap div img { width:230px;}
 }
 
 /*스마트폰 세로 이하*/
 @media (max-width:479px){
+
+    /*슬라이드 메뉴*/
+    #slide_menu_items{font-size:16px;}
+
+    /*이벤트 타이틀*/
     .sectionTitle div ul{font-size:17px;}
+
+    /*추천상품*/
+    .picks{height:500px;}
+
+    /*체크카드 포인트*/
+    .cardSubTitle li{ font-size:13px }
+    .cardDetail{display:flex; align-items: center; justify-content: center; padding-right:0;}
+    .cardDetail div{text-align:center; font-size:10px; padding:0;}
+    .cardDetail div > * {padding:10px 0;}
+    .cardDetail div h3{text-align:center; font-size:20px;}
+    .cardDetail div p{text-align:center; font-size:11px;}
+
+    /*footer*/
+    .footerUpperWrap{font-size: 13px;}
+    .footerLowerWrap{
+        flex-direction: column; margin-top:15px;
+        position:absolute; left:50%; transform: translateX(-50%);
+    }
+    .footerLowerWrap div img {
+        width:200px; position:relative;
+        left:50%; transform: translateX(-10%);
+    }
 }
