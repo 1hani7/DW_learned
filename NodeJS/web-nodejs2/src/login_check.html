@@ -6,8 +6,30 @@
     <title>Document</title>
 <!--jquery-->
 <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
-    <script>
-        // parse=function(href){
+    
+<script src="./src/func.js"></script>
+<script>
+    $(function(){
+        var fromQs = getCookie("fromQs")=='true'?true:false;
+        var isLogin = getCookie("isLogin")=='true'?true:false;
+        var id = getCookie("id");
+        if( isLogin=='false' ){
+            $('#login_result').append('<h2>로그인 실패</h2>'+
+                '<a href="/login">다시 로그인하기</a>');
+        }else{
+            $('#login_result').append('<h2>로그인 성공</h2>');
+            setTimeout(function(){
+                if( fromQs ){
+                    location.href='/qs';
+                }else{
+                    location.href='/';
+                }
+            },3000);
+        }
+    })
+    // document.write(isLogin+"  "+id);
+</script>
+        <!-- // parse=function(href){
         //     var tmp = href.split("?")[1];
         //     var obj = new Object();
         //     $.each(tmp.split("&"),function(i,t){
@@ -35,27 +57,21 @@
         //     });
         //     if( isSuccess ) document.write("로그인성공");
         //     else document.write("로그인 실패");
-        // });
+        // }); -->
 
-        function getCookie(name){
-            var cookies = document.cookie.split(";");
-            for(var i in cookies){
-                var cookie  = cookies[i].trim();
-                if( cookie.startsWith(name+"=") ){
-                    return cookie.substring(name.length+1, cookie.length);
-                }
-            }
-            return '';
-        }
-        var isLogin = getCookie("isLogin");
-        var id = getCookie("id");
-
-        document.write(isLogin+"  "+id);
-
-    </script>
+<style>
+    body{background-color:pink; height:100vh;}
+    #login_result{
+        width:500px; color:#fff; text-align:center;
+        position:relative; left:50%; top:50%;
+        transform: translateX(-50%);
+    }
+    #login_result h2{font-size:30px; font-weight:800;}
+</style>
 </head>
 <body>
+    <div id="login_result">
 
-    <h3>로그인을 처리하는 페이지</h3>
+    </div>
 </body>
 </html>

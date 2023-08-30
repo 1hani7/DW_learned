@@ -16,6 +16,7 @@ var http= require('http');
 var fs = require('fs');
 var tempUrl=require('url');
 var cookie = require('cookie');
+var fromQs = 'false';
 
 const data = JSON.parse(fs.readFileSync('./data/member.json','utf8'));
                         // ㄴ 자동 비동기
@@ -52,8 +53,18 @@ var app = http.createServer(function(request,response){
             }
             url='/src/'+page+'.html';
         }
+        if(page==='qsLogin'){
+            url='/src/login.html';
+            fromQs = 'true';
+        }
+
+        if(page==='logout'){
+            url='/src/index.html';
+        }
+
+
         response.writeHead(200,{
-            'Set-Cookie':['isLogin='+isLogin, 'id='+id]
+            'Set-Cookie':['isLogin='+isLogin, 'id='+id, 'fromQs='+fromQs]
         });
     }
     if(request.url =='/favicon.ico'){
@@ -73,3 +84,7 @@ var app = http.createServer(function(request,response){
     response.end(fs.readFileSync(__dirname+url));
 });
 app.listen(3000);
+
+/*
+    로그아웃하기 => 쿠키삭제
+*/

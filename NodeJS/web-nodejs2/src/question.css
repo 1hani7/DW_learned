@@ -1,0 +1,103 @@
+#side .login_bt{
+    padding:10px 10px;
+}
+#side .login_bt a{
+    color:#fff;
+    text-decoration: none;
+    background:#0F63B5;
+    padding:7px 0;
+    width:100%;
+    font-size:20px;
+    display:inline-block;
+    border-radius: 5px;
+    text-align:center;
+    font-weight:800;
+}
+#side .login_bt a:hover{filter:contrast(1.2);}
+#side .login_bt a:active{box-shadow:inset 4px 4px 0 rgba(0,0,0,0.3);}
+
+.qsTitle{border-bottom:5px double gray; padding:10px 0;}
+
+.qsBt{
+    color:#fff;
+    text-decoration: none;
+    background:#b5280f;
+    padding:7px 0;
+    width:100px;
+    font-size:20px;
+    display:inline-block;
+    border-radius: 5px;
+    text-align:center;
+    font-weight:800;
+}
+.qsBt:hover{filter:contrast(1.2);}
+.qsBt:active{box-shadow:inset 4px 4px 0 rgba(0,0,0,0.3);}
+
+.search_wrap{
+    display:flex; justify-content: right;
+    align-items: center; padding:30px 0;
+}
+.search_wrap label{font-size:20px; padding-right:20px;}
+.search_wrap #word{
+    width:250px; height:35px; padding-left:10px;
+    font-size:18px; outline:none; border-radius: 10px;;
+}
+
+.qsTable{
+    width:100%;
+    text-align: center;
+    border-collapse: collapse;
+}
+.qsTable thead tr{ border-bottom:2px solid gray;}
+.qsTable thead tr th{
+    height:70px; background:rgb(255, 247, 240);
+    padding:15px; font-size:18px;
+}
+.qsTable thead tr th:first-child{width:10%;}
+.qsTable thead tr th:last-child{width:10%;}
+.qsTable tbody tr {border-bottom:1px solid gray;}
+.qsTable tbody tr td{padding:25px 10px;}
+.qsTable tbody tr .qstitle{text-align: left;}
+
+
+/*Modal*/
+#qsModal{
+    position:absolute;
+    width:100%; height:100vh;
+    top:0; left:0;
+}
+#qsModal .modalBackground{
+    position:absolute;
+    width:100%; height:100%;
+    background:rgba(0,0,0,0.25);
+}
+#qsModal .qsInputBox{
+    position:absolute;
+    background:#ffefe0;
+    width:750px; padding:50px 80px;
+    border-radius: 10px;
+    top:50%; left:50%; transform:translate(-50%,-50%);
+    display:flex; flex-direction: column; row-gap:10px;
+}
+.qsInput{
+    display:flex; align-items:center;
+}
+.qsInput label{width:20%; font-size:17px; opacity:0.4;}
+#title{
+    height:30px; font-size:17px; padding:3px 15px;
+    width:80%; border:0; border-radius:5px;
+    order:2;
+}
+#title:focus + label{ opacity:1; font-weight:800; }
+#qsContent{order:2; resize:none; width:80%; height:300px;}
+#qsContent:focus + label{ opacity:1; font-weight:800; }
+.qsRegBt{ 
+
+}
+.qsRegBt a{
+    display:inline-block;
+    padding:5px 33px;
+    text-decoration: none; color:#fff;
+    background:#c5927b; border-radius: 10px;
+    font-weight:900; font-size:16px; line-height:40px;
+}
