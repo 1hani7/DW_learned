@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <h1>ajax api 가져오기 연습</h1>
+    <script>
+        $(function () {
+            $.ajax({
+                method: "GET",
+                url: "https://dapi.kakao.com/v3/search/book?target=title",
+                data: { query: "수필", size: "20" },
+                headers: { Authorization: "KakaoAK a360c20afca5c55df5ef109ad3e9b19b" }
+            })
+                .done(function (data) {
+                    console.log(data);
+                    $.each(data.documents, (i, val)=>{
+                        $("#res").append(
+                            `<img src="${val.thumbnail}" />
+                            <div>제목 : ${val.title}</div>
+                            <div>저자 : ${val.authors}</div>
+                            <div>가격 : ${val.sale_price.toLocaleString()}원</div>`
+                        )
+                    });
+                });
+        })
+    </script>
+    <div id="res"></div>
+</body>
+
+</html>
