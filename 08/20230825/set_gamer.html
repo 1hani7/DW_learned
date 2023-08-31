@@ -35,10 +35,21 @@
     $(function(){
         $("#reg").click(function(){
             $(".name").each(function(i, item){
-                opener.gamer.push( { [$(this).val()]:(i+1) } )
+                // opener.gamer.push( { [$(this).val()]:(i+1) } );
+                opener.gamer.push( $(this).val() );
+                opener.pLocation.push(0);
+                console.log(opener.pLocation);
             });
-            // console.log(opener.gamer)
-            window.close();
+            if( opener.gamer.length > 5 ){
+                opener.gamer=[];
+                opener.pLocation=[];
+                $("input").each(function(i,item){
+                    $(this).val('');
+                });
+                $(".name").eq(0).focus();
+            }else{
+                window.close();
+            }
         });
         $("#add").click(function(){
             var top = Number($(this).css("top").split("px")[0]);

@@ -4,6 +4,8 @@ const board_img=["카리나1.jpg","카리나2.jpg","카리나3.jpg","강동원.j
 
 const board=new Array(28);
 var gamer=[];
+var pLocation = [];
+var gamerNames = [];
 
 $(function(){
     board.fill(0);
@@ -13,7 +15,7 @@ $(function(){
     $("#dice_bt").click(dice_turn);
     t=setInterval( ()=>{
         if( gamer.length > 0 ){
-            console.log(gamer);
+            // console.log(gamer);
             $("#dice_bt").attr('disabled',false);
             clearInterval(t);
             draw();
