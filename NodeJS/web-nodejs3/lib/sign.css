@@ -1,0 +1,21 @@
+#main{display:block;}
+
+input{height:35px; padding-left:10px; width:30%; outline:none;}
+.phoneNumber{height:25px;}
+
+.dotC{color:#DBA42E;}
+
+#content{margin:0 auto;}
+#signTable{
+    border-top:3px solid gray;
+    width:100%; border-collapse: collapse;
+    margin:20px auto;
+}
+#signTable tr td{
+    padding:20px;
+    border-bottom:1px solid gray;
+}
+#signTable tr td:first-child{background:#FFEFB2; font-weight:900;}
+.addr{margin:10px 0;}
+
+.phoneNumber{width:30%; height:30px;}

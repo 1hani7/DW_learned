@@ -62,7 +62,7 @@ function questionWrite(){
         var isOk = confirm("로그인 후 문의하기 할 수 있습니다. \n로그인 하시겠습니까?");
                     // ㄴ alert()에 취소 버튼 추가된 것 (true/false로 환원)
         if(isOk){
-            location.href = "/?part=qsLogin";
+            location.href = "/?sub=question";
         }
     }
 }

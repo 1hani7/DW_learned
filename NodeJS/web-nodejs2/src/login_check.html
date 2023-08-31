@@ -10,7 +10,6 @@
 <script src="./src/func.js"></script>
 <script>
     $(function(){
-        var fromQs = getCookie("fromQs")=='true'?true:false;
         var isLogin = getCookie("isLogin")=='true'?true:false;
         var id = getCookie("id");
         if( isLogin=='false' ){
@@ -19,11 +18,10 @@
         }else{
             $('#login_result').append('<h2>로그인 성공</h2>');
             setTimeout(function(){
-                if( fromQs ){
-                    location.href='/qs';
-                }else{
-                    location.href='/';
-                }
+                location.href='/'+getCookie("sub");
+                document.cookie="sub=;" // 쿠키 지우기
+                //"expires=Thu, 01 Jan 1970 00:00:01 GMT";
+                // 쿠키 생성 이전의 태초로 (유닉스 시간)
             },3000);
         }
     })

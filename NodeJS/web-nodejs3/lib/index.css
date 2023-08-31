@@ -1,0 +1,20 @@
+#main img{
+    width:100%;
+}
+#side .login_bt{
+    padding:10px 10px;
+}
+#side .login_bt a{
+    color:#fff;
+    text-decoration: none;
+    background:#0F63B5;
+    padding:7px 0;
+    width:100%;
+    font-size:20px;
+    display:inline-block;
+    border-radius: 5px;
+    text-align:center;
+    font-weight:800;
+}
+#side .login_bt a:hover{filter:contrast(1.2);}
+#side .login_bt a:active{box-shadow:inset 4px 4px 0 rgba(0,0,0,0.3);}
