@@ -52,7 +52,7 @@ padding:5px 0; border-right:1px solid #aaa;}
 #dice_wrap .dice{
     position:absolute;
     width:100%; height:100%;
-    transition: all 1.5s;
+    transition: all 1s;
     transform-style: preserve-3d; /* 3D 스타일로 */
     /* animation: turn 20s linear infinite; */
 }

@@ -50,12 +50,7 @@ function draw(){
     // 보드 그리기
     var gidx=Object.values(gamer); // 참가자 번호 가져오기
     $.each(gidx,function(i,p){
-        $(".pan").eq(0).append(
-            '<svg width="50" height="50" viewBox="0 0 50 50" style="position:absolute">'+
-            '<circle cx="20" cy="10" r="10" fill="'+gcolor[i]+'"/>'+
-            '<rect width="40" height="10" x="18" y="25">'+
-            '</svg>'
-            )
+        $(".pan").eq(0).append(makeMal(i))
     });
 };
 
@@ -65,6 +60,54 @@ function setOpen(){
     "width=300,height=150,top=400,left=750");
 };
 
+var playerTurn = 0;
+
 function dice_turn(){
-    $(".dice").css("animation","turn 20s linear infinite");
+    console.log(gamer);
+    // $(".dice").css("animation","turn 20s linear infinite");
+    var roll = Math.floor(Math.random()*6)+1;
+    if( roll == 1 ) $(".dice").css("transform","rotateY(0deg)");
+    if( roll == 2 ) $(".dice").css("transform","rotateY(90deg)");
+    if( roll == 3 ) $(".dice").css("transform","rotateX(-90deg)");
+    if( roll == 4 ) $(".dice").css("transform","rotateX(90deg)");
+    if( roll == 5 ) $(".dice").css("transform","rotateY(-90deg)");
+    if( roll == 6 ) $(".dice").css("transform","rotateY(180deg)");
+
+    $(".pan").each(function(i,v){
+        $(this).find(".player"+playerTurn).remove();
+    });
+    
+    pLocation[playerTurn]+=roll;
+
+    if( pLocation[playerTurn] > $(".pan").length ){
+        pLocation[playerTurn] -= $(".pan").length;
+    }
+
+    $(".pan").eq(pLocation[playerTurn]).append(
+        makeMal(playerTurn)
+    );
+
+    if(playerTurn == pLocation.length-1){
+        playerTurn=0;
+    }else{
+        playerTurn+=1;
+    }
+
+    // for(var val of pLocation){
+    //     if( val >= $(".pan").length ){
+    //         alert(gamer[playerTurn]+" WINS!")
+    //         break;
+    //     }
+    // }
+}
+
+function makeMal(count){
+    return '<svg class="mal player'+count+
+    '"width="50" height="50" viewBox="0 0 50 50"'+
+    'style="position:absolute; top:55px; left:'+0+(count*30)+'px;">'+
+    '<circle cx="25" cy="24" r="15"'+
+    'fill="'+gcolor[count]+'"/>'+
+    "<polygon points='25,0 50,20 0,20'"+
+    'fill="'+gcolor[count]+'"/>'+
+    '</svg>'
 }
