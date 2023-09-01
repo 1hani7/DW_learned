@@ -104,7 +104,7 @@ function dice_turn(){
 function makeMal(count){
     return '<svg class="mal player'+count+
     '"width="50" height="50" viewBox="0 0 50 50"'+
-    'style="position:absolute; top:55px; left:'+0+(count*30)+'px;">'+
+    'style="position:absolute; top:55px; left:'+0+(count*25)+'px;">'+
     '<circle cx="25" cy="24" r="15"'+
     'fill="'+gcolor[count]+'"/>'+
     "<polygon points='25,0 50,20 0,20'"+

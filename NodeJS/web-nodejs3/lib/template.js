@@ -7,6 +7,7 @@ module.exports = {
                     </section>
                     <section id="side">
                         <div class="login_bt">
+                            ${login.url=='logout'?`<p>${login.id}</p>`:''}
                             <a href="/${login.url}">${login.text}</a>
                         </div>
                     </section>`
@@ -42,9 +43,9 @@ module.exports = {
         `
         return (commonHTML(main, loginHTML, "login"));
     },
-    sighUpHTML: function(main){
-        var signHTML = 
-        `
+    sighUpHTML: function (main) {
+        var signHTML =
+            `
         <section id="content">
                 <h3>스드메 회원가입</h3>
                 <table id="signTable">
@@ -97,12 +98,12 @@ module.exports = {
                 </table>
             </section>
         `
-        return ( commonHTML( main, signHTML, "sign" ) )
+        return (commonHTML(main, signHTML, "sign"))
     },
     questionHTML: function (main, login, qsData) {
-        var tag='';
-        for(var q of qsData){
-            tag+=
+        var tag = '';
+        for (var q of qsData) {
+            tag +=
                 `<tr class='qsTr'>
                     <td class="qsId">${q.id}</td>
                     <td class="qstitle">${q.title}</td>
@@ -146,8 +147,8 @@ module.exports = {
         </main>
     </div>
         `
-    var modal = 
-    `
+        var modal =
+            `
     <div id="qsModal" style="display:none;">
         <div class="modalBackground"></div>
         <div class="qsInputBox">
@@ -166,7 +167,7 @@ module.exports = {
         </div>
     </div>
     `
-        return ( commonHTML( main, qsHTML, "question") )
+        return (commonHTML(main, qsHTML, "question"))
     }
 }
 
@@ -184,6 +185,10 @@ function commonHTML(main, html, css) {
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>스드메의 문단속</title>
         
+            <!--jquery-->
+            <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+            <!--bootstrap-->
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
             <link rel="stylesheet" href="./lib/main.css">
             <link rel="stylesheet" href="./lib/${css}.css">
 

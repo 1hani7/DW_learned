@@ -5,7 +5,11 @@ const http = require('http');
 const fs = require('fs');
 const url = require('url');
 const template = require('./lib/template.js');
+const JStemp = require('./lib/JStemplate.js');
 const dataParse = JSON.parse(fs.readFileSync('./lib/page.json', 'utf8')); // JSON을 JS객체로 변환
+const member = JSON.parse(fs.readFileSync('./lib/member.json', 'utf8')); // JSON을 JS객체로 변환
+let cookie_arr = [];
+
 
 const app = http.createServer(function (request, response) {
     const pageURL = request.url;
@@ -15,24 +19,36 @@ const app = http.createServer(function (request, response) {
     if(path.indexOf(".")==-1){
         var html = ''
         if (path === "/") {
-            html = template.homeHTML(dataParse.main, dataParse.login_before);
+            if(query.sdmId==undefined)
+                html = template.homeHTML(dataParse.main, dataParse.login_before);
+            else{ // 파라미터에 id가 있다면
+                for(var m of member){
+                    if(m.sdmId==query.sdmId && m.sdmPw==query.sdmPw){
+                        cookie_arr = ['isLogin=true','id='+query.sdmId];
+                        dataParse.login_after.id=query.sdmId;
+                        break;
+                    }
+                }
+                html = template.homeHTML(dataParse.main, dataParse.login_after);
+            }
         }
         if (path === "/sign") {
             html = template.sighUpHTML(dataParse.main, dataParse.sign);
         }
         if (path === "/login") {
             html = template.loginHTML(dataParse.main);
+            html += JStemp.login();
         }
         if (path === "/qs") {
             var qdata = JSON.parse(fs.readFileSync('./lib/question.json', 'utf8'));
             html = template.questionHTML(dataParse.main, dataParse.login_before, qdata );
         }
-        response.writeHead(200);
+        response.writeHead(200,
+            {'Set-Cookie':cookie_arr});
         response.write(html);
         response.end();
     }
 
-    
     
 
     if (path.indexOf('.css') > -1) {
