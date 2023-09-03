@@ -38,7 +38,7 @@ padding:5px 0; border-right:1px solid #aaa;}
     position:relative;
     width:100px;    height:100px;
     margin:0px auto;
-    perspective:700px; /*원근감 효과(3D)*/
+    perspective:70000px; /*원근감 효과(3D)*/
 }
 #dice_wrap:after{
     position:absolute;

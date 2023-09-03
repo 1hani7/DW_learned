@@ -1,0 +1,39 @@
+<!--sample.html-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--jquery-->
+<script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <div id="w" style="height:300vh">
+        <div id="wrap" style="width:300px; height:200px; position:absolute; left:30px; top:100vh; background:brown;"></div>
+    </div>
+    <script>
+        const wrap = $("#wrap");
+        // console.log(wrap.height(), wrap.width());
+        $(window).scroll(function(){
+            const rect = wrap.position();
+            // console.log(rect.left,rect.right,rect.top,rect.bottom)
+            // console.log(rect.top, window.innerHeight);
+            // if(rect.top <= window.innerHeight) console.log("isIn");
+            // else console.log("isOut")
+            const top = $("#wrap").offset().top;
+            const bot = wrap.offset().top + wrap.height();
+            console.log( top, bot )
+            if( window.scrollY <= top ) console.log("isIn");
+            else  console.log("isOut")
+        });
+
+        $(window).resize(function(){
+            const h = window.innerHeight;
+            const w = window.innerWidth;
+            console.log(`브라우저 높이 : ${h}px 브라우저 너비 : ${w}`)
+        });
+    </script>
+</body>
+</html>
