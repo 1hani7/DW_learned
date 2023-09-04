@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&display=swap');
+/**
+    font-family: 'Black Ops One', cursive;
+    font-family: 'Noto Sans KR', sans-serif;
+*/
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    font-family: inherit;
+    vertical-align: center;
+    word-break: break-word;
+}
+
+:root{
+    scroll-behavior: smooth;
+    
+    /*color palette*/
+    --black:#000000;
+    --white:#fff;
+    --red600:#DB2535;
+    --yellow500:#FFDA33;
+    --blue600:#254EDB;
+    --orange500:#F88A13;
+    --green600:#0DD577;
+    --cyan600:#0DC0D5;
+    --purple600:#960DD5;
+    --gray400:#666666;
+
+    /** My blue-gray theme */
+    --BG-100:#10101A;
+    --BG-200:#1B1B2B;
+    --BG-300:#3A3A4F;
+    --BG-400:#9999A5;
+    --BG-500:#CCCCDE;
+
+    /** Rose Quartz - Serenity theme */
+    --RS-100:#92a8d1;
+    --RS-200:#c5b9cd;
+    --RS-300:#f7cac9;
+    --RS-400:#eaa8b3;
+    --RS-500:#dd869c;
+
+    /**기본 폰트 컬러*/
+    --primary-font:#1d1d1d;
+    --secondary-font:#3a3a3a;
+    --light-font:#777777;
+
+    /**상황별 사용 컬러*/
+    --safe:#2a4bb4;
+    --warning:#ffdf51;
+    --danger:#eb2838;
+    --blend:rgba(0,0,0,0.4); /*배경 따라 맞춤*/
+}
