@@ -55,3 +55,70 @@
     --danger:#eb2838;
     --blend:rgba(0,0,0,0.4); /*배경 따라 맞춤*/
 }
+
+a{
+    color: inherit;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+b, strong {
+    font-weight: bolder;
+}
+
+small {
+    font-size: 80%;
+}
+
+iframe, img {
+    border-style: none;
+}
+
+select {
+    text-transform: none;
+}
+
+canvas {
+    display: inline-block;
+}
+
+
+h1, h2, h3, h4, h5, h6{
+    font-family: 'Black Ops One', cursive;
+}
+h1{font-size: 2.5rem; font-weight:900;}
+h2{font-size: 2rem; font-weight:900;}
+h3{font-size: 1.75rem; font-weight:900;}
+h4{font-size: 1.5rem; font-weight:700;}
+h5{font-size: 1.25rem; font-weight:500;}
+h6{font-size: 1rem; font-weight:500;}
+
+
+
+/* [ 페이지 인트로 / 페이지 전환 ] */
+/*(1)*/
+
+
+
+/* [ 페이지 전체 레이아웃 ] */
+/*(1)*/
+
+
+
+/* [ 슬라이드 쇼 ] */
+/*(1)*/
+
+
+
+/* [ 정렬 ] */
+/*(1)*/
+
+
+
+/* [ 설명 문구 레이아웃 ] */
+/*(1)*/
+
+
+
+/* [ footer ] */
+/*(1)*/

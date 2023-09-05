@@ -14,7 +14,7 @@
                     <p>{{d.hashTag}}</p>
                     <h5>{{d.line}}</h5>
                     <h5>{{ d.desc }}</h5>
-                    <b-icon icon="arrow-bar-up"></b-icon>
+                    <i class="bi bi-bag-plus"></i>
                 </div>
             </div>
         </section>
