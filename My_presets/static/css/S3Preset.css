@@ -210,7 +210,7 @@ video {position:relative; object-fit: cover; left:0;}
 }
 .desc1 div:first-child,
 .desc1 ul{
-    padding:50px;
+    padding:70px;
     position:absolute; border-radius: 30px; background:rgba(0,0,0,0.6);
     backdrop-filter:blur(7px); box-shadow:inset -1px -1px 3px var(--white);
 }
