@@ -23,6 +23,16 @@ const routes = [
         path: "/qs",
         name: "QsBoard",
         component: () => import('@/components/QsBoard.vue')
+    },
+    {
+        path:"/dress",
+        name:"dress",
+        component: () => import('@/components/DressPage.vue')
+    },
+    {
+        path:"/makeup",
+        name:"makeup",
+        component: () => import('@/components/MakeUp.vue')
     }
 ]
 

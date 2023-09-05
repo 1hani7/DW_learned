@@ -1,0 +1,41 @@
+#main #content video{
+    width:100%; border-radius: 15px;
+}
+#content > div:nth-child(1){margin-top:0;}
+#content > div{ margin: 40px 0; }
+
+.Card{
+    width:125%; height:300px; border-radius: 20px;
+    padding:40px;
+    background-image:url('https://cdn.pixabay.com/photo/2017/04/06/05/14/wedding-2207211_1280.jpg');
+    display:grid; grid-template-columns: 5fr 3fr; 
+    align-items: center;
+    color:white;
+}
+.Card div { mix-blend-mode:difference; }
+.Card div:first-child{
+    height:100%; border-right:3px solid white;
+    display:flex; flex-direction: column; justify-content: center;
+}
+.Card div:nth-child(2){ height:100%; padding:30px;}
+.Card div:nth-child(2) > * { padding:6px;}
+.Card div:nth-child(2) > h2 { font-size:30px; }
+.Card div:nth-child(2) > p { font-size:23px; }
+.Card h3{ font-size:30px; padding:7px 0; }
+
+#side{display:flex; justify-content: right; align-items: start;}
+#side .login_bt{
+    padding:10px 10px;
+    color:#fff;
+    text-decoration: none;
+    background:#0F63B5;
+    padding:7px 0;
+    width:95%;
+    font-size:20px;
+    display:inline-block;
+    border-radius: 5px;
+    text-align:center;
+    font-weight:800;
+}
+#side .login_bt:hover{filter:contrast(1.2);}
+#side .login_bt:active{box-shadow:inset 4px 4px 0 rgba(0,0,0,0.3);}
