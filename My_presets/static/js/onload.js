@@ -1,6 +1,7 @@
-import wholeSlide from "./wholeSlide";
-
 
 $(function(){
-    wholeSlide("wholeSlide");
+
+    drawerToggle(".wholeSlide");
+    locationNum(".wholeSlide");
+
 });
