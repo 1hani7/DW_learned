@@ -94,6 +94,16 @@ h5{font-size: 1.25rem; font-weight:500;}
 h6{font-size: 1rem; font-weight:500;}
 
 
+/** 스크롤 없앰 */
+.scroll::-webkit-scrollbar {
+    display: none;
+  }
+.scroll {
+-ms-overflow-style: none; /* 인터넷 익스플로러 */
+ scrollbar-width: none; /* 파이어폭스 */
+}
+
+
 
 /* [ 페이지 인트로 / 페이지 전환 ] */
 /*(1)*/
@@ -102,6 +112,27 @@ h6{font-size: 1rem; font-weight:500;}
 
 /* [ 페이지 전체 레이아웃 ] */
 /*(1)*/
+.wholeSlide{
+    width:100vw; height:100vh;
+    position:relative;
+    background: gray;
+}
+.wholeSlide div:first-child{position:absolute; right:5%; top:3%;}
+.wholeSlide div:first-child div{font-size:30px; position:fixed; color:white;}
+.wholeSlide div:first-child div:nth-child(2){ position:relative; width:900px; }
+.wholeSlide div:first-child div:nth-child(2) ul{
+    list-style-type: none; position:absolute;
+    width:900px; right:20px; top:-6px; font-size:25px; padding:5px;
+    display:flex; justify-content: space-evenly; color:white;
+}
+.wholeSlide div:first-child ul li{ padding:5px; cursor:pointer;}
+.wholeSlide div:first-child ul li:hover{
+    filter:brightness(0.85);
+}
+
+.wholeSlide div:nth-child(2){width:100vw;height:100vh;}
+.wholeSlide div:nth-child(2) video{width:100%;}
+
 
 
 
