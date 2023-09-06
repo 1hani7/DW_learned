@@ -1,7 +1,7 @@
 <template>
     <TodoListNew/>
     <section class="container">
-        <div class="row justify-content-center m-2">
+        <div class="justify-content-center m-2">
             <TodoListMain/>
         </div>
     </section>
@@ -36,7 +36,7 @@
             }
             const removeTodo = (id) => { // 할일 삭제 기능
                 todos.value.splice(id,1)
-                todos.value.forEach( (todo, box) => {
+                todos.value.forEach( (todo, idx) => {
                     todo.id=idx
                 })
                 saveTodos(todos)

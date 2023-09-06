@@ -14,7 +14,7 @@ export const useStorage = () => {
         initTodos(temp_todos)
     }
     const saveTodos = (todos) => {
-        locdalStorage.setItem(KEY, JSON.stringify(todos.value))
+        localStorage.setItem(KEY, JSON.stringify(todos.value))
     }
     return { ...toRefs(storage_obj), loadTodos, saveTodos }
 }
