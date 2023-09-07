@@ -1,0 +1,12 @@
+// 설치
+
+[1] 기본
+npm install vue
+
+[2] cli 전역설치
+npm install -g @vue/cli => vue.cli 전역설치
+
+[3] vite 프로젝트 생성
+npm create vite@latest 프로젝트명 -- --template vue
+
+
