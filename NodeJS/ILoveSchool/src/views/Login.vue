@@ -25,6 +25,9 @@ provider.setCustomParameters({
     'display':'popup'
 })
 
+const sessionStorage = window.sessionStorage
+
+
 export default{
     name:'login',
     data(){
@@ -45,8 +48,8 @@ export default{
             firebase.auth().signInWithEmailAndPassword(
                 this.email, this.password
             ).then( (user) => {
-                this.$session.set('user_id', user.user.uid)
-                this.$router.replace('msg')
+                sessionStorage.setItem('user_id',  user.user.id)
+                this.$router.replace('msg') // $router 주소를 /msg로 바꿔서 페이지 변경
             }).catch( (err) => {
                 alert('에러 : ' + err.message)
             })
