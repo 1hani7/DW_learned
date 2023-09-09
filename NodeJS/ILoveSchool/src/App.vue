@@ -1,5 +1,20 @@
-<script setup>
+<script>
 import { RouterLink, RouterView } from 'vue-router'
+const sessionStorage = window.sessionStorage;
+const uid = sessionStorage.getItem('user_id')
+export default{
+  name:'App',
+  data(){
+    return { uid }
+  },
+  methods:{
+    logout(){
+      if( uid!==null ){
+        sessionStorage.removeItem('use_id')
+      }
+    }
+  }
+}
 </script>
 
 <template>
@@ -8,7 +23,8 @@ import { RouterLink, RouterView } from 'vue-router'
       <img class="logo" src="./assets/students.jpg">
       <nav>
         <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/login">Login</RouterLink>
+        <RouterLink v-if="uid==null" to="/login">Login</RouterLink>
+        <button v-on:click="logout" v-if="uid!==null" >Logout</button>
         <RouterLink to="/msg">입학메세지</RouterLink>
       </nav>
     </div>
