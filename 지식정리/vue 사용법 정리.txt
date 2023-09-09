@@ -1,12 +1,129 @@
-// 설치
+// 세팅
 
-[1] 기본
-npm install vue
-
-[2] cli 전역설치
-npm install -g @vue/cli => vue.cli 전역설치
-
-[3] vite 프로젝트 생성
-npm create vite@latest 프로젝트명 -- --template vue
+1. npm install -g @vue/cli => vue.cli를 전역설치
+2. vue create 프로젝트명    => 프로젝트 자동생성
+    자동설치 X  Manual Select 설치 O
+    ) => router와 vuex 선택하기, 나머지는 그냥 enter키
+          ㄴ router는 파일들 하나로 연결해주는 그거
+3. cd 프로젝트명, npm run serve
 
 
+* 완전 간단하고 빠른 방법
+=> npx @vue/cli create 프로젝트명
+
+
+
+
+// methods
+이 파일 안에서만 사용할 함수들을 넣을 수 있음
+{예시}
+export default{
+    methods: {
+        const 함수 = () => {
+            실행할 내용
+        }
+    }
+}
+
+
+
+// data
+이 파일 안에서 사용할 데이터들을 넣을 수 있음
+{예시}
+export default{
+    data: {
+        name : "신상수", age : 26
+    }
+}
+
+
+
+
+// 데이터 바인딩
+태그의 속성에 콜론을 붙여주면 안에서 데이터나 변수를 쓸 수 있음
+{예시}
+<div :style:="style" ></div>
+export default{
+    data : { style : "display:block" }
+}
+=> div에 display:none; 이 적용되게 됨
+
+{예시2}
+<a :href="naver" ></a>
+export default{
+    data : {naver : 'https://www.naver.com/'}
+}
+=> naver로 링크됨
+
+
+{예시3} 데이터와 methods 접목하기
+<div :style="border" ></div>
+export default{
+    data : { border : "border:1px solid black" },
+    methods : {
+        const border = () => {
+            return this.border;
+            // 이 파일의 데이터를 쓴다는 의미로 this
+        }
+    }
+}
+=> 함수가 data 안의 값을 들고 태그 속성 안으로 들어감
+
+
+
+
+// 이벤트
+html 태그에 직접 이벤트를 주기
+
+{{ age }}
+// {{}} 안에는 변수는 물론 자바스크립트 문법이 들어갈 수 있음
+                           ㄴ 함수 넣을 때에는 () 붙여주기
+<button v-on:click="plus" ></button>
+<button v-on:click="minus"></button>
+export default{
+    data: { age : 26 },
+    methods: {
+        plus(){
+            this.age+=1;
+        },
+        minus(){
+            this.age-=1;
+        }
+    }
+}
+=> 버튼 누를 때마다 화면의 숫자가 덧셈뺄셈
+v-on:click, v-on:scroll, v-on:submit... 등등 가능
+keyup, keypres도 사용 가능, 무슨 키인지 인식 지원
+=> v-on:keyup.enter 같은 거
+.enter / .tab / .delete / .esc
+/ .space / .up / .down / .left / .right
+/ .ctrl / .alt / .shift / .meta(맥의 command키)/
+/ 마우스 클릭 .left  .right  .middle /
+/ 조합키 .exact
+{예시} => @click.ctrl.exact 컨트롤 + 클릭
+{예시} => @keyup.ctrl.exact 컨트롤 + keyup
+
+* v-on은 @로 줄여 써도 됨
+
+.prevent : 페이지 새로고침 방지 (submit에 주로 씀)
+.once : 한 번만 발동되게
+
+
+
+
+// 양방향 바인딩
+연결된 내용들이 자동으로 동기화 되도록
+무슨 소리? => input에 입력한 글씨가 다른 곳에 동시에 뜨거나 함
+
+v-model을 사용함
+
+{예시}
+<input type="text" v-model="입력한글자" />
+{{ 입력한글자 }}
+=> input에 입력한 글자가 새로고침이나 버튼 없이 실시간으로 나옴
+   제이쿼리의 .val() 혹은 자바스크립트의 .value와 비슷하게 여겨도 됨
+
+
+
+[ composition API 기능 ]
+// 
