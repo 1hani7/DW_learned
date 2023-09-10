@@ -5,11 +5,9 @@
    => router와 Pinia 선택하기, 나머지는 No로 해도 무방
         ㄴ router는 파일들 하나로 연결해주는 그거
         ㄴ Pinia는 storage 관련
-3. cd 프로젝트명, npm run serve
+3. npm run dev => 미리보기 실행
 
 
-* 완전 간단하고 빠른 방법
-=> npx @vue/cli create 프로젝트명
 
 
 
@@ -23,6 +21,23 @@
 기존 => 신상수 하나를 쭉 조각해서 만듬
 지금 => 팔, 다리, 몸통, 머리 등을 따로 만들어서 하나로 붙임
         ㄴ> 이걸 하기 쉽게 만들어주는 게 vue
+
+
+
+// router 사용법 - vue 파일들 이어주기
+설치 과정에서 router 항목을 체크했다면 기본 틀이 자동 세팅됨
+path : 주소창에 이 글씨가 뜨는 상황에서
+name : 이 name을 담고 있는
+component : 이 파일을 RouterView에 띄워라
+
+* RouterView?
+=> path의 값에 따라 component를 갈아끼워주는 html 태그
+<template>
+    <RouterView />
+        ㄴ 여기가 주소창에 뜨는 path 글자에 따라
+           갈아끼워진다는 뜻
+</template
+
 
 
 
@@ -324,24 +339,6 @@ emit()는 반대로 자식 컴포넌트에서 부모 컴포넌트로 데이터�
 
 이렇게 보내는 데이터는
 import 데이터를보낸컴포넌트의name값 from '데이터를보낸컴포넌트의경로'
-
-
-
-
-
-// router 사용법
-설치 과정에서 router 항목을 체크했다면 기본 틀이 자동 세팅됨
-path : 주소창에 이 글씨가 뜨는 상황에서
-name : 이 name을 담고 있는
-component : 이 파일을 RouterView에 띄워라
-
-* RouterView?
-=> path의 값에 따라 component를 갈아끼워주는 html 태그
-<template>
-    <RouterView />
-        ㄴ 여기가 주소창에 뜨는 path 글자에 따라
-           갈아끼워진다는 뜻
-</template
 
 
 
