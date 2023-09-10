@@ -1,15 +1,34 @@
 // 세팅
 
 1. npm install -g @vue/cli => vue.cli를 전역설치
-2. vue create 프로젝트명    => 프로젝트 자동생성
-    자동설치 X  Manual Select 설치 O
-    ) => router와 vuex 선택하기, 나머지는 그냥 enter키
-          ㄴ router는 파일들 하나로 연결해주는 그거
+2. npm init vue@latest    => 프로젝트 자동생성
+   => router와 Pinia 선택하기, 나머지는 No로 해도 무방
+        ㄴ router는 파일들 하나로 연결해주는 그거
+        ㄴ Pinia는 storage 관련
 3. cd 프로젝트명, npm run serve
 
 
 * 완전 간단하고 빠른 방법
 => npx @vue/cli create 프로젝트명
+
+
+
+// components에 관하여
+페이지의 구성요소들을 따로따로 나눠놓은 것을 의미함
+지금까지는 html 파일 하나에 모든 구성요소들을 작성했음
+그 때문에 html 태그들이 너무 길어져서 뇌정지가 왔음
+그걸 부분 별로 따로따로 관리하고 조립하는 것이 components임
+
+{예시}
+기존 => 신상수 하나를 쭉 조각해서 만듬
+지금 => 팔, 다리, 몸통, 머리 등을 따로 만들어서 하나로 붙임
+        ㄴ> 이걸 하기 쉽게 만들어주는 게 vue
+
+
+
+
+// v-if와 v-for
+
 
 
 
@@ -24,6 +43,18 @@ export default{
         }
     }
 }
+
+
+// setup(){}
+다른 파일로 보내줄 용도의 함수/변수들은 여기에 넣어서 작성
+만약 이 안에 작성한 함수/변수들을 이 파일에서도 쓰고 싶다면
+return이라는 객체 안에 이름을 넣어주면 됨
+{예시}
+setup(){
+    const s3 = "신상수"
+    return { s3 }
+} => 이제 이 파일에서도 s3 변수를 쓸 수 있음
+
 
 
 
@@ -41,6 +72,7 @@ export default{
 
 // 데이터 바인딩
 태그의 속성에 콜론을 붙여주면 안에서 데이터나 변수를 쓸 수 있음
+이 덕분에 일일이 .innerHTML이나 .html() 같은 걸 쓸 필요가 없어짐!
 {예시}
 <div :style:="style" ></div>
 export default{
@@ -69,6 +101,21 @@ export default{
 }
 => 함수가 data 안의 값을 들고 태그 속성 안으로 들어감
 
+
+{예시4} classToggle처럼 응용할 수도 있음
+<div :class="hide : isHide" ></div>
+<button @click="toggle" ></button
+export default{
+    data: { isHide : false },
+    methods: {
+        const toggle = ()=> {
+            this.isHide = !this.isHide;
+        }
+    }
+}
+=> 버튼으로 toggle 함수를 발동시키면 isHide가 true로 바뀌어서
+   hide라는 이름의 클래스가 활성화/비활성화 됨
+=> * 만약 클래스명 사이에 '-'가 들어있다면 ''로 클래스명을 묶어줘야 함
 
 
 
@@ -244,5 +291,90 @@ export default{
 
 
 
-/** provide와 inject */
 
+/** provide와 inject, 그리고 emit() */
+provide와 inject는 상위 파일에서 준 변수나 함수를
+하위 파일에서 받도록 해주는 기능
+
+import { provide, inject } from 'vue'
+=> 사용하려면 import로 가져와야 함
+
+* 통상적 상위하위 순서
+main.js -> App.vue -> views폴더의 파일 -> components 폴더의 파일
+
+=> 줄 때
+provide('줄때 쓸 이름', 변수/함수)
+
+=> 받을 때
+inject('이름')
+
+{예시}
+* 상위 파일 => provide('good', printGood) 
+* 하위 파일 => inject('good')
+printGood이란 이름의 함수를 'good'이란 이름으로 줬고,
+그 이름을 그대로 하위 파일에서 'good'이란 이름을 써서 받아먹은 것들은
+
+
+
+emit()는 반대로 자식 컴포넌트에서 부모 컴포넌트로 데이터를 보낼 때 사용
+* TodoListMenu.vue 파일을 참고
+  ㄴ watch를 통해서 데이터 변화를 지켜본 다음,
+     데이터가 변형됐다면 filter라는 변수를 'change-filter'라는
+     이름에 담아서 올려보내는 부분이 있음
+
+이렇게 보내는 데이터는
+import 데이터를보낸컴포넌트의name값 from '데이터를보낸컴포넌트의경로'
+
+
+
+
+
+// router 사용법
+설치 과정에서 router 항목을 체크했다면 기본 틀이 자동 세팅됨
+path : 주소창에 이 글씨가 뜨는 상황에서
+name : 이 name을 담고 있는
+component : 이 파일을 RouterView에 띄워라
+
+* RouterView?
+=> path의 값에 따라 component를 갈아끼워주는 html 태그
+<template>
+    <RouterView />
+        ㄴ 여기가 주소창에 뜨는 path 글자에 따라
+           갈아끼워진다는 뜻
+</template
+
+
+
+
+
+// session
+vue3에선 이전 버전과 문법상 다른 부분이 있으므로
+../node_modules/vue-session/index.js의 일부분을 수정해야 함
+
+* 이 사이트의 내용을 덮어쓰기
+https://archijude.tistory.com/419
+
+* 이후 이렇게 import해서 사용
+import VueSession from 'vue-session/index'
+
+
+
+// local storage
+
+
+
+// firebase
+
+
+
+
+// JSON 가져오기
+
+
+
+// 자주 발생하는 에러 요인
+1. import로 불러온 기능을 사용하지 않음
+{예시}
+import { reactive, ref } from 'vue'
+const array = reactive([]);
+=> ref를 불러놓고 사용하지 않아서 오류가 출력됨
