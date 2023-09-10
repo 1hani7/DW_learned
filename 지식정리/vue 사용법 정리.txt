@@ -128,11 +128,18 @@ v-model을 사용함
 
 // [ composition API 기능 ]
 vue를 제대로 사용하기 위해 도움이 되는 고오급 기능들
+export default{
+    setup() {
+        // 이 안에 담아두자
+    }
+}
+
 
 import { 사용할API이름 } from 'vue'
+// 사용할 API는 이렇게 꺼내오자
 
 
-/* computed */
+/** computed */
 export default{
     data: { name : "신상수" },
     computed: {
@@ -149,7 +156,7 @@ export default{
 
 
 
-/* watch */
+/** watch */
 대상을 지정해 감시하고, 값이 변하면 준비된 콜백함수를 실행함
 watch(
     [ ()=> 감시대상1, ()=> 감시대상 2 ],
@@ -163,4 +170,79 @@ watch(
 
 
 
-/*  */
+/** reactive와 ref */
+반응형 데이터 => 데이터만 변경시켜도 화면에 표시된 값까지 바뀌게 할 수 있음
+                ㄴ 코드가 간단해짐
+
+ref() => 데이터가 하나일 때 사용함
+         // 여럿일 때도 사용 가능한데 일일이 .value를 추가로 적어줘야 함
+reactive() => 데이터가 배열이나 객체일 때만 사용함
+
+{ref 예시}
+import { ref } from 'vue'
+
+{{ name }}
+<button @click="reName" ></button>
+
+export default{
+    setup() {
+        const name = ref('신상수');
+
+        const reName = () => {
+            name.value = '멋진 신상수'
+        }
+    }
+}
+
+=> 버튼을 누르면 reName 함수가 실행돼서 name의 값이 바뀌는데,
+   이 변경사항이 html 부분에 자동으로 적용된다는 것!
+
+
+{reactive 예시}
+import { reactive } from 'vue'
+
+<h1>점심 뭐 먹지</h3>
+{{ menu[0], menu[1], menu[2] }}
+<button @click="고기반찬으로" ></button>
+
+export default{
+    setup() {
+        const menu = reactive([ "샐러드", "고구마", "두부" ])
+
+        const 고기반찬으로 = () => {
+            menu[0] = "제육볶음";
+            menu[1] = "간장치킨";
+            menu[2] = "튀긴족발";
+        }
+    }
+}
+=> 버튼을 누르면 함수가 실행되서 배열 안의 데이터들이 바뀜
+   이 변경사항이 html 부분에 자동으로 적용됨!
+
+
+{reactive 예시 2}
+import { reactive } from 'vue'
+
+<h1>내 정보</h1>
+{{ person.name }}
+<button @click="nameChange"></button>
+
+export default{
+    setup() {
+        const person = reactive({
+            name : "신상수",
+            age : 26
+        })
+
+        const nameChange = () => {
+            person.name = "마동석"
+        }
+    }
+}
+=> 버튼을 누르면 nameChange 함수가 실행되서 객체 안의 데이터가 바뀜
+   이 변경사항이 html 부분에 자동적용돼서 신상수가 마동석이 됨
+
+
+
+/** provide와 inject */
+
