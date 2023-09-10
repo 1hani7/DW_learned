@@ -24,6 +24,22 @@
 
 
 
+* 해당 페이지에 사용된 components들은
+
+import components의name값 from '경로'
+ㄴ 이걸로 가져와준 다음, template 안에서 사용해주고
+
+export default{
+    components: {
+        사용된components이름1, 사용된components이름2
+    }
+}
+ㄴ 이런 방식으로 정리해줘야 컴퓨터가 알아먹음
+
+
+
+
+
 // router 사용법 - vue 파일들 이어주기
 설치 과정에서 router 항목을 체크했다면 기본 틀이 자동 세팅됨
 path : 주소창에 이 글씨가 뜨는 상황에서
@@ -38,12 +54,83 @@ component : 이 파일을 RouterView에 띄워라
            갈아끼워진다는 뜻
 </template
 
+* router주소 이름 바꾸기
+this.$router.replace('바꿀주소의name')
+ㄴ> location.href 비슷한 거라 생각하면 편함
+
+
+* beforeEnter 기능
+주소가 바뀌기 직전에 함수를 발동시키거나 검사를 할 수 있음
+{
+    brforeEnter: (to, from, next) => {}
+}
+    from : 현재 라우터로 오기 이전 라우트
+    next : *필수) next에 전달되는 인자에 따라 다름 => next() : 현재 / next('/') : 루트
+
+{예시} => 로그인했나 체크하는 예시
+{
+    path: '/msg',
+    name: 'msg',
+    component: () => import('../views/CelebrationMsg.vue'),
+    beforeEnter: (to, from, next) => {
+    if( sessionStorage.getItem('user_id') !== null ) return next();
+    alert('로그인이 필요합니다.')
+    }
+}
 
 
 
 
-// v-if와 v-for
 
+// v-if와 v-show
+조건문 안에 들어간 값이 true냐 false냐에 따라
+표시가 되거나 되지 않거나 할 수 있음
+<div v-if=""></div>
+<div v-else-if=""></div>
+<div v-else></div>
+ㄴ> 직접 조건문을 써도 되고, true/false값이 담긴 변수를 써도 됨
+
+v-show도 같은 방식으로 사용 가능함
+
+* v-if와 v-show의 차이
+v-show는 생성해놓고 보여주느냐 마느냐를 결정함
+v-if는 생성하느냐 마느냐를 결정함
+=> 자주 보였다 안 보였다 할 태그는 v-show로 작업하는 게 좋음
+
+
+
+
+
+// v-for
+배열/객체를 반복된 형태의 태그로 보여주고자 할 때
+<template>
+    <table>
+        <tr v-for="name in students" :key="students.name">
+            <td>{{ students.name }}</td>
+        </tr>
+    </table>
+</template>
+export default{
+    data: {
+        students : {
+            { name: "신상수" }, { name: "정상수" }, { name: "명사수" }
+        }
+    }
+}
+=> tr이 students 객체의 name 값들에 따라 자동 반복되어
+   이름들이 담긴 tr들을 반복 생성하게 됨
+
+* 확장 사용법
+:배열의 경우
+    <tr v-for="{ item, index } in Array">
+        <td>{{ item }}, {{ index }}</td>
+    </tr>
+:객체의 경우
+    <tr v-for="{ value, key, index } in Object">
+        <td>{{ value }}, {{ key }}, {{ index }}</td>
+    </tr>
+
+=> $.each처럼 방문 순회 방식으로 사용 가능하다는 뜻
 
 
 
@@ -307,7 +394,7 @@ export default{
 
 
 
-/** provide와 inject, 그리고 emit() */
+/** provide와 inject*/
 provide와 inject는 상위 파일에서 준 변수나 함수를
 하위 파일에서 받도록 해주는 기능
 
@@ -331,32 +418,89 @@ printGood이란 이름의 함수를 'good'이란 이름으로 줬고,
 
 
 
-emit()는 반대로 자식 컴포넌트에서 부모 컴포넌트로 데이터를 보낼 때 사용
+
+
+/** props와 $emit */
+
+props는 ---보류
+
+
+$emit()는 반대로 자식 컴포넌트에서 부모 컴포넌트로 데이터를 보낼 때 사용
+const 함수명 = () => {
+    $emit( '지어준이름', 보내줄변수 )
+}
+
+(1) 자식 components를 import로 연결해줌
+import 데이터를보낸컴포넌트의name값 from '데이터를보낸컴포넌트의경로'
+
+(2) template에 들어갈 자리를 마련해줌
+<template>
+    <자식components />
+</template>
+
+(3) 받아줄땐 이렇게
+<template>
+    <자식components @지어준이름="emit가 포함된 함수이름"/>
+</template>
+
+(4) 이렇게 받은 데이터로 부모가 가진 데이터를 바꾸거나 할 수 있음
+
+
 * TodoListMenu.vue 파일을 참고
   ㄴ watch를 통해서 데이터 변화를 지켜본 다음,
      데이터가 변형됐다면 filter라는 변수를 'change-filter'라는
      이름에 담아서 올려보내는 부분이 있음
 
-이렇게 보내는 데이터는
-import 데이터를보낸컴포넌트의name값 from '데이터를보낸컴포넌트의경로'
 
 
 
 
 
 // session
+브라우저에 내장된 저장소로, 브라우저를 닫으면 초기화됨
+=> 로그인 기능 구현 가능 (브라우저 닫으면 로그아웃됨)
+
+npm install --save vue-session
+
 vue3에선 이전 버전과 문법상 다른 부분이 있으므로
 ../node_modules/vue-session/index.js의 일부분을 수정해야 함
 
 * 이 사이트의 내용을 덮어쓰기
 https://archijude.tistory.com/419
 
-* 이후 이렇게 import해서 사용
+
+* 이후 main.js에 다음 내용 추가
 import VueSession from 'vue-session/index'
+
+var sessionOptions = {
+    persist:true,
+}
+
+app.use(VueSession, sessionOptions)
+
+
+* 변수에 session 저장소 넣기
+const sessionStorage = window.sessionStorage;
+
+* session에 추가하기
+const sessionStorage = window.sessionStorage;
+sessionStorage.setItem('저장될때이름',  저장할것) ;
+
+* session에 저장된 것 가져오기
+const sessionStorage = window.sessionStorage;
+sessionStorage.getItem('저장될때이름')
+
+* session에 저장된 것 없애기
+const sessionStorage = window.sessionStorage;
+sessionStorage.removeItem('지울session이름')
+
 
 
 
 // local storage
+session과 비슷한 저장소 기능인데, 브라우저 닫아도 초기화 안 됨
+-- 보류
+
 
 
 
@@ -366,6 +510,28 @@ import VueSession from 'vue-session/index'
 
 
 // JSON 가져오기
+[1] 컴퓨터에 저장된 JSON 가져오기
+
+import data from '@/assets/파일이름.json';
+ㄴ 저장된 경로에서 import해오기
+
+const Ddata = data;
+ㄴ 가져온 데이터를 변수에 저장해두기
+
+export default {
+    data(){
+        return { Ddata, }
+    }
+}
+ㄴ data(){} 안에서 변수 이름으로 return하기
+
+=> <template></template> 안에서 자유롭게 사용하기! ( ex: v-for )
+
+
+[2] express와 axios로 open api 데이터 가져오기 (공공데이터센터 같은 거)
+-- 연구중
+
+
 
 
 
