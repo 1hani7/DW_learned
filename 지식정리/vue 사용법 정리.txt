@@ -1,11 +1,10 @@
 // 세팅
 
-1. npm install -g @vue/cli => vue.cli를 전역설치
-2. npm init vue@latest    => 프로젝트 자동생성
+1. npm init vue@latest    => 프로젝트 자동생성
    => router와 Pinia 선택하기, 나머지는 No로 해도 무방
         ㄴ router는 파일들 하나로 연결해주는 그거
         ㄴ Pinia는 storage 관련
-3. npm run dev => 미리보기 실행
+2. npm run dev => 미리보기 실행
 
 
 
