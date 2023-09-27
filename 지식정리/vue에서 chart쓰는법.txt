@@ -1,0 +1,96 @@
+// 참고 영상
+https://www.youtube.com/watch?v=pE8Memkl0Kc
+ㄴ 외국인 형이 영어로 설명하는데,
+   화면만 보고 따라해도 문제없음
+
+
+// 설치하기
+npm install chart.js
+
+
+// 사용하기
+import {onMounted} from 'vue'
+import {Chart} from 'chart.js/auto'
+ㄴ 둘 다 필요함
+
+
+export default{
+    name: '컴포넌트 이름',
+    setup(){
+        // 사용할 변수들과 함수들을 미리 세팅하는 곳
+
+
+        onMounted( () => {
+            // 컴포넌트를 완전히 가져온 다음에 실행될 함수들
+            // window.onload=function(){}과 비슷하다고 생각하면 편함!
+
+            => 여기서 차트 관련 코딩을 함
+        })
+
+        return {  }
+    }
+
+}
+
+
+
+// 프로젝트 적용 예시
+
+{예시} => 복붙해서 수정만 해도 됨
+
+<template>
+    <div id="chartWrap">
+        <canvas id="chart" width="450" height="220"></canvas>
+    </div>
+</template>
+
+<script>
+import { onMounted } from 'vue'
+import { Chart } from 'chart.js/auto';
+
+export default {
+    name: 'chart',
+    setup() {
+
+        onMounted(() => {
+            const ctx = document.getElementById('chart');
+            const label = ['09.03', '09.04', '09.05','09.06', '09.07', '09.08', '09.09', '09.10', '09.11', '09.12', ];
+            const data = [80000, 21000, 20000, 19000, 15000, 55000, 45000, 11000, 10000, 16000];
+            chart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: label,
+                    datasets: [{
+                        label: '',
+                        data: data,
+                        borderWidth: 3,
+                        borderColor: '#F9C041',
+                        pointBorderWidth: 0,
+                        pointStyle: false
+                    }]
+                },
+                options: {
+                    plugins:{
+                        legend:{
+                            display:false
+                        }
+                    }
+                }
+            });
+        });
+
+        return {  };
+    }
+}
+</script>
+
+<style>
+#chartWrap {
+    position:relative; left:50%; transform: translateX(-50%);
+    width: 450px;
+}
+
+#chart {
+    width: 450px; height:220px;
+}
+</style>
